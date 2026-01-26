@@ -11,6 +11,8 @@
     --accent: #f59e0b;
     --dark: #1e293b;
     --light: #f8fafc;
+    --primarySoft: #3b82f6; /* slightly lighter */
+    --secondarySoft: #8b5cf6; /* slightly lighter */
   }
 
   body {
@@ -61,6 +63,28 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  .bg-gradient-soft {
+    background-image: linear-gradient(135deg, var(--primarySoft), var(--secondarySoft));
+  }
+
+  .border-gradient {
+    border: 1px solid transparent;
+    border-image: linear-gradient(90deg, var(--primarySoft), var(--secondarySoft)) 1;
+  }
+
+  .icon-badge {
+    @apply rounded-full p-3 shadow-md;
+    background-image: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
+    border: 1px solid rgba(37, 99, 235, 0.15);
+  }
+
+  .hover-bright {
+    transition: filter 300ms ease;
+  }
+  .hover-bright:hover {
+    filter: brightness(1.03);
   }
 }
 

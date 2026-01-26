@@ -241,7 +241,7 @@ const Hero: FC = () => {
             
             <h1 className="text-4xl md:text-6xl font-bold text-dark mb-6 leading-tight">
               Transform Your{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+              <span className="text-gradient">
                 Digital Presence
               </span>{' '}
               in India
@@ -364,8 +364,8 @@ const Services: FC = () => {
     <section className="section-padding bg-gradient-to-b from-white to-blue-50">
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Our Services
+          <span className="inline-flex items-center bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <Zap size={16} className="mr-2" /> Our Services
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-dark mb-6">
             Digital Marketing Solutions for{' '}
@@ -381,7 +381,7 @@ const Services: FC = () => {
           {services.map((service) => (
             <div 
               key={service.id} 
-              className="card-lift overflow-hidden group"
+              className="card-lift overflow-hidden group border-gradient hover-bright"
             >
               <div className="h-48 bg-gradient-to-r from-blue-100 to-purple-100 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:scale-110 transition-transform duration-500"></div>
@@ -423,7 +423,7 @@ const Services: FC = () => {
             {stats.map((stat, idx) => (
               <div key={idx} className="text-center">
                 <div className="flex justify-center mb-4">
-                  <div className="bg-white/20 p-3 rounded-full">
+                  <div className="icon-badge">
                     {stat.icon}
                   </div>
                 </div>
@@ -453,8 +453,8 @@ const BenefitsForUser: FC = () => {
     <section className="section-padding bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Benefits for You
+          <span className="inline-flex items-center bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <TrendingUp size={16} className="mr-2" /> Benefits for You
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">Simple wins for your business</h2>
           <p className="text-gray-600">We keep things easy. No heavy words. Just clear results.</p>
@@ -497,8 +497,8 @@ const Introductions: FC = () => {
     <section className="section-padding bg-white">
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Simple Introductions
+          <span className="inline-flex items-center bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <Search size={16} className="mr-2" /> Simple Introductions
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">Understand the basics in plain words</h2>
           <p className="text-gray-600">No hard English. Just clear, helpful points for quick learning.</p>
@@ -575,7 +575,7 @@ const GrowthGraph: FC = () => {
           <p className="text-gray-600 mt-3">A simple view of lead growth over 6 months.</p>
         </div>
 
-        <div className="bg-gray-50 rounded-2xl p-6 border card-lift">
+        <div className="bg-gray-50 rounded-2xl p-6 border card-lift border-gradient">
           <div className="grid grid-cols-6 gap-4 items-end h-48">
             {values.map((v, i) => (
               <div key={i} className="flex flex-col items-center">
@@ -617,8 +617,8 @@ const SocialClients: FC = () => {
     <section className="section-padding bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Social Proof
+          <span className="inline-flex items-center bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <Award size={16} className="mr-2" /> Social Proof
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">Beautiful client cards</h2>
           <p className="text-gray-600">Instagram and Facebook clients we manage with care.</p>
@@ -626,7 +626,7 @@ const SocialClients: FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {clients.map((c, idx) => (
-            <div key={idx} className="glass-card overflow-hidden transition">
+            <div key={idx} className="glass-card overflow-hidden transition border-gradient hover-bright">
               <div className="h-36 bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-between px-6">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow">
@@ -685,8 +685,8 @@ const FAQs: FC = () => {
     <section className="section-padding bg-white">
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            FAQs
+          <span className="inline-flex items-center bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <MessageCircle size={16} className="mr-2" /> FAQs
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-dark">Quick answers</h2>
           <p className="text-gray-600 mt-3">Short and clear. No complex words.</p>
@@ -712,7 +712,9 @@ const StrongCTA: FC = () => {
         <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 md:p-12 text-white card-lift">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">Ready to make a boom?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient flex items-center">
+                <Zap size={24} className="mr-2" /> Ready to make a boom?
+              </h2>
               <p className="opacity-90 mb-6">Get a free plan for your business. Simple steps. Real leads. Clear results.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors btn-glow">Get Free Proposal</button>
@@ -785,8 +787,8 @@ const Features: FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, idx) => (
-            <div key={idx} className="text-center p-6 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 card-lift">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-md mb-6">
+            <div key={idx} className="text-center p-6 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 card-lift border-gradient hover-bright">
+              <div className="icon-badge w-16 h-16 mb-6 inline-flex items-center justify-center">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold text-dark mb-3">{feature.title}</h3>
