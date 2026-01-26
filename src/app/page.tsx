@@ -86,11 +86,8 @@ const Header: FC = () => {
 
   const servicesSubmenu: { name: string; href: string; }[] = [
     { name: 'Social Media Management', href: '/services/social-media' },
-    { name: 'Local SEO & GEO Marketing', href: '/services/local-seo' },
-    { name: 'Website Development', href: '/services/web-development' },
-    { name: 'SMO & Online Reputation', href: '/services/smo' },
-    { name: 'Content Marketing', href: '/services/content-marketing' },
-    { name: 'PPC Advertising', href: '/services/ppc' },
+    { name: 'Local SEO & Google Maps', href: '/services/local-seo' },
+    { name: 'Lead Ads (Meta & Google)', href: '/services/lead-ads' },
   ];
 
   const navItems: NavItem[] = [
@@ -227,11 +224,11 @@ const Header: FC = () => {
 // Hero Component
 const Hero: FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden pattern-grid">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float-slow"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float-slow"></div>
       </div>
 
       <div className="container mx-auto px-4 pt-20 relative z-10">
@@ -256,7 +253,7 @@ const Hero: FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button className="btn-primary flex items-center justify-center">
+              <button className="btn-gradient btn-glow flex items-center justify-center">
                 Start Free Trial
                 <ArrowRight size={20} className="ml-2" />
               </button>
@@ -318,39 +315,39 @@ const Services: FC = () => {
     {
       id: 1,
       title: 'Social Media Management',
-      description: 'Complete social media strategy, content creation, and community management for platforms like Instagram, Facebook, LinkedIn tailored for Indian audience.',
+      description: 'We plan, create and post content. We reply to comments and messages. Simple, consistent and friendly.',
       icon: <Instagram className="text-pink-600" size={32} />,
       features: [
-        'Content Calendar Creation',
-        'Audience Engagement',
-        'Paid Campaign Management',
-        'Performance Analytics'
+        'Monthly Content Calendar',
+        'Daily Engagement',
+        'Ad Campaign Setup',
+        'Simple Reports'
       ],
       image: 'https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=800'
     },
     {
       id: 2,
-      title: 'Local SEO, GEO & SMO',
-      description: 'Dominate local search results with our geo-targeted SEO strategies. Perfect for Indian businesses looking to attract local customers.',
+      title: 'Local SEO & Maps',
+      description: 'We help you show up on Google near your area. People nearby can find and call you easily.',
       icon: <Search className="text-green-600" size={32} />,
       features: [
-        'Google My Business Optimization',
-        'Local Citation Building',
-        'Geo-Targeted Content',
-        'Review Management'
+        'Google Business Profile setup',
+        'Map ranking improvement',
+        'Local reviews guidance',
+        'NAP & citations'
       ],
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800'
     },
     {
       id: 3,
-      title: 'Website Development',
-      description: 'Modern, responsive websites with SEO optimization. Fast-loading and mobile-friendly designs for the Indian market.',
-      icon: <Globe className="text-blue-600" size={32} />,
+      title: 'Lead Ads (Meta & Google)',
+      description: 'We run simple ads on Instagram, Facebook and Google to get real leads: calls, forms and messages.',
+      icon: <Target className="text-blue-600" size={32} />,
       features: [
-        'Responsive Design',
-        'SEO Optimized',
-        'E-commerce Solutions',
-        'Maintenance & Support'
+        'Lead forms & tracking',
+        'Budget-friendly plans',
+        'Clear targeting',
+        'Weekly lead reports'
       ],
       image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800'
     }
@@ -384,7 +381,7 @@ const Services: FC = () => {
           {services.map((service) => (
             <div 
               key={service.id} 
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
+              className="card-lift overflow-hidden group"
             >
               <div className="h-48 bg-gradient-to-r from-blue-100 to-purple-100 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:scale-110 transition-transform duration-500"></div>
@@ -421,7 +418,7 @@ const Services: FC = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 md:p-12 text-white">
+        <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 md:p-12 text-white animate-pulse-soft">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, idx) => (
               <div key={idx} className="text-center">
@@ -434,6 +431,310 @@ const Services: FC = () => {
                 <p className="text-sm opacity-90">{stat.label}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Benefits for User Component
+const BenefitsForUser: FC = () => {
+  const benefits = [
+    { icon: <Phone size={22} className="text-primary" />, title: 'More Calls', desc: 'Get more phone calls from nearby people.' },
+    { icon: <MessageCircle size={22} className="text-primary" />, title: 'More Messages', desc: 'More chats and DMs from real users.' },
+    { icon: <MapPin size={22} className="text-primary" />, title: 'Better Local Rank', desc: 'Show up higher on Google Maps.' },
+    { icon: <Users size={22} className="text-primary" />, title: 'Right Audience', desc: 'Reach the people who want your service.' },
+    { icon: <TrendingUp size={22} className="text-primary" />, title: 'Clear Growth', desc: 'Simple, easy-to-read monthly growth reports.' },
+    { icon: <Shield size={22} className="text-primary" />, title: 'Safe & Secure', desc: 'Your data stays protected and private.' },
+  ];
+
+  return (
+    <section className="section-padding bg-gradient-to-b from-blue-50 to-white">
+      <div className="container mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Benefits for You
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">Simple wins for your business</h2>
+          <p className="text-gray-600">We keep things easy. No heavy words. Just clear results.</p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {benefits.map((b, i) => (
+            <div key={i} className="bg-white rounded-xl shadow-sm p-6 border hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">{b.icon}</div>
+              <h3 className="text-lg font-semibold text-dark mb-1">{b.title}</h3>
+              <p className="text-gray-600 text-sm">{b.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Introductions Component (SEO, SME, Social Media)
+const Introductions: FC = () => {
+  const introCards = [
+    {
+      title: 'What is SEO?',
+      icon: <Search size={24} className="text-primary" />,
+      desc: 'SEO helps your business show up on Google. When people search near you, they can find you easily.'
+    },
+    {
+      title: 'What is SME?',
+      icon: <Users size={24} className="text-primary" />,
+      desc: 'SME means small and medium business. We make marketing simple for small teams and owners.'
+    },
+    {
+      title: 'Social Media Basics',
+      icon: <Instagram size={24} className="text-primary" />,
+      desc: 'We create easy posts, stories and ads. People see you often and remember your brand.'
+    }
+  ];
+
+  return (
+    <section className="section-padding bg-white">
+      <div className="container mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Simple Introductions
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">Understand the basics in plain words</h2>
+          <p className="text-gray-600">No hard English. Just clear, helpful points for quick learning.</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {introCards.map((card, idx) => (
+            <div key={idx} className="bg-gray-50 rounded-xl p-6 border hover:bg-white hover:shadow-sm transition">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">{card.icon}</div>
+              <h3 className="text-lg font-semibold text-dark mb-2">{card.title}</h3>
+              <p className="text-gray-600 text-sm">{card.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Comparison Component
+const Comparison: FC = () => {
+  const rows = [
+    { label: 'Clear monthly report', tm: true, others: false, diy: false },
+    { label: 'Local map ranking', tm: true, others: true, diy: false },
+    { label: 'Friendly simple language', tm: true, others: false, diy: false },
+    { label: 'Lead form setup', tm: true, others: true, diy: false },
+    { label: 'Daily social replies', tm: true, others: false, diy: false },
+  ];
+
+  return (
+    <section className="section-padding bg-gradient-to-b from-white to-blue-50">
+      <div className="container mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Why Us
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-dark">TechMinds vs Others</h2>
+          <p className="text-gray-600 mt-3">See how we compare with a quick view.</p>
+        </div>
+
+        <div className="overflow-hidden rounded-2xl border bg-white card-lift">
+          <div className="grid grid-cols-4 bg-gray-50 text-sm font-semibold text-gray-700">
+            <div className="p-4">Feature</div>
+            <div className="p-4">TechMinds</div>
+            <div className="p-4">Other Agencies</div>
+            <div className="p-4">Do-It-Yourself</div>
+          </div>
+          {rows.map((r, i) => (
+            <div key={i} className="grid grid-cols-4 border-t">
+              <div className="p-4 text-sm">{r.label}</div>
+              <div className="p-4 flex items-center">{r.tm ? <CheckCircle size={18} className="text-green-600" /> : <X size={18} className="text-red-500" />}</div>
+              <div className="p-4 flex items-center">{r.others ? <CheckCircle size={18} className="text-green-600" /> : <X size={18} className="text-red-500" />}</div>
+              <div className="p-4 flex items-center">{r.diy ? <CheckCircle size={18} className="text-green-600" /> : <X size={18} className="text-red-500" />}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Simple Growth Graph Component
+const GrowthGraph: FC = () => {
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+  const values = [20, 35, 50, 65, 80, 95];
+
+  return (
+    <section className="section-padding bg-white">
+      <div className="container mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Growth Snapshot
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-dark">Leads rising month by month</h2>
+          <p className="text-gray-600 mt-3">A simple view of lead growth over 6 months.</p>
+        </div>
+
+        <div className="bg-gray-50 rounded-2xl p-6 border card-lift">
+          <div className="grid grid-cols-6 gap-4 items-end h-48">
+            {values.map((v, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <div className="w-full bg-gradient-to-t from-primary to-secondary rounded-t-md" style={{ height: `${v}%` }}></div>
+                <span className="mt-2 text-xs text-gray-600">{months[i]}</span>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 text-sm text-gray-600 flex items-center justify-center">
+            <TrendingUp size={18} className="text-primary mr-2" />
+            Based on sample campaign data
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Social Clients (Instagram & Facebook) Component
+interface SocialClient {
+  name: string;
+  platform: 'Instagram' | 'Facebook';
+  industry: string;
+  followers: string;
+  engagement: string;
+}
+
+const SocialClients: FC = () => {
+  const clients: SocialClient[] = [
+    { name: 'Urban Style', platform: 'Instagram', industry: 'Fashion', followers: '120k', engagement: '6.2%' },
+    { name: 'Desi Delights', platform: 'Instagram', industry: 'F&B', followers: '45k', engagement: '4.8%' },
+    { name: 'TechGadgets India', platform: 'Instagram', industry: 'Electronics', followers: '80k', engagement: '5.1%' },
+    { name: 'City Clinic', platform: 'Facebook', industry: 'Healthcare', followers: '30k', engagement: '3.9%' },
+    { name: 'Bright Tutors', platform: 'Facebook', industry: 'Education', followers: '18k', engagement: '4.2%' },
+    { name: 'FreshMart', platform: 'Facebook', industry: 'Grocery', followers: '28k', engagement: '3.5%' },
+  ];
+
+  return (
+    <section className="section-padding bg-gradient-to-b from-blue-50 to-white">
+      <div className="container mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Social Proof
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">Beautiful client cards</h2>
+          <p className="text-gray-600">Instagram and Facebook clients we manage with care.</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {clients.map((c, idx) => (
+            <div key={idx} className="glass-card overflow-hidden transition">
+              <div className="h-36 bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-between px-6">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow">
+                    {c.platform === 'Instagram' ? <Instagram size={18} className="text-pink-600" /> : <Facebook size={18} className="text-blue-600" />}
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">{c.industry}</p>
+                    <h3 className="text-lg font-semibold text-dark">{c.name}</h3>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="text-xs text-gray-600">Followers</p>
+                  <p className="text-xl font-bold">{c.followers}</p>
+                </div>
+              </div>
+              <div className="p-6 grid grid-cols-2 gap-4">
+                <div className="bg-gray-50 rounded-lg p-4 text-center">
+                  <p className="text-xs text-gray-600">Engagement</p>
+                  <p className="text-lg font-semibold">{c.engagement}</p>
+                </div>
+                <div className="bg-gray-50 rounded-lg p-4 text-center">
+                  <p className="text-xs text-gray-600">Platform</p>
+                  <p className="text-lg font-semibold">{c.platform}</p>
+                </div>
+              </div>
+              <div className="px-6 pb-6 flex items-center justify-between">
+                <button className="text-primary font-semibold flex items-center">
+                  View Case
+                  <ArrowRight size={16} className="ml-2" />
+                </button>
+                <div className="text-xs text-gray-500 flex items-center">
+                  <Award size={14} className="mr-1 text-yellow-500" /> Top Performer
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// FAQs Component
+interface Faq { q: string; a: string }
+
+const FAQs: FC = () => {
+  const faqs: Faq[] = [
+    { q: 'How soon can we start?', a: 'We can start within 3–5 days after a quick call.' },
+    { q: 'Is there a long contract?', a: 'No. Start monthly. Upgrade later when you see results.' },
+    { q: 'Do you share reports?', a: 'Yes. You get a simple monthly report with leads, calls and reach.' },
+    { q: 'Can you help with reviews?', a: 'We guide you on getting honest reviews and reply to them.' },
+    { q: 'Is setup included?', a: 'Yes. We set up pages, forms and tracking for you.' },
+  ];
+
+  return (
+    <section className="section-padding bg-white">
+      <div className="container mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            FAQs
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-dark">Quick answers</h2>
+          <p className="text-gray-600 mt-3">Short and clear. No complex words.</p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          {faqs.map((f, i) => (
+            <div key={i} className="rounded-xl border p-6 bg-gray-50">
+              <h3 className="font-semibold text-dark mb-2">{f.q}</h3>
+              <p className="text-gray-600 text-sm">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Strong CTA Component
+const StrongCTA: FC = () => {
+  return (
+    <section className="section-padding">
+      <div className="container mx-auto">
+        <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 md:p-12 text-white card-lift">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">Ready to make a boom?</h2>
+              <p className="opacity-90 mb-6">Get a free plan for your business. Simple steps. Real leads. Clear results.</p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button className="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors btn-glow">Get Free Proposal</button>
+                <button className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">Book Quick Call</button>
+              </div>
+            </div>
+            <div className="bg-white/10 rounded-xl p-6">
+              <div className="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <p className="text-2xl font-bold">95%</p>
+                  <p className="text-xs opacity-80">Retention</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold">50M+</p>
+                  <p className="text-xs opacity-80">Impressions</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold">4.9/5</p>
+                  <p className="text-xs opacity-80">Ratings</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -484,7 +785,7 @@ const Features: FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, idx) => (
-            <div key={idx} className="text-center p-6 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
+            <div key={idx} className="text-center p-6 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 card-lift">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-md mb-6">
                 {feature.icon}
               </div>
@@ -714,9 +1015,8 @@ const Contact: FC = () => {
                   >
                     <option value="">Select a service</option>
                     <option value="social-media">Social Media Management</option>
-                    <option value="seo">Local SEO & GEO Marketing</option>
-                    <option value="web-dev">Website Development</option>
-                    <option value="smo">SMO Services</option>
+                    <option value="local-seo">Local SEO & Google Maps</option>
+                    <option value="lead-ads">Lead Ads (Meta & Google)</option>
                     <option value="all">All Services</option>
                   </select>
                 </div>
@@ -765,11 +1065,8 @@ const Footer: FC = () => {
 
   const services = [
     { name: 'Social Media Management', href: '/services/social-media' },
-    { name: 'Local SEO', href: '/services/local-seo' },
-    { name: 'Website Development', href: '/services/web-development' },
-    { name: 'GEO Marketing', href: '/services/geo-marketing' },
-    { name: 'SMO Services', href: '/services/smo' },
-    { name: 'PPC Advertising', href: '/services/ppc' },
+    { name: 'Local SEO & Google Maps', href: '/services/local-seo' },
+    { name: 'Lead Ads (Meta & Google)', href: '/services/lead-ads' },
   ];
 
   const indianCities = [
@@ -941,8 +1238,15 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
+        <BenefitsForUser />
+        <Introductions />
+        <Comparison />
+        <GrowthGraph />
+        <SocialClients />
         <Features />
         <Testimonials />
+        <FAQs />
+        <StrongCTA />
         <Contact />
       </main>
       <Footer />
