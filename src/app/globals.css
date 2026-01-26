@@ -1,6 +1,4 @@
-/* app/globals.css */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,123 +6,72 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    --primary: #2563eb;
+    --secondary: #7c3aed;
+    --accent: #f59e0b;
+    --dark: #1e293b;
+    --light: #f8fafc;
   }
 
   body {
-    @apply antialiased bg-white text-gray-900;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    @apply font-inter bg-light text-dark;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
-  }
-
-  /* Smooth scroll */
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px;
-  }
-
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-gray-100;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-gradient-to-b from-yellow-500 to-amber-600 rounded-full;
-  }
-
-  /* Selection */
-  ::selection {
-    @apply bg-yellow-200 text-gray-900;
-  }
-
-  /* Line clamp utility */
-  .line-clamp-1 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-  }
-
-  .line-clamp-2 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-  }
-
-  .line-clamp-3 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+  h1, h2, h3, h4 {
+    @apply font-poppins font-bold;
   }
 }
 
 @layer components {
-  .glass-panel {
-    @apply bg-white/80 backdrop-blur-md border border-white/20;
-  }
-
-  .text-gradient-yellow {
-    @apply bg-gradient-to-r from-yellow-600 to-amber-600 bg-clip-text text-transparent;
-  }
-
   .btn-primary {
-    @apply px-6 py-3 bg-gradient-to-r from-yellow-500 to-amber-600 text-white rounded-full font-semibold shadow-lg shadow-yellow-500/25 hover:shadow-xl hover:shadow-yellow-500/30 transition-all duration-300 hover:-translate-y-0.5;
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
   }
 
   .btn-secondary {
-    @apply px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-full font-semibold hover:border-yellow-500 hover:text-yellow-600 transition-colors duration-300 hover:-translate-y-0.5;
+    @apply bg-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2;
   }
 
-  .gradient-border {
-    @apply relative;
+  .section-padding {
+    @apply px-4 md:px-8 lg:px-16 py-12 md:py-20;
   }
 
-  .gradient-border::before {
-    content: '';
-    @apply absolute -inset-0.5 bg-gradient-to-r from-yellow-500 to-amber-600 rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-500;
-  }
-
-  .social-card {
-    @apply bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer;
+  .container {
+    @apply max-w-7xl mx-auto;
   }
 }
 
-/* Animations */
+/* Custom animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-@keyframes shimmer {
-  0% { background-position: -1000px 0; }
-  100% { background-position: 1000px 0; }
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-.animate-shimmer {
-  animation: shimmer 2s infinite linear;
-  background: linear-gradient(90deg, #fef3c7 0%, #fefce8 50%, #fef3c7 100%);
-  background-size: 1000px 100%;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-700;
 }
