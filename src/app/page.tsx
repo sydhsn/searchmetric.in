@@ -38,22 +38,8 @@ import {
 } from "lucide-react";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
-/* -----------------------------
-   Types
------------------------------- */
-interface NavItem {
-  name: string;
-  href: string;
-  submenu?: { name: string; href: string }[];
-}
-
-interface ContactFormData {
-  name: string;
-  email: string;
-  phone: string;
-  service: string;
-  message: string;
-}
+// ...existing code...
+import type { NavItem, ContactFormData } from "../types/nav";
 
 /* -----------------------------
    Page
@@ -302,16 +288,15 @@ const Hero: FC = () => {
             </div>
 
             <h1 className="mt-8 text-5xl md:text-7xl font-bold leading-tight">
-              <span className="text-white">Turn local attention into </span>
+              <span className="text-white">Grow your business with </span>
               <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-fuchsia-400 to-pink-400 animate-gradient">
-                real leads
+                SEO &amp; Social Media
               </span>
-              <span className="text-white block mt-2">— fast.</span>
+              <span className="text-white block mt-2">— made simple.</span>
             </h1>
 
             <p className="mt-6 text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl">
-              Clean social content, Local SEO, and lead ads—paired with reporting your
-              team actually understands.
+              Reach more local customers with easy-to-understand SEO, digital marketing, and Instagram &amp; Facebook strategies. Simple plans, clear results.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -739,43 +724,41 @@ const ChallengesSection: FC = () => {
           <p className="section-desc">Short, clear points so you can quickly see the fit.</p>
         </div>
 
-        {/* Horizontal scrollable row for challenges */}
-        <div className="mt-12 overflow-x-auto pb-4">
-          <div className="flex gap-6 min-w-[700px] md:min-w-[900px] lg:min-w-[1200px]">
-            {challenges.map((c, idx) => (
-              <div key={c.title} className="group relative min-w-[320px] max-w-xs flex-shrink-0">
-                <div className={`card overflow-hidden border-l-4 border-transparent hover:border-red-600 transition-all h-full`}> 
-                  <div className={`absolute inset-0 bg-gradient-to-r ${c.bgGradient} opacity-0 group-hover:opacity-100 transition-all duration-300`} />
-                  <div className="relative card-pad flex flex-col items-center gap-4 h-full">
-                    {/* Problem Indicator */}
-                    <div className="relative h-14 w-14 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 text-slate-600 grid place-items-center font-bold text-2xl shadow-md transform group-hover:scale-110 transition-all duration-300">
-                      <div className={`absolute -inset-1 bg-gradient-to-br ${c.gradient} rounded-2xl blur opacity-0 group-hover:opacity-50 transition-opacity`} />
-                      <div className="relative">
-                        <X size={28} className="text-red-500 group-hover:rotate-90 transition-transform duration-300" />
-                      </div>
+        {/* Responsive grid for challenges */}
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {challenges.map((c, idx) => (
+            <div key={c.title} className="group relative">
+              <div className={`card overflow-hidden border-l-4 border-transparent hover:border-red-600 transition-all h-full`}> 
+                <div className={`absolute inset-0 bg-gradient-to-r ${c.bgGradient} opacity-0 group-hover:opacity-100 transition-all duration-300`} />
+                <div className="relative card-pad flex flex-col items-center gap-4 h-full">
+                  {/* Problem Indicator */}
+                  <div className="relative h-14 w-14 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 text-slate-600 grid place-items-center font-bold text-2xl shadow-md transform group-hover:scale-110 transition-all duration-300">
+                    <div className={`absolute -inset-1 bg-gradient-to-br ${c.gradient} rounded-2xl blur opacity-0 group-hover:opacity-50 transition-opacity`} />
+                    <div className="relative">
+                      <X size={28} className="text-red-500 group-hover:rotate-90 transition-transform duration-300" />
                     </div>
-                    {/* Icon Badge */}
-                    <div className={`h-12 w-12 rounded-xl bg-gradient-to-br ${c.gradient} text-white grid place-items-center shadow-md transform group-hover:rotate-12 transition-all duration-300`}>
-                      {c.icon}
-                    </div>
-                    {/* Content */}
-                    <div className="flex-1 min-w-0 text-center">
-                      <h3 className="text-lg font-bold text-ink-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-red-600 group-hover:to-orange-600 transition-all">
-                        {c.title}
-                      </h3>
-                      <p className="mt-1 text-slate-600 leading-relaxed text-sm">{c.desc}</p>
-                    </div>
-                    {/* Solution Indicator */}
-                    <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all">
-                      <div className="h-10 w-10 rounded-full bg-emerald-500 text-white grid place-items-center shadow-lg mx-auto">
-                        <CheckCircle size={20} />
-                      </div>
+                  </div>
+                  {/* Icon Badge */}
+                  <div className={`h-12 w-12 rounded-xl bg-gradient-to-br ${c.gradient} text-white grid place-items-center shadow-md transform group-hover:rotate-12 transition-all duration-300`}>
+                    {c.icon}
+                  </div>
+                  {/* Content */}
+                  <div className="flex-1 min-w-0 text-center">
+                    <h3 className="text-lg font-bold text-ink-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-red-600 group-hover:to-orange-600 transition-all">
+                      {c.title}
+                    </h3>
+                    <p className="mt-1 text-slate-600 leading-relaxed text-sm">{c.desc}</p>
+                  </div>
+                  {/* Solution Indicator */}
+                  <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all">
+                    <div className="h-10 w-10 rounded-full bg-emerald-500 text-white grid place-items-center shadow-lg mx-auto">
+                      <CheckCircle size={20} />
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
         {/* Solution CTA */}

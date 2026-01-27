@@ -26,6 +26,7 @@ If a file or comment includes any of the following, Copilot MUST strictly follow
 - `ROLE: SEO Content Writer`
 - `ROLE: Search Engine Optimization Executive`
 - `ROLE: Social Media Analyst`
+- `ROLE: Graphics designer`
 
 ---
 
