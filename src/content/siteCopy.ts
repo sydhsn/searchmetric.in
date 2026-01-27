@@ -1,7 +1,7 @@
 export const seo = {
   title: "TechMinds Digital Solutions - Social Media Marketing & Local SEO",
-  description: "Professional social media management, local SEO, and digital marketing services for Indian businesses. Boost your online presence with expert strategies.",
-  keywords: "social media marketing, local SEO, digital marketing, India, business growth, online presence, social media management"
+  description: "Professional social media, local SEO, lead ads, and content writing for Indian businesses. Instagram & Facebook growth, Google Maps ranking, and SEO blogs that convert.",
+  keywords: "social media marketing, local SEO, digital marketing, lead ads, Instagram marketing, Facebook marketing, content writer, blog writer, SEO blogs, India, business growth, online presence, social media management"
 };
 
 export const siteCopy = {

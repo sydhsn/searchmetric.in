@@ -28,7 +28,9 @@ import {
   Award,
   Clock,
   Shield,
-  Zap
+  Zap,
+  Edit3,
+  FileText
 } from 'lucide-react';
 
 // Type Definitions
@@ -221,6 +223,121 @@ const Header: FC = () => {
   );
 };
 
+// Platform-specific Marketing (Instagram & Facebook)
+const PlatformMarketing: FC = () => {
+  const cards = [
+    {
+      platform: 'Instagram Marketing',
+      icon: <Instagram size={22} className="text-pink-600" />,
+      gradient: 'from-pink-100 to-purple-100',
+      highlights: ['Reels & Stories', 'Hashtag strategy', 'Community replies', 'Lead ads'],
+    },
+    {
+      platform: 'Facebook Marketing',
+      icon: <Facebook size={22} className="text-blue-600" />,
+      gradient: 'from-blue-100 to-cyan-100',
+      highlights: ['Page growth', 'Groups outreach', 'Messenger leads', 'Lookalike ads'],
+    },
+  ];
+
+  return (
+    <section className="section-padding bg-white">
+      <div className="container mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="inline-flex items-center bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Social Platforms
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">Grow on Instagram and Facebook</h2>
+          <p className="text-gray-600">Beautiful creatives, smart posting times, and clean reporting.</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {cards.map((c, i) => (
+            <div key={i} className="card-lift border-gradient hover-bright overflow-hidden">
+              <div className={`h-44 bg-gradient-to-r ${c.gradient} flex items-center justify-between px-6`}>
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow">
+                    {c.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-dark">{c.platform}</h3>
+                </div>
+                <div className="bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold">Popular</div>
+              </div>
+              <div className="p-6">
+                <ul className="grid grid-cols-2 gap-3 mb-6">
+                  {c.highlights.map((h) => (
+                    <li key={h} className="flex items-center text-sm">
+                      <CheckCircle size={16} className="text-green-500 mr-2" /> {h}
+                    </li>
+                  ))}
+                </ul>
+                <button className="text-primary font-semibold flex items-center group">
+                  See packages <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Content & Blog Writing Services
+const ContentServices: FC = () => {
+  const items = [
+    {
+      title: 'Content Writer',
+      icon: <Edit3 size={20} className="text-purple-600" />,
+      desc: 'Clear and simple content for websites, ads and captions.',
+      bullets: ['Brand voice guide', 'Short-form captions', 'Ad copy variants', 'Proofreading'],
+    },
+    {
+      title: 'Blog Writer (SEO)',
+      icon: <FileText size={20} className="text-green-600" />,
+      desc: 'Search-friendly blogs that educate and rank on Google.',
+      bullets: ['Keyword plan', 'Outline + headings', 'Internal linking', 'Meta tags & schema hints'],
+    },
+  ];
+
+  return (
+    <section className="section-padding bg-gradient-to-b from-blue-50 to-white">
+      <div className="container mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="inline-flex items-center bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Content & Writing
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">Words that attract and convert</h2>
+          <p className="text-gray-600">Easy-to-read language. Strong SEO basics. Ready to publish.</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {items.map((it, idx) => (
+            <div key={idx} className="glass-card p-6 border-gradient hover-bright">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 rounded-lg bg-white mr-3 flex items-center justify-center shadow">
+                  {it.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-dark">{it.title}</h3>
+              </div>
+              <p className="text-gray-600 mb-4">{it.desc}</p>
+              <ul className="grid grid-cols-2 gap-2">
+                {it.bullets.map((b) => (
+                  <li key={b} className="text-sm flex items-center">
+                    <CheckCircle size={16} className="text-green-500 mr-2" /> {b}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6">
+                <button className="btn-primary">Request Samples</button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 // Hero Component
 const Hero: FC = () => {
   return (
@@ -315,7 +432,7 @@ const Services: FC = () => {
     {
       id: 1,
       title: 'Social Media Management',
-      description: 'We plan, create and post content. We reply to comments and messages. Simple, consistent and friendly.',
+      description: 'We plan, create and post content. We reply to comments and messages. Simple, consistent and friendly for Instagram & Facebook.',
       icon: <Instagram className="text-pink-600" size={32} />,
       features: [
         'Monthly Content Calendar',
@@ -1240,6 +1357,11 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
+        <PlatformMarketing />
+        <ContentServices />
+        <ChallengesSection />
+        <CompaniesWorkedWith />
+        <SpecialCustomizedServices />
         <BenefitsForUser />
         <Introductions />
         <Comparison />
@@ -1255,3 +1377,109 @@ export default function Home() {
     </div>
   );
 }
+
+// Challenges Section
+const ChallengesSection: FC = () => {
+  const challenges = [
+    { title: 'Not enough calls', desc: 'People visit but don’t call. We fix that.' },
+    { title: 'Low Google visibility', desc: 'Your business doesn’t show up near you.' },
+    { title: 'Weak social engagement', desc: 'Likes without real conversations or leads.' },
+    { title: 'No tracking or reports', desc: 'Hard to know what’s working. We simplify.' },
+    { title: 'Random posting', desc: 'No plan. We bring a simple monthly calendar.' },
+    { title: 'Wasted ad spend', desc: 'Money spent without leads. We focus on ROI.' },
+  ];
+
+  return (
+    <section className="section-padding bg-white">
+      <div className="container mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Facing these issues?
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-dark">We solve common growth blockers</h2>
+          <p className="text-gray-600 mt-3">Short, clear points so you can quickly see the fit.</p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {challenges.map((c, i) => (
+            <div key={i} className="bg-gray-50 rounded-xl p-6 border hover:bg-white hover:shadow-sm transition">
+              <h3 className="text-lg font-semibold text-dark mb-2">{c.title}</h3>
+              <p className="text-gray-600 text-sm">{c.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Companies Worked With Section
+const CompaniesWorkedWith: FC = () => {
+  const logos = [
+    { name: 'Round World Logistics', tag: 'Logistics' },
+    { name: 'Immigration Experts', tag: 'Consulting' },
+    { name: 'Empire World Immigration', tag: 'Services' },
+    { name: 'Prime Healthcare', tag: 'Healthcare' },
+    { name: 'Bright Tutors', tag: 'Education' },
+    { name: 'FreshMart', tag: 'Grocery' },
+  ];
+
+  return (
+    <section className="section-padding bg-gradient-to-b from-blue-50 to-white">
+      <div className="container mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="inline-flex items-center bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Trusted Partners
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-dark">Companies that trust our work</h2>
+          <p className="text-gray-600 mt-3">A few examples from different industries across India.</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {logos.map((l, i) => (
+            <div key={i} className="glass-card p-6 border-gradient hover-bright">
+              <div className="h-16 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg mb-4 flex items-center justify-center">
+                <span className="text-dark font-semibold">{l.name}</span>
+              </div>
+              <p className="text-xs text-gray-600">{l.tag}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Special Customized Services Section
+const SpecialCustomizedServices: FC = () => {
+  const items = [
+    { number: '01', title: 'Social Media Management', desc: 'Plan, create, post and reply — simple and consistent.' },
+    { number: '02', title: 'Local SEO & Google Maps', desc: 'Show up near your area. Get more calls and visits.' },
+    { number: '03', title: 'Lead Ads (Instagram, Facebook & Google)', desc: 'Run budget-friendly ads to capture real leads.' },
+  ];
+
+  return (
+    <section className="section-padding bg-white">
+      <div className="container mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Tailored for your needs
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-dark">Special customized services for you</h2>
+          <p className="text-gray-600 mt-3">Focused on three simple offerings that drive results.</p>
+        </div>
+        <div className="space-y-4 max-w-3xl mx-auto">
+          {items.map((item) => (
+            <div key={item.number} className="flex items-start bg-gray-50 rounded-xl p-6 border">
+              <div className="w-12 h-12 rounded-lg bg-primary text-white flex items-center justify-center font-bold mr-4">
+                {item.number}
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-dark">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
