@@ -2,29 +2,27 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        primary: "#2563eb",
-        secondary: "#7c3aed",
-        accent: "#f59e0b",
-        dark: "#1e293b",
-        light: "#f8fafc",
-      },
-      fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-        inter: ["Inter", "sans-serif"],
-      },
-      animation: {
-        float: "float 6s ease-in-out infinite",
-        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-      },
-      keyframes: {
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-20px)" },
+        brand: {
+          50: "#f6f5ff",
+          100: "#edeafd",
+          200: "#d9d4fb",
+          300: "#bcb2f7",
+          400: "#967ef0",
+          500: "#7a55eb",
+          600: "#6c4bf0",
+          700: "#5a38de",
+          800: "#4b2eb5",
+          900: "#3f2a8a",
+        },
+        ink: {
+          900: "#0f172a",
         },
       },
     },

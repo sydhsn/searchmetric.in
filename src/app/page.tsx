@@ -1,68 +1,49 @@
-'use client';
+"use client";
 
-import { useState, useEffect, ReactNode, FC } from 'react';
-import Image from 'next/image';
-import { 
-  Menu, 
-  X, 
-  ChevronDown, 
-  Phone, 
-  Mail, 
-  ArrowRight, 
-  CheckCircle, 
-  Play,
-  Instagram,
-  Search,
-  Globe,
-  TrendingUp,
-  Users,
-  Target,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Youtube,
-  MapPin,
-  Send,
-  Star,
-  MessageCircle,
+import { FC, ReactNode, useEffect, useMemo, useState } from "react";
+import {
+  ArrowRight,
   Award,
+  BookOpen,
+  CheckCircle,
+  ChevronDown,
   Clock,
-  Shield,
-  Zap,
   Edit3,
-  FileText
-} from 'lucide-react';
+  Facebook,
+  FileText,
+  Globe,
+  Heart,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Menu,
+  MessageCircle,
+  Package,
+  Phone,
+  Plane,
+  Play,
+  Search,
+  Send,
+  Shield,
+  ShoppingCart,
+  Star,
+  Target,
+  TrendingUp,
+  Twitter,
+  Users,
+  X,
+  Youtube,
+  Zap,
+} from "lucide-react";
 
-// Type Definitions
+/* -----------------------------
+   Types
+------------------------------ */
 interface NavItem {
   name: string;
   href: string;
-  submenu?: { name: string; href: string; }[];
-}
-
-interface Service {
-  id: number;
-  title: string;
-  description: string;
-  icon: ReactNode;
-  features: string[];
-  image: string;
-}
-
-interface Stat {
-  value: string;
-  label: string;
-  icon: ReactNode;
-}
-
-interface Testimonial {
-  id: number;
-  name: string;
-  role: string;
-  company: string;
-  content: string;
-  rating: number;
-  image: string;
+  submenu?: { name: string; href: string }[];
 }
 
 interface ContactFormData {
@@ -73,1284 +54,10 @@ interface ContactFormData {
   message: string;
 }
 
-// Header Component
-const Header: FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [scrolled, setScrolled] = useState<boolean>(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const servicesSubmenu: { name: string; href: string; }[] = [
-    { name: 'Social Media Management', href: '/services/social-media' },
-    { name: 'Local SEO & Google Maps', href: '/services/local-seo' },
-    { name: 'Lead Ads (Meta & Google)', href: '/services/lead-ads' },
-  ];
-
-  const navItems: NavItem[] = [
-    { name: 'Home', href: '/' },
-    { 
-      name: 'Services', 
-      href: '/services',
-      submenu: servicesSubmenu
-    },
-    { name: 'About Us', href: '/about' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/contact' },
-  ];
-
-  return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-    }`}>
-      {/* Top Bar */}
-      <div className="bg-gradient-to-r from-primary to-secondary text-white text-sm py-2">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center">
-              <Phone size={14} className="mr-2" />
-              <span>+91 98765 43210</span>
-            </div>
-            <div className="hidden md:flex items-center">
-              <Mail size={14} className="mr-2" />
-              <span>info@techmindsolutions.com</span>
-            </div>
-          </div>
-          <div className="flex items-center space-x-4">
-            <span className="hidden md:inline">📍 Delhi, Mumbai, Bangalore</span>
-            <button className="bg-white text-primary px-3 py-1 rounded text-xs font-semibold hover:bg-gray-100 transition-colors">
-              Free Audit
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Navigation */}
-      <nav className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="bg-gradient-to-r from-primary to-secondary w-10 h-10 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">TM</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-dark">TechMinds</h1>
-              <p className="text-xs text-gray-600">Digital Solutions</p>
-            </div>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <div key={item.name} className="relative group">
-                <a 
-                  href={item.href} 
-                  className="flex items-center text-dark hover:text-primary transition-colors duration-300 font-medium"
-                >
-                  {item.name}
-                  {item.submenu && <ChevronDown size={16} className="ml-1" />}
-                </a>
-                {item.submenu && (
-                  <div className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100 z-50">
-                    {item.submenu.map((sub) => (
-                      <a 
-                        key={sub.name} 
-                        href={sub.href}
-                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200 border-b border-gray-100 last:border-0"
-                      >
-                        {sub.name}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-            <button className="btn-primary">
-              Get Quote
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button 
-            className="lg:hidden text-dark"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="lg:hidden mt-4 bg-white rounded-lg shadow-lg p-4 border">
-            {navItems.map((item) => (
-              <div key={item.name} className="py-2 border-b">
-                <a 
-                  href={item.href} 
-                  className="block text-dark hover:text-primary font-medium"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </a>
-                {item.submenu && (
-                  <div className="ml-4 mt-2 space-y-1">
-                    {item.submenu.map((sub) => (
-                      <a 
-                        key={sub.name} 
-                        href={sub.href}
-                        className="block text-sm text-gray-600 hover:text-primary py-1"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {sub.name}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-            <button className="btn-primary w-full mt-4">
-              Get Quote
-            </button>
-          </div>
-        )}
-      </nav>
-    </header>
-  );
-};
-
-// Platform-specific Marketing (Instagram & Facebook)
-const PlatformMarketing: FC = () => {
-  const cards = [
-    {
-      platform: 'Instagram Marketing',
-      icon: <Instagram size={22} className="text-pink-600" />,
-      gradient: 'from-pink-100 to-purple-100',
-      highlights: ['Reels & Stories', 'Hashtag strategy', 'Community replies', 'Lead ads'],
-    },
-    {
-      platform: 'Facebook Marketing',
-      icon: <Facebook size={22} className="text-blue-600" />,
-      gradient: 'from-blue-100 to-cyan-100',
-      highlights: ['Page growth', 'Groups outreach', 'Messenger leads', 'Lookalike ads'],
-    },
-  ];
-
-  return (
-    <section className="section-padding bg-white">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-flex items-center bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Social Platforms
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">Grow on Instagram and Facebook</h2>
-          <p className="text-gray-600">Beautiful creatives, smart posting times, and clean reporting.</p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {cards.map((c, i) => (
-            <div key={i} className="card-lift border-gradient hover-bright overflow-hidden">
-              <div className={`h-44 bg-gradient-to-r ${c.gradient} flex items-center justify-between px-6`}>
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow">
-                    {c.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-dark">{c.platform}</h3>
-                </div>
-                <div className="bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold">Popular</div>
-              </div>
-              <div className="p-6">
-                <ul className="grid grid-cols-2 gap-3 mb-6">
-                  {c.highlights.map((h) => (
-                    <li key={h} className="flex items-center text-sm">
-                      <CheckCircle size={16} className="text-green-500 mr-2" /> {h}
-                    </li>
-                  ))}
-                </ul>
-                <button className="text-primary font-semibold flex items-center group">
-                  See packages <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Content & Blog Writing Services
-const ContentServices: FC = () => {
-  const items = [
-    {
-      title: 'Content Writer',
-      icon: <Edit3 size={20} className="text-purple-600" />,
-      desc: 'Clear and simple content for websites, ads and captions.',
-      bullets: ['Brand voice guide', 'Short-form captions', 'Ad copy variants', 'Proofreading'],
-    },
-    {
-      title: 'Blog Writer (SEO)',
-      icon: <FileText size={20} className="text-green-600" />,
-      desc: 'Search-friendly blogs that educate and rank on Google.',
-      bullets: ['Keyword plan', 'Outline + headings', 'Internal linking', 'Meta tags & schema hints'],
-    },
-  ];
-
-  return (
-    <section className="section-padding bg-gradient-to-b from-blue-50 to-white">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-flex items-center bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Content & Writing
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">Words that attract and convert</h2>
-          <p className="text-gray-600">Easy-to-read language. Strong SEO basics. Ready to publish.</p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {items.map((it, idx) => (
-            <div key={idx} className="glass-card p-6 border-gradient hover-bright">
-              <div className="flex items-center mb-4">
-                <div className="w-10 h-10 rounded-lg bg-white mr-3 flex items-center justify-center shadow">
-                  {it.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-dark">{it.title}</h3>
-              </div>
-              <p className="text-gray-600 mb-4">{it.desc}</p>
-              <ul className="grid grid-cols-2 gap-2">
-                {it.bullets.map((b) => (
-                  <li key={b} className="text-sm flex items-center">
-                    <CheckCircle size={16} className="text-green-500 mr-2" /> {b}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-6">
-                <button className="btn-primary">Request Samples</button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-// Hero Component
-const Hero: FC = () => {
-  return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden pattern-grid">
-      {/* Background Elements */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float-slow"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float-slow"></div>
-      </div>
-
-      <div className="container mx-auto px-4 pt-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="inline-flex items-center bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <CheckCircle size={16} className="mr-2" />
-              Trusted by 500+ Indian Businesses
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold text-dark mb-6 leading-tight">
-              Transform Your{' '}
-              <span className="text-gradient">
-                Digital Presence
-              </span>{' '}
-              in India
-            </h1>
-            
-            <p className="text-xl text-gray-600 mb-8">
-              TechMinds Solutions delivers cutting-edge digital marketing strategies tailored for the Indian market. 
-              Boost your local visibility, engagement, and conversions.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button className="btn-gradient btn-glow flex items-center justify-center">
-                Start Free Trial
-                <ArrowRight size={20} className="ml-2" />
-              </button>
-              <button className="border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center">
-                <Play size={20} className="mr-2" />
-                Watch Demo
-              </button>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-6">
-              <div className="flex -space-x-4">
-                {[1,2,3,4].map((i) => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200"></div>
-                ))}
-                <div className="w-10 h-10 rounded-full border-2 border-white bg-primary flex items-center justify-center text-white text-xs font-bold">
-                  500+
-                </div>
-              </div>
-              <div>
-                <p className="font-semibold">500+ Happy Clients</p>
-                <p className="text-sm text-gray-600">Across India</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="relative bg-white rounded-2xl shadow-2xl p-2 transform rotate-1 hover:rotate-0 transition-transform duration-300">
-              <div className="bg-gradient-to-br from-primary to-secondary rounded-xl overflow-hidden">
-                <div className="h-96 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
-                  <span className="text-white text-xl font-semibold">Dashboard Preview</span>
-                </div>
-              </div>
-              
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -left-4 bg-white p-4 rounded-xl shadow-lg">
-                <div className="text-center">
-                  <p className="text-2xl font-bold text-primary">98%</p>
-                  <p className="text-xs text-gray-600">Success Rate</p>
-                </div>
-              </div>
-              
-              <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-xl shadow-lg">
-                <div className="text-center">
-                  <p className="text-2xl font-bold text-secondary">4.9/5</p>
-                  <p className="text-xs text-gray-600">Client Rating</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Services Component
-const Services: FC = () => {
-  const services: Service[] = [
-    {
-      id: 1,
-      title: 'Social Media Management',
-      description: 'We plan, create and post content. We reply to comments and messages. Simple, consistent and friendly for Instagram & Facebook.',
-      icon: <Instagram className="text-pink-600" size={32} />,
-      features: [
-        'Monthly Content Calendar',
-        'Daily Engagement',
-        'Ad Campaign Setup',
-        'Simple Reports'
-      ],
-      image: 'https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=800'
-    },
-    {
-      id: 2,
-      title: 'Local SEO & Maps',
-      description: 'We help you show up on Google near your area. People nearby can find and call you easily.',
-      icon: <Search className="text-green-600" size={32} />,
-      features: [
-        'Google Business Profile setup',
-        'Map ranking improvement',
-        'Local reviews guidance',
-        'NAP & citations'
-      ],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800'
-    },
-    {
-      id: 3,
-      title: 'Lead Ads (Meta & Google)',
-      description: 'We run simple ads on Instagram, Facebook and Google to get real leads: calls, forms and messages.',
-      icon: <Target className="text-blue-600" size={32} />,
-      features: [
-        'Lead forms & tracking',
-        'Budget-friendly plans',
-        'Clear targeting',
-        'Weekly lead reports'
-      ],
-      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800'
-    }
-  ];
-
-  const stats: Stat[] = [
-    { value: '300+', label: 'Websites Developed', icon: <Globe size={24} /> },
-    { value: '95%', label: 'Client Retention', icon: <Users size={24} /> },
-    { value: '50M+', label: 'Impressions Managed', icon: <TrendingUp size={24} /> },
-    { value: '100%', label: 'SEO Success Rate', icon: <Target size={24} /> },
-  ];
-
-  return (
-    <section className="section-padding bg-gradient-to-b from-white to-blue-50">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-flex items-center bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            <Zap size={16} className="mr-2" /> Our Services
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-6">
-            Digital Marketing Solutions for{' '}
-            <span className="text-primary">Indian Businesses</span>
-          </h2>
-          <p className="text-gray-600">
-            We understand the Indian market dynamics and provide tailored solutions 
-            to help your business grow in the digital space.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
-          {services.map((service) => (
-            <div 
-              key={service.id} 
-              className="card-lift overflow-hidden group border-gradient hover-bright"
-            >
-              <div className="h-48 bg-gradient-to-r from-blue-100 to-purple-100 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:scale-110 transition-transform duration-500"></div>
-                <div className="absolute top-4 left-4">
-                  {service.icon}
-                </div>
-                <div className="absolute bottom-4 right-4">
-                  <div className="bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold">
-                    Featured
-                  </div>
-                </div>
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-dark mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm">
-                      <CheckCircle size={16} className="text-green-500 mr-2 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <button className="text-primary font-semibold hover:text-blue-700 flex items-center group">
-                  Learn More
-                  <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Stats Section */}
-        <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 md:p-12 text-white animate-pulse-soft">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, idx) => (
-              <div key={idx} className="text-center">
-                <div className="flex justify-center mb-4">
-                  <div className="icon-badge">
-                    {stat.icon}
-                  </div>
-                </div>
-                <p className="text-3xl font-bold mb-2">{stat.value}</p>
-                <p className="text-sm opacity-90">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Benefits for User Component
-const BenefitsForUser: FC = () => {
-  const benefits = [
-    { icon: <Phone size={22} className="text-primary" />, title: 'More Calls', desc: 'Get more phone calls from nearby people.' },
-    { icon: <MessageCircle size={22} className="text-primary" />, title: 'More Messages', desc: 'More chats and DMs from real users.' },
-    { icon: <MapPin size={22} className="text-primary" />, title: 'Better Local Rank', desc: 'Show up higher on Google Maps.' },
-    { icon: <Users size={22} className="text-primary" />, title: 'Right Audience', desc: 'Reach the people who want your service.' },
-    { icon: <TrendingUp size={22} className="text-primary" />, title: 'Clear Growth', desc: 'Simple, easy-to-read monthly growth reports.' },
-    { icon: <Shield size={22} className="text-primary" />, title: 'Safe & Secure', desc: 'Your data stays protected and private.' },
-  ];
-
-  return (
-    <section className="section-padding bg-gradient-to-b from-blue-50 to-white">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-flex items-center bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            <TrendingUp size={16} className="mr-2" /> Benefits for You
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">Simple wins for your business</h2>
-          <p className="text-gray-600">We keep things easy. No heavy words. Just clear results.</p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {benefits.map((b, i) => (
-            <div key={i} className="bg-white rounded-xl shadow-sm p-6 border hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">{b.icon}</div>
-              <h3 className="text-lg font-semibold text-dark mb-1">{b.title}</h3>
-              <p className="text-gray-600 text-sm">{b.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Introductions Component (SEO, SME, Social Media)
-const Introductions: FC = () => {
-  const introCards = [
-    {
-      title: 'What is SEO?',
-      icon: <Search size={24} className="text-primary" />,
-      desc: 'SEO helps your business show up on Google. When people search near you, they can find you easily.'
-    },
-    {
-      title: 'What is SME?',
-      icon: <Users size={24} className="text-primary" />,
-      desc: 'SME means small and medium business. We make marketing simple for small teams and owners.'
-    },
-    {
-      title: 'Social Media Basics',
-      icon: <Instagram size={24} className="text-primary" />,
-      desc: 'We create easy posts, stories and ads. People see you often and remember your brand.'
-    }
-  ];
-
-  return (
-    <section className="section-padding bg-white">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-flex items-center bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            <Search size={16} className="mr-2" /> Simple Introductions
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">Understand the basics in plain words</h2>
-          <p className="text-gray-600">No hard English. Just clear, helpful points for quick learning.</p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {introCards.map((card, idx) => (
-            <div key={idx} className="bg-gray-50 rounded-xl p-6 border hover:bg-white hover:shadow-sm transition">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">{card.icon}</div>
-              <h3 className="text-lg font-semibold text-dark mb-2">{card.title}</h3>
-              <p className="text-gray-600 text-sm">{card.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Comparison Component
-const Comparison: FC = () => {
-  const rows = [
-    { label: 'Clear monthly report', tm: true, others: false, diy: false },
-    { label: 'Local map ranking', tm: true, others: true, diy: false },
-    { label: 'Friendly simple language', tm: true, others: false, diy: false },
-    { label: 'Lead form setup', tm: true, others: true, diy: false },
-    { label: 'Daily social replies', tm: true, others: false, diy: false },
-  ];
-
-  return (
-    <section className="section-padding bg-gradient-to-b from-white to-blue-50">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Why Us
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark">TechMinds vs Others</h2>
-          <p className="text-gray-600 mt-3">See how we compare with a quick view.</p>
-        </div>
-
-        <div className="overflow-hidden rounded-2xl border bg-white card-lift">
-          <div className="grid grid-cols-4 bg-gray-50 text-sm font-semibold text-gray-700">
-            <div className="p-4">Feature</div>
-            <div className="p-4">TechMinds</div>
-            <div className="p-4">Other Agencies</div>
-            <div className="p-4">Do-It-Yourself</div>
-          </div>
-          {rows.map((r, i) => (
-            <div key={i} className="grid grid-cols-4 border-t">
-              <div className="p-4 text-sm">{r.label}</div>
-              <div className="p-4 flex items-center">{r.tm ? <CheckCircle size={18} className="text-green-600" /> : <X size={18} className="text-red-500" />}</div>
-              <div className="p-4 flex items-center">{r.others ? <CheckCircle size={18} className="text-green-600" /> : <X size={18} className="text-red-500" />}</div>
-              <div className="p-4 flex items-center">{r.diy ? <CheckCircle size={18} className="text-green-600" /> : <X size={18} className="text-red-500" />}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Simple Growth Graph Component
-const GrowthGraph: FC = () => {
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
-  const values = [20, 35, 50, 65, 80, 95];
-
-  return (
-    <section className="section-padding bg-white">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Growth Snapshot
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark">Leads rising month by month</h2>
-          <p className="text-gray-600 mt-3">A simple view of lead growth over 6 months.</p>
-        </div>
-
-        <div className="bg-gray-50 rounded-2xl p-6 border card-lift border-gradient">
-          <div className="grid grid-cols-6 gap-4 items-end h-48">
-            {values.map((v, i) => (
-              <div key={i} className="flex flex-col items-center">
-                <div className="w-full bg-gradient-to-t from-primary to-secondary rounded-t-md" style={{ height: `${v}%` }}></div>
-                <span className="mt-2 text-xs text-gray-600">{months[i]}</span>
-              </div>
-            ))}
-          </div>
-          <div className="mt-4 text-sm text-gray-600 flex items-center justify-center">
-            <TrendingUp size={18} className="text-primary mr-2" />
-            Based on sample campaign data
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Social Clients (Instagram & Facebook) Component
-interface SocialClient {
-  name: string;
-  platform: 'Instagram' | 'Facebook';
-  industry: string;
-  followers: string;
-  engagement: string;
-}
-
-const SocialClients: FC = () => {
-  const clients: SocialClient[] = [
-    { name: 'Urban Style', platform: 'Instagram', industry: 'Fashion', followers: '120k', engagement: '6.2%' },
-    { name: 'Desi Delights', platform: 'Instagram', industry: 'F&B', followers: '45k', engagement: '4.8%' },
-    { name: 'TechGadgets India', platform: 'Instagram', industry: 'Electronics', followers: '80k', engagement: '5.1%' },
-    { name: 'City Clinic', platform: 'Facebook', industry: 'Healthcare', followers: '30k', engagement: '3.9%' },
-    { name: 'Bright Tutors', platform: 'Facebook', industry: 'Education', followers: '18k', engagement: '4.2%' },
-    { name: 'FreshMart', platform: 'Facebook', industry: 'Grocery', followers: '28k', engagement: '3.5%' },
-  ];
-
-  return (
-    <section className="section-padding bg-gradient-to-b from-blue-50 to-white">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-flex items-center bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            <Award size={16} className="mr-2" /> Social Proof
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">Beautiful client cards</h2>
-          <p className="text-gray-600">Instagram and Facebook clients we manage with care.</p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {clients.map((c, idx) => (
-            <div key={idx} className="glass-card overflow-hidden transition border-gradient hover-bright">
-              <div className="h-36 bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-between px-6">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow">
-                    {c.platform === 'Instagram' ? <Instagram size={18} className="text-pink-600" /> : <Facebook size={18} className="text-blue-600" />}
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600">{c.industry}</p>
-                    <h3 className="text-lg font-semibold text-dark">{c.name}</h3>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <p className="text-xs text-gray-600">Followers</p>
-                  <p className="text-xl font-bold">{c.followers}</p>
-                </div>
-              </div>
-              <div className="p-6 grid grid-cols-2 gap-4">
-                <div className="bg-gray-50 rounded-lg p-4 text-center">
-                  <p className="text-xs text-gray-600">Engagement</p>
-                  <p className="text-lg font-semibold">{c.engagement}</p>
-                </div>
-                <div className="bg-gray-50 rounded-lg p-4 text-center">
-                  <p className="text-xs text-gray-600">Platform</p>
-                  <p className="text-lg font-semibold">{c.platform}</p>
-                </div>
-              </div>
-              <div className="px-6 pb-6 flex items-center justify-between">
-                <button className="text-primary font-semibold flex items-center">
-                  View Case
-                  <ArrowRight size={16} className="ml-2" />
-                </button>
-                <div className="text-xs text-gray-500 flex items-center">
-                  <Award size={14} className="mr-1 text-yellow-500" /> Top Performer
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// FAQs Component
-interface Faq { q: string; a: string }
-
-const FAQs: FC = () => {
-  const faqs: Faq[] = [
-    { q: 'How soon can we start?', a: 'We can start within 3–5 days after a quick call.' },
-    { q: 'Is there a long contract?', a: 'No. Start monthly. Upgrade later when you see results.' },
-    { q: 'Do you share reports?', a: 'Yes. You get a simple monthly report with leads, calls and reach.' },
-    { q: 'Can you help with reviews?', a: 'We guide you on getting honest reviews and reply to them.' },
-    { q: 'Is setup included?', a: 'Yes. We set up pages, forms and tracking for you.' },
-  ];
-
-  return (
-    <section className="section-padding bg-white">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-flex items-center bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            <MessageCircle size={16} className="mr-2" /> FAQs
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark">Quick answers</h2>
-          <p className="text-gray-600 mt-3">Short and clear. No complex words.</p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-6">
-          {faqs.map((f, i) => (
-            <div key={i} className="rounded-xl border p-6 bg-gray-50">
-              <h3 className="font-semibold text-dark mb-2">{f.q}</h3>
-              <p className="text-gray-600 text-sm">{f.a}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Strong CTA Component
-const StrongCTA: FC = () => {
-  return (
-    <section className="section-padding">
-      <div className="container mx-auto">
-        <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 md:p-12 text-white card-lift">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient flex items-center">
-                <Zap size={24} className="mr-2" /> Ready to make a boom?
-              </h2>
-              <p className="opacity-90 mb-6">Get a free plan for your business. Simple steps. Real leads. Clear results.</p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors btn-glow">Get Free Proposal</button>
-                <button className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">Book Quick Call</button>
-              </div>
-            </div>
-            <div className="bg-white/10 rounded-xl p-6">
-              <div className="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <p className="text-2xl font-bold">95%</p>
-                  <p className="text-xs opacity-80">Retention</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-bold">50M+</p>
-                  <p className="text-xs opacity-80">Impressions</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-bold">4.9/5</p>
-                  <p className="text-xs opacity-80">Ratings</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Features Component
-const Features: FC = () => {
-  const features = [
-    {
-      icon: <Zap className="text-yellow-500" size={24} />,
-      title: 'Fast Results',
-      description: 'See measurable improvements within 30 days of our partnership'
-    },
-    {
-      icon: <Shield className="text-green-500" size={24} />,
-      title: 'Data Security',
-      description: 'Enterprise-grade security for all your business data'
-    },
-    {
-      icon: <Clock className="text-blue-500" size={24} />,
-      title: '24/7 Support',
-      description: 'Round-the-clock customer support for Indian time zones'
-    },
-    {
-      icon: <Award className="text-purple-500" size={24} />,
-      title: 'Certified Experts',
-      description: 'Google and Meta certified professionals'
-    }
-  ];
-
-  return (
-    <section className="section-padding bg-white">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Why Choose Us
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-6">
-            Built for <span className="text-primary">Indian Market</span> Success
-          </h2>
-          <p className="text-gray-600">
-            Our strategies are specifically designed considering Indian consumer behavior, 
-            regional preferences, and market dynamics.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, idx) => (
-            <div key={idx} className="text-center p-6 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300 card-lift border-gradient hover-bright">
-              <div className="icon-badge w-16 h-16 mb-6 inline-flex items-center justify-center">
-                {feature.icon}
-              </div>
-              <h3 className="text-xl font-bold text-dark mb-3">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Testimonials Component
-const Testimonials: FC = () => {
-  const testimonials: Testimonial[] = [
-    {
-      id: 1,
-      name: 'Rahul Sharma',
-      role: 'CEO',
-      company: 'Urban Style',
-      content: 'TechMinds transformed our online presence. Our sales increased by 300% in just 6 months!',
-      rating: 5,
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200'
-    },
-    {
-      id: 2,
-      name: 'Priya Patel',
-      role: 'Marketing Director',
-      company: 'Desi Delights',
-      content: 'Their local SEO strategy helped us dominate search results across 5 Indian cities.',
-      rating: 5,
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=200'
-    },
-    {
-      id: 3,
-      name: 'Amit Kumar',
-      role: 'Founder',
-      company: 'TechGadgets India',
-      content: 'Best ROI on our digital marketing spend. Highly recommended for Indian startups.',
-      rating: 5,
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200'
-    }
-  ];
-
-  return (
-    <section className="section-padding bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Client Testimonials
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-6">
-            What Our <span className="text-primary">Indian Clients</span> Say
-          </h2>
-          <p className="text-gray-600">
-            Don&apos;t just take our word for it. Here&apos;s what businesses across India have to say about us.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 rounded-full bg-gray-200 mr-4 overflow-hidden">
-                  {/* Placeholder for image */}
-                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                    <span className="text-primary font-bold">{testimonial.name.charAt(0)}</span>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-bold text-dark">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.role}, {testimonial.company}</p>
-                  <div className="flex mt-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} size={16} className="text-yellow-500 fill-yellow-500" />
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <p className="text-gray-700 italic mb-4">{testimonial.content}</p>
-              <div className="flex items-center text-sm text-gray-500">
-                <MessageCircle size={16} className="mr-2" />
-                Verified Client
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Contact Component
-const Contact: FC = () => {
-  const [formData, setFormData] = useState<ContactFormData>({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: ''
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add your form submission logic here
-  };
-
-  return (
-    <section className="section-padding bg-gradient-to-r from-blue-50 to-purple-50">
-      <div className="container mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              Get In Touch
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-dark mb-6">
-              Ready to <span className="text-primary">Grow Your Business</span> in India?
-            </h2>
-            <p className="text-gray-600 mb-8">
-              Contact us for a free consultation. Our experts will analyze your business 
-              and provide a customized digital marketing strategy.
-            </p>
-
-            <div className="space-y-6">
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                  <Phone className="text-primary" size={24} />
-                </div>
-                <div>
-                  <p className="font-semibold">Call Us</p>
-                  <p className="text-gray-600">+91 98765 43210</p>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                  <Mail className="text-primary" size={24} />
-                </div>
-                <div>
-                  <p className="font-semibold">Email Us</p>
-                  <p className="text-gray-600">info@techmindsolutions.com</p>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                  <MapPin className="text-primary" size={24} />
-                </div>
-                <div>
-                  <p className="font-semibold">Our Offices</p>
-                  <p className="text-gray-600">Delhi • Mumbai • Bangalore • Hyderabad</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h3 className="text-2xl font-bold text-dark mb-6">Get Free Consultation</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
-                    placeholder="Enter your name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
-                    placeholder="Enter your email"
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
-                    placeholder="+91 98765 43210"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                    Service Interested In *
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="social-media">Social Media Management</option>
-                    <option value="local-seo">Local SEO & Google Maps</option>
-                    <option value="lead-ads">Lead Ads (Meta & Google)</option>
-                    <option value="all">All Services</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Your Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
-                  placeholder="Tell us about your business goals..."
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full btn-primary flex items-center justify-center"
-              >
-                Get Free Proposal
-                <ArrowRight size={20} className="ml-2" />
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Footer Component
-const Footer: FC = () => {
-  const quickLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/contact' },
-  ];
-
-  const services = [
-    { name: 'Social Media Management', href: '/services/social-media' },
-    { name: 'Local SEO & Google Maps', href: '/services/local-seo' },
-    { name: 'Lead Ads (Meta & Google)', href: '/services/lead-ads' },
-  ];
-
-  const indianCities = [
-    'Delhi NCR', 'Mumbai', 'Bangalore', 'Hyderabad', 
-    'Chennai', 'Kolkata', 'Pune', 'Ahmedabad'
-  ];
-
-  const socialIcons = [
-    { icon: Facebook, href: '#' },
-    { icon: Instagram, href: '#' },
-    { icon: Twitter, href: '#' },
-    { icon: Linkedin, href: '#' },
-    { icon: Youtube, href: '#' },
-  ];
-
-  return (
-    <footer className="bg-dark text-white">
-      {/* Main Footer */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="bg-gradient-to-r from-primary to-secondary w-10 h-10 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">TM</span>
-              </div>
-              <div>
-                <h2 className="text-xl font-bold">TechMinds</h2>
-                <p className="text-sm text-gray-400">Digital Solutions</p>
-              </div>
-            </div>
-            <p className="text-gray-400 mb-6">
-              Leading digital marketing agency in India helping businesses grow 
-              through innovative strategies and cutting-edge technology.
-            </p>
-            <div className="flex space-x-4">
-              {socialIcons.map(({ icon: Icon, href }, idx) => (
-                <a 
-                  key={idx} 
-                  href={href} 
-                  className="bg-gray-800 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
-                  aria-label={`Follow us on ${Icon.name}`}
-                >
-                  <Icon size={18} />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-bold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <a 
-                    href={link.href} 
-                    className="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center"
-                  >
-                    <ArrowRight size={14} className="mr-2" />
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="text-lg font-bold mb-6">Our Services</h3>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service.name}>
-                  <a 
-                    href={service.href} 
-                    className="text-gray-400 hover:text-primary transition-colors duration-300"
-                  >
-                    {service.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact & Newsletter */}
-          <div>
-            <h3 className="text-lg font-bold mb-6">Stay Updated</h3>
-            <p className="text-gray-400 mb-4">
-              Subscribe to our newsletter for digital marketing tips and updates.
-            </p>
-            <form className="mb-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="flex">
-                <input 
-                  type="email" 
-                  placeholder="Your email"
-                  className="bg-gray-800 text-white px-4 py-3 rounded-l-lg w-full focus:outline-none focus:ring-2 focus:ring-primary"
-                  required
-                />
-                <button 
-                  type="submit"
-                  className="bg-primary hover:bg-blue-700 px-4 rounded-r-lg transition-colors duration-300"
-                  aria-label="Subscribe to newsletter"
-                >
-                  <Send size={20} />
-                </button>
-              </div>
-            </form>
-
-            <div className="space-y-4">
-              <div className="flex items-center">
-                <Phone size={18} className="text-primary mr-3" />
-                <div>
-                  <p className="text-sm text-gray-400">Call Us</p>
-                  <p>+91 98765 43210</p>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <Mail size={18} className="text-primary mr-3" />
-                <div>
-                  <p className="text-sm text-gray-400">Email Us</p>
-                  <p>info@techmindsolutions.com</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Indian Cities */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <h4 className="text-center mb-6 font-semibold">Serving Across India</h4>
-          <div className="flex flex-wrap justify-center gap-4">
-            {indianCities.map((city) => (
-              <span 
-                key={city} 
-                className="bg-gray-800 px-4 py-2 rounded-full text-sm hover:bg-primary transition-colors duration-300 cursor-default"
-              >
-                {city}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="bg-black/50 py-6">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} TechMinds Solutions. All rights reserved.
-            </p>
-            <div className="flex flex-wrap gap-6 text-sm">
-              <a href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
-              <a href="/sitemap" className="text-gray-400 hover:text-white transition-colors">Sitemap</a>
-              <a href="/gdpr" className="text-gray-400 hover:text-white transition-colors">GDPR Compliance</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-};
-
-// Main Page Component
-export default function Home() {
+/* -----------------------------
+   Page
+------------------------------ */
+export default function HomePage() {
   return (
     <div className="min-h-screen">
       <Header />
@@ -1378,32 +85,576 @@ export default function Home() {
   );
 }
 
-// Challenges Section
+/* -----------------------------
+   Header (Premium Floating)
+------------------------------ */
+const Header: FC = () => {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const servicesSubmenu = useMemo(
+    () => [
+      { name: "Social Media Management", href: "#services" },
+      { name: "Local SEO & Google Maps", href: "#services" },
+      { name: "Lead Ads (Meta & Google)", href: "#services" },
+    ],
+    []
+  );
+
+  const navItems: NavItem[] = useMemo(
+    () => [
+      { name: "Home", href: "#top" },
+      { name: "Services", href: "#services", submenu: servicesSubmenu },
+      { name: "Case Studies", href: "#cases" },
+      { name: "Blog", href: "#blog" },
+      { name: "Contact", href: "#contact" },
+    ],
+    [servicesSubmenu]
+  );
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <header id="top" className="sticky top-0 z-50">
+      {/* Top strip */}
+      <div className="bg-ink-900 text-white/90 w-full">
+        <div className="container-wide max-w-full px-6 lg:px-12 flex items-center justify-between py-2 text-xs md:text-sm">
+          <div className="flex items-center gap-4">
+            <span className="inline-flex items-center gap-2">
+              <Phone size={14} className="opacity-90" /> +91 98765 43210
+            </span>
+            <span className="hidden md:inline-flex items-center gap-2">
+              <Mail size={14} className="opacity-90" /> info@techmindsolutions.com
+            </span>
+          </div>
+
+          <div className="hidden md:flex items-center gap-3">
+            <span className="inline-flex items-center gap-2 opacity-90">
+              <MapPin size={14} /> Delhi • Mumbai • Bangalore
+            </span>
+            <a className="btn-secondary !py-2 !px-4" href="#contact">
+              Free Audit <ArrowRight size={16} />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main floating nav */}
+      <div className={`bg-white/95 backdrop-blur-sm border-b border-slate-200 transition-all duration-300`}>
+        <div className="container-wide max-w-full px-6 lg:px-12">
+          <div
+            className={[
+              "flex items-center justify-between",
+              "bg-transparent",
+              "px-4 py-3 md:px-6 md:py-4",
+            ].join(" ")}
+          >
+            {/* Brand */}
+            <a href="#top" className="flex items-center gap-3">
+              <div className="h-10 w-10 rounded-xl bg-brand-600 text-white grid place-items-center font-bold">
+                TM
+              </div>
+              <div className="leading-tight">
+                <div className="text-base md:text-lg font-semibold text-ink-900">
+                  TechMinds
+                </div>
+                <div className="text-xs text-slate-500">Digital Solutions</div>
+              </div>
+            </a>
+
+            {/* Desktop */}
+            <div className="hidden lg:flex items-center gap-8">
+              {navItems.map((item) => (
+                <div key={item.name} className="relative group">
+                  <a
+                    href={item.href}
+                    className="inline-flex items-center gap-1 text-sm font-semibold text-ink-900/90 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-brand-600 hover:to-fuchsia-600 transition-all"
+                  >
+                    {item.name}
+                    {item.submenu && <ChevronDown size={16} className="opacity-70 group-hover:opacity-100 group-hover:text-brand-600 transition-all" />}
+                  </a>
+
+                  <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-gradient-to-r from-brand-600 to-fuchsia-600 transition-all group-hover:w-full" />
+
+                  {item.submenu && (
+                    <div className="absolute left-0 top-full mt-4 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                      <div className="card overflow-hidden">
+                        {item.submenu.map((sub) => (
+                          <a
+                            key={sub.name}
+                            href={sub.href}
+                            className="block px-4 py-3 text-sm text-slate-700 hover:bg-gradient-to-r hover:from-brand-50 hover:to-fuchsia-50 hover:text-brand-700 hover:pl-6 transition-all"
+                          >
+                            {sub.name}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+
+              <a href="#contact" className="btn-primary">
+                Get Free Proposal <ArrowRight size={18} />
+              </a>
+            </div>
+
+            {/* Mobile */}
+            <button
+              className="lg:hidden btn-ghost !px-3"
+              onClick={() => setOpen((v) => !v)}
+              aria-label="Toggle menu"
+            >
+              {open ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
+
+          {/* Mobile dropdown */}
+          {open && (
+            <div className="lg:hidden mt-3 card card-pad">
+              <div className="space-y-2">
+                {navItems.map((item) => (
+                  <div key={item.name} className="border-b border-slate-100 pb-2">
+                    <a
+                      href={item.href}
+                      className="block py-2 font-semibold text-ink-900"
+                      onClick={() => setOpen(false)}
+                    >
+                      {item.name}
+                    </a>
+
+                    {item.submenu && (
+                      <div className="pl-4 pb-2 space-y-1">
+                        {item.submenu.map((sub) => (
+                          <a
+                            key={sub.name}
+                            href={sub.href}
+                            className="block py-1 text-sm text-slate-600"
+                            onClick={() => setOpen(false)}
+                          >
+                            {sub.name}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              <a href="#contact" className="btn-primary w-full mt-4">
+                Get Free Proposal <ArrowRight size={18} />
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
+    </header>
+  );
+};
+
+/* -----------------------------
+   Hero
+------------------------------ */
+const Hero: FC = () => {
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-br from-white via-brand-50/30 to-fuchsia-50/30">
+      <div className="absolute inset-0 bg-grid opacity-[0.25]" />
+      <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-brand-300 blur-3xl opacity-40" />
+      <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-fuchsia-300 blur-3xl opacity-35" />
+      <div className="absolute top-1/2 left-1/2 h-80 w-80 rounded-full bg-purple-200 blur-3xl opacity-30" />
+
+      <div className="container-pad pt-36 pb-20 md:pt-44 md:pb-28 relative">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="badge">
+              <CheckCircle size={16} />
+              Trusted by 500+ Indian Businesses
+            </div>
+
+            <h1 className="h1 mt-6">
+              Turn local attention into{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">
+                real leads
+              </span>{" "}
+              — fast.
+            </h1>
+
+            <p className="p-lead mt-6">
+              Clean social content, Local SEO, and lead ads—paired with reporting your
+              team actually understands.
+            </p>
+
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <a href="#contact" className="btn-primary">
+                Get Free Proposal <ArrowRight size={18} />
+              </a>
+              <a href="#cases" className="btn-secondary">
+                View Case Studies <TrendingUp size={18} />
+              </a>
+            </div>
+
+            <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-3">
+              {[
+                { icon: <MapPin size={16} />, label: "Maps visibility boost" },
+                { icon: <MessageCircle size={16} />, label: "More DMs & calls" },
+                { icon: <Shield size={16} />, label: "Transparent reporting" },
+              ].map((i) => (
+                <div key={i.label} className="card px-4 py-3 flex items-center gap-2 text-sm text-slate-700">
+                  <span className="text-brand-700">{i.icon}</span>
+                  <span className="font-semibold">{i.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="card overflow-hidden shadow-2xl">
+              <div className="h-64 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" 
+                  alt="Digital marketing analytics dashboard showing growth metrics" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6 border-b border-slate-100 flex items-center justify-between">
+                <div>
+                  <div className="text-sm font-semibold text-ink-900">Growth Snapshot</div>
+                  <div className="text-xs text-slate-500">Sample performance view</div>
+                </div>
+                <div className="badge-neutral">
+                  <Zap size={16} /> Live
+                </div>
+              </div>
+
+              <div className="p-6">
+                <div className="grid grid-cols-3 gap-3">
+                  {[
+                    { k: "Leads", v: "+128%" },
+                    { k: "Calls", v: "+64%" },
+                    { k: "Maps Rank", v: "Top 3" },
+                  ].map((s) => (
+                    <div key={s.k} className="rounded-xl bg-slate-50 p-4">
+                      <div className="text-xs text-slate-500">{s.k}</div>
+                      <div className="text-xl font-semibold text-ink-900 mt-1">{s.v}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 h-44 rounded-xl bg-gradient-to-r from-brand-600/10 to-fuchsia-600/10 border border-slate-200" />
+                <div className="mt-4 text-xs text-slate-500">
+                  Replace this with a real chart or a dashboard screenshot later.
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute -top-5 -left-5 card px-4 py-3">
+              <div className="text-xs text-slate-500">Client Rating</div>
+              <div className="text-lg font-semibold text-ink-900 flex items-center gap-2">
+                4.9 <Star size={16} className="text-amber-500 fill-amber-500" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* -----------------------------
+   Reusable UI
+------------------------------ */
+const ServiceCard: FC<{
+  title: string;
+  desc: string;
+  icon: ReactNode;
+  features: string[];
+}> = ({ title, desc, icon, features }) => {
+  return (
+    <div className="card card-hover overflow-hidden">
+      <div className="p-6 flex items-start justify-between gap-4 border-b border-slate-100">
+        <div>
+          <h3 className="text-lg font-semibold text-ink-900">{title}</h3>
+          <p className="text-sm text-slate-600 mt-2">{desc}</p>
+        </div>
+        <div className="h-11 w-11 rounded-xl bg-brand-50 ring-1 ring-brand-100 flex items-center justify-center text-brand-700">
+          {icon}
+        </div>
+      </div>
+
+      <div className="p-6">
+        <ul className="grid grid-cols-2 gap-2 text-sm text-slate-700">
+          {features.slice(0, 4).map((f) => (
+            <li key={f} className="flex items-center gap-2">
+              <CheckCircle size={16} className="text-emerald-600" />
+              <span className="font-medium">{f}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-6 flex items-center justify-between">
+          <a
+            href="#contact"
+            className="text-sm font-semibold text-brand-700 hover:text-brand-800 inline-flex items-center gap-2"
+          >
+            Learn more <ArrowRight size={16} />
+          </a>
+          <a href="#contact" className="btn-secondary !py-2 !px-4">
+            Get quote
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* -----------------------------
+   Services
+------------------------------ */
+const Services: FC = () => {
+  const services = [
+    {
+      title: "Social Media Management",
+      desc: "Beautiful creatives, consistent posting, and community replies that drive leads.",
+      icon: <Instagram size={20} />,
+      features: ["Content calendar", "Design & captions", "Daily replies", "Monthly reporting"],
+    },
+    {
+      title: "Local SEO & Google Maps",
+      desc: "Improve visibility near your area and turn local searches into calls.",
+      icon: <Search size={20} />,
+      features: ["GBP setup", "Map ranking", "Reviews guidance", "NAP + citations"],
+    },
+    {
+      title: "Lead Ads (Meta & Google)",
+      desc: "Budget-smart campaigns designed for forms, calls, and messages.",
+      icon: <Target size={20} />,
+      features: ["Lead form setup", "Tracking", "Targeting", "Weekly review"],
+    },
+  ];
+
+  const stats = [
+    { value: "300+", label: "Websites Developed", icon: <Globe size={18} /> },
+    { value: "95%", label: "Client Retention", icon: <Users size={18} /> },
+    { value: "50M+", label: "Impressions Managed", icon: <TrendingUp size={18} /> },
+    { value: "Top 3", label: "Maps Wins", icon: <MapPin size={18} /> },
+  ];
+
+  return (
+    <section id="services" className="section bg-slate-50">
+      <div className="container-pad">
+        <div className="section-head">
+          <div className="section-kicker">
+            <Zap size={16} /> Our Services
+          </div>
+          <h2 className="h2">Premium digital growth for Indian businesses</h2>
+          <p className="section-desc">
+            One consistent system across creative, SEO, and performance—so it looks branded and converts better.
+          </p>
+        </div>
+
+        <div className="mt-10 grid md:grid-cols-3 gap-6">
+          {services.map((s) => (
+            <ServiceCard
+              key={s.title}
+              title={s.title}
+              desc={s.desc}
+              icon={s.icon}
+              features={s.features}
+            />
+          ))}
+        </div>
+
+        <div className="mt-10 card overflow-hidden">
+          <div className="p-8 md:p-10 bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {stats.map((st) => (
+                <div key={st.label} className="text-center">
+                  <div className="mx-auto mb-3 h-10 w-10 rounded-xl bg-white/15 grid place-items-center">
+                    {st.icon}
+                  </div>
+                  <div className="text-2xl font-semibold">{st.value}</div>
+                  <div className="text-xs opacity-90 mt-1">{st.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* -----------------------------
+   Platform Marketing
+------------------------------ */
+const PlatformMarketing: FC = () => {
+  const cards = [
+    {
+      platform: "Instagram Marketing",
+      icon: <Instagram size={18} className="text-pink-600" />,
+      highlights: ["Reels & Stories", "Hashtag strategy", "Community replies", "Lead ads"],
+      image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&q=80",
+    },
+    {
+      platform: "Facebook Marketing",
+      icon: <Facebook size={18} className="text-blue-600" />,
+      highlights: ["Page growth", "Groups outreach", "Messenger leads", "Lookalike ads"],
+      image: "https://images.unsplash.com/photo-1633675254053-d96c7668c3b8?w=600&q=80",
+    },
+  ];
+
+  return (
+    <section className="section bg-gradient-to-b from-white to-slate-50">
+      <div className="container-pad">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="badge justify-center">
+            <Instagram size={16} /> Social Platforms
+          </div>
+          <h2 className="h2 mt-5">Grow on Instagram and Facebook</h2>
+          <p className="section-desc">Beautiful creatives, smart posting times, and clean reporting.</p>
+        </div>
+
+        <div className="mt-10 grid md:grid-cols-2 gap-6">
+          {cards.map((c) => (
+            <div key={c.platform} className="card card-hover overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={c.image} 
+                  alt={`${c.platform} social media marketing services`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6 border-b border-slate-100 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="h-11 w-11 rounded-xl bg-slate-50 ring-1 ring-slate-200 grid place-items-center">
+                    {c.icon}
+                  </div>
+                  <div className="font-semibold text-ink-900">{c.platform}</div>
+                </div>
+                <span className="badge-neutral !px-3 !py-1 text-xs">Popular</span>
+              </div>
+
+              <div className="p-6">
+                <ul className="grid grid-cols-2 gap-2 text-sm text-slate-700">
+                  {c.highlights.map((h) => (
+                    <li key={h} className="flex items-center gap-2">
+                      <CheckCircle size={16} className="text-emerald-600" />
+                      <span className="font-medium">{h}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-6">
+                  <a href="#contact" className="btn-primary">
+                    See packages <ArrowRight size={18} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* -----------------------------
+   Content Services
+------------------------------ */
+const ContentServices: FC = () => {
+  const items = [
+    {
+      title: "Content Writer",
+      icon: <Edit3 size={18} className="text-fuchsia-600" />,
+      desc: "Clear and simple content for websites, ads, and captions.",
+      bullets: ["Brand voice guide", "Short-form captions", "Ad copy variants", "Proofreading"],
+    },
+    {
+      title: "Blog Writer (SEO)",
+      icon: <FileText size={18} className="text-emerald-600" />,
+      desc: "Search-friendly blogs that educate and rank on Google.",
+      bullets: ["Keyword plan", "Outline + headings", "Internal linking", "Meta tags"],
+    },
+  ];
+
+  return (
+    <section className="section bg-slate-50">
+      <div className="container-pad">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="badge justify-center">
+            <FileText size={16} /> Content & Writing
+          </div>
+          <h2 className="h2 mt-5">Words that attract and convert</h2>
+          <p className="section-desc">Easy-to-read language. Strong SEO basics. Ready to publish.</p>
+        </div>
+
+        <div className="mt-10 grid md:grid-cols-2 gap-6">
+          {items.map((it) => (
+            <div key={it.title} className="card card-hover card-pad">
+              <div className="flex items-center gap-3">
+                <div className="h-11 w-11 rounded-xl bg-slate-50 ring-1 ring-slate-200 grid place-items-center">
+                  {it.icon}
+                </div>
+                <div className="text-lg font-semibold text-ink-900">{it.title}</div>
+              </div>
+
+              <p className="mt-4 text-slate-600">{it.desc}</p>
+
+              <ul className="mt-5 grid grid-cols-2 gap-2 text-sm text-slate-700">
+                {it.bullets.map((b) => (
+                  <li key={b} className="flex items-center gap-2">
+                    <CheckCircle size={16} className="text-emerald-600" />
+                    <span className="font-medium">{b}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-7">
+                <a href="#contact" className="btn-primary">
+                  Request Samples <ArrowRight size={18} />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* -----------------------------
+   Challenges
+------------------------------ */
 const ChallengesSection: FC = () => {
   const challenges = [
-    { title: 'Not enough calls', desc: 'People visit but don’t call. We fix that.' },
-    { title: 'Low Google visibility', desc: 'Your business doesn’t show up near you.' },
-    { title: 'Weak social engagement', desc: 'Likes without real conversations or leads.' },
-    { title: 'No tracking or reports', desc: 'Hard to know what’s working. We simplify.' },
-    { title: 'Random posting', desc: 'No plan. We bring a simple monthly calendar.' },
-    { title: 'Wasted ad spend', desc: 'Money spent without leads. We focus on ROI.' },
+    { title: "Not enough calls", desc: "People visit but don't call. We fix that." },
+    { title: "Low Google visibility", desc: "Your business doesn't show up near you." },
+    { title: "Weak social engagement", desc: "Likes without real conversations or leads." },
+    { title: "No tracking or reports", desc: "Hard to know what's working. We simplify." },
+    { title: "Random posting", desc: "No plan. We bring a simple monthly calendar." },
+    { title: "Wasted ad spend", desc: "Money spent without leads. We focus on ROI." },
   ];
 
   return (
-    <section className="section-padding bg-white">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Facing these issues?
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark">We solve common growth blockers</h2>
-          <p className="text-gray-600 mt-3">Short, clear points so you can quickly see the fit.</p>
+    <section className="section bg-white">
+      <div className="container-pad">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="badge justify-center">
+            <Target size={16} /> Facing these issues?
+          </div>
+          <h2 className="h2 mt-5">We solve common growth blockers</h2>
+          <p className="section-desc">Short, clear points so you can quickly see the fit.</p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {challenges.map((c, i) => (
-            <div key={i} className="bg-gray-50 rounded-xl p-6 border hover:bg-white hover:shadow-sm transition">
-              <h3 className="text-lg font-semibold text-dark mb-2">{c.title}</h3>
-              <p className="text-gray-600 text-sm">{c.desc}</p>
+
+        <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {challenges.map((c) => (
+            <div key={c.title} className="card card-hover card-pad">
+              <h3 className="text-lg font-semibold text-ink-900">{c.title}</h3>
+              <p className="mt-2 text-slate-600 text-sm">{c.desc}</p>
             </div>
           ))}
         </div>
@@ -1412,34 +663,238 @@ const ChallengesSection: FC = () => {
   );
 };
 
-// Companies Worked With Section
+/* -----------------------------
+   Companies Worked With
+------------------------------ */
 const CompaniesWorkedWith: FC = () => {
   const logos = [
-    { name: 'Round World Logistics', tag: 'Logistics' },
-    { name: 'Immigration Experts', tag: 'Consulting' },
-    { name: 'Empire World Immigration', tag: 'Services' },
-    { name: 'Prime Healthcare', tag: 'Healthcare' },
-    { name: 'Bright Tutors', tag: 'Education' },
-    { name: 'FreshMart', tag: 'Grocery' },
+    { name: "Round World Logistics", tag: "Logistics", icon: <Package size={24} />, color: "from-blue-600 to-cyan-600" },
+    { name: "Immigration Experts", tag: "Consulting", icon: <Globe size={24} />, color: "from-emerald-600 to-teal-600" },
+    { name: "Empire World Immigration", tag: "Services", icon: <Plane size={24} />, color: "from-violet-600 to-purple-600" },
+    { name: "Prime Healthcare", tag: "Healthcare", icon: <Heart size={24} />, color: "from-rose-600 to-pink-600" },
+    { name: "Bright Tutors", tag: "Education", icon: <BookOpen size={24} />, color: "from-amber-600 to-orange-600" },
+    { name: "FreshMart", tag: "Grocery", icon: <ShoppingCart size={24} />, color: "from-green-600 to-lime-600" },
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-b from-blue-50 to-white">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-flex items-center bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Trusted Partners
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark">Companies that trust our work</h2>
-          <p className="text-gray-600 mt-3">A few examples from different industries across India.</p>
+    <section className="section bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/4 h-96 w-96 rounded-full bg-brand-200 blur-3xl opacity-20" />
+      <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-fuchsia-200 blur-3xl opacity-20" />
+      <div className="container-pad relative">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="badge justify-center bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white ring-0">
+            <Award size={16} /> Trusted Partners
+          </div>
+          <h2 className="h2 mt-5">Companies that <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">trust</span> our work</h2>
+          <p className="section-desc">Delivering results across diverse industries in India.</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {logos.map((l, i) => (
-            <div key={i} className="glass-card p-6 border-gradient hover-bright">
-              <div className="h-16 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg mb-4 flex items-center justify-center">
-                <span className="text-dark font-semibold">{l.name}</span>
+
+        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {logos.map((l, idx) => (
+            <div key={l.name} className="group relative">
+              <div className="card card-hover card-pad relative overflow-hidden border-t-4 border-transparent hover:border-brand-600 transition-all">
+                <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-gradient-to-br opacity-0 group-hover:opacity-10 blur-2xl transition-all" style={{backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))`}} />
+                
+                <div className="flex items-start gap-4">
+                  <div className={`h-14 w-14 rounded-xl bg-gradient-to-br ${l.color} text-white grid place-items-center shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all`}>
+                    {l.icon}
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-bold text-lg text-ink-900 group-hover:text-brand-700 transition-colors">
+                      {l.name}
+                    </div>
+                    <div className="mt-1 inline-flex items-center gap-2 text-xs text-slate-600">
+                      <div className="h-1.5 w-1.5 rounded-full bg-brand-600" />
+                      {l.tag}
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-4 flex items-center gap-2 text-xs text-emerald-600 font-semibold">
+                  <CheckCircle size={14} />
+                  <span>Active Client</span>
+                </div>
               </div>
-              <p className="text-xs text-gray-600">{l.tag}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <div className="inline-flex items-center gap-8 px-8 py-4 rounded-2xl bg-white border border-slate-200 shadow-soft">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">500+</div>
+              <div className="text-xs text-slate-600 mt-1">Happy Clients</div>
+            </div>
+            <div className="h-12 w-px bg-slate-200" />
+            <div className="text-center">
+              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">98%</div>
+              <div className="text-xs text-slate-600 mt-1">Satisfaction Rate</div>
+            </div>
+            <div className="h-12 w-px bg-slate-200" />
+            <div className="text-center">
+              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">4.9★</div>
+              <div className="text-xs text-slate-600 mt-1">Average Rating</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* -----------------------------
+   Special Customized Services
+------------------------------ */
+const SpecialCustomizedServices: FC = () => {
+  const items = [
+    { 
+      number: "01", 
+      title: "Social Media Management", 
+      desc: "Plan, create, post and reply — simple and consistent.",
+      icon: <Instagram size={24} />,
+      gradient: "from-pink-600 via-purple-600 to-indigo-600",
+      bgGradient: "from-pink-50 to-purple-50"
+    },
+    { 
+      number: "02", 
+      title: "Local SEO & Google Maps", 
+      desc: "Show up near your area. Get more calls and visits.",
+      icon: <MapPin size={24} />,
+      gradient: "from-emerald-600 via-teal-600 to-cyan-600",
+      bgGradient: "from-emerald-50 to-teal-50"
+    },
+    { 
+      number: "03", 
+      title: "Lead Ads (Instagram, Facebook & Google)", 
+      desc: "Run budget-friendly ads to capture real leads.",
+      icon: <Target size={24} />,
+      gradient: "from-amber-600 via-orange-600 to-red-600",
+      bgGradient: "from-amber-50 to-orange-50"
+    },
+  ];
+
+  return (
+    <section className="section bg-gradient-to-br from-white via-slate-50 to-white relative overflow-hidden">
+      <div className="absolute top-1/4 -left-24 h-96 w-96 rounded-full bg-brand-200 blur-3xl opacity-20" />
+      <div className="absolute bottom-1/4 -right-24 h-96 w-96 rounded-full bg-fuchsia-200 blur-3xl opacity-20" />
+      
+      <div className="container-pad relative">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="badge justify-center bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white ring-0">
+            <Zap size={16} /> Tailored for your needs
+          </div>
+          <h2 className="h2 mt-5">
+            Special <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">customized</span> services for you
+          </h2>
+          <p className="section-desc">Focused on three simple offerings that drive results.</p>
+        </div>
+
+        <div className="mt-12 max-w-4xl mx-auto space-y-6">
+          {items.map((item, idx) => (
+            <div key={item.number} className="group relative">
+              <div className={`card card-hover overflow-hidden border-l-4 border-transparent hover:border-brand-600 transition-all`}>
+                <div className={`absolute inset-0 bg-gradient-to-r ${item.bgGradient} opacity-0 group-hover:opacity-100 transition-all duration-300`} />
+                
+                <div className="relative card-pad flex items-start gap-6">
+                  {/* Animated Number Badge */}
+                  <div className={`relative h-16 w-16 rounded-2xl bg-gradient-to-br ${item.gradient} text-white grid place-items-center font-bold text-2xl shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                    {item.number}
+                    <div className={`absolute -inset-1 bg-gradient-to-br ${item.gradient} rounded-2xl blur opacity-50 group-hover:opacity-75 transition-opacity`} />
+                    <div className="relative">{item.number}</div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <h3 className="text-xl font-bold text-ink-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-brand-600 group-hover:to-fuchsia-600 transition-all">
+                          {item.title}
+                        </h3>
+                        <p className="mt-2 text-slate-600 leading-relaxed">{item.desc}</p>
+                      </div>
+                      
+                      {/* Icon Badge */}
+                      <div className={`h-12 w-12 rounded-xl bg-gradient-to-br ${item.gradient} text-white grid place-items-center shadow-md transform group-hover:rotate-12 transition-all duration-300`}>
+                        {item.icon}
+                      </div>
+                    </div>
+
+                    {/* Feature Tags */}
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {idx === 0 && (
+                        <>
+                          <span className="text-xs px-3 py-1 rounded-full bg-pink-100 text-pink-700 font-medium">Posts & Stories</span>
+                          <span className="text-xs px-3 py-1 rounded-full bg-purple-100 text-purple-700 font-medium">Community Management</span>
+                        </>
+                      )}
+                      {idx === 1 && (
+                        <>
+                          <span className="text-xs px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 font-medium">Google My Business</span>
+                          <span className="text-xs px-3 py-1 rounded-full bg-teal-100 text-teal-700 font-medium">Local Rankings</span>
+                        </>
+                      )}
+                      {idx === 2 && (
+                        <>
+                          <span className="text-xs px-3 py-1 rounded-full bg-amber-100 text-amber-700 font-medium">Meta Ads</span>
+                          <span className="text-xs px-3 py-1 rounded-full bg-orange-100 text-orange-700 font-medium">Google Ads</span>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Arrow Indicator */}
+                <div className="absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all">
+                  <ArrowRight size={24} className="text-brand-600" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA Button */}
+        <div className="mt-12 text-center">
+          <a href="#contact" className="btn-primary inline-flex items-center gap-2">
+            Get Started Now <ArrowRight size={18} />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* -----------------------------
+   Benefits
+------------------------------ */
+const BenefitsForUser: FC = () => {
+  const benefits = [
+    { icon: <Phone size={18} />, title: "More Calls", desc: "Get more phone calls from nearby people." },
+    { icon: <MessageCircle size={18} />, title: "More Messages", desc: "More chats and DMs from real users." },
+    { icon: <MapPin size={18} />, title: "Better Local Rank", desc: "Show up higher on Google Maps." },
+    { icon: <Users size={18} />, title: "Right Audience", desc: "Reach the people who want your service." },
+    { icon: <TrendingUp size={18} />, title: "Clear Growth", desc: "Simple monthly growth reports." },
+    { icon: <Shield size={18} />, title: "Safe & Secure", desc: "Your data stays protected and private." },
+  ];
+
+  return (
+    <section className="section bg-gradient-to-br from-slate-50 via-brand-50/20 to-fuchsia-50/20">
+      <div className="container-pad">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="badge justify-center">
+            <TrendingUp size={16} /> Benefits for You
+          </div>
+          <h2 className="h2 mt-5">Simple wins for your business</h2>
+          <p className="section-desc">We keep things easy. No heavy words. Just clear results.</p>
+        </div>
+
+        <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {benefits.map((b, idx) => (
+            <div key={b.title} className="card card-hover card-pad border-t-4 border-brand-600 hover:border-fuchsia-600 transition-all">
+              <div className={`h-12 w-12 rounded-xl bg-gradient-to-br ${idx % 3 === 0 ? 'from-brand-600 to-purple-600' : idx % 3 === 1 ? 'from-fuchsia-600 to-pink-600' : 'from-purple-600 to-brand-700'} text-white grid place-items-center shadow-lg`}>
+                {b.icon}
+              </div>
+              <div className="mt-4 text-lg font-semibold text-ink-900">{b.title}</div>
+              <p className="mt-1 text-slate-600 text-sm">{b.desc}</p>
             </div>
           ))}
         </div>
@@ -1448,38 +903,715 @@ const CompaniesWorkedWith: FC = () => {
   );
 };
 
-// Special Customized Services Section
-const SpecialCustomizedServices: FC = () => {
-  const items = [
-    { number: '01', title: 'Social Media Management', desc: 'Plan, create, post and reply — simple and consistent.' },
-    { number: '02', title: 'Local SEO & Google Maps', desc: 'Show up near your area. Get more calls and visits.' },
-    { number: '03', title: 'Lead Ads (Instagram, Facebook & Google)', desc: 'Run budget-friendly ads to capture real leads.' },
+/* -----------------------------
+   Introductions
+------------------------------ */
+const Introductions: FC = () => {
+  const introCards = [
+    {
+      title: "What is SEO?",
+      icon: <Search size={18} />,
+      desc: "SEO helps your business show up on Google. People near you can find you easily.",
+    },
+    {
+      title: "What is SME?",
+      icon: <Users size={18} />,
+      desc: "SME means small and medium business. We make marketing simple for small teams.",
+    },
+    {
+      title: "Social Media Basics",
+      icon: <Instagram size={18} />,
+      desc: "We create easy posts, stories and ads. People remember your brand.",
+    },
   ];
 
   return (
-    <section className="section-padding bg-white">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-block bg-blue-100 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Tailored for your needs
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark">Special customized services for you</h2>
-          <p className="text-gray-600 mt-3">Focused on three simple offerings that drive results.</p>
+    <section className="section bg-gradient-to-b from-white via-slate-50/50 to-white">
+      <div className="container-pad">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="badge justify-center">
+            <Search size={16} /> Simple Introductions
+          </div>
+          <h2 className="h2 mt-5">Understand the basics in plain words</h2>
+          <p className="section-desc">No complex English. Just quick, helpful points.</p>
         </div>
-        <div className="space-y-4 max-w-3xl mx-auto">
-          {items.map((item) => (
-            <div key={item.number} className="flex items-start bg-gray-50 rounded-xl p-6 border">
-              <div className="w-12 h-12 rounded-lg bg-primary text-white flex items-center justify-center font-bold mr-4">
-                {item.number}
+
+        <div className="mt-10 grid md:grid-cols-3 gap-6">
+          {introCards.map((card, idx) => (
+            <div key={card.title} className="card card-hover card-pad relative overflow-hidden">
+              <div className={`absolute top-0 right-0 h-24 w-24 rounded-full blur-2xl opacity-20 ${idx % 3 === 0 ? 'bg-brand-400' : idx % 3 === 1 ? 'bg-fuchsia-400' : 'bg-purple-400'}`} />
+              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-brand-600 to-fuchsia-600 text-white grid place-items-center shadow-md relative z-10">
+                {card.icon}
               </div>
-              <div>
-                <h3 className="text-lg font-semibold text-dark">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
+              <div className="mt-4 text-lg font-semibold text-ink-900">{card.title}</div>
+              <p className="mt-2 text-slate-600 text-sm">{card.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* -----------------------------
+   Comparison
+------------------------------ */
+const Comparison: FC = () => {
+  const rows = [
+    { label: "Clear monthly report", tm: true, others: false, diy: false },
+    { label: "Local map ranking", tm: true, others: true, diy: false },
+    { label: "Friendly simple language", tm: true, others: false, diy: false },
+    { label: "Lead form setup", tm: true, others: true, diy: false },
+    { label: "Daily social replies", tm: true, others: false, diy: false },
+  ];
+
+  const IconYes = () => <CheckCircle size={18} className="text-emerald-600" />;
+  const IconNo = () => <X size={18} className="text-rose-500" />;
+
+  return (
+    <section className="section bg-gradient-to-br from-slate-50 via-white to-slate-50">
+      <div className="container-pad">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="badge justify-center bg-brand-600 text-white ring-0">Why Us</div>
+          <h2 className="h2 mt-5">TechMinds <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">vs</span> Others</h2>
+          <p className="section-desc">A quick comparison.</p>
+        </div>
+
+        <div className="mt-10 card overflow-hidden">
+          <div className="grid grid-cols-4 bg-slate-50 text-sm font-semibold text-slate-700 border-b border-slate-200">
+            <div className="p-4">Feature</div>
+            <div className="p-4">TechMinds</div>
+            <div className="p-4">Other Agencies</div>
+            <div className="p-4">DIY</div>
+          </div>
+
+          {rows.map((r) => (
+            <div key={r.label} className="grid grid-cols-4 border-b last:border-b-0 border-slate-100">
+              <div className="p-4 text-sm text-slate-700">{r.label}</div>
+              <div className="p-4">{r.tm ? <IconYes /> : <IconNo />}</div>
+              <div className="p-4">{r.others ? <IconYes /> : <IconNo />}</div>
+              <div className="p-4">{r.diy ? <IconYes /> : <IconNo />}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* -----------------------------
+   Growth Graph
+------------------------------ */
+const GrowthGraph: FC = () => {
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"];
+  const values = [20, 35, 50, 65, 80, 95];
+
+  return (
+    <section className="section bg-white">
+      <div className="container-pad">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="badge justify-center">Growth Snapshot</div>
+          <h2 className="h2 mt-5">Leads rising month by month</h2>
+          <p className="section-desc">A simple view of lead growth over 6 months.</p>
+        </div>
+
+        <div className="mt-10 card card-pad">
+          <div className="grid grid-cols-6 gap-4 items-end h-52">
+            {values.map((v, i) => (
+              <div key={months[i]} className="flex flex-col items-center">
+                <div
+                  className="w-full rounded-t-lg bg-gradient-to-t from-brand-600 to-fuchsia-600"
+                  style={{ height: `${v}%` }}
+                />
+                <span className="mt-2 text-xs text-slate-600">{months[i]}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 text-sm text-slate-600 flex items-center justify-center gap-2">
+            <TrendingUp size={18} className="text-brand-700" />
+            Based on sample campaign data
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* -----------------------------
+   Social Clients
+------------------------------ */
+const SocialClients: FC = () => {
+  const clients = [
+    { name: "Urban Style", platform: "Instagram", industry: "Fashion", followers: "120k", engagement: "6.2%" },
+    { name: "Desi Delights", platform: "Instagram", industry: "F&B", followers: "45k", engagement: "4.8%" },
+    { name: "TechGadgets India", platform: "Instagram", industry: "Electronics", followers: "80k", engagement: "5.1%" },
+    { name: "City Clinic", platform: "Facebook", industry: "Healthcare", followers: "30k", engagement: "3.9%" },
+    { name: "Bright Tutors", platform: "Facebook", industry: "Education", followers: "18k", engagement: "4.2%" },
+    { name: "FreshMart", platform: "Facebook", industry: "Grocery", followers: "28k", engagement: "3.5%" },
+  ];
+
+  return (
+    <section className="section bg-gradient-to-b from-slate-50 to-white">
+      <div className="container-pad">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="badge justify-center bg-gradient-to-r from-emerald-600 to-teal-600 text-white ring-0">
+            <Award size={16} /> Social Proof
+          </div>
+          <h2 className="h2 mt-5">Beautiful <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">client</span> cards</h2>
+          <p className="section-desc">Instagram and Facebook clients we manage with care.</p>
+        </div>
+
+        <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {clients.map((c, idx) => (
+            <div key={c.name} className="card card-hover overflow-hidden group">
+              <div className="h-40 overflow-hidden bg-gradient-to-br from-brand-100 to-fuchsia-100 relative">
+                <img 
+                  src={`https://images.unsplash.com/photo-${
+                    idx === 0 ? '1460925895917-afdab827c52f' : 
+                    idx === 1 ? '1504674900247-0877df9cc836' : 
+                    idx === 2 ? '1505740420928-5e560c06d30e' : 
+                    idx === 3 ? '1551076805-e1869033e561' : 
+                    idx === 4 ? '1503676260728-1c00da094a0b' : 
+                    '1542838132-92c53300491e'
+                  }?w=600&q=80`}
+                  alt={`${c.name} ${c.platform} marketing campaign`}
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              </div>
+              <div className="p-6 border-b border-slate-100 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="h-11 w-11 rounded-xl bg-slate-50 ring-1 ring-slate-200 grid place-items-center">
+                    {c.platform === "Instagram" ? (
+                      <Instagram size={18} className="text-pink-600" />
+                    ) : (
+                      <Facebook size={18} className="text-blue-600" />
+                    )}
+                  </div>
+                  <div>
+                    <div className="text-xs text-slate-500">{c.industry}</div>
+                    <div className="font-semibold text-ink-900">{c.name}</div>
+                  </div>
+                </div>
+
+                <div className="text-right">
+                  <div className="text-xs text-slate-500">Followers</div>
+                  <div className="text-lg font-semibold text-ink-900">{c.followers}</div>
+                </div>
+              </div>
+
+              <div className="p-6 grid grid-cols-2 gap-3">
+                <div className="rounded-xl bg-slate-50 p-4 text-center">
+                  <div className="text-xs text-slate-500">Engagement</div>
+                  <div className="text-lg font-semibold text-ink-900">{c.engagement}</div>
+                </div>
+                <div className="rounded-xl bg-slate-50 p-4 text-center">
+                  <div className="text-xs text-slate-500">Platform</div>
+                  <div className="text-lg font-semibold text-ink-900">{c.platform}</div>
+                </div>
+              </div>
+
+              <div className="px-6 pb-6 flex items-center justify-between">
+                <a className="text-sm font-semibold text-brand-700 hover:text-brand-800 inline-flex items-center gap-2" href="#cases">
+                  View Case <ArrowRight size={16} />
+                </a>
+                <div className="text-xs text-slate-500 inline-flex items-center gap-2">
+                  <Award size={14} className="text-amber-500" /> Top Performer
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
     </section>
+  );
+};
+
+/* -----------------------------
+   Features
+------------------------------ */
+const Features: FC = () => {
+  const features = [
+    { icon: <Zap size={18} className="text-amber-600" />, title: "Fast Results", description: "See measurable improvements within 30 days." },
+    { icon: <Shield size={18} className="text-emerald-600" />, title: "Data Security", description: "Enterprise-grade security for your business data." },
+    { icon: <Clock size={18} className="text-sky-600" />, title: "24/7 Support", description: "Support aligned to Indian time zones." },
+    { icon: <Award size={18} className="text-fuchsia-600" />, title: "Certified Experts", description: "Google and Meta certified professionals." },
+  ];
+
+  return (
+    <section className="section bg-white">
+      <div className="container-pad">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="badge justify-center">Why Choose Us</div>
+          <h2 className="h2 mt-5">
+            Built for <span className="text-brand-700">Indian Market</span> Success
+          </h2>
+          <p className="section-desc">
+            Strategy + creative + performance—made simple, consistent, and premium.
+          </p>
+        </div>
+
+        <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((f) => (
+            <div key={f.title} className="card card-hover card-pad text-center">
+              <div className="mx-auto h-12 w-12 rounded-xl bg-slate-50 ring-1 ring-slate-200 grid place-items-center">
+                {f.icon}
+              </div>
+              <div className="mt-4 text-lg font-semibold text-ink-900">{f.title}</div>
+              <p className="mt-2 text-slate-600 text-sm">{f.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* -----------------------------
+   Testimonials
+------------------------------ */
+const Testimonials: FC = () => {
+  const testimonials = [
+    {
+      name: "Rahul Sharma",
+      role: "CEO",
+      company: "Urban Style",
+      content: "TechMinds transformed our online presence. Our sales increased by 300% in 6 months!",
+      rating: 5,
+    },
+    {
+      name: "Priya Patel",
+      role: "Marketing Director",
+      company: "Desi Delights",
+      content: "Their local SEO strategy helped us dominate search results across 5 Indian cities.",
+      rating: 5,
+    },
+    {
+      name: "Amit Kumar",
+      role: "Founder",
+      company: "TechGadgets India",
+      content: "Best ROI on our marketing spend. Highly recommended for Indian startups.",
+      rating: 5,
+    },
+  ];
+
+  return (
+    <section className="section bg-gradient-to-b from-white via-brand-50/20 to-white">
+      <div className="container-pad">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="badge justify-center bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white ring-0">Client Testimonials</div>
+          <h2 className="h2 mt-5">
+            What our <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">clients</span> say
+          </h2>
+          <p className="section-desc">Real feedback from businesses across India.</p>
+        </div>
+
+        <div className="mt-10 grid md:grid-cols-3 gap-6">
+          {testimonials.map((t, idx) => (
+            <div key={t.name} className="card card-hover card-pad relative overflow-hidden border-l-4 border-brand-600">
+              <div className={`absolute -top-10 -right-10 h-32 w-32 rounded-full blur-2xl opacity-10 ${idx % 3 === 0 ? 'bg-brand-400' : idx % 3 === 1 ? 'bg-fuchsia-400' : 'bg-purple-400'}`} />
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="font-semibold text-ink-900">{t.name}</div>
+                  <div className="text-xs text-slate-500">
+                    {t.role}, {t.company}
+                  </div>
+                </div>
+                <div className="flex items-center gap-1">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <Star key={i} size={16} className="text-amber-500 fill-amber-500" />
+                  ))}
+                </div>
+              </div>
+
+              <p className="mt-4 text-slate-700 italic">&quot;{t.content}&quot;</p>
+
+              <div className="mt-5 text-xs text-slate-500 inline-flex items-center gap-2">
+                <MessageCircle size={14} /> Verified Client
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* -----------------------------
+   FAQs
+------------------------------ */
+const FAQs: FC = () => {
+  const faqs = [
+    { q: "How soon can we start?", a: "We can start within 3–5 days after a quick call." },
+    { q: "Is there a long contract?", a: "No. Start monthly. Upgrade later when you see results." },
+    { q: "Do you share reports?", a: "Yes. A simple monthly report with leads, calls and reach." },
+    { q: "Can you help with reviews?", a: "Yes. We guide you on getting honest reviews and reply to them." },
+    { q: "Is setup included?", a: "Yes. We set up pages, forms and tracking for you." },
+  ];
+
+  return (
+    <section className="section bg-white">
+      <div className="container-pad">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="badge justify-center">
+            <MessageCircle size={16} /> FAQs
+          </div>
+          <h2 className="h2 mt-5">Quick answers</h2>
+          <p className="section-desc">Short and clear. No complex words.</p>
+        </div>
+
+        <div className="mt-10 grid md:grid-cols-2 gap-6">
+          {faqs.map((f) => (
+            <div key={f.q} className="card card-hover card-pad">
+              <div className="font-semibold text-ink-900">{f.q}</div>
+              <p className="mt-2 text-slate-600 text-sm">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* -----------------------------
+   Strong CTA
+------------------------------ */
+const StrongCTA: FC = () => {
+  return (
+    <section className="section">
+      <div className="container-pad">
+        <div className="card overflow-hidden">
+          <div className="p-8 md:p-12 bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div>
+                <div className="text-3xl md:text-4xl font-semibold tracking-tight">
+                  Ready to grow your leads?
+                </div>
+                <p className="mt-3 opacity-90">
+                  Get a free plan for your business. Simple steps. Real leads. Clear results.
+                </p>
+
+                <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                  <a href="#contact" className="btn-secondary !bg-white !text-ink-900">
+                    Get Free Proposal <ArrowRight size={18} />
+                  </a>
+                  <a href="#contact" className="btn-ghost !text-white hover:!bg-white/10">
+                    Book Quick Call <Phone size={18} />
+                  </a>
+                </div>
+              </div>
+
+              <div className="rounded-2xl bg-white/10 p-6">
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div>
+                    <div className="text-2xl font-semibold">95%</div>
+                    <div className="text-xs opacity-80">Retention</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-semibold">50M+</div>
+                    <div className="text-xs opacity-80">Impressions</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-semibold">4.9/5</div>
+                    <div className="text-xs opacity-80">Ratings</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* -----------------------------
+   Contact
+------------------------------ */
+const Contact: FC = () => {
+  const [formData, setFormData] = useState<ContactFormData>({
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => setFormData((p) => ({ ...p, [e.target.name]: e.target.value }));
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // integrate your API here
+    console.log("Form submitted:", formData);
+  };
+
+  return (
+    <section id="contact" className="section bg-gradient-to-br from-slate-50 via-brand-50/30 to-fuchsia-50/30 relative overflow-hidden">
+      <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-brand-300 blur-3xl opacity-20" />
+      <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-fuchsia-300 blur-3xl opacity-20" />
+      <div className="container-pad relative">
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <div className="badge bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white ring-0">
+              <Send size={16} /> Get in touch
+            </div>
+            <h2 className="h2 mt-5">
+              Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">grow</span> your business?
+            </h2>
+            <p className="section-desc">
+              Contact us for a free consultation. We&apos;ll share a customized plan for your business.
+            </p>
+
+            <div className="mt-8 space-y-4">
+              <InfoRow icon={<Phone size={18} />} title="Call Us" value="+91 98765 43210" />
+              <InfoRow icon={<Mail size={18} />} title="Email Us" value="info@techmindsolutions.com" />
+              <InfoRow icon={<MapPin size={18} />} title="Our Offices" value="Delhi • Mumbai • Bangalore • Hyderabad" />
+            </div>
+          </div>
+
+          <div className="card card-pad shadow-2xl border-t-4 border-brand-600">
+            <div className="text-2xl font-semibold text-ink-900">Get Free Consultation</div>
+
+            <form onSubmit={handleSubmit} className="mt-6 space-y-5">
+              <div className="grid md:grid-cols-2 gap-4">
+                <Field label="Full Name *">
+                  <input
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300"
+                    placeholder="Enter your name"
+                  />
+                </Field>
+
+                <Field label="Email Address *">
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300"
+                    placeholder="Enter your email"
+                  />
+                </Field>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <Field label="Phone Number *">
+                  <input
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300"
+                    placeholder="+91 98765 43210"
+                  />
+                </Field>
+
+                <Field label="Service Interested In *">
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300 bg-white"
+                  >
+                    <option value="">Select a service</option>
+                    <option value="social-media">Social Media Management</option>
+                    <option value="local-seo">Local SEO & Google Maps</option>
+                    <option value="lead-ads">Lead Ads (Meta & Google)</option>
+                    <option value="all">All Services</option>
+                  </select>
+                </Field>
+              </div>
+
+              <Field label="Your Message">
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={4}
+                  className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300"
+                  placeholder="Tell us about your business goals..."
+                />
+              </Field>
+
+              <button className="btn-primary w-full" type="submit">
+                Get Free Proposal <ArrowRight size={18} />
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Field: FC<{ label: string; children: ReactNode }> = ({ label, children }) => (
+  <label className="block">
+    <div className="text-sm font-semibold text-slate-700 mb-2">{label}</div>
+    {children}
+  </label>
+);
+
+const InfoRow: FC<{ icon: ReactNode; title: string; value: string }> = ({ icon, title, value }) => (
+  <div className="flex items-center gap-4">
+    <div className="h-11 w-11 rounded-xl bg-brand-50 ring-1 ring-brand-100 text-brand-700 grid place-items-center">
+      {icon}
+    </div>
+    <div>
+      <div className="font-semibold text-ink-900">{title}</div>
+      <div className="text-slate-600 text-sm">{value}</div>
+    </div>
+  </div>
+);
+
+/* -----------------------------
+   Footer
+------------------------------ */
+const Footer: FC = () => {
+  const quickLinks = [
+    { name: "Home", href: "#top" },
+    { name: "Services", href: "#services" },
+    { name: "Case Studies", href: "#cases" },
+    { name: "Blog", href: "#blog" },
+    { name: "Contact", href: "#contact" },
+  ];
+
+  const services = [
+    { name: "Social Media Management", href: "#services" },
+    { name: "Local SEO & Google Maps", href: "#services" },
+    { name: "Lead Ads (Meta & Google)", href: "#services" },
+  ];
+
+  const indianCities = ["Delhi NCR", "Mumbai", "Bangalore", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"];
+
+  const socialIcons = [
+    { icon: Facebook, href: "#" },
+    { icon: Instagram, href: "#" },
+    { icon: Twitter, href: "#" },
+    { icon: Linkedin, href: "#" },
+    { icon: Youtube, href: "#" },
+  ];
+
+  return (
+    <footer className="bg-ink-900 text-white">
+      <div className="container-pad py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-10 rounded-xl bg-brand-600 text-white grid place-items-center font-bold">
+                TM
+              </div>
+              <div>
+                <div className="text-lg font-semibold">TechMinds</div>
+                <div className="text-xs text-white/70">Digital Solutions</div>
+              </div>
+            </div>
+
+            <p className="mt-5 text-white/70 text-sm leading-relaxed">
+              Digital marketing agency helping Indian businesses grow through clean creative,
+              local SEO, and performance campaigns.
+            </p>
+
+            <div className="mt-6 flex items-center gap-3">
+              {socialIcons.map(({ icon: Icon, href }) => (
+                <a
+                  key={Icon.name}
+                  href={href}
+                  className="h-10 w-10 rounded-full bg-white/10 hover:bg-brand-600 grid place-items-center transition"
+                  aria-label={Icon.name}
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <div className="text-lg font-semibold">Quick Links</div>
+            <ul className="mt-5 space-y-3 text-sm text-white/70">
+              {quickLinks.map((l) => (
+                <li key={l.name}>
+                  <a href={l.href} className="hover:text-white transition inline-flex items-center gap-2">
+                    <ArrowRight size={14} /> {l.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <div className="text-lg font-semibold">Our Services</div>
+            <ul className="mt-5 space-y-3 text-sm text-white/70">
+              {services.map((s) => (
+                <li key={s.name}>
+                  <a href={s.href} className="hover:text-white transition">
+                    {s.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <div className="text-lg font-semibold">Stay Updated</div>
+            <p className="mt-4 text-sm text-white/70">
+              Subscribe for digital marketing tips and updates.
+            </p>
+
+            <form className="mt-4" onSubmit={(e) => e.preventDefault()}>
+              <div className="flex">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  className="w-full rounded-l-xl bg-white/10 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-brand-300"
+                  required
+                />
+                <button className="rounded-r-xl bg-brand-600 px-4 hover:bg-brand-700 transition" aria-label="Subscribe">
+                  <Send size={18} />
+                </button>
+              </div>
+            </form>
+
+            <div className="mt-6 space-y-4 text-sm">
+              <div className="flex items-center gap-3 text-white/80">
+                <Phone size={16} className="text-brand-300" /> +91 98765 43210
+              </div>
+              <div className="flex items-center gap-3 text-white/80">
+                <Mail size={16} className="text-brand-300" /> info@techmindsolutions.com
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <div className="text-center font-semibold">Serving Across India</div>
+          <div className="mt-5 flex flex-wrap justify-center gap-3">
+            {indianCities.map((city) => (
+              <span key={city} className="rounded-full bg-white/10 px-4 py-2 text-xs text-white/80">
+                {city}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-black/30 py-6">
+        <div className="container-pad flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/70">
+          <div>© {new Date().getFullYear()} TechMinds Solutions. All rights reserved.</div>
+          <div className="flex flex-wrap gap-5">
+            <a href="#" className="hover:text-white transition">Privacy</a>
+            <a href="#" className="hover:text-white transition">Terms</a>
+            <a href="#" className="hover:text-white transition">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 };
