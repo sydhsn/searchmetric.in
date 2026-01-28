@@ -12,10 +12,10 @@
     </linearGradient>
   </defs>
   <text x="28" y="38" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="32" font-weight="bold" fill="url(#text)">
-    TechMinds
+    SearchMetric
   </text>
   <text x="155" y="52" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#F3F4F6" letter-spacing="0.04em">
-    Solution
+    .in
   </text>
   <!-- Digital accent: clean dot and square -->
   <circle cx="128" cy="24" r="5" fill="#EC4899"/>

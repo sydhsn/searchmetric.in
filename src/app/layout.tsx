@@ -9,6 +9,29 @@ export const metadata: Metadata = {
   title: seo.title,
   description: seo.description,
   keywords: seo.keywords,
+  openGraph: {
+    title: seo.title,
+    description: seo.description,
+    url: "https://searchmetric.in/",
+    siteName: "SearchMetric.in",
+    images: [
+      {
+        url: "/techminds-logo.svg", // Update to new logo if renamed
+        width: 220,
+        height: 60,
+        alt: "SearchMetric.in Logo",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: seo.title,
+    description: seo.description,
+    site: "@searchmetricin",
+    images: ["/techminds-logo.svg"],
+  },
 };
 
 export default function RootLayout({

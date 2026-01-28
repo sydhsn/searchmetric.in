@@ -13,8 +13,8 @@ const Header: FC = () => {
   const servicesSubmenu = useMemo(
     () => [
       { name: "Social Media Management", href: "#services" },
-      { name: "Local SEO & Google Maps", href: "#services" },
-      { name: "Lead Ads (Meta & Google)", href: "#services" },
+      { name: "Local SEO & Google Maps Optimization", href: "#services" },
+      { name: "Lead Ads (Instagram, Facebook & Google)", href: "#services" },
     ],
     []
   );

@@ -1,21 +1,21 @@
 export const seo = {
-  title: "TechMinds Digital Solutions - Social Media Marketing & Local SEO",
-  description: "Professional social media, local SEO, lead ads, and content writing for Indian businesses. Instagram & Facebook growth, Google Maps ranking, and SEO blogs that convert.",
-  keywords: "social media marketing, local SEO, digital marketing, lead ads, Instagram marketing, Facebook marketing, content writer, blog writer, SEO blogs, India, business growth, online presence, social media management"
+  title: "SearchMetric.in - Social Media, Local SEO & Lead Ads",
+  description: "SearchMetric.in offers expert social media management, local SEO (Google Maps optimization), and lead ads for Instagram, Facebook, and Google. Grow your business online with proven digital strategies.",
+  keywords: "searchmetric, social media management, local SEO, google maps optimization, lead ads, Instagram ads, Facebook ads, Google ads, digital marketing, business growth, India, online presence, SEO services"
 };
 
 export const siteCopy = {
   hero: {
-    headline: "Transform Your Business with Expert Digital Marketing",
-    subheadline: "Professional social media management, local SEO, and digital strategies tailored for Indian businesses",
+    headline: "Accelerate Your Growth with SearchMetric.in",
+    subheadline: "Social media management, local SEO, and lead ads for Indian businesses. Get found, get leads, get results.",
     cta: "Get Free Consultation"
   },
   services: {
-    title: "Our Digital Marketing Services",
-    subtitle: "Comprehensive solutions to grow your business online"
+    title: "Our Services",
+    subtitle: "Social Media, Local SEO, Lead Ads"
   },
   about: {
-    title: "Why Choose TechMinds?",
-    description: "We specialize in helping Indian businesses succeed in the digital landscape with proven strategies and expert execution."
+    title: "Why Choose SearchMetric?",
+    description: "SearchMetric.in specializes in helping Indian businesses succeed online with expert social media, local SEO, and lead generation strategies."
   }
 };
