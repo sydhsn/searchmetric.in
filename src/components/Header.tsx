@@ -46,7 +46,7 @@ const Header: FC = () => {
               <Phone size={14} className="opacity-90" /> +91 98765 43210
             </span>
             <span className="hidden md:inline-flex items-center gap-2">
-              <Mail size={14} className="opacity-90" /> info@techmindsolutions.com
+              <Mail size={14} className="opacity-90" /> info@searchmetric.in
             </span>
           </div>
 
@@ -74,13 +74,13 @@ const Header: FC = () => {
             {/* Brand */}
             <a href="#top" className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-xl bg-brand-600 text-white grid place-items-center font-bold">
-                TM
+                SM
               </div>
               <div className="leading-tight">
                 <div className="text-base md:text-lg font-semibold text-ink-900">
-                  TechMinds
+                  SearchMetric
                 </div>
-                <div className="text-xs text-slate-500">Digital Solutions</div>
+                <div className="text-xs text-slate-500">Digital Growth</div>
               </div>
             </a>
 

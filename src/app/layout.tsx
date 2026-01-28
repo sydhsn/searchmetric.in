@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "SearchMetric.in",
     images: [
       {
-        url: "/techminds-logo.svg", // Update to new logo if renamed
+        url: "/techminds-logo.svg", // Should be updated to /searchmetric-logo.svg if logo file is renamed
         width: 220,
         height: 60,
         alt: "SearchMetric.in Logo",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: seo.title,
     description: seo.description,
     site: "@searchmetricin",
-    images: ["/techminds-logo.svg"],
+    images: ["/techminds-logo.svg"], // Should be updated to /searchmetric-logo.svg if logo file is renamed
   },
 };
 

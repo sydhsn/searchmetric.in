@@ -1710,11 +1710,11 @@ const Footer: FC = () => {
           <div>
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-xl bg-brand-600 text-white grid place-items-center font-bold">
-                TM
+                SM
               </div>
               <div>
-                <div className="text-lg font-semibold">TechMinds</div>
-                <div className="text-xs text-white/70">Digital Solutions</div>
+                <div className="text-lg font-semibold">SearchMetric</div>
+                <div className="text-xs text-white/70">Digital Growth</div>
               </div>
             </div>
 
@@ -1788,7 +1788,7 @@ const Footer: FC = () => {
                 <Phone size={16} className="text-brand-300" /> +91 98765 43210
               </div>
               <div className="flex items-center gap-3 text-white/80">
-                <Mail size={16} className="text-brand-300" /> info@techmindsolutions.com
+                <Mail size={16} className="text-brand-300" /> info@searchmetric.in
               </div>
             </div>
           </div>
@@ -1808,7 +1808,7 @@ const Footer: FC = () => {
 
       <div className="bg-black/30 py-6">
         <div className="container-pad flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/70">
-          <div>© {new Date().getFullYear()} TechMinds Solutions. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} SearchMetric.in. All rights reserved.</div>
           <div className="flex flex-wrap gap-5">
             <a href="#" className="hover:text-white transition">Privacy</a>
             <a href="#" className="hover:text-white transition">Terms</a>
