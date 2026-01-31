@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { seo } from "@/content/siteCopy";
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
@@ -40,8 +43,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-     <html lang="en">
-      <body className="bg-white text-slate-900 antialiased">{children}</body>
+    <html lang="en">
+      <body className="bg-white text-slate-900 antialiased">
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

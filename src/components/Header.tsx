@@ -12,20 +12,19 @@ const Header: FC = () => {
 
   const servicesSubmenu = useMemo(
     () => [
-      { name: "Social Media Management", href: "#services" },
-      { name: "Local SEO & Google Maps Optimization", href: "#services" },
-      { name: "Lead Ads (Instagram, Facebook & Google)", href: "#services" },
+      { name: "Social Media Management", href: "/services/social-media-management" },
+      { name: "Local SEO & Google Map Optimization", href: "/services/local-seo" },
+      { name: "Lead Ads", href: "/services/lead-ads" },
     ],
     []
   );
 
   const navItems: NavItem[] = useMemo(
     () => [
-      { name: "Home", href: "#top" },
-      { name: "Services", href: "#services", submenu: servicesSubmenu },
-      { name: "Case Studies", href: "#cases" },
-      { name: "Blog", href: "#blog" },
-      { name: "Contact", href: "#contact" },
+      { name: "Home", href: "/" },
+      { name: "Services", href: "/services", submenu: servicesSubmenu },
+      { name: "About", href: "/about" },
+      { name: "Contact", href: "/contact" },
     ],
     [servicesSubmenu]
   );
@@ -54,7 +53,7 @@ const Header: FC = () => {
             <span className="inline-flex items-center gap-2 opacity-90">
               <MapPin size={14} /> Delhi • Mumbai • Bangalore
             </span>
-            <a className="btn-secondary !py-2 !px-4" href="#contact">
+            <a className="btn-secondary !py-2 !px-4" href="/contact">
               Free Audit <ArrowRight size={16} />
             </a>
           </div>
@@ -72,7 +71,7 @@ const Header: FC = () => {
             ].join(" ")}
           >
             {/* Brand */}
-            <a href="#top" className="flex items-center gap-3">
+            <a href="/" className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-xl bg-brand-600 text-white grid place-items-center font-bold">
                 SM
               </div>
@@ -116,7 +115,7 @@ const Header: FC = () => {
                 </div>
               ))}
 
-              <a href="#contact" className="btn-primary">
+              <a href="/contact" className="btn-primary">
                 Get Free Proposal <ArrowRight size={18} />
               </a>
             </div>
@@ -163,7 +162,7 @@ const Header: FC = () => {
                 ))}
               </div>
 
-              <a href="#contact" className="btn-primary w-full mt-4">
+              <a href="/contact" className="btn-primary w-full mt-4">
                 Get Free Proposal <ArrowRight size={18} />
               </a>
             </div>

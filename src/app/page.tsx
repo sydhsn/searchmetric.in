@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -48,7 +49,6 @@ import Header from "@/components/Header";
 export default function HomePage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main>
         <Hero />
         <Services />
@@ -68,7 +68,6 @@ export default function HomePage() {
         <StrongCTA />
         <Contact />
       </main>
-      <Footer />
     </div>
   );
 }
@@ -131,13 +130,13 @@ const Hero: FC = () => {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <a href="#contact" className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white font-semibold rounded-xl shadow-2xl hover:shadow-brand-600/50 transition-all overflow-hidden">
+              <a href="/contact" className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white font-semibold rounded-xl shadow-2xl hover:shadow-brand-600/50 transition-all overflow-hidden">
                 <span className="relative z-10 flex items-center gap-2">
                   Get Free Proposal <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-brand-700 to-fuchsia-700 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
-              <a href="#cases" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all">
+              <a href="/case-studies" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all">
                 View Case Studies <TrendingUp size={18} />
               </a>
             </div>
@@ -261,12 +260,12 @@ const ServiceCard: FC<{
 
         <div className="mt-6 flex items-center justify-between">
           <a
-            href="#contact"
+            href="/contact"
             className="text-sm font-semibold text-brand-700 hover:text-brand-800 inline-flex items-center gap-2"
           >
             Learn more <ArrowRight size={16} />
           </a>
-          <a href="#contact" className="btn-secondary !py-2 !px-4">
+          <a href="/contact" className="btn-secondary !py-2 !px-4">
             Get quote
           </a>
         </div>
@@ -414,7 +413,7 @@ const PlatformMarketing: FC = () => {
                 </ul>
 
                 <div className="mt-6">
-                  <a href="#contact" className="btn-primary">
+                  <a href="/contact" className="btn-primary">
                     See packages <ArrowRight size={18} />
                   </a>
                 </div>
@@ -479,7 +478,7 @@ const ContentServices: FC = () => {
               </ul>
 
               <div className="mt-7">
-                <a href="#contact" className="btn-primary">
+                <a href="/contact" className="btn-primary">
                   Request Samples <ArrowRight size={18} />
                 </a>
               </div>
@@ -601,7 +600,7 @@ const ChallengesSection: FC = () => {
               </div>
               <h3 className="text-2xl font-bold mb-2">We&apos;ve got solutions</h3>
               <p className="text-white/90 mb-6">Let&apos;s turn these challenges into opportunities for growth</p>
-              <a href="#contact" className="btn !bg-white !text-emerald-700 hover:!bg-slate-100 inline-flex items-center gap-2 shadow-xl">
+              <a href="/contact" className="btn !bg-white !text-emerald-700 hover:!bg-slate-100 inline-flex items-center gap-2 shadow-xl">
                 Get Your Free Growth Plan <ArrowRight size={18} />
               </a>
             </div>
@@ -803,7 +802,7 @@ const SpecialCustomizedServices: FC = () => {
 
         {/* CTA Button */}
         <div className="mt-12 text-center">
-          <a href="#contact" className="btn-primary inline-flex items-center gap-2">
+          <a href="/contact" className="btn-primary inline-flex items-center gap-2">
             Get Started Now <ArrowRight size={18} />
           </a>
         </div>
@@ -1167,7 +1166,7 @@ const GrowthGraph: FC = () => {
         <div className="mt-12 text-center card card-pad bg-gradient-to-r from-slate-900 to-slate-800 text-white">
           <h3 className="text-2xl font-bold mb-2">Ready to see similar results?</h3>
           <p className="text-slate-300 mb-6">Join 500+ businesses growing with our proven strategies</p>
-          <a href="#contact" className="btn-primary inline-flex items-center gap-2 !bg-white !text-slate-900 hover:!bg-slate-100">
+          <a href="/contact" className="btn-primary inline-flex items-center gap-2 !bg-white !text-slate-900 hover:!bg-slate-100">
             Start Your Growth Journey <ArrowRight size={18} />
           </a>
         </div>
@@ -1253,7 +1252,7 @@ const SocialClients: FC = () => {
               </div>
 
               <div className="px-6 pb-6 flex items-center justify-between">
-                <a className="text-sm font-semibold text-brand-700 hover:text-brand-800 inline-flex items-center gap-2" href="#cases">
+                <a className="text-sm font-semibold text-brand-700 hover:text-brand-800 inline-flex items-center gap-2" href="/case-studies">
                   View Case <ArrowRight size={16} />
                 </a>
                 <div className="text-xs text-slate-500 inline-flex items-center gap-2">
@@ -1465,7 +1464,7 @@ const FAQs: FC = () => {
           <h3 className="text-2xl font-bold mb-2">Still have questions?</h3>
           <p className="text-white/90 mb-6 text-sm">Our team is here to help. Get in touch for a friendly chat.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="#contact" className="btn !bg-white !text-slate-900 hover:!bg-slate-100 inline-flex items-center gap-2">
+            <a href="/contact" className="btn !bg-white !text-slate-900 hover:!bg-slate-100 inline-flex items-center gap-2">
               <MessageCircle size={18} /> Chat with us
             </a>
             <a href="tel:+919876543210" className="btn !bg-white/10 !text-white border border-white/20 hover:!bg-white/20 inline-flex items-center gap-2">
@@ -1497,10 +1496,10 @@ const StrongCTA: FC = () => {
                 </p>
 
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                  <a href="#contact" className="btn-secondary !bg-white !text-ink-900">
+                  <a href="/contact" className="btn-secondary !bg-white !text-ink-900">
                     Get Free Proposal <ArrowRight size={18} />
                   </a>
-                  <a href="#contact" className="btn-ghost !text-white hover:!bg-white/10">
+                  <a href="/contact" className="btn-ghost !text-white hover:!bg-white/10">
                     Book Quick Call <Phone size={18} />
                   </a>
                 </div>
@@ -1675,147 +1674,3 @@ const InfoRow: FC<{ icon: ReactNode; title: string; value: string }> = ({ icon, 
   </div>
 );
 
-/* -----------------------------
-   Footer
------------------------------- */
-const Footer: FC = () => {
-  const quickLinks = [
-    { name: "Home", href: "#top" },
-    { name: "Services", href: "#services" },
-    { name: "Case Studies", href: "#cases" },
-    { name: "Blog", href: "#blog" },
-    { name: "Contact", href: "#contact" },
-  ];
-
-  const services = [
-    { name: "Social Media Management", href: "#services" },
-    { name: "Local SEO & Google Maps", href: "#services" },
-    { name: "Lead Ads (Meta & Google)", href: "#services" },
-  ];
-
-  const indianCities = ["Delhi NCR", "Mumbai", "Bangalore", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"];
-
-  const socialIcons = [
-    { icon: Facebook, href: "#" },
-    { icon: Instagram, href: "#" },
-    { icon: Twitter, href: "#" },
-    { icon: Linkedin, href: "#" },
-    { icon: Youtube, href: "#" },
-  ];
-
-  return (
-    <footer className="bg-ink-900 text-white">
-      <div className="container-pad py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div>
-            <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-brand-600 text-white grid place-items-center font-bold">
-                SM
-              </div>
-              <div>
-                <div className="text-lg font-semibold">SearchMetric</div>
-                <div className="text-xs text-white/70">Digital Growth</div>
-              </div>
-            </div>
-
-            <p className="mt-5 text-white/70 text-sm leading-relaxed">
-              Digital marketing agency helping Indian businesses grow through clean creative,
-              local SEO, and performance campaigns.
-            </p>
-
-            <div className="mt-6 flex items-center gap-3">
-              {socialIcons.map(({ icon: Icon, href }) => (
-                <a
-                  key={Icon.name}
-                  href={href}
-                  className="h-10 w-10 rounded-full bg-white/10 hover:bg-brand-600 grid place-items-center transition"
-                  aria-label={Icon.name}
-                >
-                  <Icon size={18} />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <div className="text-lg font-semibold">Quick Links</div>
-            <ul className="mt-5 space-y-3 text-sm text-white/70">
-              {quickLinks.map((l) => (
-                <li key={l.name}>
-                  <a href={l.href} className="hover:text-white transition inline-flex items-center gap-2">
-                    <ArrowRight size={14} /> {l.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <div className="text-lg font-semibold">Our Services</div>
-            <ul className="mt-5 space-y-3 text-sm text-white/70">
-              {services.map((s) => (
-                <li key={s.name}>
-                  <a href={s.href} className="hover:text-white transition">
-                    {s.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <div className="text-lg font-semibold">Stay Updated</div>
-            <p className="mt-4 text-sm text-white/70">
-              Subscribe for digital marketing tips and updates.
-            </p>
-
-            <form className="mt-4" onSubmit={(e) => e.preventDefault()}>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="w-full rounded-l-xl bg-white/10 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-brand-300"
-                  required
-                />
-                <button className="rounded-r-xl bg-brand-600 px-4 hover:bg-brand-700 transition" aria-label="Subscribe">
-                  <Send size={18} />
-                </button>
-              </div>
-            </form>
-
-            <div className="mt-6 space-y-4 text-sm">
-              <div className="flex items-center gap-3 text-white/80">
-                <Phone size={16} className="text-brand-300" /> +91 98765 43210
-              </div>
-              <div className="flex items-center gap-3 text-white/80">
-                <Mail size={16} className="text-brand-300" /> info@searchmetric.in
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 pt-8 border-t border-white/10">
-          <div className="text-center font-semibold">Serving Across India</div>
-          <div className="mt-5 flex flex-wrap justify-center gap-3">
-            {indianCities.map((city) => (
-              <span key={city} className="rounded-full bg-white/10 px-4 py-2 text-xs text-white/80">
-                {city}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-black/30 py-6">
-        <div className="container-pad flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/70">
-          <div>© {new Date().getFullYear()} SearchMetric.in. All rights reserved.</div>
-          <div className="flex flex-wrap gap-5">
-            <a href="#" className="hover:text-white transition">Privacy</a>
-            <a href="#" className="hover:text-white transition">Terms</a>
-            <a href="#" className="hover:text-white transition">Sitemap</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-};
