@@ -922,14 +922,14 @@ const Comparison: FC = () => {
       <div className="container-pad">
         <div className="text-center max-w-3xl mx-auto">
           <div className="badge justify-center bg-brand-600 text-white ring-0">Why Us</div>
-          <h2 className="h2 mt-5">TechMinds <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">vs</span> Others</h2>
+          <h2 className="h2 mt-5">SearchMetric <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">vs</span> Others</h2>
           <p className="section-desc">A quick comparison.</p>
         </div>
 
         <div className="mt-10 card overflow-hidden">
           <div className="grid grid-cols-4 bg-slate-50 text-sm font-semibold text-slate-700 border-b border-slate-200">
             <div className="p-4">Feature</div>
-            <div className="p-4">TechMinds</div>
+            <div className="p-4">SearchMetric</div>
             <div className="p-4">Other Agencies</div>
             <div className="p-4">DIY</div>
           </div>
@@ -980,15 +980,15 @@ const GrowthGraph: FC = () => {
       <div className="container-pad relative">
         <div className="text-center max-w-3xl mx-auto">
           <div className="badge justify-center bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white ring-0">
-            <TrendingUp size={16} /> Real Client Results
+            Social Proof
           </div>
           <h2 className="h2 mt-5">
-            Actual client <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">lead growth</span> over 6 months
+            Featured Clients
           </h2>
-          <p className="section-desc">Real campaign data from 3 active clients across different industries.</p>
+          <p className="section-desc">Instagram and Facebook clients we manage with care.</p>
         </div>
 
-        {/* Client Cards */}
+        {/* Social Proof Section */}
         <div className="mt-10 grid md:grid-cols-3 gap-6">
           {clients.map((client, idx) => {
             const firstMonth = clientData[0][client.key as keyof typeof clientData[0]] as number;
@@ -1196,7 +1196,7 @@ const SocialClients: FC = () => {
           <div className="badge justify-center bg-gradient-to-r from-emerald-600 to-teal-600 text-white ring-0">
             <Award size={16} /> Social Proof
           </div>
-          <h2 className="h2 mt-5">Beautiful <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">client</span> cards</h2>
+            <h2 className="h2 mt-5">Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">Clients</span></h2>
           <p className="section-desc">Instagram and Facebook clients we manage with care.</p>
         </div>
 
@@ -1283,13 +1283,13 @@ const Features: FC = () => {
     <section className="section bg-white">
       <div className="container-pad">
         <div className="text-center max-w-3xl mx-auto">
-          <div className="badge justify-center">Why Choose Us</div>
-          <h2 className="h2 mt-5">
-            Built for <span className="text-brand-700">Indian Market</span> Success
-          </h2>
-          <p className="section-desc">
-            Strategy + creative + performance—made simple, consistent, and premium.
-          </p>
+            <div className="badge justify-center">Why Choose Us</div>
+            <h2 className="h2 mt-5">
+            Engineered for <span className="text-brand-700">Indian Business Growth</span>
+            </h2>
+            <p className="section-desc">
+            Proven strategies, creative excellence, and measurable results—tailored for ambitious Indian brands.
+            </p>
         </div>
 
         <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1317,7 +1317,7 @@ const Testimonials: FC = () => {
       name: "Rahul Sharma",
       role: "CEO",
       company: "Urban Style",
-      content: "TechMinds transformed our online presence. Our sales increased by 300% in 6 months!",
+      content: "SearchMetric transformed our online presence. Our sales increased by 300% in 6 months!",
       rating: 5,
     },
     {
@@ -1571,7 +1571,7 @@ const Contact: FC = () => {
 
             <div className="mt-8 space-y-4">
               <InfoRow icon={<Phone size={18} />} title="Call Us" value="+91 98765 43210" />
-              <InfoRow icon={<Mail size={18} />} title="Email Us" value="info@techmindsolutions.com" />
+              <InfoRow icon={<Mail size={18} />} title="Email Us" value="info@searchmetric.in" />
               <InfoRow icon={<MapPin size={18} />} title="Our Offices" value="Delhi • Mumbai • Bangalore • Hyderabad" />
             </div>
           </div>
