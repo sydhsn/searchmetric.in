@@ -1,14 +1,12 @@
-
 "use client";
 
 import Image from "next/image";
-import { FC, ReactNode, useEffect, useMemo, useState } from "react";
+import { FC, ReactNode, useState } from "react";
 import {
   ArrowRight,
   Award,
   BookOpen,
   CheckCircle,
-  ChevronDown,
   Clock,
   Edit3,
   Facebook,
@@ -16,10 +14,8 @@ import {
   Globe,
   Heart,
   Instagram,
-  Linkedin,
   Mail,
   MapPin,
-  Menu,
   MessageCircle,
   Package,
   Phone,
@@ -31,44 +27,77 @@ import {
   Star,
   Target,
   TrendingUp,
-  Twitter,
   Users,
   X,
-  Youtube,
   Zap,
 } from "lucide-react";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
+import Head from "next/head";
+import type { ContactFormData } from "../types/nav";
 
-// ...existing code...
-import type { NavItem, ContactFormData } from "../types/nav";
-import Header from "@/components/Header";
+/* -----------------------------
+   SEO Metadata Component
+------------------------------ */
+const SEOMetadata = () => (
+  <Head>
+    <title>SearchMetric - SEO & Social Media Marketing Agency for Indian Businesses</title>
+    <meta name="description" content="Grow your business with easy-to-understand SEO, digital marketing, and Instagram & Facebook strategies. Simple plans, clear results for Indian SMEs." />
+    <meta name="keywords" content="SEO India, Social Media Marketing, Digital Marketing Agency, Google Maps Ranking, Instagram Marketing, Facebook Ads India, Local SEO Services" />
+    <meta name="author" content="SearchMetric" />
+    <meta property="og:title" content="SearchMetric - SEO & Social Media Marketing Agency" />
+    <meta property="og:description" content="Premium digital marketing services for Indian businesses. Get more leads, calls, and online visibility." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://searchmetric.in" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SearchMetric - Digital Marketing Agency" />
+    <meta name="twitter:description" content="Transform your online presence with our proven SEO and social media strategies" />
+    <link rel="canonical" href="https://searchmetric.in" />
+  </Head>
+);
+
+/* -----------------------------
+   Skip to Content Link (Accessibility)
+------------------------------ */
+const SkipToContent = () => (
+  <a 
+    href="#main-content" 
+    className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:bg-black focus:text-white focus:p-4"
+    aria-label="Skip to main content"
+  >
+    Skip to main content
+  </a>
+);
 
 /* -----------------------------
    Page
 ------------------------------ */
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
-      <main>
-        <Hero />
-        <Services />
-        <PlatformMarketing />
-        <ContentServices />
-        <ChallengesSection />
-        <CompaniesWorkedWith />
-        <SpecialCustomizedServices />
-        <BenefitsForUser />
-        <Introductions />
-        <Comparison />
-        <GrowthGraph />
-        <SocialClients />
-        <Features />
-        <Testimonials />
-        <FAQs />
-        <StrongCTA />
-        <Contact />
-      </main>
-    </div>
+    <>
+      <SEOMetadata />
+      <SkipToContent />
+      <div className="min-h-screen">
+        <main id="main-content" tabIndex={-1}>
+          <Hero />
+          <Services />
+          <PlatformMarketing />
+          <ContentServices />
+          <ChallengesSection />
+          <CompaniesWorkedWith />
+          <SpecialCustomizedServices />
+          <BenefitsForUser />
+          <Introductions />
+          <Comparison />
+          <GrowthGraph />
+          <SocialClients />
+          <Features />
+          <Testimonials />
+          <FAQs />
+          <StrongCTA />
+          <Contact />
+        </main>
+      </div>
+    </>
   );
 }
 
@@ -130,13 +159,21 @@ const Hero: FC = () => {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <a href="/contact" className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white font-semibold rounded-xl shadow-2xl hover:shadow-brand-600/50 transition-all overflow-hidden">
+              <a 
+                href="/contact" 
+                className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white font-semibold rounded-xl shadow-2xl hover:shadow-brand-600/50 transition-all overflow-hidden"
+                aria-label="Get free marketing proposal for your business"
+              >
                 <span className="relative z-10 flex items-center gap-2">
                   Get Free Proposal <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-brand-700 to-fuchsia-700 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
-              <a href="/case-studies" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all">
+              <a 
+                href="/case-studies" 
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all"
+                aria-label="View our successful case studies"
+              >
                 View Case Studies <TrendingUp size={18} />
               </a>
             </div>
@@ -165,9 +202,12 @@ const Hero: FC = () => {
                 <div className="h-72 overflow-hidden relative">
                     <Image 
                       src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" 
-                      alt="Digital marketing analytics dashboard showing growth metrics" 
+                      alt="Digital marketing analytics dashboard showing growth metrics, leads, and SEO performance for Indian businesses"
                       fill
                       className="object-cover opacity-90"
+                      priority
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      loading="eager"
                     />
                   </div>
                 <div className="p-6 border-t border-white/10">
@@ -262,10 +302,15 @@ const ServiceCard: FC<{
           <a
             href="/contact"
             className="text-sm font-semibold text-brand-700 hover:text-brand-800 inline-flex items-center gap-2"
+            aria-label={`Learn more about ${title} service`}
           >
             Learn more <ArrowRight size={16} />
           </a>
-          <a href="/contact" className="btn-secondary !py-2 !px-4">
+          <a 
+            href="/contact" 
+            className="btn-secondary !py-2 !px-4"
+            aria-label={`Get quote for ${title} service`}
+          >
             Get quote
           </a>
         </div>
@@ -387,9 +432,11 @@ const PlatformMarketing: FC = () => {
               <div className="h-48 overflow-hidden relative">
                 <Image 
                   src={c.image} 
-                  alt={`${c.platform} social media marketing services`}
+                  alt={`${c.platform} social media marketing services showing successful campaigns`}
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="lazy"
                 />
               </div>
               <div className="p-6 border-b border-slate-100 flex items-center justify-between">
@@ -413,7 +460,11 @@ const PlatformMarketing: FC = () => {
                 </ul>
 
                 <div className="mt-6">
-                  <a href="/contact" className="btn-primary">
+                  <a 
+                    href="/contact" 
+                    className="btn-primary"
+                    aria-label={`View packages for ${c.platform} marketing`}
+                  >
                     See packages <ArrowRight size={18} />
                   </a>
                 </div>
@@ -478,7 +529,11 @@ const ContentServices: FC = () => {
               </ul>
 
               <div className="mt-7">
-                <a href="/contact" className="btn-primary">
+                <a 
+                  href="/contact" 
+                  className="btn-primary"
+                  aria-label="Request content writing samples"
+                >
                   Request Samples <ArrowRight size={18} />
                 </a>
               </div>
@@ -600,7 +655,11 @@ const ChallengesSection: FC = () => {
               </div>
               <h3 className="text-2xl font-bold mb-2">We&apos;ve got solutions</h3>
               <p className="text-white/90 mb-6">Let&apos;s turn these challenges into opportunities for growth</p>
-              <a href="/contact" className="btn !bg-white !text-emerald-700 hover:!bg-slate-100 inline-flex items-center gap-2 shadow-xl">
+              <a 
+                href="/contact" 
+                className="btn !bg-white !text-emerald-700 hover:!bg-slate-100 inline-flex items-center gap-2 shadow-xl"
+                aria-label="Get your free personalized growth plan"
+              >
                 Get Your Free Growth Plan <ArrowRight size={18} />
               </a>
             </div>
@@ -802,7 +861,11 @@ const SpecialCustomizedServices: FC = () => {
 
         {/* CTA Button */}
         <div className="mt-12 text-center">
-          <a href="/contact" className="btn-primary inline-flex items-center gap-2">
+          <a 
+            href="/contact" 
+            className="btn-primary inline-flex items-center gap-2"
+            aria-label="Get started with our digital marketing services"
+          >
             Get Started Now <ArrowRight size={18} />
           </a>
         </div>
@@ -1166,7 +1229,11 @@ const GrowthGraph: FC = () => {
         <div className="mt-12 text-center card card-pad bg-gradient-to-r from-slate-900 to-slate-800 text-white">
           <h3 className="text-2xl font-bold mb-2">Ready to see similar results?</h3>
           <p className="text-slate-300 mb-6">Join 500+ businesses growing with our proven strategies</p>
-          <a href="/contact" className="btn-primary inline-flex items-center gap-2 !bg-white !text-slate-900 hover:!bg-slate-100">
+          <a 
+            href="/contact" 
+            className="btn-primary inline-flex items-center gap-2 !bg-white !text-slate-900 hover:!bg-slate-100"
+            aria-label="Start your growth journey with our proven strategies"
+          >
             Start Your Growth Journey <ArrowRight size={18} />
           </a>
         </div>
@@ -1213,9 +1280,11 @@ const SocialClients: FC = () => {
                     idx === 4 ? '1503676260728-1c00da094a0b' : 
                     '1542838132-92c53300491e'
                   }?w=600&q=80`}
-                  alt={`${c.name} ${c.platform} marketing campaign`}
+                  alt={`${c.name} ${c.platform} marketing campaign showing success metrics and growth`}
                   fill
                   className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
@@ -1252,7 +1321,11 @@ const SocialClients: FC = () => {
               </div>
 
               <div className="px-6 pb-6 flex items-center justify-between">
-                <a className="text-sm font-semibold text-brand-700 hover:text-brand-800 inline-flex items-center gap-2" href="/case-studies">
+                <a 
+                  className="text-sm font-semibold text-brand-700 hover:text-brand-800 inline-flex items-center gap-2" 
+                  href="/case-studies"
+                  aria-label={`View case study for ${c.name}`}
+                >
                   View Case <ArrowRight size={16} />
                 </a>
                 <div className="text-xs text-slate-500 inline-flex items-center gap-2">
@@ -1464,10 +1537,18 @@ const FAQs: FC = () => {
           <h3 className="text-2xl font-bold mb-2">Still have questions?</h3>
           <p className="text-white/90 mb-6 text-sm">Our team is here to help. Get in touch for a friendly chat.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="/contact" className="btn !bg-white !text-slate-900 hover:!bg-slate-100 inline-flex items-center gap-2">
+            <a 
+              href="/contact" 
+              className="btn !bg-white !text-slate-900 hover:!bg-slate-100 inline-flex items-center gap-2"
+              aria-label="Chat with our marketing experts"
+            >
               <MessageCircle size={18} /> Chat with us
             </a>
-            <a href="tel:+919876543210" className="btn !bg-white/10 !text-white border border-white/20 hover:!bg-white/20 inline-flex items-center gap-2">
+            <a 
+              href="tel:+919876543210" 
+              className="btn !bg-white/10 !text-white border border-white/20 hover:!bg-white/20 inline-flex items-center gap-2"
+              aria-label="Call our office now"
+            >
               <Phone size={18} /> Call now
             </a>
           </div>
@@ -1496,10 +1577,18 @@ const StrongCTA: FC = () => {
                 </p>
 
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                  <a href="/contact" className="btn-secondary !bg-white !text-ink-900">
+                  <a 
+                    href="/contact" 
+                    className="btn-secondary !bg-white !text-ink-900"
+                    aria-label="Get free marketing proposal"
+                  >
                     Get Free Proposal <ArrowRight size={18} />
                   </a>
-                  <a href="/contact" className="btn-ghost !text-white hover:!bg-white/10">
+                  <a 
+                    href="/contact" 
+                    className="btn-ghost !text-white hover:!bg-white/10"
+                    aria-label="Book quick call with our team"
+                  >
                     Book Quick Call <Phone size={18} />
                   </a>
                 </div>
@@ -1549,6 +1638,21 @@ const Contact: FC = () => {
     e.preventDefault();
     // integrate your API here
     console.log("Form submitted:", formData);
+    // Add form submission logic
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert('Thank you! We will contact you soon.');
+      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Something went wrong. Please try again.');
+    });
   };
 
   return (
@@ -1588,6 +1692,7 @@ const Contact: FC = () => {
                     required
                     className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300"
                     placeholder="Enter your name"
+                    aria-label="Your full name"
                   />
                 </Field>
 
@@ -1600,6 +1705,7 @@ const Contact: FC = () => {
                     required
                     className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300"
                     placeholder="Enter your email"
+                    aria-label="Your email address"
                   />
                 </Field>
               </div>
@@ -1613,6 +1719,7 @@ const Contact: FC = () => {
                     required
                     className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300"
                     placeholder="+91 98765 43210"
+                    aria-label="Your phone number"
                   />
                 </Field>
 
@@ -1623,6 +1730,7 @@ const Contact: FC = () => {
                     onChange={handleChange}
                     required
                     className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300 bg-white"
+                    aria-label="Service you're interested in"
                   >
                     <option value="">Select a service</option>
                     <option value="social-media">Social Media Management</option>
@@ -1641,10 +1749,15 @@ const Contact: FC = () => {
                   rows={4}
                   className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300"
                   placeholder="Tell us about your business goals..."
+                  aria-label="Additional message about your business"
                 />
               </Field>
 
-              <button className="btn-primary w-full" type="submit">
+              <button 
+                className="btn-primary w-full" 
+                type="submit"
+                aria-label="Submit form to get free marketing proposal"
+              >
                 Get Free Proposal <ArrowRight size={18} />
               </button>
             </form>
@@ -1673,4 +1786,3 @@ const InfoRow: FC<{ icon: ReactNode; title: string; value: string }> = ({ icon, 
     </div>
   </div>
 );
-
