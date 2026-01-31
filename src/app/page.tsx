@@ -1,13 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { FC, ReactNode, useEffect, useMemo, useState } from "react";
+import { FC, ReactNode, useState } from "react";
 import {
   ArrowRight,
   Award,
   BookOpen,
   CheckCircle,
-  ChevronDown,
   Clock,
   Edit3,
   Facebook,
@@ -15,10 +14,8 @@ import {
   Globe,
   Heart,
   Instagram,
-  Linkedin,
   Mail,
   MapPin,
-  Menu,
   MessageCircle,
   Package,
   Phone,
@@ -30,46 +27,77 @@ import {
   Star,
   Target,
   TrendingUp,
-  Twitter,
   Users,
   X,
-  Youtube,
   Zap,
 } from "lucide-react";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
+import Head from "next/head";
+import type { ContactFormData } from "../types/nav";
 
-// ...existing code...
-import type { NavItem, ContactFormData } from "../types/nav";
-import Header from "@/components/Header";
+/* -----------------------------
+   SEO Metadata Component
+------------------------------ */
+const SEOMetadata = () => (
+  <Head>
+    <title>SearchMetric - SEO & Social Media Marketing Agency for Indian Businesses</title>
+    <meta name="description" content="Grow your business with easy-to-understand SEO, digital marketing, and Instagram & Facebook strategies. Simple plans, clear results for Indian SMEs." />
+    <meta name="keywords" content="SEO India, Social Media Marketing, Digital Marketing Agency, Google Maps Ranking, Instagram Marketing, Facebook Ads India, Local SEO Services" />
+    <meta name="author" content="SearchMetric" />
+    <meta property="og:title" content="SearchMetric - SEO & Social Media Marketing Agency" />
+    <meta property="og:description" content="Premium digital marketing services for Indian businesses. Get more leads, calls, and online visibility." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://searchmetric.in" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SearchMetric - Digital Marketing Agency" />
+    <meta name="twitter:description" content="Transform your online presence with our proven SEO and social media strategies" />
+    <link rel="canonical" href="https://searchmetric.in" />
+  </Head>
+);
+
+/* -----------------------------
+   Skip to Content Link (Accessibility)
+------------------------------ */
+const SkipToContent = () => (
+  <a 
+    href="#main-content" 
+    className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:bg-black focus:text-white focus:p-4"
+    aria-label="Skip to main content"
+  >
+    Skip to main content
+  </a>
+);
 
 /* -----------------------------
    Page
 ------------------------------ */
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <Hero />
-        <Services />
-        <PlatformMarketing />
-        <ContentServices />
-        <ChallengesSection />
-        <CompaniesWorkedWith />
-        <SpecialCustomizedServices />
-        <BenefitsForUser />
-        <Introductions />
-        <Comparison />
-        <GrowthGraph />
-        <SocialClients />
-        <Features />
-        <Testimonials />
-        <FAQs />
-        <StrongCTA />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <SEOMetadata />
+      <SkipToContent />
+      <div className="min-h-screen">
+        <main id="main-content" tabIndex={-1}>
+          <Hero />
+          <Services />
+          <PlatformMarketing />
+          <ContentServices />
+          <ChallengesSection />
+          <CompaniesWorkedWith />
+          <SpecialCustomizedServices />
+          <BenefitsForUser />
+          <Introductions />
+          <Comparison />
+          <GrowthGraph />
+          <SocialClients />
+          <Features />
+          <Testimonials />
+          <FAQs />
+          <StrongCTA />
+          <Contact />
+        </main>
+      </div>
+    </>
   );
 }
 
@@ -131,13 +159,21 @@ const Hero: FC = () => {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <a href="#contact" className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white font-semibold rounded-xl shadow-2xl hover:shadow-brand-600/50 transition-all overflow-hidden">
+              <a 
+                href="/contact" 
+                className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white font-semibold rounded-xl shadow-2xl hover:shadow-brand-600/50 transition-all overflow-hidden"
+                aria-label="Get free marketing proposal for your business"
+              >
                 <span className="relative z-10 flex items-center gap-2">
                   Get Free Proposal <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-brand-700 to-fuchsia-700 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
-              <a href="#cases" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all">
+              <a 
+                href="/case-studies" 
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all"
+                aria-label="View our successful case studies"
+              >
                 View Case Studies <TrendingUp size={18} />
               </a>
             </div>
@@ -166,9 +202,12 @@ const Hero: FC = () => {
                 <div className="h-72 overflow-hidden relative">
                     <Image 
                       src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" 
-                      alt="Digital marketing analytics dashboard showing growth metrics" 
+                      alt="Digital marketing analytics dashboard showing growth metrics, leads, and SEO performance for Indian businesses"
                       fill
                       className="object-cover opacity-90"
+                      priority
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      loading="eager"
                     />
                   </div>
                 <div className="p-6 border-t border-white/10">
@@ -261,12 +300,17 @@ const ServiceCard: FC<{
 
         <div className="mt-6 flex items-center justify-between">
           <a
-            href="#contact"
+            href="/contact"
             className="text-sm font-semibold text-brand-700 hover:text-brand-800 inline-flex items-center gap-2"
+            aria-label={`Learn more about ${title} service`}
           >
             Learn more <ArrowRight size={16} />
           </a>
-          <a href="#contact" className="btn-secondary !py-2 !px-4">
+          <a 
+            href="/contact" 
+            className="btn-secondary !py-2 !px-4"
+            aria-label={`Get quote for ${title} service`}
+          >
             Get quote
           </a>
         </div>
@@ -388,9 +432,11 @@ const PlatformMarketing: FC = () => {
               <div className="h-48 overflow-hidden relative">
                 <Image 
                   src={c.image} 
-                  alt={`${c.platform} social media marketing services`}
+                  alt={`${c.platform} social media marketing services showing successful campaigns`}
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="lazy"
                 />
               </div>
               <div className="p-6 border-b border-slate-100 flex items-center justify-between">
@@ -414,7 +460,11 @@ const PlatformMarketing: FC = () => {
                 </ul>
 
                 <div className="mt-6">
-                  <a href="#contact" className="btn-primary">
+                  <a 
+                    href="/contact" 
+                    className="btn-primary"
+                    aria-label={`View packages for ${c.platform} marketing`}
+                  >
                     See packages <ArrowRight size={18} />
                   </a>
                 </div>
@@ -479,7 +529,11 @@ const ContentServices: FC = () => {
               </ul>
 
               <div className="mt-7">
-                <a href="#contact" className="btn-primary">
+                <a 
+                  href="/contact" 
+                  className="btn-primary"
+                  aria-label="Request content writing samples"
+                >
                   Request Samples <ArrowRight size={18} />
                 </a>
               </div>
@@ -601,7 +655,11 @@ const ChallengesSection: FC = () => {
               </div>
               <h3 className="text-2xl font-bold mb-2">We&apos;ve got solutions</h3>
               <p className="text-white/90 mb-6">Let&apos;s turn these challenges into opportunities for growth</p>
-              <a href="#contact" className="btn !bg-white !text-emerald-700 hover:!bg-slate-100 inline-flex items-center gap-2 shadow-xl">
+              <a 
+                href="/contact" 
+                className="btn !bg-white !text-emerald-700 hover:!bg-slate-100 inline-flex items-center gap-2 shadow-xl"
+                aria-label="Get your free personalized growth plan"
+              >
                 Get Your Free Growth Plan <ArrowRight size={18} />
               </a>
             </div>
@@ -803,7 +861,11 @@ const SpecialCustomizedServices: FC = () => {
 
         {/* CTA Button */}
         <div className="mt-12 text-center">
-          <a href="#contact" className="btn-primary inline-flex items-center gap-2">
+          <a 
+            href="/contact" 
+            className="btn-primary inline-flex items-center gap-2"
+            aria-label="Get started with our digital marketing services"
+          >
             Get Started Now <ArrowRight size={18} />
           </a>
         </div>
@@ -922,14 +984,14 @@ const Comparison: FC = () => {
       <div className="container-pad">
         <div className="text-center max-w-3xl mx-auto">
           <div className="badge justify-center bg-brand-600 text-white ring-0">Why Us</div>
-          <h2 className="h2 mt-5">TechMinds <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">vs</span> Others</h2>
+          <h2 className="h2 mt-5">SearchMetric <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">vs</span> Others</h2>
           <p className="section-desc">A quick comparison.</p>
         </div>
 
         <div className="mt-10 card overflow-hidden">
           <div className="grid grid-cols-4 bg-slate-50 text-sm font-semibold text-slate-700 border-b border-slate-200">
             <div className="p-4">Feature</div>
-            <div className="p-4">TechMinds</div>
+            <div className="p-4">SearchMetric</div>
             <div className="p-4">Other Agencies</div>
             <div className="p-4">DIY</div>
           </div>
@@ -980,15 +1042,15 @@ const GrowthGraph: FC = () => {
       <div className="container-pad relative">
         <div className="text-center max-w-3xl mx-auto">
           <div className="badge justify-center bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white ring-0">
-            <TrendingUp size={16} /> Real Client Results
+            Social Proof
           </div>
           <h2 className="h2 mt-5">
-            Actual client <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">lead growth</span> over 6 months
+            Featured Clients
           </h2>
-          <p className="section-desc">Real campaign data from 3 active clients across different industries.</p>
+          <p className="section-desc">Instagram and Facebook clients we manage with care.</p>
         </div>
 
-        {/* Client Cards */}
+        {/* Social Proof Section */}
         <div className="mt-10 grid md:grid-cols-3 gap-6">
           {clients.map((client, idx) => {
             const firstMonth = clientData[0][client.key as keyof typeof clientData[0]] as number;
@@ -1167,7 +1229,11 @@ const GrowthGraph: FC = () => {
         <div className="mt-12 text-center card card-pad bg-gradient-to-r from-slate-900 to-slate-800 text-white">
           <h3 className="text-2xl font-bold mb-2">Ready to see similar results?</h3>
           <p className="text-slate-300 mb-6">Join 500+ businesses growing with our proven strategies</p>
-          <a href="#contact" className="btn-primary inline-flex items-center gap-2 !bg-white !text-slate-900 hover:!bg-slate-100">
+          <a 
+            href="/contact" 
+            className="btn-primary inline-flex items-center gap-2 !bg-white !text-slate-900 hover:!bg-slate-100"
+            aria-label="Start your growth journey with our proven strategies"
+          >
             Start Your Growth Journey <ArrowRight size={18} />
           </a>
         </div>
@@ -1196,7 +1262,7 @@ const SocialClients: FC = () => {
           <div className="badge justify-center bg-gradient-to-r from-emerald-600 to-teal-600 text-white ring-0">
             <Award size={16} /> Social Proof
           </div>
-          <h2 className="h2 mt-5">Beautiful <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">client</span> cards</h2>
+            <h2 className="h2 mt-5">Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">Clients</span></h2>
           <p className="section-desc">Instagram and Facebook clients we manage with care.</p>
         </div>
 
@@ -1214,9 +1280,11 @@ const SocialClients: FC = () => {
                     idx === 4 ? '1503676260728-1c00da094a0b' : 
                     '1542838132-92c53300491e'
                   }?w=600&q=80`}
-                  alt={`${c.name} ${c.platform} marketing campaign`}
+                  alt={`${c.name} ${c.platform} marketing campaign showing success metrics and growth`}
                   fill
                   className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
@@ -1253,7 +1321,11 @@ const SocialClients: FC = () => {
               </div>
 
               <div className="px-6 pb-6 flex items-center justify-between">
-                <a className="text-sm font-semibold text-brand-700 hover:text-brand-800 inline-flex items-center gap-2" href="#cases">
+                <a 
+                  className="text-sm font-semibold text-brand-700 hover:text-brand-800 inline-flex items-center gap-2" 
+                  href="/case-studies"
+                  aria-label={`View case study for ${c.name}`}
+                >
                   View Case <ArrowRight size={16} />
                 </a>
                 <div className="text-xs text-slate-500 inline-flex items-center gap-2">
@@ -1283,13 +1355,13 @@ const Features: FC = () => {
     <section className="section bg-white">
       <div className="container-pad">
         <div className="text-center max-w-3xl mx-auto">
-          <div className="badge justify-center">Why Choose Us</div>
-          <h2 className="h2 mt-5">
-            Built for <span className="text-brand-700">Indian Market</span> Success
-          </h2>
-          <p className="section-desc">
-            Strategy + creative + performance—made simple, consistent, and premium.
-          </p>
+            <div className="badge justify-center">Why Choose Us</div>
+            <h2 className="h2 mt-5">
+            Engineered for <span className="text-brand-700">Indian Business Growth</span>
+            </h2>
+            <p className="section-desc">
+            Proven strategies, creative excellence, and measurable results—tailored for ambitious Indian brands.
+            </p>
         </div>
 
         <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1317,7 +1389,7 @@ const Testimonials: FC = () => {
       name: "Rahul Sharma",
       role: "CEO",
       company: "Urban Style",
-      content: "TechMinds transformed our online presence. Our sales increased by 300% in 6 months!",
+      content: "SearchMetric transformed our online presence. Our sales increased by 300% in 6 months!",
       rating: 5,
     },
     {
@@ -1465,10 +1537,18 @@ const FAQs: FC = () => {
           <h3 className="text-2xl font-bold mb-2">Still have questions?</h3>
           <p className="text-white/90 mb-6 text-sm">Our team is here to help. Get in touch for a friendly chat.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="#contact" className="btn !bg-white !text-slate-900 hover:!bg-slate-100 inline-flex items-center gap-2">
+            <a 
+              href="/contact" 
+              className="btn !bg-white !text-slate-900 hover:!bg-slate-100 inline-flex items-center gap-2"
+              aria-label="Chat with our marketing experts"
+            >
               <MessageCircle size={18} /> Chat with us
             </a>
-            <a href="tel:+919876543210" className="btn !bg-white/10 !text-white border border-white/20 hover:!bg-white/20 inline-flex items-center gap-2">
+            <a 
+              href="tel:+919876543210" 
+              className="btn !bg-white/10 !text-white border border-white/20 hover:!bg-white/20 inline-flex items-center gap-2"
+              aria-label="Call our office now"
+            >
               <Phone size={18} /> Call now
             </a>
           </div>
@@ -1497,10 +1577,18 @@ const StrongCTA: FC = () => {
                 </p>
 
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                  <a href="#contact" className="btn-secondary !bg-white !text-ink-900">
+                  <a 
+                    href="/contact" 
+                    className="btn-secondary !bg-white !text-ink-900"
+                    aria-label="Get free marketing proposal"
+                  >
                     Get Free Proposal <ArrowRight size={18} />
                   </a>
-                  <a href="#contact" className="btn-ghost !text-white hover:!bg-white/10">
+                  <a 
+                    href="/contact" 
+                    className="btn-ghost !text-white hover:!bg-white/10"
+                    aria-label="Book quick call with our team"
+                  >
                     Book Quick Call <Phone size={18} />
                   </a>
                 </div>
@@ -1550,6 +1638,21 @@ const Contact: FC = () => {
     e.preventDefault();
     // integrate your API here
     console.log("Form submitted:", formData);
+    // Add form submission logic
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert('Thank you! We will contact you soon.');
+      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Something went wrong. Please try again.');
+    });
   };
 
   return (
@@ -1571,7 +1674,7 @@ const Contact: FC = () => {
 
             <div className="mt-8 space-y-4">
               <InfoRow icon={<Phone size={18} />} title="Call Us" value="+91 98765 43210" />
-              <InfoRow icon={<Mail size={18} />} title="Email Us" value="info@techmindsolutions.com" />
+              <InfoRow icon={<Mail size={18} />} title="Email Us" value="info@searchmetric.in" />
               <InfoRow icon={<MapPin size={18} />} title="Our Offices" value="Delhi • Mumbai • Bangalore • Hyderabad" />
             </div>
           </div>
@@ -1589,6 +1692,7 @@ const Contact: FC = () => {
                     required
                     className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300"
                     placeholder="Enter your name"
+                    aria-label="Your full name"
                   />
                 </Field>
 
@@ -1601,6 +1705,7 @@ const Contact: FC = () => {
                     required
                     className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300"
                     placeholder="Enter your email"
+                    aria-label="Your email address"
                   />
                 </Field>
               </div>
@@ -1614,6 +1719,7 @@ const Contact: FC = () => {
                     required
                     className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300"
                     placeholder="+91 98765 43210"
+                    aria-label="Your phone number"
                   />
                 </Field>
 
@@ -1624,6 +1730,7 @@ const Contact: FC = () => {
                     onChange={handleChange}
                     required
                     className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300 bg-white"
+                    aria-label="Service you're interested in"
                   >
                     <option value="">Select a service</option>
                     <option value="social-media">Social Media Management</option>
@@ -1642,10 +1749,15 @@ const Contact: FC = () => {
                   rows={4}
                   className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300"
                   placeholder="Tell us about your business goals..."
+                  aria-label="Additional message about your business"
                 />
               </Field>
 
-              <button className="btn-primary w-full" type="submit">
+              <button 
+                className="btn-primary w-full" 
+                type="submit"
+                aria-label="Submit form to get free marketing proposal"
+              >
                 Get Free Proposal <ArrowRight size={18} />
               </button>
             </form>
@@ -1674,148 +1786,3 @@ const InfoRow: FC<{ icon: ReactNode; title: string; value: string }> = ({ icon, 
     </div>
   </div>
 );
-
-/* -----------------------------
-   Footer
------------------------------- */
-const Footer: FC = () => {
-  const quickLinks = [
-    { name: "Home", href: "#top" },
-    { name: "Services", href: "#services" },
-    { name: "Case Studies", href: "#cases" },
-    { name: "Blog", href: "#blog" },
-    { name: "Contact", href: "#contact" },
-  ];
-
-  const services = [
-    { name: "Social Media Management", href: "#services" },
-    { name: "Local SEO & Google Maps", href: "#services" },
-    { name: "Lead Ads (Meta & Google)", href: "#services" },
-  ];
-
-  const indianCities = ["Delhi NCR", "Mumbai", "Bangalore", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"];
-
-  const socialIcons = [
-    { icon: Facebook, href: "#" },
-    { icon: Instagram, href: "#" },
-    { icon: Twitter, href: "#" },
-    { icon: Linkedin, href: "#" },
-    { icon: Youtube, href: "#" },
-  ];
-
-  return (
-    <footer className="bg-ink-900 text-white">
-      <div className="container-pad py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div>
-            <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-brand-600 text-white grid place-items-center font-bold">
-                SM
-              </div>
-              <div>
-                <div className="text-lg font-semibold">SearchMetric</div>
-                <div className="text-xs text-white/70">Digital Growth</div>
-              </div>
-            </div>
-
-            <p className="mt-5 text-white/70 text-sm leading-relaxed">
-              Digital marketing agency helping Indian businesses grow through clean creative,
-              local SEO, and performance campaigns.
-            </p>
-
-            <div className="mt-6 flex items-center gap-3">
-              {socialIcons.map(({ icon: Icon, href }) => (
-                <a
-                  key={Icon.name}
-                  href={href}
-                  className="h-10 w-10 rounded-full bg-white/10 hover:bg-brand-600 grid place-items-center transition"
-                  aria-label={Icon.name}
-                >
-                  <Icon size={18} />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <div className="text-lg font-semibold">Quick Links</div>
-            <ul className="mt-5 space-y-3 text-sm text-white/70">
-              {quickLinks.map((l) => (
-                <li key={l.name}>
-                  <a href={l.href} className="hover:text-white transition inline-flex items-center gap-2">
-                    <ArrowRight size={14} /> {l.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <div className="text-lg font-semibold">Our Services</div>
-            <ul className="mt-5 space-y-3 text-sm text-white/70">
-              {services.map((s) => (
-                <li key={s.name}>
-                  <a href={s.href} className="hover:text-white transition">
-                    {s.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <div className="text-lg font-semibold">Stay Updated</div>
-            <p className="mt-4 text-sm text-white/70">
-              Subscribe for digital marketing tips and updates.
-            </p>
-
-            <form className="mt-4" onSubmit={(e) => e.preventDefault()}>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="w-full rounded-l-xl bg-white/10 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-brand-300"
-                  required
-                />
-                <button className="rounded-r-xl bg-brand-600 px-4 hover:bg-brand-700 transition" aria-label="Subscribe">
-                  <Send size={18} />
-                </button>
-              </div>
-            </form>
-
-            <div className="mt-6 space-y-4 text-sm">
-              <div className="flex items-center gap-3 text-white/80">
-                <Phone size={16} className="text-brand-300" /> +91 98765 43210
-              </div>
-              <div className="flex items-center gap-3 text-white/80">
-                <Mail size={16} className="text-brand-300" /> info@searchmetric.in
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 pt-8 border-t border-white/10">
-          <div className="text-center font-semibold">Serving Across India</div>
-          <div className="mt-5 flex flex-wrap justify-center gap-3">
-            {indianCities.map((city) => (
-              <span key={city} className="rounded-full bg-white/10 px-4 py-2 text-xs text-white/80">
-                {city}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-black/30 py-6">
-        <div className="container-pad flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/70">
-          <div>© {new Date().getFullYear()} SearchMetric.in. All rights reserved.</div>
-          <div className="flex flex-wrap gap-5">
-            <a href="#" className="hover:text-white transition">Privacy</a>
-            <a href="#" className="hover:text-white transition">Terms</a>
-            <a href="#" className="hover:text-white transition">Sitemap</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-};
