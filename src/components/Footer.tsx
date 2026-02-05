@@ -1,5 +1,6 @@
 "use client";
 import React, { FC } from "react";
+import Image from "next/image";
 import { Facebook, Instagram, Twitter, Linkedin, Youtube, ArrowRight, Send, Phone, Mail } from "lucide-react";
 
 /* -----------------------------
@@ -35,15 +36,15 @@ const Footer: FC = () => {
       <div className="container-pad py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-brand-600 text-white grid place-items-center font-bold">
-                SM
-              </div>
-              <div>
-                <div className="text-lg font-semibold">SearchMetric</div>
-                <div className="text-xs text-white/70">Digital Growth</div>
-              </div>
-            </div>
+            <a href="/" className="inline-block">
+              <Image
+                src="/footer-logo.png"
+                alt="SearchMetric Logo"
+                width={180}
+                height={54}
+                className="h-auto w-44"
+              />
+            </a>
 
             <p className="mt-5 text-white/70 text-sm leading-relaxed">
               Digital marketing agency helping Indian businesses grow through clean creative,
