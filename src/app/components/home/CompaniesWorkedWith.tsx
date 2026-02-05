@@ -1,18 +1,21 @@
 import { Package, Globe, Plane, Heart, BookOpen, ShoppingCart, Award, CheckCircle } from "lucide-react";
 import { FC } from "react";
+import { companiesSection, companiesData } from "@/content/homePageData";
+
+/* Icon map */
+const iconMap = {
+  package: <Package size={24} />,
+  globe: <Globe size={24} />,
+  plane: <Plane size={24} />,
+  heart: <Heart size={24} />,
+  bookOpen: <BookOpen size={24} />,
+  shoppingCart: <ShoppingCart size={24} />,
+};
 
 /* -----------------------------
    Companies Worked With
 ------------------------------ */
 const CompaniesWorkedWith: FC = () => {
-  const logos = [
-    { name: "Round World Logistics", tag: "Logistics", icon: <Package size={24} />, color: "from-blue-600 to-cyan-600" },
-    { name: "Immigration Experts", tag: "Consulting", icon: <Globe size={24} />, color: "from-emerald-600 to-teal-600" },
-    { name: "Empire World Immigration", tag: "Services", icon: <Plane size={24} />, color: "from-violet-600 to-purple-600" },
-    { name: "Prime Healthcare", tag: "Healthcare", icon: <Heart size={24} />, color: "from-rose-600 to-pink-600" },
-    { name: "Bright Tutors", tag: "Education", icon: <BookOpen size={24} />, color: "from-amber-600 to-orange-600" },
-    { name: "FreshMart", tag: "Grocery", icon: <ShoppingCart size={24} />, color: "from-green-600 to-lime-600" },
-  ];
 
   return (
     <section className="section bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden">
@@ -21,21 +24,21 @@ const CompaniesWorkedWith: FC = () => {
       <div className="container-pad relative">
         <div className="text-center max-w-3xl mx-auto">
           <div className="badge justify-center bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white ring-0">
-            <Award size={16} /> Trusted Partners
+            <Award size={16} /> {companiesSection.badge}
           </div>
-          <h2 className="h2 mt-5">Companies that <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">trust</span> our work</h2>
-          <p className="section-desc">Delivering results across diverse industries in India.</p>
+          <h2 className="h2 mt-5">{companiesSection.title} <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">{companiesSection.titleHighlight}</span> {companiesSection.titleEnd}</h2>
+          <p className="section-desc">{companiesSection.description}</p>
         </div>
 
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {logos.map((l, idx) => (
-            <div key={l.name} className="group relative">
+          {companiesData.map((l, idx) => (
+            <div key={l.id} className="group relative">
               <div className="card card-hover card-pad relative overflow-hidden border-t-4 border-transparent hover:border-brand-600 transition-all">
                 <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-gradient-to-br opacity-0 group-hover:opacity-10 blur-2xl transition-all" style={{backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))`}} />
                 
                 <div className="flex items-start gap-4">
                   <div className={`h-14 w-14 rounded-xl bg-gradient-to-br ${l.color} text-white grid place-items-center shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all`}>
-                    {l.icon}
+                    {iconMap[l.icon as keyof typeof iconMap]}
                   </div>
                   <div className="flex-1">
                     <div className="font-bold text-lg text-ink-900 group-hover:text-brand-700 transition-colors">

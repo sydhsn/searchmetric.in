@@ -1,6 +1,7 @@
 import { ContactFormData } from "@/types/nav";
 import { Send, Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 import { FC, ReactNode, useState } from "react";
+import { ctaSection } from "@/content/homePageData";
 
 /* -----------------------------
    Contact
@@ -50,10 +51,10 @@ const Contact: FC = () => {
               <Send size={16} /> Get in touch
             </div>
             <h2 className="h2 mt-5">
-              Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">grow</span> your business?
+              {ctaSection.title}
             </h2>
             <p className="section-desc">
-              Contact us for a free consultation. We&apos;ll share a customized plan for your business.
+              {ctaSection.subtitle}
             </p>
 
             <div className="mt-8 space-y-4">

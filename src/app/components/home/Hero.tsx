@@ -1,5 +1,6 @@
 import { Star, ArrowRight, TrendingUp, MapPin, MessageCircle, Shield } from "lucide-react";
 import Image from "next/image";
+import { heroData } from "@/content/homePageData";
 
 /* -----------------------------
    Hero
@@ -23,31 +24,31 @@ const Hero = () => {
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white shadow-lg">
               <div className="flex gap-1">
-                {[1,2,3,4,5].map(i => <Star key={i} size={14} className="fill-amber-400 text-amber-400" />)}
+                {Array(heroData.badge.stars).fill(0).map((_, i) => <Star key={i} size={14} className="fill-amber-400 text-amber-400" />)}
               </div>
-              <span className="text-sm font-semibold">Trusted by 500+ Businesses</span>
+              <span className="text-sm font-semibold">{heroData.badge.text}</span>
             </div>
 
             <h1 className="mt-8 text-5xl md:text-7xl font-bold leading-tight">
-              <span className="text-white">Grow your business with </span>
+              <span className="text-white">{heroData.headline.main} </span>
               <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-fuchsia-400 to-pink-400 animate-gradient">
-                SEO &amp; Social Media
+                {heroData.headline.highlight}
               </span>
-              <span className="text-white block mt-2">— made simple.</span>
+              <span className="text-white block mt-2">{heroData.headline.end}</span>
             </h1>
 
             <p className="mt-6 text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl">
-              Reach more local customers with easy-to-understand SEO, digital marketing, and Instagram &amp; Facebook strategies. Simple plans, clear results.
+              {heroData.description}
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <a 
-                href="/contact" 
+                href={heroData.cta.primary.href}
                 className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white font-semibold rounded-xl shadow-2xl hover:shadow-brand-600/50 transition-all overflow-hidden"
-                aria-label="Get free marketing proposal for your business"
+                aria-label={heroData.cta.primary.ariaLabel}
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  Get Free Proposal <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  {heroData.cta.primary.text} <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-brand-700 to-fuchsia-700 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>

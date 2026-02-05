@@ -1,36 +1,18 @@
 import { Instagram, MapPin, Target, Zap, ArrowRight } from "lucide-react";
 import { FC } from "react";
+import { specialServicesSection, specialServicesData } from "@/content/homePageData";
+
+/* Icon map */
+const iconMap = {
+  instagram: <Instagram size={24} />,
+  mapPin: <MapPin size={24} />,
+  target: <Target size={24} />,
+};
 
 /* -----------------------------
    Special Customized Services
 ------------------------------ */
 const SpecialCustomizedServices: FC = () => {
-  const items = [
-    { 
-      number: "01", 
-      title: "Social Media Management", 
-      desc: "Plan, create, post and reply — simple and consistent.",
-      icon: <Instagram size={24} />,
-      gradient: "from-pink-600 via-purple-600 to-indigo-600",
-      bgGradient: "from-pink-50 to-purple-50"
-    },
-    { 
-      number: "02", 
-      title: "Local SEO & Google Maps", 
-      desc: "Show up near your area. Get more calls and visits.",
-      icon: <MapPin size={24} />,
-      gradient: "from-emerald-600 via-teal-600 to-cyan-600",
-      bgGradient: "from-emerald-50 to-teal-50"
-    },
-    { 
-      number: "03", 
-      title: "Lead Ads (Instagram, Facebook & Google)", 
-      desc: "Run budget-friendly ads to capture real leads.",
-      icon: <Target size={24} />,
-      gradient: "from-amber-600 via-orange-600 to-red-600",
-      bgGradient: "from-amber-50 to-orange-50"
-    },
-  ];
 
   return (
     <section className="section bg-gradient-to-br from-white via-slate-50 to-white relative overflow-hidden">
@@ -40,17 +22,17 @@ const SpecialCustomizedServices: FC = () => {
       <div className="container-pad relative">
         <div className="text-center max-w-3xl mx-auto">
           <div className="badge justify-center bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white ring-0">
-            <Zap size={16} /> Tailored for your needs
+            <Zap size={16} /> {specialServicesSection.badge}
           </div>
           <h2 className="h2 mt-5">
-            Special <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">customized</span> services for you
+            {specialServicesSection.title} <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">{specialServicesSection.titleHighlight}</span> {specialServicesSection.titleEnd}
           </h2>
-          <p className="section-desc">Focused on three simple offerings that drive results.</p>
+          <p className="section-desc">{specialServicesSection.description}</p>
         </div>
 
         <div className="mt-12 max-w-4xl mx-auto space-y-6">
-          {items.map((item, idx) => (
-            <div key={item.number} className="group relative">
+          {specialServicesData.map((item, idx) => (
+            <div key={item.id} className="group relative">
               <div className={`card card-hover overflow-hidden border-l-4 border-transparent hover:border-brand-600 transition-all`}>
                 <div className={`absolute inset-0 bg-gradient-to-r ${item.bgGradient} opacity-0 group-hover:opacity-100 transition-all duration-300`} />
                 
@@ -69,12 +51,12 @@ const SpecialCustomizedServices: FC = () => {
                         <h3 className="text-xl font-bold text-ink-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-brand-600 group-hover:to-fuchsia-600 transition-all">
                           {item.title}
                         </h3>
-                        <p className="mt-2 text-slate-600 leading-relaxed">{item.desc}</p>
+                        <p className="mt-2 text-slate-600 leading-relaxed">{item.description}</p>
                       </div>
                       
                       {/* Icon Badge */}
                       <div className={`h-12 w-12 rounded-xl bg-gradient-to-br ${item.gradient} text-white grid place-items-center shadow-md transform group-hover:rotate-12 transition-all duration-300`}>
-                        {item.icon}
+                        {iconMap[item.icon as keyof typeof iconMap]}
                       </div>
                     </div>
 

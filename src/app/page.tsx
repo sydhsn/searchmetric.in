@@ -16,24 +16,25 @@ import SocialClients from "./components/home/SocialClients";
 import SpecialCustomizedServices from "./components/home/SpecialCustomizedServices";
 import Testimonials from "./components/home/Testimonials";
 import Contact from "./components/home/Contact";
+import { seoMetadata } from "@/content/homePageData";
 
 /* -----------------------------
    SEO Metadata Component
 ------------------------------ */
 const SEOMetadata = () => (
   <Head>
-    <title>SearchMetric - SEO & Social Media Marketing Agency for Indian Businesses</title>
-    <meta name="description" content="Grow your business with easy-to-understand SEO, digital marketing, and Instagram & Facebook strategies. Simple plans, clear results for Indian SMEs." />
-    <meta name="keywords" content="SEO India, Social Media Marketing, Digital Marketing Agency, Google Maps Ranking, Instagram Marketing, Facebook Ads India, Local SEO Services" />
-    <meta name="author" content="SearchMetric" />
-    <meta property="og:title" content="SearchMetric - SEO & Social Media Marketing Agency" />
-    <meta property="og:description" content="Premium digital marketing services for Indian businesses. Get more leads, calls, and online visibility." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://searchmetric.in" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="SearchMetric - Digital Marketing Agency" />
-    <meta name="twitter:description" content="Transform your online presence with our proven SEO and social media strategies" />
-    <link rel="canonical" href="https://searchmetric.in" />
+    <title>{seoMetadata.title}</title>
+    <meta name="description" content={seoMetadata.description} />
+    <meta name="keywords" content={seoMetadata.keywords} />
+    <meta name="author" content={seoMetadata.author} />
+    <meta property="og:title" content={seoMetadata.og.title} />
+    <meta property="og:description" content={seoMetadata.og.description} />
+    <meta property="og:type" content={seoMetadata.og.type} />
+    <meta property="og:url" content={seoMetadata.og.url} />
+    <meta name="twitter:card" content={seoMetadata.twitter.card} />
+    <meta name="twitter:title" content={seoMetadata.twitter.title} />
+    <meta name="twitter:description" content={seoMetadata.twitter.description} />
+    <link rel="canonical" href={seoMetadata.canonical} />
   </Head>
 );
 

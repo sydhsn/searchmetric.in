@@ -1,48 +1,40 @@
 import { Edit3, FileText, CheckCircle, ArrowRight } from "lucide-react";
 import { FC } from "react";
+import { contentServicesSection, contentServicesData } from "@/content/homePageData";
 
+/* Icon map */
+const iconMap = {
+  edit3: <Edit3 size={18} className="text-fuchsia-600" />,
+  fileText: <FileText size={18} className="text-emerald-600" />,
+};
 
 /* -----------------------------
    Content Services
 ------------------------------ */
 const ContentServices: FC = () => {
-  const items = [
-    {
-      title: "Content Writer",
-      icon: <Edit3 size={18} className="text-fuchsia-600" />,
-      desc: "Clear and simple content for websites, ads, and captions.",
-      bullets: ["Brand voice guide", "Short-form captions", "Ad copy variants", "Proofreading"],
-    },
-    {
-      title: "Blog Writer (SEO)",
-      icon: <FileText size={18} className="text-emerald-600" />,
-      desc: "Search-friendly blogs that educate and rank on Google.",
-      bullets: ["Keyword plan", "Outline + headings", "Internal linking", "Meta tags"],
-    },
-  ];
 
   return (
     <section className="section bg-slate-50">
       <div className="container-pad">
         <div className="text-center max-w-3xl mx-auto">
           <div className="badge justify-center">
-            <FileText size={16} /> Content & Writing
+            <FileText size={16} /> {contentServicesSection.badge}
           </div>
-          <h2 className="h2 mt-5">Words that attract and convert</h2>
-          <p className="section-desc">Easy-to-read language. Strong SEO basics. Ready to publish.</p>
+          <h2 className="h2 mt-5">{contentServicesSection.title}</h2>
+          <p className="section-desc">{contentServicesSection.description}</p>
         </div>
 
         <div className="mt-10 grid md:grid-cols-2 gap-6">
-          {items.map((it) => (
-            <div key={it.title} className="card card-hover card-pad">
+          {contentServicesData.map((it) => (
+            <div key={it.id} className="card card-hover card-pad">
               <div className="flex items-center gap-3">
                 <div className="h-11 w-11 rounded-xl bg-slate-50 ring-1 ring-slate-200 grid place-items-center">
-                  {it.icon}
+                  {iconMap[it.icon as keyof typeof iconMap]}
                 </div>
                 <div className="text-lg font-semibold text-ink-900">{it.title}</div>
               </div>
 
-              <p className="mt-4 text-slate-600">{it.desc}</p>
+              <p className="mt-4 text-slate-600">{it.description}</p>
 
               <ul className="mt-5 grid grid-cols-2 gap-2 text-sm text-slate-700">
                 {it.bullets.map((b) => (

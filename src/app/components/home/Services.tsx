@@ -4,6 +4,22 @@
 
 import { CheckCircle, ArrowRight, Instagram, Search, Target, Globe, Users, TrendingUp, MapPin, Zap } from "lucide-react";
 import { FC, ReactNode } from "react";
+import { servicesData } from "@/content/homePageData";
+
+/* Icon map for services */
+const iconMap = {
+  instagram: <Instagram size={20} />,
+  search: <Search size={20} />,
+  target: <Target size={20} />,
+};
+
+/* Statistics */
+const stats = [
+  { value: "300+", label: "Websites Developed", icon: <Globe size={18} /> },
+  { value: "95%", label: "Client Retention", icon: <Users size={18} /> },
+  { value: "50M+", label: "Impressions Managed", icon: <TrendingUp size={18} /> },
+  { value: "Top 3", label: "Maps Wins", icon: <MapPin size={18} /> },
+];
 
 /* -----------------------------
    Reusable UI
@@ -13,7 +29,9 @@ const ServiceCard: FC<{
   desc: string;
   icon: ReactNode;
   features: string[];
-}> = ({ title, desc, icon, features }) => {
+  learnMore: string;
+  getQuote: string;
+}> = ({ title, desc, icon, features, learnMore, getQuote }) => {
   return (
     <div className="card card-hover overflow-hidden">
       <div className="p-6 flex items-start justify-between gap-4 border-b border-slate-100">
@@ -40,14 +58,14 @@ const ServiceCard: FC<{
           <a
             href="/contact"
             className="text-sm font-semibold text-brand-700 hover:text-brand-800 inline-flex items-center gap-2"
-            aria-label={`Learn more about ${title} service`}
+            aria-label={learnMore}
           >
             Learn more <ArrowRight size={16} />
           </a>
           <a 
             href="/contact" 
             className="btn-secondary !py-2 !px-4"
-            aria-label={`Get quote for ${title} service`}
+            aria-label={getQuote}
           >
             Get quote
           </a>
@@ -59,34 +77,6 @@ const ServiceCard: FC<{
 
 
 const Services: FC = () => {
-  const services = [
-    {
-      title: "Social Media Management",
-      desc: "Beautiful creatives, consistent posting, and community replies that drive leads.",
-      icon: <Instagram size={20} />,
-      features: ["Content calendar", "Design & captions", "Daily replies", "Monthly reporting"],
-    },
-    {
-      title: "Local SEO & Google Maps",
-      desc: "Improve visibility near your area and turn local searches into calls.",
-      icon: <Search size={20} />,
-      features: ["GBP setup", "Map ranking", "Reviews guidance", "NAP + citations"],
-    },
-    {
-      title: "Lead Ads (Meta & Google)",
-      desc: "Budget-smart campaigns designed for forms, calls, and messages.",
-      icon: <Target size={20} />,
-      features: ["Lead form setup", "Tracking", "Targeting", "Weekly review"],
-    },
-  ];
-
-  const stats = [
-    { value: "300+", label: "Websites Developed", icon: <Globe size={18} /> },
-    { value: "95%", label: "Client Retention", icon: <Users size={18} /> },
-    { value: "50M+", label: "Impressions Managed", icon: <TrendingUp size={18} /> },
-    { value: "Top 3", label: "Maps Wins", icon: <MapPin size={18} /> },
-  ];
-
   return (
     <section id="services" className="section bg-slate-50">
       <div className="container-pad">
@@ -101,13 +91,15 @@ const Services: FC = () => {
         </div>
 
         <div className="mt-10 grid md:grid-cols-3 gap-6">
-          {services.map((s) => (
+          {servicesData.map((s) => (
             <ServiceCard
-              key={s.title}
+              key={s.id}
               title={s.title}
-              desc={s.desc}
-              icon={s.icon}
+              desc={s.description}
+              icon={iconMap[s.icon as keyof typeof iconMap]}
               features={s.features}
+              learnMore={s.learnMore}
+              getQuote={s.getQuote}
             />
           ))}
         </div>
