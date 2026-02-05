@@ -40,9 +40,9 @@ const Footer: FC = () => {
               <Image
                 src="/footer-logo.png"
                 alt="SearchMetric Logo"
-                width={180}
+                width={300}
                 height={54}
-                className="h-auto w-44"
+                className="h-auto w-50"
               />
             </a>
 

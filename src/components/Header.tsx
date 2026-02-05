@@ -76,8 +76,8 @@ const Header: FC = () => {
                 src="/logo.png"
                 alt="SearchMetric Logo"
                 width={300}
-                height={60}
-                className="h-auto w-60"
+                height={50}
+                className="h-auto w-50"
                 priority
               />
             </a>
