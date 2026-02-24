@@ -5,6 +5,21 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
     "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./src/content/**/*.{js,ts,jsx,tsx}", // ← ADD THIS — scans your data files
+  ],
+  safelist: [
+    // Challenges gradients
+    "from-pink-600", "to-rose-600", "from-pink-50", "to-rose-50",
+    "from-red-600", "to-orange-600", "from-red-50", "to-orange-50",
+    "from-orange-600", "to-amber-600", "from-orange-50", "to-amber-50",
+    "from-purple-600", "to-violet-600", "from-purple-50", "to-violet-50",
+    "from-blue-600", "to-cyan-600", "from-blue-50", "to-cyan-50",
+    "from-emerald-600", "to-teal-600", "from-emerald-50", "to-teal-50",
+    // FAQs gradients
+    "from-brand-600", "to-purple-600",
+    "from-fuchsia-600", "to-pink-600",
+    "from-violet-600", "to-purple-600",
+    "from-amber-600", "to-orange-600",
   ],
   theme: {
     extend: {

@@ -8,73 +8,78 @@
 // ============ HERO SECTION ============
 export const heroData = {
   badge: {
-    text: "Trusted by 500+ Businesses",
+    text: "Trusted by 50+ Businesses Across India",
     stars: 5,
   },
   headline: {
-    main: "Grow your business with",
-    highlight: "SEO & Social Media",
-    end: "— made simple.",
+    main: "Grow Your Business with",
+    highlight: "SEO & Social Media Marketing",
+    end: "— by Searchmetric.",
   },
   description:
-    "Reach more local customers with easy-to-understand SEO, digital marketing, and Instagram & Facebook strategies. Simple plans, clear results.",
+    "Searchmetric helps local businesses rank higher on Google, get more leads, and grow faster with proven SEO services, social media marketing, and digital marketing strategies — simple, transparent, and results-driven.",
   cta: {
     primary: {
-      text: "Get Free Proposal",
+      text: "Get Your Free SEO Proposal",
       href: "/contact",
-      ariaLabel: "Get free marketing proposal for your business",
+      ariaLabel: "Get a free SEO and digital marketing proposal from Searchmetric",
     },
     secondary: {
       text: "Watch Demo",
       href: "#demo",
-      ariaLabel: "Watch demo video",
+      ariaLabel: "Watch Searchmetric demo video",
     },
   },
   benefits: [
-    "✓ Free 30-minute consultation",
-    "✓ Customized growth plan",
-    "✓ No long-term contracts",
+    "✓ Free 30-minute SEO Strategy Call",
+    "✓ Custom Digital Marketing Growth Plan",
+    "✓ No Long-Term Contracts — Cancel Anytime",
   ],
 };
 
 // ============ FEATURES SECTION ============
 export const featuresSection = {
-  badge: "Why Choose Us",
-  title: "Engineered for",
+  badge: "Why Choose Searchmetric",
+  title: "Digital Marketing Built for",
   titleHighlight: "Indian Business Growth",
   description:
-    "Proven strategies, creative excellence, and measurable results—tailored for ambitious Indian brands.",
+    "We combine proven SEO strategies, creative social media marketing, and data-driven results to help Indian businesses get found online, attract more customers, and grow consistently.",
 };
 
+// ============ FEATURES DATA ============
 export const featuresData = [
   {
     id: "fast-results",
-    title: "Fast Results",
-    description: "See measurable improvements within 30 days.",
+    title: "Fast, Measurable Results",
+    description:
+      "See real growth in website traffic, leads, and rankings within the first 30 days — no guesswork, just results.",
     icon: "zap",
     color: "text-amber-600",
   },
   {
     id: "data-security",
-    title: "Data Security",
-    description: "Enterprise-grade security for your business data.",
+    title: "100% Safe & Secure",
+    description:
+      "Your business data is protected with enterprise-grade security — we handle your digital presence with complete confidentiality.",
     icon: "shield",
     color: "text-emerald-600",
   },
   {
     id: "support",
-    title: "24/7 Support",
-    description: "Support aligned to Indian time zones.",
+    title: "24/7 Dedicated Support",
+    description:
+      "Got a question at midnight? We're here. Our support team operates on Indian time zones so you're never left waiting.",
     icon: "clock",
     color: "text-sky-600",
   },
   {
-    id: "certified",
-    title: "Certified Experts",
-    description: "Google and Meta certified professionals.",
-    icon: "award",
-    color: "text-fuchsia-600",
-  },
+  id: "certified",
+  title: "Skilled & Passionate Team",
+  description:
+    "We're a team of dedicated SEO and social media experts who stay ahead of every Google update and algorithm change — so your business always stays on top.",
+  icon: "award",
+  color: "text-fuchsia-600",
+},
 ];
 
 // ============ SERVICES SECTION ============
@@ -172,162 +177,215 @@ export const testimonialsSection = {
   description: "See how businesses like yours are growing with our services.",
 };
 
+// ============ TESTIMONIALS DATA ============
+
 export const testimonialsData = [
   {
     id: "testimonial-1",
-    name: "Rajesh Kumar",
-    role: "Restaurant Owner",
-    company: "The Spice House",
-    text: "SearchMetric helped us get 40+ calls every week from Google Maps. Our business has grown 3x in 6 months.",
+    name: "Jabeen Fatima",
+    role: "Owner",
+    company: "TechMinds Academy",
+    text: "Searchmetric helped TechMinds Academy rank higher on Google and reach more students online. Our inquiries have grown significantly since we started working with them. Highly recommend their SEO services!",
     rating: 5,
-    image: "/testimonials/rajesh.jpg",
+    image: "/testimonials/jabeen.jpg",
   },
   {
     id: "testimonial-2",
-    name: "Priya Singh",
-    role: "E-commerce Manager",
-    company: "Fashion Store",
-    text: "Their Instagram management increased our sales by 250%. The team is professional and always available.",
+    name: "Samsuddin Ansari",
+    role: "Owner",
+    company: "Galaxy Documents",
+    text: "Thanks to Searchmetric, our Google Maps visibility improved drastically and we started getting more walk-in customers. Their digital marketing strategies are simple, effective, and worth every rupee.",
     rating: 5,
-    image: "/testimonials/priya.jpg",
+    image: "/testimonials/samsuddin.jpg",
   },
   {
     id: "testimonial-3",
-    name: "Amit Patel",
-    role: "Service Center Owner",
-    company: "Mobile Repair Pro",
-    text: "Lead ads brought us high-quality customers. ROI is amazing. Worth every rupee spent.",
+    name: "Pawan Kumar",
+    role: "Owner",
+    company: "Mobimerz",
+    text: "Searchmetric transformed our online presence completely. Our website traffic increased and we're now getting quality leads through social media. The team is professional, transparent, and always available.",
     rating: 5,
-    image: "/testimonials/amit.jpg",
+    image: "/testimonials/pawan.jpg",
   },
 ];
 
 // ============ CTA SECTION ============
 export const ctaSection = {
-  title: "Ready to Grow Your Business?",
-  subtitle: "Start your free consultation today.",
+  title: "Let's Grow Your Business Online — Starting Today.",
+  subtitle:
+    "Join 50+ Indian businesses already growing with Searchmetric. Book your free SEO consultation and get a custom digital marketing plan built around your goals.",
   cta: {
-    text: "Get Started Now",
+    text: "Get My Free Consultation",
     href: "/contact",
-    ariaLabel: "Start your free consultation",
+    ariaLabel: "Book your free SEO and digital marketing consultation with Searchmetric",
   },
 };
 
 // ============ BENEFITS SECTION ============
 export const benefitsSection = {
-  badge: "Benefits for You",
-  title: "Simple wins for your business",
-  description: "We keep things easy. No heavy words. Just clear results.",
+  badge: "What You Gain with Searchmetric",
+  title: "Real Business Results, Not Just Promises",
+  description:
+    "We focus on what actually moves the needle for your business — more visibility, more customers, and consistent growth you can track every month.",
 };
 
 export const benefitsData = [
-  { id: "calls", icon: "phone", title: "More Calls", description: "Get more phone calls from nearby people." },
-  { id: "messages", icon: "messageCircle", title: "More Messages", description: "More chats and DMs from real users." },
-  { id: "local-rank", icon: "mapPin", title: "Better Local Rank", description: "Show up higher on Google Maps." },
-  { id: "audience", icon: "users", title: "Right Audience", description: "Reach the people who want your service." },
-  { id: "growth", icon: "trendingUp", title: "Clear Growth", description: "Simple monthly growth reports." },
-  { id: "security", icon: "shield", title: "Safe & Secure", description: "Your data stays protected and private." },
+  {
+    id: "calls",
+    icon: "phone",
+    title: "More Customer Calls",
+    description:
+      "Get more inbound calls from local customers actively searching for your service on Google.",
+  },
+  {
+    id: "messages",
+    icon: "messageCircle",
+    title: "More DMs & Enquiries",
+    description:
+      "Turn your social media presence into a lead machine — more real messages from people ready to buy.",
+  },
+  {
+    id: "local-rank",
+    icon: "mapPin",
+    title: "Higher Google Maps Ranking",
+    description:
+      "Rank higher on Google Maps and local search so nearby customers find your business first — not your competitor's.",
+  },
+  {
+    id: "audience",
+    icon: "users",
+    title: "Reach the Right Audience",
+    description:
+      "We target the exact people looking for your product or service — so every rupee you spend works harder.",
+  },
+  {
+    id: "growth",
+    icon: "trendingUp",
+    title: "Transparent Monthly Growth Reports",
+    description:
+      "No confusing dashboards or jargon. You get clear, simple monthly reports showing exactly how your business is growing.",
+  },
+  {
+    id: "security",
+    icon: "shield",
+    title: "Your Data, Always Safe",
+    description:
+      "We handle your business information with complete confidentiality — your data is always secure and never shared.",
+  },
 ];
 
 // ============ FAQs SECTION ============
 export const faqsSection = {
-  badge: "FAQs",
-  title: "Quick",
-  titleHighlight: "answers",
-  description: "Short and clear. No complex words.",
+  badge: "Frequently Asked Questions",
+  title: "Everything You Need",
+  titleHighlight: "to Know",
+  description:
+    "We believe in complete transparency. Here are honest answers to the questions most business owners ask before getting started with Searchmetric.",
 };
 
 export const faqsData = [
   {
     id: "start-time",
-    question: "How soon can we start?",
-    answer: "We can start within 3–5 days after a quick call.",
+    question: "How quickly can we get started?",
+    answer:
+      "Pretty quickly! Once we have a brief intro call to understand your business goals, we can typically onboard you and begin work within 3–5 business days.",
     icon: "clock",
     color: "from-brand-600 to-purple-600",
   },
   {
     id: "contract",
-    question: "Is there a long contract?",
-    answer: "No. Start monthly. Upgrade later when you see results.",
+    question: "Do I need to sign a long-term contract?",
+    answer:
+      "Not at all. We work on flexible monthly plans so you're never locked in. Most of our clients choose to stay because they see real results — not because they have to.",
     icon: "fileText",
     color: "from-emerald-600 to-teal-600",
   },
   {
     id: "reports",
-    question: "Do you share reports?",
-    answer: "Yes. A simple monthly report with leads, calls and reach.",
+    question: "Will I receive regular performance reports?",
+    answer:
+      "Absolutely. Every month you'll receive a clear, easy-to-understand report covering leads generated, calls received, reach, and overall growth — no confusing data, just what matters.",
     icon: "trendingUp",
     color: "from-amber-600 to-orange-600",
   },
   {
     id: "reviews",
-    question: "Can you help with reviews?",
-    answer: "Yes. We guide you on getting honest reviews and reply to them.",
+    question: "Can you help us get more Google reviews?",
+    answer:
+      "Yes. We guide you through a simple process to collect genuine reviews from your happy customers and professionally respond to them — helping build trust and improve your local ranking.",
     icon: "star",
     color: "from-fuchsia-600 to-pink-600",
   },
   {
-    id: "setup",
-    question: "Is setup included?",
-    answer: "Yes. We set up pages, forms and tracking for you.",
-    icon: "checkCircle",
-    color: "from-violet-600 to-purple-600",
-  },
+  id: "setup",
+  question: "Is the initial setup included in the plan?",
+  answer:
+    "Yes, completely. We handle everything from setting up your business pages and lead forms to installing tracking — so you don't have to worry about the technical side at all.",
+  icon: "shield",
+  color: "from-emerald-600 to-teal-600", // ← use a confirmed working color
+},
 ];
 
 // ============ CHALLENGES SECTION ============
 export const challengesSection = {
-  badge: "Facing these issues?",
-  title: "We solve common",
-  titleHighlight: "business problems",
-  description: "Recognize these? We have simple fixes.",
+  badge: "Sound Familiar?",
+  title: "Real Problems We",
+  titleHighlight: "Solve Every Day",
+  description:
+    "Most Indian businesses face the same digital marketing challenges. Here's how Searchmetric turns each one into a growth opportunity.",
 };
 
 export const challengesData = [
   {
     id: "calls",
-    title: "Not enough calls",
-    description: "People visit but don't call. We fix that.",
+    title: "Not Getting Enough Calls",
+    description:
+      "People find your business online but never call. We optimise your listing and call-to-action to turn visitors into real customers.",
     icon: "phone",
     gradient: "from-pink-600 to-rose-600",
     bgGradient: "from-pink-50 to-rose-50",
   },
   {
     id: "visibility",
-    title: "Low Google visibility",
-    description: "Your business doesn't show up near you.",
+    title: "Not Showing Up on Google",
+    description:
+      "If your business isn't appearing in local search or Google Maps, you're losing customers to competitors every day. We fix that.",
     icon: "search",
     gradient: "from-red-600 to-orange-600",
     bgGradient: "from-red-50 to-orange-50",
   },
   {
     id: "engagement",
-    title: "Weak social engagement",
-    description: "Likes without real conversations or leads.",
+    title: "Social Media With No Real Leads",
+    description:
+      "Getting likes is easy — getting enquiries is hard. We create content that starts real conversations and brings in genuine leads.",
     icon: "messageCircle",
     gradient: "from-orange-600 to-amber-600",
     bgGradient: "from-orange-50 to-amber-50",
   },
   {
     id: "tracking",
-    title: "No tracking or reports",
-    description: "Hard to know what's working. We simplify.",
+    title: "No Idea What's Actually Working",
+    description:
+      "Without proper tracking, you're running blind. We set up clear monthly reports so you always know where your growth is coming from.",
     icon: "trendingUp",
     gradient: "from-purple-600 to-violet-600",
     bgGradient: "from-purple-50 to-violet-50",
   },
   {
     id: "posting",
-    title: "Random posting",
-    description: "No plan. We bring a simple monthly calendar.",
+    title: "Inconsistent & Unplanned Posting",
+    description:
+      "Posting randomly without a strategy rarely works. We build a structured monthly content calendar tailored to your business and audience.",
     icon: "target",
     gradient: "from-blue-600 to-cyan-600",
     bgGradient: "from-blue-50 to-cyan-50",
   },
   {
     id: "ad-spend",
-    title: "Wasted ad spend",
-    description: "Money spent without leads. We focus on ROI.",
+    title: "Wasting Money on Ads With No Returns",
+    description:
+      "Running ads without the right targeting is money down the drain. We manage your budget strategically to maximise ROI and quality leads.",
     icon: "zap",
     gradient: "from-emerald-600 to-teal-600",
     bgGradient: "from-emerald-50 to-teal-50",
@@ -340,64 +398,156 @@ export const companiesSection = {
   title: "Companies that",
   titleHighlight: "trust",
   titleEnd: "our work",
-  description: "Delivering results across diverse industries in India.",
+  description: "Delivering real results for businesses across diverse industries in India.",
 };
-
 export const companiesData = [
-  { id: "rwl", name: "Round World Logistics", tag: "Logistics", icon: "package", color: "from-blue-600 to-cyan-600" },
-  { id: "immigration", name: "Immigration Experts", tag: "Consulting", icon: "globe", color: "from-emerald-600 to-teal-600" },
-  { id: "empire", name: "Empire World Immigration", tag: "Services", icon: "plane", color: "from-violet-600 to-purple-600" },
-  { id: "healthcare", name: "Prime Healthcare", tag: "Healthcare", icon: "heart", color: "from-rose-600 to-pink-600" },
-  { id: "tutors", name: "Bright Tutors", tag: "Education", icon: "bookOpen", color: "from-amber-600 to-orange-600" },
-  { id: "freshmart", name: "FreshMart", tag: "Grocery", icon: "shoppingCart", color: "from-green-600 to-lime-600" },
+  {
+    id: "techminds",
+    name: "TechMinds Academy",
+    tag: "Education",
+    icon: "bookOpen",
+    color: "from-violet-600 to-purple-600",
+  },
+  {
+    id: "galaxy",
+    name: "Galaxy Documents",
+    tag: "Legal & Documentation",
+    icon: "fileText",
+    color: "from-blue-600 to-cyan-600",
+  },
+  {
+    id: "mobimerz",
+    name: "Mobimerz",
+    tag: "Web Development",
+    icon: "globe",
+    color: "from-emerald-600 to-teal-600",
+  },
+  {
+    id: "makhdumi",
+    name: "Makhdumi Welfare Society",
+    tag: "NGO & Community",
+    icon: "heart",
+    color: "from-rose-600 to-pink-600",
+  },
+  {
+    id: "client-5",
+    name: "Sunrise Enterprises",
+    tag: "Retail",
+    icon: "shoppingCart",
+    color: "from-amber-600 to-orange-600",
+  },
+  {
+    id: "client-6",
+    name: "Metro Solutions",
+    tag: "Consulting",
+    icon: "briefcase",
+    color: "from-green-600 to-lime-600",
+  },
 ];
-
 // ============ COMPARISON SECTION ============
 export const comparisonSection = {
-  badge: "Why Us",
-  title: "SearchMetric",
+  badge: "Why Choose Searchmetric",
+  title: "Searchmetric",
   titleHighlight: "vs",
-  titleEnd: "Others",
-  description: "A quick comparison.",
+  titleEnd: "The Rest",
+  description:
+    "Not all digital marketing agencies are the same. Here's an honest look at what sets Searchmetric apart from other agencies and doing it yourself.",
 };
 
 export const comparisonData = [
-  { id: "reports", label: "Clear monthly report", searchMetric: true, others: false, diy: false },
-  { id: "maps", label: "Local map ranking", searchMetric: true, others: true, diy: false },
-  { id: "language", label: "Friendly simple language", searchMetric: true, others: false, diy: false },
-  { id: "lead-forms", label: "Lead form setup", searchMetric: true, others: true, diy: false },
-  { id: "replies", label: "Daily social replies", searchMetric: true, others: false, diy: false },
+  {
+    id: "reports",
+    label: "Clear, jargon-free monthly reports",
+    searchMetric: true,
+    others: false,
+    diy: false,
+  },
+  {
+    id: "maps",
+    label: "Google Maps & local search ranking",
+    searchMetric: true,
+    others: true,
+    diy: false,
+  },
+  {
+    id: "language",
+    label: "Simple communication, no technical jargon",
+    searchMetric: true,
+    others: false,
+    diy: false,
+  },
+  {
+    id: "lead-forms",
+    label: "Lead form & enquiry setup included",
+    searchMetric: true,
+    others: true,
+    diy: false,
+  },
+  {
+    id: "replies",
+    label: "Daily social media engagement & replies",
+    searchMetric: true,
+    others: false,
+    diy: false,
+  },
+  {
+    id: "support",
+    label: "Dedicated support on Indian time zones",
+    searchMetric: true,
+    others: false,
+    diy: false,
+  },
+  {
+    id: "pricing",
+    label: "Transparent pricing, no hidden charges",
+    searchMetric: true,
+    others: false,
+    diy: false,
+  },
 ];
-
 // ============ CONTENT SERVICES SECTION ============
 export const contentServicesSection = {
-  badge: "Content & Writing",
-  title: "Words that attract and convert",
-  description: "Easy-to-read language. Strong SEO basics. Ready to publish.",
+  badge: "Content & Copywriting",
+  title: "Words That Bring Customers to Your Door",
+  description:
+    "Great content does two things — it ranks on Google and convinces real people to take action. At Searchmetric, we write content that does both, in clear and simple language your audience actually understands.",
 };
 
 export const contentServicesData = [
   {
     id: "content-writer",
-    title: "Content Writer",
+    title: "Website & Ad Copywriting",
     icon: "edit3",
-    description: "Clear and simple content for websites, ads, and captions.",
-    bullets: ["Brand voice guide", "Short-form captions", "Ad copy variants", "Proofreading"],
+    description:
+      "We write compelling, conversion-focused content for your website, social media ads, and captions — in a tone that feels natural to your brand and speaks directly to your customers.",
+    bullets: [
+      "Custom brand voice guide",
+      "Short-form social media captions",
+      "High-converting ad copy variants",
+      "Professional proofreading & editing",
+    ],
   },
   {
     id: "blog-writer",
-    title: "Blog Writer (SEO)",
+    title: "SEO Blog Writing",
     icon: "fileText",
-    description: "Search-friendly blogs that educate and rank on Google.",
-    bullets: ["Keyword plan", "Outline + headings", "Internal linking", "Meta tags"],
+    description:
+      "We create well-researched, keyword-optimised blog posts that help your business rank higher on Google, build authority in your industry, and keep your audience coming back for more.",
+    bullets: [
+      "In-depth keyword research & planning",
+      "Structured outline with SEO headings",
+      "Strategic internal linking",
+      "Optimised meta titles & descriptions",
+    ],
   },
 ];
 
 // ============ PLATFORM MARKETING SECTION ============
 export const platformMarketingSection = {
-  badge: "Social Platforms",
-  title: "Grow on Instagram and Facebook",
-  description: "Beautiful creatives, smart posting times, and clean reporting.",
+  badge: "Social Media Marketing",
+  title: "Turn Instagram & Facebook Into Your Best Sales Channel",
+  description:
+    "Your customers are already scrolling — we make sure they stop at your content. Searchmetric manages your social media presence with eye-catching creatives, smart strategy, and consistent engagement that builds real followers and real leads.",
 };
 
 export const platformMarketingData = [
@@ -405,33 +555,92 @@ export const platformMarketingData = [
     id: "instagram",
     platform: "Instagram Marketing",
     icon: "instagram",
-    highlights: ["Reels & Stories", "Hashtag strategy", "Community replies", "Lead ads"],
+    highlights: [
+      "Engaging Reels & Stories that stop the scroll",
+      "Targeted hashtag strategy for wider reach",
+      "Daily community engagement & replies",
+      "High-converting Instagram lead ads",
+    ],
     image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&q=80",
   },
   {
     id: "facebook",
     platform: "Facebook Marketing",
     icon: "facebook",
-    highlights: ["Page growth", "Groups outreach", "Messenger leads", "Lookalike ads"],
+    highlights: [
+      "Consistent page growth & brand awareness",
+      "Local group outreach to reach nearby customers",
+      "Messenger-based lead generation",
+      "Lookalike & retargeting ad campaigns",
+    ],
     image: "https://images.unsplash.com/photo-1633675254053-d96c7668c3b8?w=600&q=80",
   },
 ];
 
 // ============ SOCIAL CLIENTS SECTION ============
 export const socialClientsSection = {
-  badge: "Social Proof",
-  title: "Featured",
-  titleHighlight: "Clients",
-  description: "Instagram and Facebook clients we manage with care.",
+  badge: "Client Success Stories",
+  title: "Brands We",
+  titleHighlight: "Manage & Grow",
+  description:
+    "These are real businesses we manage on Instagram and Facebook every day — building their audience, driving engagement, and turning followers into loyal customers.",
 };
 
 export const socialClientsData = [
-  { id: "urban", name: "Urban Style", platform: "Instagram", industry: "Fashion", followers: "120k", engagement: "6.2%", imageId: "1460925895917-afdab827c52f" },
-  { id: "desi", name: "Desi Delights", platform: "Instagram", industry: "F&B", followers: "45k", engagement: "4.8%", imageId: "1504674900247-0877df9cc836" },
-  { id: "tech", name: "TechGadgets India", platform: "Instagram", industry: "Electronics", followers: "80k", engagement: "5.1%", imageId: "1505740420928-5e560c06d30e" },
-  { id: "clinic", name: "City Clinic", platform: "Facebook", industry: "Healthcare", followers: "30k", engagement: "3.9%", imageId: "1551076805-e1869033e561" },
-  { id: "bright", name: "Bright Tutors", platform: "Facebook", industry: "Education", followers: "18k", engagement: "4.2%", imageId: "1503676260728-1c00da094a0b" },
-  { id: "fresh", name: "FreshMart", platform: "Facebook", industry: "Grocery", followers: "28k", engagement: "3.5%", imageId: "1542838132-92c53300491e" },
+  {
+    id: "urban",
+    name: "Urban Style",
+    platform: "Instagram",
+    industry: "Fashion",
+    followers: "120k",
+    engagement: "6.2%",
+    imageId: "1460925895917-afdab827c52f",
+  },
+  {
+    id: "desi",
+    name: "Desi Delights",
+    platform: "Instagram",
+    industry: "F&B",
+    followers: "45k",
+    engagement: "4.8%",
+    imageId: "1504674900247-0877df9cc836",
+  },
+  {
+    id: "tech",
+    name: "TechGadgets India",
+    platform: "Instagram",
+    industry: "Electronics",
+    followers: "80k",
+    engagement: "5.1%",
+    imageId: "1505740420928-5e560c06d30e",
+  },
+  {
+    id: "clinic",
+    name: "City Clinic",
+    platform: "Facebook",
+    industry: "Healthcare",
+    followers: "30k",
+    engagement: "3.9%",
+    imageId: "1551076805-e1869033e561",
+  },
+  {
+    id: "bright",
+    name: "Bright Tutors",
+    platform: "Facebook",
+    industry: "Education",
+    followers: "18k",
+    engagement: "4.2%",
+    imageId: "1503676260728-1c00da094a0b",
+  },
+  {
+    id: "fresh",
+    name: "FreshMart",
+    platform: "Facebook",
+    industry: "Grocery",
+    followers: "28k",
+    engagement: "3.5%",
+    imageId: "1542838132-92c53300491e",
+  },
 ];
 
 // ============ SPECIAL SERVICES SECTION ============

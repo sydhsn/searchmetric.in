@@ -1,57 +1,67 @@
 export const leadAdsService = {
-  title: "Lead Ads (Instagram, Facebook, Google)",
-  heroTitle: "Generate High-Quality Leads with Precision Targeting",
-  description: "Data-driven lead generation campaigns that deliver qualified prospects ready to convert.",
-  heroDescription: "Turn ad spend into predictable revenue with our proven lead generation strategies across Meta and Google platforms.",
+  title: "Lead Ads — Instagram, Facebook & Google",
+  heroTitle: "Stop Guessing. Start Getting Real Leads Every Day.",
+  description:
+    "Most businesses waste money on ads that get clicks but no customers. At Searchmetric, we build laser-targeted lead ad campaigns on Instagram, Facebook, and Google that bring in real enquiries from people who are actively looking for exactly what you offer — in Mira Road, Mumbai, and across India.",
+  heroDescription:
+    "We turn your ad budget into a predictable lead machine. No wasted spend, no confusion — just qualified prospects landing in your inbox every single day.",
   features: [
     {
-      title: "Custom Lead Form Setup",
-      description: "High-converting lead forms optimized for mobile and desktop",
-      icon: "form"
+      title: "High-Converting Lead Form Setup",
+      description:
+        "We design and optimise lead forms that load fast, look great on mobile, and make it easy for customers to reach you.",
+      icon: "form",
     },
     {
-      title: "Advanced Audience Targeting",
-      description: "Precise targeting based on demographics, interests, and behaviors",
-      icon: "target"
+      title: "Laser-Focused Audience Targeting",
+      description:
+        "We target the exact people most likely to buy — based on location, interests, behavior, and buying intent.",
+      icon: "target",
     },
     {
       title: "Multi-Platform Campaigns",
-      description: "Integrated campaigns across Instagram, Facebook, and Google",
-      icon: "layers"
+      description:
+        "We run integrated campaigns across Instagram, Facebook, and Google so your business is visible wherever your customers scroll.",
+      icon: "layers",
     },
     {
-      title: "Real-Time Optimization",
-      description: "Continuous A/B testing and performance optimization",
-      icon: "trending"
-    }
+      title: "Continuous Optimisation & Scaling",
+      description:
+        "We test, tweak, and improve your campaigns daily — so your cost per lead keeps going down while your results go up.",
+      icon: "trending",
+    },
   ],
   process: [
     {
       step: "01",
-      title: "Audience Research",
-      description: "Identify your ideal customer profiles and target segments"
+      title: "Understand Your Customer",
+      description:
+        "We start by understanding who your ideal customer is, what they care about, and how they search online.",
     },
     {
       step: "02",
-      title: "Campaign Strategy",
-      description: "Develop platform-specific strategies and creative concepts"
+      title: "Build Your Campaign Strategy",
+      description:
+        "We create a platform-specific strategy with the right messaging, creatives, and targeting for your business.",
     },
     {
       step: "03",
-      title: "Ad Creation & Launch",
-      description: "Design high-converting ads and launch campaigns"
+      title: "Launch & Go Live",
+      description:
+        "We design your ads, set up your lead forms, and launch your campaigns — usually within 3-5 business days.",
     },
     {
       step: "04",
-      title: "Optimization & Scaling",
-      description: "Monitor performance and scale successful campaigns"
-    }
+      title: "Optimise, Report & Scale",
+      description:
+        "We monitor performance daily, share clear monthly reports, and scale what's working to bring in even more leads.",
+    },
   ],
   results: [
     { metric: "30-50%", label: "Lower Cost Per Lead" },
     { metric: "2-3x", label: "Higher Conversion Rates" },
-    { metric: "24-48h", label: "First Leads Delivered" },
-    { metric: "5-10x", label: "Average ROI" }
+    { metric: "24-48hrs", label: "First Leads Delivered" },
+    { metric: "5-10x", label: "Average ROI" },
   ],
   packages: [
     {
@@ -59,114 +69,127 @@ export const leadAdsService = {
       price: "₹25,000",
       period: "/month",
       features: [
-        "1 platform (Facebook OR Instagram)",
-        "Up to 2 ad creatives",
-        "Weekly optimization",
-        "Basic reporting",
-        "Up to ₹15,000 ad spend"
+        "1 platform — Facebook or Instagram",
+        "Up to 2 ad creatives per month",
+        "Weekly campaign optimisation",
+        "Clear monthly performance report",
+        "Up to ₹15,000 ad spend managed",
       ],
-      bestFor: "Small businesses starting with ads"
+      bestFor: "Small businesses running their first ad campaign",
     },
     {
       name: "Growth",
       price: "₹45,000",
       period: "/month",
       features: [
-        "2 platforms (Facebook + Instagram)",
-        "Up to 5 ad creatives",
-        "Daily optimization",
-        "Advanced reporting",
-        "Up to ₹50,000 ad spend",
-        "Lead nurturing setup"
+        "2 platforms — Facebook + Instagram",
+        "Up to 5 ad creatives per month",
+        "Daily campaign optimisation",
+        "Advanced performance reporting",
+        "Up to ₹50,000 ad spend managed",
+        "Lead nurturing & follow-up setup",
       ],
-      bestFor: "Growing businesses scaling ads",
-      popular: true
+      bestFor: "Growing businesses ready to scale their leads",
+      popular: true,
     },
     {
       name: "Enterprise",
       price: "₹75,000+",
       period: "/month",
       features: [
-        "All platforms (Meta + Google)",
+        "All platforms — Meta + Google",
         "Unlimited ad creatives",
-        "24/7 monitoring",
+        "24/7 campaign monitoring",
         "Custom analytics dashboard",
-        "₹1,00,000+ ad spend",
-        "Dedicated account manager"
+        "₹1,00,000+ ad spend managed",
+        "Dedicated account manager",
       ],
-      bestFor: "Established brands with high volume"
-    }
+      bestFor: "Established brands running high-volume campaigns",
+    },
   ],
   faqs: [
     {
-      question: "How quickly can I expect to see results?",
-      answer: "Most clients see first leads within 24-48 hours of campaign launch. Full optimization and consistent results typically take 2-4 weeks."
+      question: "How quickly will I start getting leads?",
+      answer:
+        "Most of our clients receive their first leads within 24-48 hours of going live. Full optimisation and consistent results typically take 2-4 weeks as we fine-tune targeting and creatives.",
     },
     {
-      question: "What's your minimum ad spend requirement?",
-      answer: "We recommend at least ₹15,000/month for testing and ₹30,000+ for scaling. However, we tailor budgets based on your industry and goals."
+      question: "What is the minimum ad budget I need?",
+      answer:
+        "We recommend a minimum of ₹15,000/month for testing and ₹30,000+ for scaling. We'll always recommend a budget based on your industry, goals, and local competition.",
     },
     {
-      question: "Do you offer performance guarantees?",
-      answer: "While we can't guarantee specific results (platform algorithms change), we guarantee our expertise and optimization. We typically achieve 3-10x ROI for our clients."
-    }
-  ]
+      question: "Can you guarantee a specific number of leads?",
+      answer:
+        "While no agency can guarantee exact numbers — platform algorithms change constantly — we guarantee our expertise, daily optimisation, and full transparency. Our clients typically see 3-10x ROI, and we'll always be upfront about what's working and what isn't.",
+    },
+  ],
 };
 
 export const localSEOService = {
-  title: "Local SEO & Google Map Optimization",
-  heroTitle: "Dominate Local Search Results & Google Maps",
-  description: "Get found by customers in your area with comprehensive local SEO strategies.",
-  heroDescription: "Turn local searches into foot traffic, calls, and revenue with our proven Google Maps optimization framework.",
+  title: "Local SEO & Google Maps Optimization",
+  heroTitle: "Get Found by Local Customers Before Your Competitors Do.",
+  description:
+    "If your business isn't showing up on Google Maps or local search results, you're losing customers every single day — to competitors who may not even be better than you. Searchmetric fixes that. We optimise your entire local online presence so the right people in Mira Road, Mumbai, and nearby areas find you first.",
+  heroDescription:
+    "We help local Indian businesses rank higher on Google Maps, get more calls, and turn local searches into real walk-ins and enquiries — consistently.",
   features: [
     {
-      title: "Google Business Profile Optimization",
-      description: "Complete GBP setup and optimization for maximum visibility",
-      icon: "map-pin"
+      title: "Google Business Profile Optimisation",
+      description:
+        "We set up and fully optimise your GBP listing — photos, categories, hours, services, and everything Google needs to rank you higher.",
+      icon: "map-pin",
     },
     {
       title: "Local Citation Building",
-      description: "Consistent NAP listings across 50+ local directories",
-      icon: "list"
+      description:
+        "We list your business consistently across 50+ trusted local directories so Google trusts your business information.",
+      icon: "list",
     },
     {
-      title: "Review Management",
-      description: "Review generation strategies and reputation monitoring",
-      icon: "star"
+      title: "Review Generation & Management",
+      description:
+        "We help you collect more genuine Google reviews and professionally respond to them — building trust and boosting your local ranking.",
+      icon: "star",
     },
     {
-      title: "Localized Content",
-      description: "Location-specific content and geo-targeted pages",
-      icon: "file-text"
-    }
+      title: "Localised Content Creation",
+      description:
+        "We create location-specific website content and geo-targeted pages that help you rank for searches in your area.",
+      icon: "file-text",
+    },
   ],
   process: [
     {
       step: "01",
-      title: "Local Audit",
-      description: "Comprehensive analysis of your local search presence"
+      title: "Full Local SEO Audit",
+      description:
+        "We analyse your current local search presence, identify gaps, and benchmark you against your top local competitors.",
     },
     {
       step: "02",
-      title: "GBP Optimization",
-      description: "Complete Google Business Profile setup and optimization"
+      title: "Google Business Profile Setup",
+      description:
+        "We completely optimise your GBP listing with the right categories, keywords, photos, and content to maximise visibility.",
     },
     {
       step: "03",
-      title: "Citation Cleanup",
-      description: "Fix inconsistencies and build quality local citations"
+      title: "Citation Cleanup & Building",
+      description:
+        "We fix any inconsistent business listings across the web and build fresh citations on high-authority local directories.",
     },
     {
       step: "04",
-      title: "Review Strategy",
-      description: "Implement review generation and management system"
-    }
+      title: "Reviews & Ongoing Growth",
+      description:
+        "We implement a review generation system and monitor your rankings monthly — keeping you ahead of the competition.",
+    },
   ],
   results: [
-    { metric: "300-500%", label: "Map Views Increase" },
+    { metric: "300-500%", label: "More Map Views" },
     { metric: "Top 3", label: "Google Maps Ranking" },
     { metric: "40-60%", label: "More Phone Calls" },
-    { metric: "25+", label: "Positive Reviews/Month" }
+    { metric: "25+", label: "New Reviews/Month" },
   ],
   packages: [
     {
@@ -174,28 +197,28 @@ export const localSEOService = {
       price: "₹15,000",
       period: "/month",
       features: [
-        "Google Business Profile optimization",
-        "Basic citation setup (10 directories)",
+        "Google Business Profile optimisation",
+        "Basic citation setup — 10 directories",
         "Monthly review monitoring",
         "Local ranking reports",
-        "Competitor analysis"
+        "Competitor analysis",
       ],
-      bestFor: "Single-location businesses"
+      bestFor: "Single-location businesses just getting started",
     },
     {
       name: "Local Pro",
       price: "₹25,000",
       period: "/month",
       features: [
-        "Advanced GBP optimization",
-        "50+ local citations",
+        "Advanced GBP optimisation & management",
+        "50+ local directory citations",
         "Review generation strategy",
         "Weekly ranking tracking",
-        "Localized content creation",
-        "Competitor tracking"
+        "Localised content creation",
+        "Competitor tracking & reporting",
       ],
-      bestFor: "Multi-location businesses",
-      popular: true
+      bestFor: "Growing businesses with multiple locations",
+      popular: true,
     },
     {
       name: "Local Enterprise",
@@ -204,84 +227,97 @@ export const localSEOService = {
       features: [
         "Unlimited location management",
         "100+ premium citations",
-        "Review reputation management",
+        "Full review reputation management",
         "Local link building",
-        "Geo-targeted content",
-        "Dedicated local SEO specialist"
+        "Geo-targeted content strategy",
+        "Dedicated local SEO specialist",
       ],
-      bestFor: "National brands with local branches"
-    }
+      bestFor: "National brands with local branches across India",
+    },
   ],
   faqs: [
     {
-      question: "How long does it take to see Google Maps results?",
-      answer: "Initial improvements can be seen in 2-4 weeks, but consistent top 3 rankings typically take 3-6 months of sustained effort."
+      question: "How long does it take to see results on Google Maps?",
+      answer:
+        "You'll typically see initial improvements in your Google Maps visibility within 2-4 weeks. Consistent top 3 rankings usually take 3-6 months — local SEO is a long-term investment that pays off significantly over time.",
     },
     {
-      question: "Can you help with multiple locations?",
-      answer: "Yes! We specialize in multi-location local SEO and have systems to scale your local presence across cities."
+      question: "Can you manage SEO for multiple business locations?",
+      answer:
+        "Absolutely. We specialise in multi-location local SEO and have proven systems to build and maintain a strong local presence across multiple cities and areas simultaneously.",
     },
     {
-      question: "Do you guarantee #1 ranking on Google Maps?",
-      answer: "No ethical agency guarantees #1 rankings. However, we guarantee our work and typically achieve top 3 positions for most clients."
-    }
-  ]
+      question: "Do you guarantee a #1 ranking on Google Maps?",
+      answer:
+        "Any agency promising a guaranteed #1 ranking is not being honest with you. What we do guarantee is expert work, full transparency, and consistent progress. Most of our clients reach the top 3 positions — which is where the real calls and customers come from.",
+    },
+  ],
 };
 
 export const socialMediaService = {
   title: "Social Media Management",
-  heroTitle: "Build Your Brand & Community on Social Media",
-  description: "Consistent growth, engagement, and conversion across all major social platforms.",
-  heroDescription: "Transform your social media presence from silent to sensational with our data-driven content and community management.",
+  heroTitle: "Turn Your Instagram & Facebook Into a Customer-Generating Machine.",
+  description:
+    "Your customers are already on Instagram and Facebook every day — the question is whether they're seeing your business or your competitor's. Searchmetric manages your social media presence end-to-end, from content creation and posting to daily engagement and growth, so your brand stays visible, consistent, and professional without you lifting a finger.",
+  heroDescription:
+    "We handle everything — content, creatives, captions, posting, and replies — so you can focus on running your business while we grow your audience and bring in real leads.",
   features: [
     {
-      title: "Content Strategy & Calendar",
-      description: "Monthly content plans aligned with your business goals",
-      icon: "calendar"
+      title: "Monthly Content Strategy & Calendar",
+      description:
+        "We plan your entire month of content in advance — aligned with your business goals, seasonal trends, and audience preferences.",
+      icon: "calendar",
     },
     {
-      title: "Creative Design",
-      description: "Eye-catching visuals, videos, and carousels",
-      icon: "image"
+      title: "Eye-Catching Creative Design",
+      description:
+        "Our designers create scroll-stopping visuals, reels, carousels, and stories that look professional and represent your brand beautifully.",
+      icon: "image",
     },
     {
-      title: "Community Engagement",
-      description: "Daily comments, DMs, and audience interaction",
-      icon: "message-circle"
+      title: "Daily Community Engagement",
+      description:
+        "We reply to comments, answer DMs, and interact with your audience every day — building real relationships that turn followers into customers.",
+      icon: "message-circle",
     },
     {
-      title: "Performance Analytics",
-      description: "Monthly reports with actionable insights",
-      icon: "bar-chart"
-    }
+      title: "Clear Monthly Performance Reports",
+      description:
+        "Every month you'll receive a simple, jargon-free report showing your follower growth, engagement, reach, and leads generated.",
+      icon: "bar-chart",
+    },
   ],
   process: [
     {
       step: "01",
-      title: "Brand Discovery",
-      description: "Understand your brand voice, audience, and goals"
+      title: "Understand Your Brand",
+      description:
+        "We start with a discovery session to understand your brand voice, target audience, business goals, and competitors.",
     },
     {
       step: "02",
-      title: "Content Planning",
-      description: "Create monthly content calendar and strategy"
+      title: "Build Your Content Plan",
+      description:
+        "We create a structured monthly content calendar tailored to your business — shared with you for approval before anything goes live.",
     },
     {
       step: "03",
-      title: "Creation & Scheduling",
-      description: "Design content and schedule across platforms"
+      title: "Create, Design & Schedule",
+      description:
+        "Our team designs all creatives, writes captions, and schedules posts at the best times for maximum reach and engagement.",
     },
     {
       step: "04",
-      title: "Engagement & Growth",
-      description: "Active community management and growth tactics"
-    }
+      title: "Engage, Grow & Report",
+      description:
+        "We manage your community daily, track your growth, and share a clear monthly report so you always know how your social media is performing.",
+    },
   ],
   results: [
     { metric: "20-40%", label: "Monthly Follower Growth" },
     { metric: "5-10%", label: "Average Engagement Rate" },
     { metric: "3-5x", label: "More Brand Mentions" },
-    { metric: "15-25", label: "Posts/Month" }
+    { metric: "15-25", label: "Posts Per Month" },
   ],
   packages: [
     {
@@ -289,56 +325,59 @@ export const socialMediaService = {
       price: "₹20,000",
       period: "/month",
       features: [
-        "1 platform (Instagram OR Facebook)",
-        "12 posts/month",
-        "Basic content creation",
-        "Community replies (5 days/week)",
-        "Monthly performance report"
+        "1 platform — Instagram or Facebook",
+        "12 posts per month",
+        "Professional content creation",
+        "Community replies — 5 days a week",
+        "Monthly performance report",
       ],
-      bestFor: "Small businesses starting on social"
+      bestFor: "Small businesses just getting started on social media",
     },
     {
       name: "Growth",
       price: "₹35,000",
       period: "/month",
       features: [
-        "2 platforms (Instagram + Facebook)",
-        "20 posts/month",
-        "Premium content creation",
+        "2 platforms — Instagram + Facebook",
+        "20 posts per month",
+        "Premium content & creative design",
         "Daily community management",
-        "Weekly strategy calls",
-        "Competitor analysis"
+        "Weekly strategy check-in calls",
+        "Competitor analysis & benchmarking",
       ],
-      bestFor: "Growing brands expanding presence",
-      popular: true
+      bestFor: "Growing brands ready to expand their social presence",
+      popular: true,
     },
     {
       name: "Premium",
       price: "₹60,000+",
       period: "/month",
       features: [
-        "3+ platforms (add LinkedIn/Twitter)",
-        "30+ posts/month",
-        "Video content creation",
+        "3+ platforms — add LinkedIn or Twitter",
+        "30+ posts per month",
+        "Video & reel content creation",
         "24/7 community management",
-        "Influencer outreach",
-        "Dedicated social media manager"
+        "Influencer outreach & collaboration",
+        "Dedicated social media manager",
       ],
-      bestFor: "Established brands with active communities"
-    }
+      bestFor: "Established brands with active, growing communities",
+    },
   ],
   faqs: [
     {
       question: "How many posts do you create per month?",
-      answer: "Our packages include 12-30+ posts per month, depending on your plan. We focus on quality over quantity."
+      answer:
+        "Depending on your plan, we create between 12 and 30+ posts per month. We always prioritise quality over quantity — every post is designed with purpose and aligned to your brand.",
     },
     {
-      question: "Do you handle customer service on social media?",
-      answer: "Yes! We manage all incoming messages and comments, escalating customer service issues to your team when needed."
+      question: "Do you handle customer messages and comments?",
+      answer:
+        "Yes, absolutely. We manage all incoming comments and DMs on your behalf, responding promptly and professionally. If a query needs your direct input — like a specific order or complaint — we flag it to you immediately.",
     },
     {
-      question: "Can we provide input on content?",
-      answer: "Absolutely! We collaborate closely with you and provide monthly content calendars for approval before posting."
-    }
-  ]
+      question: "Can I review and approve content before it goes live?",
+      answer:
+        "Always. We share your complete monthly content calendar for review and approval before anything is published. You're in full control — we just make the process effortless.",
+    },
+  ],
 };

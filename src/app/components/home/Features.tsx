@@ -21,7 +21,7 @@ const Features: FC = () => {
         <div className="text-center max-w-3xl mx-auto">
             <div className="badge justify-center">{featuresSection.badge}</div>
             <h2 className="h2 mt-5">
-            {featuresSection.title}<span className="text-brand-700">{featuresSection.titleHighlight}</span>
+            {featuresSection.title}&nbsp;<span className="text-brand-700">{featuresSection.titleHighlight}</span>
             </h2>
             <p className="section-desc">
             {featuresSection.description}

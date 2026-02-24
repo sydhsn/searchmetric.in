@@ -1,6 +1,6 @@
-import { Clock, FileText, TrendingUp, Star, CheckCircle, MessageCircle, ArrowRight, Phone } from "lucide-react";
 import { FC } from "react";
 import { faqsSection, faqsData } from "@/content/homePageData";
+import { Clock, FileText, TrendingUp, Star, CheckCircle, MessageCircle, ArrowRight, Phone, Shield } from "lucide-react";
 
 /* Icon map */
 const iconMap = {
@@ -9,13 +9,10 @@ const iconMap = {
   trendingUp: <TrendingUp size={20} />,
   star: <Star size={20} />,
   checkCircle: <CheckCircle size={20} />,
+  shield: <Shield size={20} />,
 };
 
-/* -----------------------------
-   FAQs
------------------------------- */
 const FAQs: FC = () => {
-
   return (
     <section className="section bg-gradient-to-br from-slate-50 via-white to-slate-50 relative overflow-hidden">
       <div className="absolute top-1/4 -left-24 h-96 w-96 rounded-full bg-brand-200 blur-3xl opacity-20" />
@@ -61,23 +58,14 @@ const FAQs: FC = () => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
         <div className="mt-12 text-center card card-pad bg-gradient-to-r from-brand-600 via-purple-600 to-fuchsia-600 text-white max-w-2xl mx-auto">
           <h3 className="text-2xl font-bold mb-2">Still have questions?</h3>
           <p className="text-white/90 mb-6 text-sm">Our team is here to help. Get in touch for a friendly chat.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a 
-              href="/contact" 
-              className="btn !bg-white !text-slate-900 hover:!bg-slate-100 inline-flex items-center gap-2"
-              aria-label="Chat with our marketing experts"
-            >
+            <a href="/contact" className="btn !bg-white !text-slate-900 hover:!bg-slate-100 inline-flex items-center gap-2" aria-label="Chat with our marketing experts">
               <MessageCircle size={18} /> Chat with us
             </a>
-            <a 
-              href="tel:+919876543210" 
-              className="btn !bg-white/10 !text-white border border-white/20 hover:!bg-white/20 inline-flex items-center gap-2"
-              aria-label="Call our office now"
-            >
+            <a href="tel:+919876543210" className="btn !bg-white/10 !text-white border border-white/20 hover:!bg-white/20 inline-flex items-center gap-2" aria-label="Call our office now">
               <Phone size={18} /> Call now
             </a>
           </div>
