@@ -71,16 +71,15 @@ const Header: FC = () => {
             ].join(" ")}
           >
             {/* Brand */}
-            <a href="/" className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-brand-600 text-white grid place-items-center font-bold">
-                SM
-              </div>
-              <div className="leading-tight">
-                <div className="text-base md:text-lg font-semibold text-ink-900">
-                  SearchMetric
-                </div>
-                <div className="text-xs text-slate-500">Digital Growth</div>
-              </div>
+            <a href="/" className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="SearchMetric Logo"
+                width={300}
+                height={50}
+                className="h-auto w-50"
+                priority
+              />
             </a>
 
             {/* Desktop */}
