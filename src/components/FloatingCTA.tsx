@@ -4,6 +4,11 @@ import React, { useState, useEffect } from "react";
 import { Phone, X, MessageCircle } from "lucide-react";
 import { contact } from "@/content/siteCopy";
 
+/**
+ * FloatingCTA - Hydration-safe implementation following React 18 best practices
+ * Uses mounted state to ensure server and client render identical HTML initially
+ * Content visibility is toggled via CSS classes to maintain DOM structure
+ */
 export default function FloatingCTA() {
   const [visible, setVisible] = useState(false);
   const [expanded, setExpanded] = useState(false);

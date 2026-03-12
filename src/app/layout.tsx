@@ -215,7 +215,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
         />
       </head>
-      <body className={`${manrope.variable} bg-white text-slate-900 antialiased`}>
+      <body suppressHydrationWarning className={`${manrope.variable} bg-white text-slate-900 antialiased`}>
         {/* Skip to content for accessibility + SEO */}
         <a
           href="#main-content"
