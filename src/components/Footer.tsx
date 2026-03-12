@@ -136,6 +136,13 @@ const Footer: FC = () => {
             ))}
           </div>
         </div>
+
+        {/* Horizontal Inline Footer Logo */}
+        <div className="mt-8 pt-8 border-t border-white/10 flex justify-center px-4">
+          <div className="w-full sm:w-auto max-w-xs sm:max-w-sm md:max-w-md">
+            <Image src="/footer-logo-inline.svg" alt="SearchMetric Logo" width={270} height={30} className="w-full h-auto" />
+          </div>
+        </div>
       </div>
 
       {/* Copyright */}
