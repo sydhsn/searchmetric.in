@@ -216,15 +216,15 @@ export default function KatiharLocalSEOPage() {
                 🎯 The Katihar SEO Opportunity
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-5">
-                Katihar's Google Maps Is Almost Empty —{" "}
+                Katihar&apos;s Google Maps Is Almost Empty —{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-violet-600">
-                  Here's Your Advantage
+                  Here&apos;s Your Advantage
                 </span>
               </h2>
               <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
                 <p>Katihar is a major railway junction city with a growing population of students, professionals, and families who use Google every day to find local services. The problem? Most local businesses have no optimised digital presence.</p>
                 <p>This is a first-mover market. In Katihar right now, if you rank in the top 3 on Google Maps for your service, you will dominate that position for years — and every new competitor will struggle to displace you.</p>
-                <p>Unlike Delhi or Mumbai where hundreds of businesses compete for every keyword, in Katihar you're often competing with 5–10 businesses, most of whom have incomplete or zero online presence. Ranking is faster and more affordable here than anywhere else in India.</p>
+                <p>Unlike Delhi or Mumbai where hundreds of businesses compete for every keyword, in Katihar you&apos;re often competing with 5–10 businesses, most of whom have incomplete or zero online presence. Ranking is faster and more affordable here than anywhere else in India.</p>
               </div>
               <div className="mt-6 space-y-3">
                 {["Near-zero competition for most local search terms", "Growing smartphone usage — more searches every month", "Railway junction city attracts visitors searching for services", "First-mover rankings hold for years in smaller markets"].map((item, i) => (

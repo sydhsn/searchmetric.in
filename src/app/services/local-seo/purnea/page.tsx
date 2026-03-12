@@ -155,7 +155,7 @@ export default function PurneaLocalSEOPage() {
                 Rank Your Purnea Business<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-400">#1 on Google Maps</span>
               </h1>
-              <p className="text-lg text-slate-300 mb-8 leading-relaxed">Purnea is North Bihar's largest commercial hub with millions of searches monthly. Most businesses here are invisible on Google — be the one that isn't.</p>
+              <p className="text-lg text-slate-300 mb-8 leading-relaxed">Purnea is North Bihar&apos;s largest commercial hub with millions of searches monthly. Most businesses here are invisible on Google — be the one that isn&apos;t.</p>
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white font-semibold rounded-xl shadow-xl transition-all hover:opacity-90">
                   Free Purnea SEO Audit <ArrowRight size={18} />
@@ -207,7 +207,7 @@ export default function PurneaLocalSEOPage() {
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-5">Why Purnea Is the Right Time to Get on Google</h2>
               <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
-                <p>Purnea is the administrative capital of Seemanchal with a district population over 3 million. Smartphone and internet penetration is rising fast, and 'near me' searches grow month-on-month. Yet most local businesses remain completely invisible on Google Maps. Competition is still low enough that ranking in the top 3 is achievable within 60–90 days for most categories.</p>
+                <p>Purnea is the administrative capital of Seemanchal with a district population over 3 million. Smartphone and internet penetration is rising fast, and &apos;near me&apos; searches grow month-on-month. Yet most local businesses remain completely invisible on Google Maps. Competition is still low enough that ranking in the top 3 is achievable within 60–90 days for most categories.</p>
               </div>
               <div className="mt-6 space-y-3">
                 {["Near-zero competition for most local search terms in Purnea", "Growing smartphone usage — more people searching every month", "First-mover rankings in smaller markets hold for years", "Ranking here is faster and more affordable than any metro"].map((item, i) => (

@@ -207,7 +207,7 @@ export default function KishanganjLocalSEOPage() {
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-5">Why Kishanganj Is the Right Time to Get on Google</h2>
               <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
-                <p>Kishanganj is unique — a Bihar city that draws customers from West Bengal, Sikkim, and the Northeast via NH-27. Tea gardens, agriculture, trade, and growing retail make it search-rich. Most businesses haven't even claimed their Google Business Profile, so ranking in the top 3 for most local searches is achievable within weeks.</p>
+                <p>Kishanganj is unique — a Bihar city that draws customers from West Bengal, Sikkim, and the Northeast via NH-27. Tea gardens, agriculture, trade, and growing retail make it search-rich. Most businesses haven&apos;t even claimed their Google Business Profile, so ranking in the top 3 for most local searches is achievable within weeks.</p>
               </div>
               <div className="mt-6 space-y-3">
                 {["Near-zero competition for most local search terms in Kishanganj", "Growing smartphone usage — more people searching every month", "First-mover rankings in smaller markets hold for years", "Ranking here is faster and more affordable than any metro"].map((item, i) => (

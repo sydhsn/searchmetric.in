@@ -207,7 +207,7 @@ export default function BaisiLocalSEOPage() {
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-5">Why Baisi Is the Right Time to Get on Google</h2>
               <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
-                <p>Baisi is where Searchmetric is headquartered — at Hospital Road, Purab Chowk, Baisi, Purnea. We know this market intimately. Almost no business in Baisi has an optimised Google presence, meaning you can reach the top 3 on Google Maps very quickly. We're your neighbours — and we're proud to help local Baisi businesses grow.</p>
+                <p>Baisi is where Searchmetric is headquartered — at Hospital Road, Purab Chowk, Baisi, Purnea. We know this market intimately. Almost no business in Baisi has an optimised Google presence, meaning you can reach the top 3 on Google Maps very quickly. We&apos;re your neighbours — and we&apos;re proud to help local Baisi businesses grow.</p>
               </div>
               <div className="mt-6 space-y-3">
                 {["Near-zero competition for most local search terms in Baisi", "Growing smartphone usage — more people searching every month", "First-mover rankings in smaller markets hold for years", "Ranking here is faster and more affordable than any metro"].map((item, i) => (

@@ -195,14 +195,14 @@ export default function SiliguriLocalSEOPage() {
       <section className="section bg-gradient-to-b from-white to-slate-50">
         <div className="container-pad">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="badge bg-gradient-to-r from-teal-500 to-emerald-600 text-white ring-0 mb-4">Siliguri's SEO Opportunity</div>
+            <div className="badge bg-gradient-to-r from-teal-500 to-emerald-600 text-white ring-0 mb-4">Siliguri&apos;s SEO Opportunity</div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Why Siliguri Businesses Must be on{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-emerald-600">
                 Google Maps Now
               </span>
             </h2>
-            <p className="text-slate-500 text-lg">Siliguri's unique geography creates a market that no other city in India replicates.</p>
+            <p className="text-slate-500 text-lg">Siliguri&apos;s unique geography creates a market that no other city in India replicates.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {whyItems.map((item, i) => (
