@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import {
   Smartphone, Search, Target, Edit2, CheckCircle, ChevronRight,
@@ -10,6 +8,7 @@ import {
 } from "lucide-react";
 import { websiteDevelopmentService } from "@/content/servicesData";
 import { contact } from "@/content/siteCopy";
+import WebsiteDevFAQ from "@/components/WebsiteDevFAQ";
 
 function FeatureIcon({ icon }: { icon: string }) {
   switch (icon) {
@@ -52,9 +51,6 @@ const businessOutcomes = [
 ];
 
 export default function WebsiteDevelopmentPage() {
-  const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
-  const [selectedPackage, setSelectedPackage] = useState<number>(1);
-
   return (
     <div className="min-h-screen bg-white">
       {/* ========================================
@@ -273,27 +269,7 @@ export default function WebsiteDevelopmentPage() {
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">Frequently Asked Questions</h2>
           
-          <div className="space-y-4">
-            {websiteDevelopmentService.faqs.map((faq, idx) => (
-              <div key={idx} className="border rounded-lg overflow-hidden">
-                <button
-                  onClick={() => setExpandedFAQ(expandedFAQ === idx ? null : idx)}
-                  className="w-full bg-white p-6 flex justify-between items-center hover:bg-slate-50 transition"
-                >
-                  <span className="font-bold text-lg text-left">{faq.question}</span>
-                  <ChevronRight 
-                    size={24} 
-                    className={`flex-shrink-0 transition ${expandedFAQ === idx ? "rotate-90" : ""}`}
-                  />
-                </button>
-                {expandedFAQ === idx && (
-                  <div className="bg-slate-50 p-6 border-t">
-                    <p className="text-slate-700 leading-relaxed">{faq.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+          <WebsiteDevFAQ faqs={websiteDevelopmentService.faqs} />
         </div>
       </section>
 

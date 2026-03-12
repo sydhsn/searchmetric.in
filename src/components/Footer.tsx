@@ -1,7 +1,7 @@
 "use client";
 import React, { FC } from "react";
-import Image from "next/image";
 import { Facebook, Instagram, Twitter, Linkedin, Youtube, ArrowRight, Send, Phone, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 
 const Footer: FC = () => {
   const quickLinks = [
@@ -45,7 +45,7 @@ const Footer: FC = () => {
           {/* Col 1 — Brand */}
           <div>
             <a href="/" className="inline-block">
-              <Image src="/footer-logo.png" alt="SearchMetric Logo" width={300} height={54} className="h-auto w-50" />
+              <Image src="/footer-logo.svg" alt="SearchMetric Logo" width={300} height={54} className="h-auto w-50" />
             </a>
             <p className="mt-5 text-white/70 text-sm leading-relaxed">
               SEO & digital marketing agency for Seemanchal Bihar — helping local businesses in Katihar, Purnea, Kishanganj & beyond rank on Google.
