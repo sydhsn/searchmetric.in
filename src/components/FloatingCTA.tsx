@@ -8,20 +8,24 @@ export default function FloatingCTA() {
   const [visible, setVisible] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [dismissed, setDismissed] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     const timer = setTimeout(() => {
       if (!dismissed) setVisible(true);
     }, 3000);
     return () => clearTimeout(timer);
-  }, [dismissed]);
-
-  if (!visible) return null;
+  }, [dismissed, mounted]);
 
   return (
-    <>
+    <div suppressHydrationWarning className={mounted ? "" : "hidden"}>
       {/* WhatsApp floating button — always visible */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+      <div className={`fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 ${!visible ? 'hidden' : ''}`}>
         {/* Expanded options */}
         {expanded && (
           <div className="flex flex-col gap-2 items-end animate-in slide-in-from-bottom-4 fade-in duration-200">
@@ -81,6 +85,6 @@ export default function FloatingCTA() {
           )}
         </button>
       </div>
-    </>
+    </div>
   );
 }

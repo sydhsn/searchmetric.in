@@ -9,6 +9,7 @@ import type { NavItem } from "../types/nav";
 const Header: FC = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const servicesSubmenu = useMemo(
     () => [
@@ -45,6 +46,7 @@ const Header: FC = () => {
   );
 
   useEffect(() => {
+    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 12);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -145,9 +147,8 @@ const Header: FC = () => {
           </div>
 
           {/* Mobile dropdown */}
-          {open && (
-            <div className="lg:hidden mt-3 card card-pad">
-              <div className="space-y-2">
+          <div className={`lg:hidden mt-3 card card-pad ${open ? '' : 'hidden'}`} suppressHydrationWarning>
+            <div className="space-y-2">
                 {navItems.map((item) => (
                   <div key={item.name} className="border-b border-slate-100 pb-2">
                     <a
@@ -180,7 +181,6 @@ const Header: FC = () => {
                 Get Free Proposal <ArrowRight size={18} />
               </a>
             </div>
-          )}
         </div>
       </div>
     </header>

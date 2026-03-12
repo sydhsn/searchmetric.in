@@ -52,7 +52,7 @@ const businessOutcomes = [
 
 export default function WebsiteDevelopmentPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" suppressHydrationWarning>
       {/* ========================================
           HERO SECTION
           ======================================== */}
