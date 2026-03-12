@@ -147,7 +147,7 @@ export default function AboutPage() {
               <Quote size={40} className="text-brand-200 flex-shrink-0 mt-1" />
               <div>
                 <p className="text-2xl md:text-3xl font-semibold text-ink-900 leading-relaxed">
-                  "We started Searchmetric because we were tired of watching local businesses spend good money on digital marketing agencies that sent beautiful reports full of numbers that didn't mean anything."
+                  &ldquo;We started Searchmetric because we were tired of watching local businesses spend good money on digital marketing agencies that sent beautiful reports full of numbers that didn&apos;t mean anything.&rdquo;
                 </p>
                 <div className="mt-6 flex items-center gap-3">
                   <div className="h-12 w-12 rounded-full overflow-hidden relative">
