@@ -74,18 +74,18 @@ export const seo = {
 // CONTACT DETAILS — Update with real info before going live
 // ============================================================
 export const contact = {
-  phone: "+91 98765 43210",
-  phoneHref: "tel:+919876543210",
-  email: "hello@searchmetric.in",
-  emailHref: "mailto:hello@searchmetric.in",
-  whatsapp: "https://wa.me/919876543210?text=Hi%2C%20I%20found%20you%20on%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services.",
+  phone: "+91 90801 35567",
+  phoneHref: "tel:+919080135567",
+  email: "info@searchmetric.in",
+  emailHref: "mailto:info@searchmetric.in",
+  whatsapp: "https://wa.me/919080135567?text=Hi%2C%20I%20found%20you%20on%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services.",
   address: {
-    line1: "Mira Road",
-    line2: "Thane — 401107",
-    city: "Mumbai",
-    state: "Maharashtra",
+    line1: "Hospital Road, Purab Chowk",
+    line2: "Baisi — 854311",
+    city: "Purnea",
+    state: "Bihar",
     country: "India",
-    full: "Mira Road, Thane — 401107, Mumbai, Maharashtra, India",
+    full: "Hospital Road, Purab Chowk, Baisi, Purnea, Bihar — 854311, India",
   },
   hours: {
     weekdays: "Mon – Sat: 9:00 AM – 7:00 PM",
@@ -95,7 +95,7 @@ export const contact = {
     instagram: "https://instagram.com/searchmetric.in",
     facebook: "https://facebook.com/searchmetric.in",
     linkedin: "https://linkedin.com/company/searchmetric",
-    whatsappBusiness: "https://wa.me/919876543210",
+    whatsappBusiness: "https://wa.me/919080135567",
   },
 };
 
@@ -109,15 +109,21 @@ export const organizationSchema = {
   "url": "https://searchmetric.in",
   "logo": "https://searchmetric.in/searchmetric-logo.svg",
   "description": "Searchmetric is a leading SEO and digital marketing agency serving Seemanchal Bihar — Katihar, Purnea, Kishanganj, Barsoi, Dalkhola & more.",
-  "telephone": "+91-98765-43210",
-  "email": "hello@searchmetric.in",
+  "telephone": "+91-90801-35567",
+  "email": "info@searchmetric.in",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Mira Road",
-    "addressLocality": "Mira Road East",
-    "addressRegion": "Maharashtra",
-    "postalCode": "401107",
+    "streetAddress": "Hospital Road, Purab Chowk",
+    "addressLocality": "Baisi",
+    "addressRegion": "Bihar",
+    "postalCode": "854311",
     "addressCountry": "IN",
+  },
+  "hasMap": "https://maps.google.com/?q=Hospital+Road+Purab+Chowk+Baisi+Purnea+Bihar",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "25.8",
+    "longitude": "87.7"
   },
   "openingHoursSpecification": [
     {

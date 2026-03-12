@@ -74,11 +74,11 @@ export const seo = {
 // CONTACT DETAILS — Update with real info before going live
 // ============================================================
 export const contact = {
-  phone: "+91 98765 43210",
-  phoneHref: "tel:+919876543210",
+  phone: "+91 90801 35567",
+  phoneHref: "tel:+919080135567",
   email: "hello@searchmetric.in",
   emailHref: "mailto:hello@searchmetric.in",
-  whatsapp: "https://wa.me/919876543210?text=Hi%2C%20I%20found%20you%20on%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services.",
+  whatsapp: "https://wa.me/919080135567?text=Hi%2C%20I%20found%20you%20on%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services.",
   address: {
     line1: "Mira Road",
     line2: "Thane — 401107",
@@ -95,7 +95,7 @@ export const contact = {
     instagram: "https://instagram.com/searchmetric.in",
     facebook: "https://facebook.com/searchmetric.in",
     linkedin: "https://linkedin.com/company/searchmetric",
-    whatsappBusiness: "https://wa.me/919876543210",
+    whatsappBusiness: "https://wa.me/919080135567",
   },
 };
 
@@ -109,7 +109,7 @@ export const organizationSchema = {
   "url": "https://searchmetric.in",
   "logo": "https://searchmetric.in/searchmetric-logo.svg",
   "description": "Searchmetric is a leading SEO and digital marketing agency in Mira Road, Mumbai.",
-  "telephone": "+91-98765-43210",
+  "telephone": "+91-90801-35567",
   "email": "hello@searchmetric.in",
   "address": {
     "@type": "PostalAddress",

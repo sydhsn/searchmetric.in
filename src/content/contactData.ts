@@ -1,7 +1,7 @@
 export const contactInfo = {
-  phone: "+91 98765 43210",
-  email: "hello@searchmetric.in",
-  address: "Katihar, Seemanchal, Bihar",
+  phone: "+91 90801 35567",
+  email: "info@searchmetric.in",
+  address: "Hospital Road, Purab Chowk, Baisi, Purnea, Bihar — 854311",
   social: [
     { platform: "Instagram", icon: "instagram", link: "https://instagram.com/searchmetric.in", handle: "@searchmetric.in" },
     { platform: "Facebook", icon: "facebook", link: "https://facebook.com/searchmetric.in", handle: "Searchmetric" },
@@ -49,14 +49,14 @@ export const faqs = [
 export const teamContacts = [
   {
     name: "Sales & New Enquiries",
-    email: "sales@searchmetric.in",
-    phone: "+91 98765 43211",
+    email: "info@searchmetric.in",
+    phone: "+91 90801 35567",
     description: "New business, pricing, and getting started",
   },
   {
     name: "Client Support",
-    email: "support@searchmetric.in",
-    phone: "+91 98765 43212",
+    email: "info@searchmetric.in",
+    phone: "+91 90801 35567",
     description: "Existing clients — campaign queries, reports, account help",
   },
 ];

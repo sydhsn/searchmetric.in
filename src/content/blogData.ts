@@ -151,7 +151,6 @@ export const categories = [
   { name: "Social Media", count: 2, slug: "social-media" },
   { name: "Content Marketing", count: 2, slug: "content-marketing" },
   { name: "Lead Generation", count: 3, slug: "lead-generation" },
-  { name: "Case Studies", count: 4, slug: "case-studies" }
 ];
 
 export const popularTags = [

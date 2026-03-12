@@ -3,14 +3,14 @@ import nodemailer from "nodemailer";
 
 // ============================================================
 // POST /api/contact
-// Sends form submissions as email to hello@searchmetric.in
+// Sends form submissions as email to info@searchmetric.in
 //
 // Required environment variables (set in .env.local):
 //   SMTP_HOST     — e.g. smtp.gmail.com
 //   SMTP_PORT     — e.g. 587
 //   SMTP_USER     — your sending email address
 //   SMTP_PASS     — your app password / SMTP password
-//   CONTACT_EMAIL — recipient, defaults to hello@searchmetric.in
+//   CONTACT_EMAIL — recipient, defaults to info@searchmetric.in
 // ============================================================
 
 interface ContactPayload {
@@ -127,9 +127,9 @@ function buildAutoReplyHtml(name: string): string {
         <div class="step"><span class="step-num">2</span><span>We reach out via your preferred contact method to schedule a free 30-minute strategy call.</span></div>
         <div class="step"><span class="step-num">3</span><span>On the call, we audit your current digital presence and share a clear action plan — no jargon, just real steps.</span></div>
       </div>
-      <p>In the meantime, feel free to check out our <a href="https://searchmetric.in/case-studies" style="color:#7c3aed">case studies</a> to see how we've helped businesses like yours grow online.</p>
+      <p>In the meantime, feel free to check out our <a href="https://searchmetric.in/blog" style="color:#7c3aed">blog</a> to see how we've helped businesses like yours grow online.</p>
       <p>If it's urgent, you can also reach us directly:</p>
-      <p>📞 <a href="tel:+919876543210" style="color:#7c3aed">+91 98765 43210</a> &nbsp;|&nbsp; 💬 <a href="https://wa.me/919876543210" style="color:#7c3aed">WhatsApp Us</a></p>
+      <p>📞 <a href="tel:+919080135567" style="color:#7c3aed">+91 90801 35567</a> &nbsp;|&nbsp; 💬 <a href="https://wa.me/919080135567" style="color:#7c3aed">WhatsApp Us</a></p>
       <br/>
       <p>Looking forward to speaking with you soon!</p>
       <p>Warm regards,<br/><strong>The Searchmetric Team</strong><br/><span style="color:#94a3b8;font-size:13px">Searchmetric | Seemanchal Bihar</span></p>
@@ -165,7 +165,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const recipientEmail = process.env.CONTACT_EMAIL || "hello@searchmetric.in";
+    const recipientEmail = process.env.CONTACT_EMAIL || "info@searchmetric.in";
 
     // Configure transporter from environment variables
     const transporter = nodemailer.createTransport({
@@ -194,7 +194,7 @@ export async function POST(request: Request) {
       to: body.email,
       subject: `Thanks ${body.name.split(" ")[0]}! We've received your message — Searchmetric`,
       html: buildAutoReplyHtml(body.name),
-      text: `Hi ${body.name.split(" ")[0]},\n\nThank you for contacting Searchmetric! We'll get back to you within 24 hours.\n\nFor urgent queries: +91 98765 43210\n\nWarm regards,\nThe Searchmetric Team`,
+      text: `Hi ${body.name.split(" ")[0]},\n\nThank you for contacting Searchmetric! We'll get back to you within 24 hours.\n\nFor urgent queries: +91 90801 35567\n\nWarm regards,\nThe Searchmetric Team`,
     });
 
     return NextResponse.json({

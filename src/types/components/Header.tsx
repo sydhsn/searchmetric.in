@@ -42,7 +42,7 @@ const Header: FC = () => {
         <div className="container-wide max-w-full px-6 lg:px-12 flex items-center justify-between py-2 text-xs md:text-sm">
           <div className="flex items-center gap-4">
             <span className="inline-flex items-center gap-2">
-              <Phone size={14} className="opacity-90" /> +91 98765 43210
+              <Phone size={14} className="opacity-90" /> +91 90801 35567
             </span>
             <span className="hidden md:inline-flex items-center gap-2">
               <Mail size={14} className="opacity-90" /> info@searchmetric.in

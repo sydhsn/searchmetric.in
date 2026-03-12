@@ -120,10 +120,10 @@ export default function AboutPage() {
                 </p>
                 <div className="mt-6 flex items-center gap-3">
                   <div className="h-12 w-12 rounded-full overflow-hidden relative">
-                    <Image src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Rahul Verma" fill className="object-cover" sizes="48px" />
+                    <Image src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&q=80" alt="Jabeen Fatima" fill className="object-cover" sizes="48px" />
                   </div>
                   <div>
-                    <div className="font-bold text-ink-900">Rahul Verma</div>
+                    <div className="font-bold text-ink-900">Jabeen Fatima</div>
                     <div className="text-sm text-slate-500">Founder & CEO, Searchmetric</div>
                   </div>
                 </div>
@@ -165,7 +165,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-5 text-slate-600 leading-relaxed">
                   <p>
-                    Searchmetric was born in 2018 out of frustration. Our founder Rahul had spent years watching local businesses — restaurants, clinics, coaching institutes, salons — pour money into marketing agencies that delivered nothing more than confusing dashboards and excuses.
+                    Searchmetric was born in 2018 out of frustration. Our founder Jabeen had spent years watching local businesses — restaurants, clinics, coaching institutes, salons — pour money into marketing agencies that delivered nothing more than confusing dashboards and excuses.
                   </p>
                   <p>
                     We started Searchmetric with a simple observation: businesses in Katihar, Purnea, Kishanganj, and across Seemanchal Bihar are working hard every day — but almost none of them can be found on Google. Bigger agencies from Mumbai or Delhi don&apos;t care about small Bihar towns. So we decided to.
@@ -363,7 +363,7 @@ export default function AboutPage() {
               <div className="mt-8 pt-8 border-t border-white/10">
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-2">
-                    {["photo-1507003211169-0a1dd7228f2d","photo-1494790108755-2616b612b786","photo-1472099645785-5658abf4ff4e","photo-1487412720507-e7ab37603c6f"].map((id, i) => (
+                    {["photo-1494790108755-2616b612b786","photo-1494790108755-2616b612b786","photo-1472099645785-5658abf4ff4e","photo-1487412720507-e7ab37603c6f"].map((id, i) => (
                       <div key={i} className="h-9 w-9 rounded-full border-2 border-slate-800 overflow-hidden relative">
                         <Image src={`https://images.unsplash.com/${id}?w=100&q=80`} alt="Team member" fill className="object-cover" sizes="36px" />
                       </div>
@@ -387,7 +387,7 @@ export default function AboutPage() {
             <div className="p-8 md:p-14 bg-gradient-to-r from-slate-900 to-slate-800 text-white text-center">
               <div className="max-w-3xl mx-auto">
                 <div className="badge bg-white/10 text-white ring-0 mb-6 inline-flex">
-                  <Building2 size={14} /> Katihar · Seemanchal · Bihar
+                  <Building2 size={14} /> Hospital Road, Purab Chowk, Baisi, Purnea
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-5">
                   Ready to Work with an Agency That Actually Cares?
@@ -412,7 +412,7 @@ export default function AboutPage() {
                     <Mail size={16} /> {contactDetails.email}
                   </a>
                   <span className="flex items-center gap-2 text-slate-400">
-                    <MapPin size={16} /> Katihar, Seemanchal, Bihar
+                    <MapPin size={16} /> Hospital Road, Purab Chowk, Baisi, Purnea, Bihar
                   </span>
                 </div>
               </div>

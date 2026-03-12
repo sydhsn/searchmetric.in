@@ -1,77 +1,184 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MapPin, CheckCircle, Phone, ArrowRight, MessageCircle, Star, Search, TrendingUp } from "lucide-react";
+import { MapPin, CheckCircle, Phone, ArrowRight, MessageCircle, Star, Search, TrendingUp, Shield, Clock, Users, BarChart3 } from "lucide-react";
 import { contact } from "@/content/siteCopy";
 
 export const metadata: Metadata = {
-  title: "Local SEO Services in Purnea | Google Maps Ranking — Searchmetric",
-  description:
-    "Get your Purnea business to the top of Google Maps. Searchmetric provides local SEO for shops, clinics, coaching centres and all businesses in Purnea, Bihar. Free audit available.",
-  keywords: "local SEO Purnea, Google Maps ranking Purnea, SEO agency Purnea, digital marketing Purnea Bihar, Google Business Profile Purnea, SEO company Purnea",
+  title: "Local SEO in Purnea | Google Maps Ranking & Digital Marketing — Searchmetric",
+  description: "Local SEO & digital marketing for Purnea businesses. Rank on Google Maps, grow your Google Business Profile. Free audit — +91 90801 35567.",
+  keywords: "local SEO Purnea, SEO agency Purnea, digital marketing Purnea, Google Maps ranking Purnea, Google Business Profile Purnea, GBP Purnea, SEO company Purnea Bihar, Instagram marketing Purnea, Facebook ads Purnea, lead generation Purnea, best digital marketing agency Purnea, Seemanchal SEO, near me SEO Purnea",
   alternates: { canonical: "/services/local-seo/purnea" },
+  openGraph: {
+    title: "Local SEO in Purnea | Google Maps Ranking — Searchmetric",
+    description: "Rank your Purnea business on Google Maps. North Bihar's commercial hub — be found first.",
+    url: "https://searchmetric.in/services/local-seo/purnea",
+    siteName: "Searchmetric",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Local SEO in Purnea — Searchmetric",
+    description: "Rank your Purnea business on Google Maps. North Bihar's commercial hub — be found first.",
+  },
+};
+
+const citySchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://searchmetric.in/services/local-seo/purnea",
+  "name": "Searchmetric — Local SEO Agency Purnea",
+  "url": "https://searchmetric.in/services/local-seo/purnea",
+  "telephone": "+91-90801-35567",
+  "email": "info@searchmetric.in",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Hospital Road, Purab Chowk",
+    "addressLocality": "Baisi",
+    "addressRegion": "Bihar",
+    "postalCode": "854311",
+    "addressCountry": "IN",
+  },
+  "areaServed": { "@type": "City", "name": "Purnea" },
+  "priceRange": "₹₹",
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is local SEO useful for small shops in Purnea?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — even a small shop benefits. A well-set-up Google Business Profile puts your shop on Google Maps so people nearby find you instantly when searching 'near me'. It's the most cost-effective marketing for small local businesses." }
+    },
+    {
+      "@type": "Question",
+      "name": "How competitive is Google Maps SEO in Purnea?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Moderate — far lower than any metro. In most categories, 2–5 businesses are even partially optimised. Reaching the top 3 within 90 days is realistic with proper strategy." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you help set up a Google Business Profile from scratch?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We handle full setup — verification, category selection, description, photos, opening hours, service areas, and Google's verification process." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you serve businesses across Purnea district, not just the city?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We serve all of Purnea district — Kasba, Dhamdaha, Bhimnagar, Banmankhi, Araria, and beyond." }
+    }
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://searchmetric.in" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://searchmetric.in/services" },
+    { "@type": "ListItem", "position": 3, "name": "Local SEO", "item": "https://searchmetric.in/services/local-seo" },
+    { "@type": "ListItem", "position": 4, "name": "Purnea", "item": "https://searchmetric.in/services/local-seo/purnea" },
+  ],
 };
 
 const businessTypes = [
-  { emoji: "🏪", type: "Retail Shops" },
-  { emoji: "🏥", type: "Clinics & Nursing Homes" },
-  { emoji: "📚", type: "Schools & Coaching" },
-  { emoji: "🍽️", type: "Restaurants & Sweets" },
-  { emoji: "🏨", type: "Hotels & Guest Houses" },
-  { emoji: "🚘", type: "Showrooms & Dealers" },
-  { emoji: "🏗️", type: "Construction & Hardware" },
-  { emoji: "💇", type: "Salons & Beauty Parlours" },
+  { emoji: "🏥", type: "Clinics & Health" },
+  { emoji: "📚", type: "Coaching & Schools" },
+  { emoji: "🏪", type: "Shops & Retail" },
+  { emoji: "🍽️", type: "Restaurants & Dhabas" },
+  { emoji: "🏨", type: "Hotels & Lodges" },
+  { emoji: "🔧", type: "Repair & Services" },
+  { emoji: "💼", type: "Local Professionals" },
+  { emoji: "🌾", type: "Agriculture & Trade" },
 ];
 
+const processSteps = [
+  { step: "01", title: "Free Audit", desc: "We audit your Google presence, check Purnea competitors, and identify your fastest ranking opportunities — at zero cost." },
+  { step: "02", title: "GBP Optimisation", desc: "Complete Google Business Profile setup — right categories, keyword-rich description, service areas, photos, attributes." },
+  { step: "03", title: "Citation Building", desc: "30+ directory listings with perfectly consistent Name, Address, Phone — Justdial, Sulekha, IndiaMart, Bing Places." },
+  { step: "04", title: "Reviews & Posts", desc: "Simple review collection system and regular Google Posts to keep your profile active and climbing in rank." },
+  { step: "05", title: "Monthly Reports", desc: "Clear monthly report — profile views, calls, direction requests, keyword rankings. No jargon." },
+];
+
+const includes = [
+  { icon: "📍", title: "Google Business Profile Full Setup", desc: "Complete GBP creation or deep optimisation — categories, description, photos, service areas, attributes, Q&A." },
+  { icon: "🔑", title: "Purnea Keyword Research", desc: "We find exactly what Purnea customers search for and build your SEO around those exact phrases." },
+  { icon: "📋", title: "30+ Local Directory Listings", desc: "Justdial, Sulekha, IndiaMart, Bing Places, and regional Bihar directories — consistent info builds Google trust." },
+  { icon: "⭐", title: "Review Generation System", desc: "A WhatsApp-friendly system to collect genuine Google reviews from your happy customers." },
+  { icon: "📸", title: "Photos, Posts & Q&A", desc: "Real business photos, Google Posts, Q&A management — all ranking signals Google considers for Maps." },
+  { icon: "📊", title: "Monthly Performance Report", desc: "Transparent monthly report — impressions, calls, searches, direction requests, keyword positions." },
+];
+
+const nearbyAreas = ["Purnea City", "Kasba", "Raniganj", "Bhatta Bazar", "Civil Lines", "Purnea Junction", "Bhimnagar", "Dhamdaha"];
+
 const faqs = [
-  {
-    q: "Can Searchmetric help my Purnea business rank on Google?",
-    a: "Absolutely. Purnea is a growing city and Google search usage is increasing rapidly here. We specialise in local SEO for smaller Bihar cities where competition is still low, making it much easier to rank than in larger metros.",
-  },
-  {
-    q: "How is local SEO different from regular SEO?",
-    a: "Local SEO focuses specifically on ranking your business on Google Maps and in local search results — so people nearby can find you. Regular SEO targets national or global rankings. For most Purnea businesses, local SEO gives much faster, more relevant results.",
-  },
-  {
-    q: "My business doesn't have a website. Can you still help?",
-    a: "Yes. A Google Business Profile alone can get you ranking on Google Maps. We'll set up and optimise your GBP first. If you need a website later, we can help with that too.",
-  },
-  {
-    q: "How do I get started?",
-    a: "Just fill out our contact form or WhatsApp us. We'll do a free audit of your current Google presence, explain what we find, and give you a clear plan — no pressure, no obligation.",
-  },
+  { q: "Is local SEO useful for small shops in Purnea?", a: "Yes — even a small shop benefits. A well-set-up Google Business Profile puts your shop on Google Maps so people nearby find you instantly when searching 'near me'. It's the most cost-effective marketing for small local businesses." },
+  { q: "How competitive is Google Maps SEO in Purnea?", a: "Moderate — far lower than any metro. In most categories, 2–5 businesses are even partially optimised. Reaching the top 3 within 90 days is realistic with proper strategy." },
+  { q: "Can you help set up a Google Business Profile from scratch?", a: "Yes. We handle full setup — verification, category selection, description, photos, opening hours, service areas, and Google's verification process." },
+  { q: "Do you serve businesses across Purnea district, not just the city?", a: "We serve all of Purnea district — Kasba, Dhamdaha, Bhimnagar, Banmankhi, Araria, and beyond." },
 ];
 
 export default function PurneaLocalSEOPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900 py-20 md:py-32">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 -left-4 w-96 h-96 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-15" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(citySchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+
+      {/* Breadcrumb */}
+      <nav className="bg-slate-50 border-b border-slate-100 py-2" aria-label="Breadcrumb">
+        <div className="container-pad">
+          <ol className="flex flex-wrap items-center gap-1 text-xs text-slate-500">
+            {[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: "Local SEO", href: "/services/local-seo" }, { name: "Purnea", href: "/services/local-seo/purnea" }].map((crumb, i, arr) => (
+              <li key={i} className="flex items-center gap-1">
+                {i < arr.length - 1 ? (<><Link href={crumb.href} className="hover:text-brand-600 transition">{crumb.name}</Link><span className="text-slate-300">/</span></>) : (<span className="text-brand-600 font-medium">{crumb.name}</span>)}
+              </li>
+            ))}
+          </ol>
         </div>
-        <div className="container-pad relative z-10 max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white mb-6">
-            <MapPin size={16} className="text-emerald-400" />
-            <span className="text-sm font-semibold">Local SEO · Purnea, Bihar</span>
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Rank Your Purnea Business<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
-              #1 on Google Maps
-            </span>
-          </h1>
-          <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Purnea customers are searching on Google every day for businesses just like yours. With the right local SEO, you'll be the first business they find — and call.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-xl shadow-xl hover:shadow-emerald-500/40 transition-all">
-              Get Free Purnea SEO Audit <ArrowRight size={18} />
-            </Link>
-            <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/30 text-white hover:bg-white/10 transition-all font-semibold">
-              <MessageCircle size={18} /> Chat on WhatsApp
-            </a>
+      </nav>
+
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-20 md:py-32">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 -left-20 w-96 h-96 bg-white/5 rounded-full filter blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full filter blur-3xl" />
+        </div>
+        <div className="container-pad relative z-10 max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white mb-6">
+                <MapPin size={16} className="opacity-80" />
+                <span className="text-sm font-semibold">Local SEO · Google Maps · Purnea, Bihar</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
+                Rank Your Purnea Business<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-400">#1 on Google Maps</span>
+              </h1>
+              <p className="text-lg text-slate-300 mb-8 leading-relaxed">Purnea is North Bihar's largest commercial hub with millions of searches monthly. Most businesses here are invisible on Google — be the one that isn't.</p>
+              <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white font-semibold rounded-xl shadow-xl transition-all hover:opacity-90">
+                  Free Purnea SEO Audit <ArrowRight size={18} />
+                </Link>
+                <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl border border-white/30 text-white hover:bg-white/10 transition-all font-semibold">
+                  <MessageCircle size={18} /> WhatsApp Us
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-slate-300 text-sm">
+                <Phone size={16} className="opacity-70" />
+                <a href={contact.phoneHref} className="hover:text-white transition font-semibold">{contact.phone}</a>
+                <span className="text-slate-500">·</span>
+                <span className="text-slate-400">Free audit · No commitment</span>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[{ val: "Top 3", label: "Google Maps positions we target" }, { val: "Free", label: "Audit — no cost, no commitment" }, { val: "60–90", label: "Days avg. for ranking results" }, { val: "0 ₹", label: "Setup fee for free audit" }].map((s, i) => (
+                <div key={i} className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-5 text-center">
+                  <div className="text-2xl font-bold text-white mb-1">{s.val}</div>
+                  <div className="text-xs text-slate-300 leading-snug">{s.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -79,7 +186,7 @@ export default function PurneaLocalSEOPage() {
       {/* Business types */}
       <section className="bg-white border-b border-slate-100 py-8">
         <div className="container-pad">
-          <p className="text-center text-sm text-slate-500 font-medium mb-5">We help Purnea businesses across these industries rank on Google:</p>
+          <p className="text-center text-sm text-slate-500 font-medium mb-4">We help these Purnea businesses rank on Google:</p>
           <div className="flex flex-wrap justify-center gap-3">
             {businessTypes.map((b, i) => (
               <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-100 text-sm font-medium text-slate-700">
@@ -90,66 +197,156 @@ export default function PurneaLocalSEOPage() {
         </div>
       </section>
 
-      {/* Why now */}
+      {/* The Opportunity */}
       <section className="section bg-gradient-to-b from-white to-slate-50">
-        <div className="container-pad">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="container-pad max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-sm font-semibold mb-5">
-                📍 Purnea's Digital Opportunity
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-semibold mb-5">
+                🎯 The Purnea SEO Opportunity
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-5">
-                Purnea Businesses Can Rank on Google{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-600">
-                  Faster Than You Think
-                </span>
-              </h2>
-              <div className="space-y-4 text-slate-600 leading-relaxed">
-                <p>
-                  Purnea is one of the largest cities in North Bihar with a rapidly growing population of smartphone users. Yet very few local businesses have made any effort to establish their Google presence.
-                </p>
-                <p>
-                  When someone in Purnea searches "clinic near me" or "sweet shop Purnea" on Google, the top result gets the call. We put you at that top position before your competitors even think about it.
-                </p>
-                <p>
-                  This is the window of opportunity — and it won't stay open forever. Early movers in Purnea's local SEO will own their categories for years to come.
-                </p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-5">Why Purnea Is the Right Time to Get on Google</h2>
+              <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
+                <p>Purnea is the administrative capital of Seemanchal with a district population over 3 million. Smartphone and internet penetration is rising fast, and 'near me' searches grow month-on-month. Yet most local businesses remain completely invisible on Google Maps. Competition is still low enough that ranking in the top 3 is achievable within 60–90 days for most categories.</p>
               </div>
-              <div className="mt-7 space-y-3">
-                {[
-                  "Purnea is a major commercial hub in North Bihar",
-                  "Search volume growing every month",
-                  "Very low Google Maps competition currently",
-                  "Be the first business in your category to rank",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <CheckCircle size={18} className="text-emerald-500 flex-shrink-0" />
+              <div className="mt-6 space-y-3">
+                {["Near-zero competition for most local search terms in Purnea", "Growing smartphone usage — more people searching every month", "First-mover rankings in smaller markets hold for years", "Ranking here is faster and more affordable than any metro"].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <CheckCircle size={18} className="text-emerald-500 flex-shrink-0 mt-0.5" />
                     <span className="text-slate-700 text-sm">{item}</span>
                   </div>
                 ))}
               </div>
               <div className="mt-8">
-                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all">
-                  Start Now — Free Audit <ArrowRight size={18} />
+                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white font-semibold rounded-xl hover:opacity-90 transition-all">
+                  Get Free Audit <ArrowRight size={18} />
                 </Link>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-4">
               {[
-                { icon: <Search size={24} />, label: "Local Search Ranking", desc: "Appear when Purnea locals search" },
-                { icon: <MapPin size={24} />, label: "Google Maps Top 3", desc: "First thing customers see" },
-                { icon: <Star size={24} />, label: "Reviews & Trust", desc: "Build credibility fast" },
-                { icon: <TrendingUp size={24} />, label: "Clear Reports", desc: "See your growth monthly" },
+                { icon: <Search size={20} />, label: "Google Search Visibility", desc: "Appear when Purnea locals search for your service category" },
+                { icon: <MapPin size={20} />, label: "Google Maps Top 3", desc: "The 3 businesses Google shows — you need to be there" },
+                { icon: <Star size={20} />, label: "Review Authority", desc: "Reviews build trust before customers even visit you" },
+                { icon: <BarChart3 size={20} />, label: "Real Monthly Data", desc: "Calls, views, impressions — tracked every month" },
               ].map((item, i) => (
-                <div key={i} className="card card-pad text-center group hover:border-emerald-200 transition-all">
-                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white grid place-items-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                <div key={i} className="card card-pad flex items-center gap-4 group hover:border-slate-300 transition-all">
+                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-500 to-fuchsia-600 text-white grid place-items-center flex-shrink-0">
                     {item.icon}
                   </div>
-                  <div className="font-semibold text-sm text-ink-900 mb-1">{item.label}</div>
-                  <div className="text-xs text-slate-500">{item.desc}</div>
+                  <div>
+                    <div className="font-bold text-sm text-ink-900">{item.label}</div>
+                    <div className="text-xs text-slate-500 mt-0.5">{item.desc}</div>
+                  </div>
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Process */}
+      <section className="section bg-white">
+        <div className="container-pad max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="badge bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white ring-0 mb-4">Our Process</div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">How We Rank Your Purnea Business on Google</h2>
+            <p className="text-slate-500">Clear, transparent process — no black-box tactics, no confusion.</p>
+          </div>
+          <div className="grid md:grid-cols-5 gap-4">
+            {processSteps.map((step, i) => (
+              <div key={i} className="text-center">
+                <div className="h-14 w-14 rounded-full bg-gradient-to-br from-purple-500 to-fuchsia-600 text-white font-bold text-lg grid place-items-center mx-auto mb-4 shadow-lg">
+                  {step.step}
+                </div>
+                <h3 className="font-bold text-sm text-ink-900 mb-2">{step.title}</h3>
+                <p className="text-xs text-slate-500 leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What's Included */}
+      <section className="section bg-slate-50">
+        <div className="container-pad max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <div className="badge bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white ring-0 mb-4">Full Service</div>
+            <h2 className="text-3xl font-bold">Everything Included for Purnea Local SEO</h2>
+            <p className="text-slate-500 mt-3">All done for you — you run your business, we handle your Google presence.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {includes.map((item, i) => (
+              <div key={i} className="card card-pad group hover:border-slate-300 transition-all">
+                <div className="text-3xl mb-3">{item.icon}</div>
+                <h3 className="font-bold text-ink-900 mb-2">{item.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ranking Factors */}
+      <section className="section bg-white">
+        <div className="container-pad max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="badge bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white ring-0 mb-5">100% White-Hat SEO</div>
+              <h2 className="text-3xl font-bold mb-5">Why Our SEO Lasts — No Shortcuts, No Risks</h2>
+              <div className="space-y-4">
+                {[
+                  { icon: <Shield size={18} />, title: "No Fake Reviews or Spam", desc: "We never use fake reviews, keyword stuffing, or tactics that could get your Google listing suspended. Every strategy follows Google&apos;s guidelines." },
+                  { icon: <Clock size={18} />, title: "No Lock-In Contracts", desc: "Our clients stay because they see results — not because they&apos;re contractually trapped. Month-to-month, transparent pricing." },
+                  { icon: <Users size={18} />, title: "Direct Communication", desc: "You speak directly with the person working on your account. WhatsApp or call anytime — no call centres." },
+                  { icon: <TrendingUp size={18} />, title: "Based in Seemanchal Bihar", desc: "We&apos;re based in Baisi, Purnea — 5 minutes from your market. We know how people search in this region." },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-4">
+                    <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-purple-500 to-fuchsia-600 text-white grid place-items-center flex-shrink-0">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <div className="font-bold text-sm text-ink-900 mb-0.5">{item.title}</div>
+                      <div className="text-slate-500 text-sm leading-relaxed" dangerouslySetInnerHTML={{__html: item.desc}} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="card card-pad">
+              <h3 className="font-bold text-lg mb-5">Google Maps Ranking Factors We Optimise</h3>
+              <div className="space-y-3">
+                {[
+                  { factor: "GBP Completeness & Accuracy", weight: "25%", color: "bg-indigo-500" },
+                  { factor: "Review Quantity & Quality", weight: "20%", color: "bg-violet-500" },
+                  { factor: "Citation Consistency", weight: "15%", color: "bg-emerald-500" },
+                  { factor: "Distance from Searcher", weight: "15%", color: "bg-amber-500" },
+                  { factor: "Relevance to Search Term", weight: "15%", color: "bg-pink-500" },
+                  { factor: "Website & Content Signals", weight: "10%", color: "bg-blue-500" },
+                ].map((item, i) => (
+                  <div key={i}>
+                    <div className="flex justify-between text-xs mb-1"><span className="font-medium text-ink-900">{item.factor}</span><span className="text-slate-500">{item.weight}</span></div>
+                    <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden"><div className={`h-full ${item.color} rounded-full`} style={{ width: item.weight }} /></div>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-xs text-slate-400">We optimise every one of these factors — not just one or two.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Areas covered */}
+      <section className="section bg-slate-50">
+        <div className="container-pad max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl font-bold mb-2">Areas We Cover in & Around Purnea</h2>
+          <p className="text-slate-500 text-sm mb-6">We target customers searching across all parts of Purnea and nearby areas.</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {nearbyAreas.map((area) => (
+              <span key={area} className="px-4 py-2 rounded-full bg-purple-50 text-purple-700 text-sm font-medium border border-purple-200">
+                📍 {area}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -158,7 +355,7 @@ export default function PurneaLocalSEOPage() {
       <section className="section bg-white">
         <div className="container-pad max-w-3xl mx-auto">
           <div className="text-center mb-10">
-            <div className="badge bg-gradient-to-r from-emerald-500 to-teal-600 text-white ring-0 mb-4">FAQ</div>
+            <div className="badge bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white ring-0 mb-4">FAQ</div>
             <h2 className="text-3xl font-bold">Questions from Purnea Business Owners</h2>
           </div>
           <div className="space-y-4">
@@ -172,25 +369,43 @@ export default function PurneaLocalSEOPage() {
         </div>
       </section>
 
+      {/* Nearby cities */}
+      <section className="section bg-slate-50">
+        <div className="container-pad max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl font-bold mb-3">We Also Serve Businesses Near Purnea</h2>
+          <p className="text-slate-500 text-sm mb-6">Part of our Seemanchal & North Bihar coverage area.</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {[{ name: "Katihar", href: "/services/local-seo/katihar" }, { name: "Purnea", href: "/services/local-seo/purnea" }, { name: "Kishanganj", href: "/services/local-seo/kishanganj" }, { name: "Barsoi", href: "/services/local-seo/barsoi" }, { name: "Baisi", href: "/services/local-seo/baisi" }, { name: "Dalkhola", href: "/services/local-seo/dalkhola" }, { name: "Siliguri", href: "/services/local-seo/siliguri" }].filter(c => c.name !== "Purnea").map((city) => (
+              <Link key={city.name} href={city.href} className="px-5 py-2 rounded-full border border-purple-200 text-purple-700 text-sm font-medium hover:bg-purple-50 transition-all">
+                Local SEO {city.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="section bg-gradient-to-br from-emerald-900 to-slate-900 text-white">
+      <section className="section bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
         <div className="container-pad text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Start Ranking on Google Maps in Purnea</h2>
-          <p className="text-slate-300 mb-8 text-lg">
-            Free audit. No pressure. We'll show you exactly where you stand and what we can do for your business.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Rank #1 on Google Maps in Purnea?</h2>
+          <p className="text-slate-300 mb-3 text-lg">Free audit. No pressure. Results in 60–90 days.</p>
+          <p className="text-white font-bold text-xl mb-8">📞 {contact.phone}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl transition-all">
+              <MessageCircle size={18} /> WhatsApp Free Audit
+            </a>
             <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-900 font-semibold rounded-xl hover:bg-slate-100 transition-all">
-              Get Free Audit <ArrowRight size={18} />
+              Contact Form <ArrowRight size={18} />
             </Link>
             <a href={contact.phoneHref} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/30 text-white hover:bg-white/10 transition-all font-semibold">
               <Phone size={16} /> {contact.phone}
             </a>
           </div>
-          <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm text-slate-400">
-            <span>✓ Free audit, no commitment</span>
-            <span>✓ No contract lock-in</span>
-            <span>✓ Results within 60–90 days</span>
+          <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-slate-400">
+            <span>✓ 100% White-Hat SEO</span>
+            <span>✓ No lock-in contracts</span>
+            <span>✓ Free audit — no commitment</span>
+            <span>✓ Based in Bihar</span>
           </div>
         </div>
       </section>

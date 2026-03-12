@@ -13,11 +13,21 @@ const Header: FC = () => {
   const servicesSubmenu = useMemo(
     () => [
       { name: "Social Media Management", href: "/services/social-media-management" },
-      { name: "Local SEO & Google Map Optimization", href: "/services/local-seo" },
-      { name: "Lead Ads", href: "/services/lead-ads" },
+      { name: "Local SEO & Google Maps", href: "/services/local-seo" },
+      { name: "Lead Ads (Meta & Google)", href: "/services/lead-ads" },
+    ],
+    []
+  );
+
+  const citiesSubmenu = useMemo(
+    () => [
       { name: "Local SEO — Katihar", href: "/services/local-seo/katihar" },
       { name: "Local SEO — Purnea", href: "/services/local-seo/purnea" },
       { name: "Local SEO — Kishanganj", href: "/services/local-seo/kishanganj" },
+      { name: "Local SEO — Barsoi", href: "/services/local-seo/barsoi" },
+      { name: "Local SEO — Baisi", href: "/services/local-seo/baisi" },
+      { name: "Local SEO — Dalkhola", href: "/services/local-seo/dalkhola" },
+      { name: "Local SEO — Siliguri", href: "/services/local-seo/siliguri" },
     ],
     []
   );
@@ -26,11 +36,11 @@ const Header: FC = () => {
     () => [
       { name: "Home", href: "/" },
       { name: "Services", href: "/services", submenu: servicesSubmenu },
+      { name: "Cities", href: "/services/local-seo", submenu: citiesSubmenu },
       { name: "Free Audit", href: "/free-audit" },
-      { name: "About", href: "/about" },
       { name: "Contact", href: "/contact" },
     ],
-    [servicesSubmenu]
+    [servicesSubmenu, citiesSubmenu]
   );
 
   useEffect(() => {
@@ -46,7 +56,7 @@ const Header: FC = () => {
         <div className="container-wide max-w-full px-6 lg:px-12 flex items-center justify-between py-2 text-xs md:text-sm">
           <div className="flex items-center gap-4">
             <span className="inline-flex items-center gap-2">
-              <Phone size={14} className="opacity-90" /> +91 98765 43210
+              <Phone size={14} className="opacity-90" /> +91 90801 35567
             </span>
             <span className="hidden md:inline-flex items-center gap-2">
               <Mail size={14} className="opacity-90" /> info@searchmetric.in

@@ -58,9 +58,9 @@ const Contact: FC = () => {
             </p>
 
             <div className="mt-8 space-y-4">
-              <InfoRow icon={<Phone size={18} />} title="Call Us" value="+91 98765 43210" />
+              <InfoRow icon={<Phone size={18} />} title="Call Us" value="+91 90801 35567" />
               <InfoRow icon={<Mail size={18} />} title="Email Us" value="info@searchmetric.in" />
-              <InfoRow icon={<MapPin size={18} />} title="Our Offices" value="Katihar • Purnea • Kishanganj • Seemanchal" />
+              <InfoRow icon={<MapPin size={18} />} title="Our Offices" value="Hospital Road, Purab Chowk, Baisi, Purnea — 854311, Bihar" />
             </div>
           </div>
 
@@ -103,7 +103,7 @@ const Contact: FC = () => {
                     onChange={handleChange}
                     required
                     className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300"
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 90801 35567"
                     aria-label="Your phone number"
                   />
                 </Field>

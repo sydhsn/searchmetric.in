@@ -245,7 +245,7 @@ export default function ContactPage() {
                     </p>
                     <div className="inline-flex items-center gap-2 text-sm text-slate-500 bg-slate-50 px-4 py-2 rounded-full">
                       <Clock size={14} />
-                      While you wait, check out our <Link href="/case-studies" className="text-brand-600 hover:underline ml-1">case studies</Link>
+                      While you wait, visit our <Link href="/blog" className="text-brand-600 hover:underline ml-1">blog</Link>
                     </div>
                     <div className="mt-6">
                       <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
@@ -276,7 +276,7 @@ export default function ContactPage() {
                         <label className="block text-sm font-semibold text-slate-700 mb-2">Phone Number *</label>
                         <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required
                           className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300 transition-all"
-                          placeholder="+91 98765 43210" />
+                          placeholder="+91 90801 35567" />
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-2">Business Name</label>

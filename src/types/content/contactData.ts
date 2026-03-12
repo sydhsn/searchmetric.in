@@ -1,5 +1,5 @@
 export const contactInfo = {
-  phone: "+91 98765 43210",
+  phone: "+91 90801 35567",
   email: "hello@searchmetric.in",
   address: "Mira Road, Thane — 401107, Mumbai",
   social: [

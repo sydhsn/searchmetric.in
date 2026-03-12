@@ -10,7 +10,6 @@ const sections = [
       { name: "Services", href: "/services" },
       { name: "Free SEO Audit", href: "/free-audit" },
       { name: "Blog", href: "/blog" },
-      { name: "Case Studies", href: "/case-studies" },
       { name: "Contact", href: "/contact" },
     ],
   },

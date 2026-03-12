@@ -61,12 +61,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.7,
     },
-    {
-      url: `${BASE_URL}/case-studies`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
   ];
 
   // City landing pages — high priority, unique content per city
@@ -77,6 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "barsoi",
     "baisi",
     "dalkhola",
+    "siliguri",
   ].map((city) => ({
     url: `${BASE_URL}/services/local-seo/${city}`,
     lastModified: now,

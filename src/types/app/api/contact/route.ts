@@ -101,7 +101,7 @@ function buildAutoReplyHtml(name: string): string {
         <p style="margin:0">⏱️ We'll get back to you within <strong>24 hours</strong> (Mon–Sat, 9 AM – 7 PM IST).</p>
       </div>
       <p>If it's urgent, reach us directly:</p>
-      <p>📞 <a href="tel:+919876543210" style="color:#7c3aed">+91 98765 43210</a> &nbsp;|&nbsp; 💬 <a href="https://wa.me/919876543210" style="color:#7c3aed">WhatsApp Us</a></p>
+      <p>📞 <a href="tel:+919080135567" style="color:#7c3aed">+91 90801 35567</a> &nbsp;|&nbsp; 💬 <a href="https://wa.me/919080135567" style="color:#7c3aed">WhatsApp Us</a></p>
       <p>Warm regards,<br/><strong>The Searchmetric Team</strong></p>
     </div>
     <div class="footer">

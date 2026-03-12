@@ -65,7 +65,7 @@ const FAQs: FC = () => {
             <a href="/contact" className="btn !bg-white !text-slate-900 hover:!bg-slate-100 inline-flex items-center gap-2" aria-label="Chat with our marketing experts">
               <MessageCircle size={18} /> Chat with us
             </a>
-            <a href="tel:+919876543210" className="btn !bg-white/10 !text-white border border-white/20 hover:!bg-white/20 inline-flex items-center gap-2" aria-label="Call our office now">
+            <a href="tel:+919080135567" className="btn !bg-white/10 !text-white border border-white/20 hover:!bg-white/20 inline-flex items-center gap-2" aria-label="Call our office now">
               <Phone size={18} /> Call now
             </a>
           </div>
