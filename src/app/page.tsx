@@ -12,7 +12,6 @@ import FAQs from "./components/home/FAQs";
 import Features from "./components/home/Features";
 import Introductions from "./components/home/Introductions";
 import PlatformMarketing from "./components/home/PlatformMarketing";
-import SocialClients from "./components/home/SocialClients";
 import SpecialCustomizedServices from "./components/home/SpecialCustomizedServices";
 import Testimonials from "./components/home/Testimonials";
 import Contact from "./components/home/Contact";
@@ -71,7 +70,6 @@ export default function HomePage() {
           <BenefitsForUser />
           <Introductions />
           <Comparison />
-          <SocialClients />
           <Features />
           <Testimonials />
           <FAQs />

@@ -460,8 +460,8 @@ export default function CaseStudiesPage() {
                     <Link href="/contact" className="btn-primary !bg-white !text-slate-900 hover:!bg-slate-100">
                       Get Free Strategy Session <ArrowRight size={18} />
                     </Link>
-                    <a href="tel:+919876543210" className="btn-ghost !text-white hover:!bg-white/10">
-                      Call Now +91 98765 43210
+                    <a href="tel:+919080135567" className="btn-ghost !text-white hover:!bg-white/10">
+                      Call Now +91 90801 35567
                     </a>
                   </div>
                 </div>

@@ -276,7 +276,7 @@ export default function ContactPage() {
                         <label className="block text-sm font-semibold text-slate-700 mb-2">Phone Number *</label>
                         <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required
                           className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300 transition-all"
-                          placeholder="+91 98765 43210" />
+                          placeholder="+91 90801 35567" />
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-2">Business Name</label>

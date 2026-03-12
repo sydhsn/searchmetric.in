@@ -113,7 +113,7 @@ const Footer: FC = () => {
 
             <div className="mt-6 space-y-4 text-sm">
               <div className="flex items-center gap-3 text-white/80">
-                <Phone size={16} className="text-brand-300" /> +91 98765 43210
+                <Phone size={16} className="text-brand-300" /> +91 90801 35567
               </div>
               <div className="flex items-center gap-3 text-white/80">
                 <Mail size={16} className="text-brand-300" /> info@searchmetric.in

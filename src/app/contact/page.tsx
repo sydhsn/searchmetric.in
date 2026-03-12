@@ -83,7 +83,7 @@ export default function ContactPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white shadow-lg mb-6">
               <div className="flex gap-1">{[1,2,3,4,5].map(i => <Star key={i} size={12} className="fill-amber-400 text-amber-400" />)}</div>
-              <span className="text-sm font-semibold">4.9 rating · 500+ happy clients</span>
+              <span className="text-sm font-semibold">Free audit · No commitment</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
               Let&apos;s Build Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-fuchsia-400 to-pink-400">Great Together</span>
@@ -94,7 +94,7 @@ export default function ContactPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
               {[
                 { value: "24h", label: "Response Time" },
-                { value: "500+", label: "Happy Clients" },
+                { value: "Free", label: "Audit Available" },
                 { value: "Free", label: "Consultation" },
                 { value: "0", label: "Lock-in Contracts" },
               ].map((stat, i) => (
@@ -155,7 +155,7 @@ export default function ContactPage() {
               <div className="sticky top-6 space-y-6">
                 {/* Why us */}
                 <div className="card card-pad border-t-4 border-brand-600">
-                  <h3 className="font-bold text-lg mb-5 text-ink-900">Why 500+ businesses chose us</h3>
+                  <h3 className="font-bold text-lg mb-5 text-ink-900">Why Seemanchal businesses choose us</h3>
                   <div className="space-y-4">
                     {[
                       { icon: <Zap size={16} className="text-amber-500" />, text: "Results visible in 30 days, not 6 months" },
@@ -245,7 +245,7 @@ export default function ContactPage() {
                     </p>
                     <div className="inline-flex items-center gap-2 text-sm text-slate-500 bg-slate-50 px-4 py-2 rounded-full">
                       <Clock size={14} />
-                      While you wait, check out our <Link href="/case-studies" className="text-brand-600 hover:underline ml-1">case studies</Link>
+                      While you wait, visit our <Link href="/blog" className="text-brand-600 hover:underline ml-1">blog</Link>
                     </div>
                     <div className="mt-6">
                       <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
@@ -276,7 +276,7 @@ export default function ContactPage() {
                         <label className="block text-sm font-semibold text-slate-700 mb-2">Phone Number *</label>
                         <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required
                           className="w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-300 transition-all"
-                          placeholder="+91 98765 43210" />
+                          placeholder="+91 90801 35567" />
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-2">Business Name</label>

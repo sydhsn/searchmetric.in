@@ -9,12 +9,27 @@ import type { NavItem } from "../types/nav";
 const Header: FC = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const servicesSubmenu = useMemo(
     () => [
       { name: "Social Media Management", href: "/services/social-media-management" },
-      { name: "Local SEO & Google Map Optimization", href: "/services/local-seo" },
-      { name: "Lead Ads", href: "/services/lead-ads" },
+      { name: "Local SEO & Google Maps", href: "/services/local-seo" },
+      { name: "Lead Ads (Meta & Google)", href: "/services/lead-ads" },
+      { name: "Website Development", href: "/services/website-development" },
+    ],
+    []
+  );
+
+  const citiesSubmenu = useMemo(
+    () => [
+      { name: "Local SEO — Katihar", href: "/services/local-seo/katihar" },
+      { name: "Local SEO — Purnea", href: "/services/local-seo/purnea" },
+      { name: "Local SEO — Kishanganj", href: "/services/local-seo/kishanganj" },
+      { name: "Local SEO — Barsoi", href: "/services/local-seo/barsoi" },
+      { name: "Local SEO — Baisi", href: "/services/local-seo/baisi" },
+      { name: "Local SEO — Dalkhola", href: "/services/local-seo/dalkhola" },
+      { name: "Local SEO — Siliguri", href: "/services/local-seo/siliguri" },
     ],
     []
   );
@@ -23,13 +38,15 @@ const Header: FC = () => {
     () => [
       { name: "Home", href: "/" },
       { name: "Services", href: "/services", submenu: servicesSubmenu },
-      { name: "About", href: "/about" },
+      { name: "Cities", href: "/services/local-seo", submenu: citiesSubmenu },
+      { name: "Free Audit", href: "/free-audit" },
       { name: "Contact", href: "/contact" },
     ],
-    [servicesSubmenu]
+    [servicesSubmenu, citiesSubmenu]
   );
 
   useEffect(() => {
+    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 12);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -42,7 +59,7 @@ const Header: FC = () => {
         <div className="container-wide max-w-full px-6 lg:px-12 flex items-center justify-between py-2 text-xs md:text-sm">
           <div className="flex items-center gap-4">
             <span className="inline-flex items-center gap-2">
-              <Phone size={14} className="opacity-90" /> +91 98765 43210
+              <Phone size={14} className="opacity-90" /> +91 90801 35567
             </span>
             <span className="hidden md:inline-flex items-center gap-2">
               <Mail size={14} className="opacity-90" /> info@searchmetric.in
@@ -51,9 +68,9 @@ const Header: FC = () => {
 
           <div className="hidden md:flex items-center gap-3">
             <span className="inline-flex items-center gap-2 opacity-90">
-              <MapPin size={14} /> Delhi • Mumbai • Bangalore
+              <MapPin size={14} /> Katihar • Purnea • Seemanchal
             </span>
-            <a className="btn-secondary !py-2 !px-4" href="/contact">
+            <a className="btn-secondary !py-2 !px-4" href="/free-audit">
               Free Audit <ArrowRight size={16} />
             </a>
           </div>
@@ -130,9 +147,8 @@ const Header: FC = () => {
           </div>
 
           {/* Mobile dropdown */}
-          {open && (
-            <div className="lg:hidden mt-3 card card-pad">
-              <div className="space-y-2">
+          <div className={`lg:hidden mt-3 card card-pad ${open ? '' : 'hidden'}`} suppressHydrationWarning>
+            <div className="space-y-2">
                 {navItems.map((item) => (
                   <div key={item.name} className="border-b border-slate-100 pb-2">
                     <a
@@ -165,7 +181,6 @@ const Header: FC = () => {
                 Get Free Proposal <ArrowRight size={18} />
               </a>
             </div>
-          )}
         </div>
       </div>
     </header>

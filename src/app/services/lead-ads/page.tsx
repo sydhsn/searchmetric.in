@@ -30,13 +30,13 @@ const platforms = [
 const testimonials = [
   {
     name: "Manish G.",
-    business: "Real Estate Agent, Mumbai",
+    business: "Real Estate Agent, Katihar",
     quote: "I was spending ₹30,000/month on Facebook ads and getting maybe 2–3 leads. Searchmetric restructured everything and now I get 25–30 qualified leads for the same budget. Game changer.",
     stars: 5,
   },
   {
     name: "Dr. Anita Sharma",
-    business: "Physiotherapy Clinic, Mira Road",
+    business: "Physiotherapy Clinic, Purnea",
     quote: "The transparency alone is worth it. Every month I get a clear report showing how many enquiries came in, what each one cost, and what they're doing to improve next month.",
     stars: 5,
   },
@@ -66,7 +66,7 @@ export default function LeadAdsPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white mb-6">
               <Target size={16} className="text-orange-400" />
-              <span className="text-sm font-semibold">Lead Generation Agency · Mumbai & Mira Road</span>
+              <span className="text-sm font-semibold">Lead Generation Agency · Seemanchal Bihar</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
               {leadAdsService.heroTitle}
@@ -127,7 +127,7 @@ export default function LeadAdsPage() {
                   Running ads without a proper lead generation strategy is one of the most common and costly mistakes local businesses make. You spend money, you get clicks, but the phone doesn&apos;t ring and the enquiries don&apos;t come. That&apos;s not a budget problem — it&apos;s a strategy problem.
                 </p>
                 <p>
-                  At Searchmetric, we specialise in <strong className="text-ink-900">lead ads for local businesses in Mira Road, Mumbai, and across India</strong>. We build targeted campaigns on Instagram, Facebook, and Google that are designed with one goal in mind — getting real, qualified enquiries from people who are actively looking for your product or service right now.
+                  At Searchmetric, we specialise in <strong className="text-ink-900">lead ads for local businesses across Seemanchal, Bihar, and across India</strong>. We build targeted campaigns on Instagram, Facebook, and Google that are designed with one goal in mind — getting real, qualified enquiries from people who are actively looking for your product or service right now.
                 </p>
                 <p>
                   Unlike most agencies that set up your ads and go quiet, we monitor your campaigns daily, optimise your targeting and creatives continuously, and share clear monthly reports so you always know exactly what your ad spend is delivering.
@@ -219,16 +219,16 @@ export default function LeadAdsPage() {
           <div className="max-w-4xl mx-auto">
             <div className="badge bg-gradient-to-r from-orange-500 to-rose-600 text-white ring-0 mb-6">Why Searchmetric</div>
             <h2 className="text-3xl md:text-4xl font-bold mb-10">
-              Why Local Businesses in Mumbai Choose Searchmetric for <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-rose-600">Lead Generation</span>
+              Why Seemanchal Businesses Choose Searchmetric for <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-rose-600">Lead Generation</span>
             </h2>
             <div className="grid lg:grid-cols-2 gap-8 text-slate-600 leading-relaxed">
               <div className="space-y-5">
-                <p>There are hundreds of digital marketing agencies in Mumbai claiming to run lead ads. Most of them set up a basic campaign, charge a management fee, and leave you staring at a dashboard you don&apos;t understand. At Searchmetric, we do things differently.</p>
-                <p>We start every engagement with a deep understanding of your business, your ideal customer, and your local market. Whether you run a clinic in Mira Road, a coaching institute in Thane, or an e-commerce store targeting customers across India — we build a campaign strategy that speaks directly to your audience, in their language, at the right time, on the right platform.</p>
+                <p>There are many digital marketing agencies claiming to run lead ads. Most of them set up a basic campaign, charge a management fee, and leave you staring at a dashboard you don&apos;t understand. At Searchmetric, we do things differently.</p>
+                <p>We start every engagement with a deep understanding of your business, your ideal customer, and your local market. Whether you run a clinic in Katihar, a coaching institute in Purnea, or a business targeting customers anywhere in India — we build a campaign strategy that speaks directly to your audience, in their language, at the right time, on the right platform.</p>
                 <p>Our <strong className="text-ink-900">Instagram lead ads and Facebook lead ads</strong> are designed to capture attention instantly and make it effortless for interested customers to reach you. We build mobile-optimised lead forms that load in seconds and ask only what&apos;s necessary — because every extra field costs you a lead.</p>
               </div>
               <div className="space-y-5">
-                <p>On <strong className="text-ink-900">Google lead ads</strong>, we target high-intent search queries — people actively typing phrases like &quot;best plumber near me&quot; or &quot;digital marketing course in Mumbai&quot; — so your ad appears exactly when they&apos;re ready to take action.</p>
+                <p>On <strong className="text-ink-900">Google lead ads</strong>, we target high-intent search queries — people actively typing phrases like &quot;best plumber near me&quot; or &quot;digital marketing course near me&quot; — so your ad appears exactly when they&apos;re ready to take action.</p>
                 <p>We believe in complete transparency. Every month, you receive a detailed performance report in plain language — no jargon, no fluff. You&apos;ll see exactly how many leads came in, what each lead cost, which platform performed best, and what we&apos;re doing next to improve results.</p>
                 <p>And unlike many agencies that lock you into 6 or 12-month contracts, Searchmetric operates on flexible monthly plans. We earn your business every month by delivering results — not by holding you to a long-term commitment.</p>
               </div>

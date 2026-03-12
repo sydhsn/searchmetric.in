@@ -29,8 +29,8 @@ const platforms = [
 ];
 
 const testimonials = [
-  { name: "Priya R.", business: "Boutique Owner, Mira Road", quote: "Our Instagram following went from 200 to 4,000 in three months. More importantly, actual customers started walking in saying they found us on Instagram.", stars: 5 },
-  { name: "Anil K.", business: "Restaurant, Thane", quote: "Searchmetric doesn't just post things — they understand our business. Our engagement is through the roof and we've seen a real increase in reservations.", stars: 5 },
+  { name: "Priya R.", business: "Boutique Owner, Katihar", quote: "Our Instagram following went from 200 to 4,000 in three months. More importantly, actual customers started walking in saying they found us on Instagram.", stars: 5 },
+  { name: "Anil K.", business: "Restaurant, Purnea", quote: "Searchmetric doesn't just post things — they understand our business. Our engagement is through the roof and we've seen a real increase in reservations.", stars: 5 },
 ];
 
 export default function SocialMediaManagementPage() {
@@ -50,7 +50,7 @@ export default function SocialMediaManagementPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white shadow-lg mb-6">
               <Instagram size={16} className="text-pink-400" />
-              <span className="text-sm font-semibold">Social Media Management · Mumbai & Mira Road</span>
+              <span className="text-sm font-semibold">Social Media Management · Seemanchal Bihar</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
               {socialMediaService.heroTitle}

@@ -1,7 +1,7 @@
 export const contactInfo = {
-  phone: "+91 98765 43210",
-  email: "hello@searchmetric.in",
-  address: "Mira Road, Thane — 401107, Mumbai",
+  phone: "+91 90801 35567",
+  email: "info@searchmetric.in",
+  address: "Hospital Road, Purab Chowk, Baisi, Purnea, Bihar — 854311",
   social: [
     { platform: "Instagram", icon: "instagram", link: "https://instagram.com/searchmetric.in", handle: "@searchmetric.in" },
     { platform: "Facebook", icon: "facebook", link: "https://facebook.com/searchmetric.in", handle: "Searchmetric" },
@@ -37,8 +37,8 @@ export const faqs = [
     answer: "No. We believe in earning your business every month. All our plans are month-to-month, and you can cancel anytime with 30 days' notice.",
   },
   {
-    question: "Do you only work with businesses in Mumbai?",
-    answer: "We're based in Mira Road but work with businesses across India. We specialise in the Indian market and have clients in Mumbai, Thane, Pune, Delhi, Bangalore, and beyond.",
+    question: "Do you work with businesses outside Bihar?",
+    answer: "We're based in Bihar and specialise in Seemanchal businesses, but we work with any Indian business looking for honest digital marketing.",
   },
   {
     question: "What makes Searchmetric different from other agencies?",
@@ -49,14 +49,14 @@ export const faqs = [
 export const teamContacts = [
   {
     name: "Sales & New Enquiries",
-    email: "sales@searchmetric.in",
-    phone: "+91 98765 43211",
+    email: "info@searchmetric.in",
+    phone: "+91 90801 35567",
     description: "New business, pricing, and getting started",
   },
   {
     name: "Client Support",
-    email: "support@searchmetric.in",
-    phone: "+91 98765 43212",
+    email: "info@searchmetric.in",
+    phone: "+91 90801 35567",
     description: "Existing clients — campaign queries, reports, account help",
   },
 ];
