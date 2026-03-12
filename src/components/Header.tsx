@@ -15,6 +15,7 @@ const Header: FC = () => {
       { name: "Social Media Management", href: "/services/social-media-management" },
       { name: "Local SEO & Google Maps", href: "/services/local-seo" },
       { name: "Lead Ads (Meta & Google)", href: "/services/lead-ads" },
+      { name: "Website Development", href: "/services/website-development" },
     ],
     []
   );

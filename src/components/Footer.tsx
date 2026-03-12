@@ -16,6 +16,7 @@ const Footer: FC = () => {
     { name: "Local SEO & Google Maps", href: "/services/local-seo" },
     { name: "Social Media Management", href: "/services/social-media-management" },
     { name: "Lead Ads (Meta & Google)", href: "/services/lead-ads" },
+    { name: "Website Development", href: "/services/website-development" },
   ];
 
   const cities = [

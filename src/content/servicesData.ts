@@ -381,3 +381,138 @@ export const socialMediaService = {
     },
   ],
 };
+
+export const websiteDevelopmentService = {
+  title: "Website Development",
+  heroTitle: "Get a Professional Website That Actually Brings in Customers.",
+  description:
+    "Your website is your business's 24/7 salesman. Most small business websites are slow, outdated, and don't convert visitors into customers. We build fast, modern websites designed specifically to showcase your business, build trust, and turn visitors into enquiries and sales.",
+  heroDescription:
+    "We create custom websites that load in seconds, look amazing on all devices, and are optimised to bring you real customers — not just pretty to look at.",
+  features: [
+    {
+      title: "Fast & Mobile-Friendly Design",
+      description:
+        "We build websites that load lightning-fast on mobile, tablet, and desktop. A slow website loses customers — ours keep them engaged.",
+      icon: "smartphone",
+    },
+    {
+      title: "SEO Built In From Day One",
+      description:
+        "Every website we build is optimised for Google from the start — clean code, fast loading, proper structure — so you rank higher without extra work.",
+      icon: "search",
+    },
+    {
+      title: "Designed to Convert Visitors",
+      description:
+        "We don't just make pretty websites. We design them to guide visitors towards calling you, filling a form, or buying — every element has a purpose.",
+      icon: "target",
+    },
+    {
+      title: "Easy for You to Update",
+      description:
+        "You can update content, add photos, and make changes yourself without needing to call a developer. Our websites come with a simple, powerful dashboard.",
+      icon: "edit-2",
+    },
+  ],
+  process: [
+    {
+      step: "01",
+      title: "Understand Your Business",
+      description:
+        "We learn about your business, your customers, your competitors, and what makes you different. This becomes the foundation of your website.",
+    },
+    {
+      step: "02",
+      title: "Design & Plan Together",
+      description:
+        "We show you mockups and plan the layout with you. You see everything before we code a single line — no surprises, full control.",
+    },
+    {
+      step: "03",
+      title: "Build & Test Everything",
+      description:
+        "We build your website with clean, modern code, test it across all devices, and make sure it loads fast and works perfectly.",
+    },
+    {
+      step: "04",
+      title: "Launch & Train You",
+      description:
+        "We launch your website live, train you on how to update it, and provide ongoing support so you're never left hanging.",
+    },
+  ],
+  results: [
+    { metric: "Under 2s", label: "Page Load Time" },
+    { metric: "100%", label: "Mobile Responsive" },
+    { metric: "40-60%", label: "More Enquiries" },
+    { metric: "Top 5", label: "Google Search Ranking" },
+  ],
+  packages: [
+    {
+      name: "Starter Website",
+      price: "₹40,000",
+      period: "one-time",
+      features: [
+        "5-7 pages — Home, About, Services, Contact, etc",
+        "Mobile-friendly design",
+        "Contact form & enquiry system",
+        "Google Analytics setup",
+        "Free domain for 1 year",
+        "SSL certificate included",
+        "30 days free support",
+      ],
+      bestFor: "Small businesses needing their first professional website",
+    },
+    {
+      name: "Professional Website",
+      price: "₹75,000",
+      period: "one-time",
+      features: [
+        "10-15 pages with custom design",
+        "Advanced SEO optimisation",
+        "Contact forms & lead capture",
+        "Blog section for content marketing",
+        "Customer testimonials section",
+        "Free domain + email setup",
+        "Google Search Console setup",
+        "90 days free support & updates",
+      ],
+      bestFor: "Growing businesses ready to establish a strong online presence",
+      popular: true,
+    },
+    {
+      name: "Premium E-Commerce",
+      price: "₹1,50,000+",
+      period: "one-time",
+      features: [
+        "Custom design with unlimited pages",
+        "Product catalogue & shopping cart",
+        "Payment gateway integration",
+        "Inventory management system",
+        "Advanced analytics & reporting",
+        "Blog & content management",
+        "Email automation setup",
+        "6 months free support",
+        "Annual maintenance plan included",
+      ],
+      bestFor: "Established businesses selling products online across Seemanchal",
+    },
+  ],
+  faqs: [
+    {
+      question: "How long does it take to build a website?",
+      answer:
+        "A typical website takes 2-4 weeks from start to launch. This includes design approval, development, testing, and training. Larger, custom projects may take longer — we'll give you a timeline upfront.",
+    },
+    {
+      question: "Do you handle hosting and domain?",
+      answer:
+        "Yes. We handle everything — domain registration, hosting, SSL certificates, and backups. You don't need to worry about the technical side. Most plans include 1 year of free hosting and domain.",
+    },
+    {
+      question: "What if I need changes after launch?",
+      answer:
+        "We provide free support for 30-90 days after launch depending on your plan. After that, ongoing updates are affordable and easy. Many clients come back to us for seasonal changes, new services, or blog content.",
+    },
+  ],
+};
