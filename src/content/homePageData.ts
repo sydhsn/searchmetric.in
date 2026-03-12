@@ -8,16 +8,16 @@
 // ============ HERO SECTION ============
 export const heroData = {
   badge: {
-    text: "Trusted by 50+ Businesses Across India",
+    text: "Serving Businesses Across Seemanchal, Bihar",
     stars: 5,
   },
   headline: {
     main: "Grow Your Business with",
-    highlight: "SEO & Social Media Marketing",
-    end: "— by Searchmetric.",
+    highlight: "SEO & Digital Marketing",
+    end: "in Seemanchal Bihar.",
   },
   description:
-    "Searchmetric helps local businesses rank higher on Google, get more leads, and grow faster with proven SEO services, social media marketing, and digital marketing strategies — simple, transparent, and results-driven.",
+    "Searchmetric helps local businesses in Katihar, Purnea, Kishanganj, Barsoi, Dalkhola & across Seemanchal rank higher on Google, get more leads, and grow faster — with simple, honest, and results-focused digital marketing.",
   cta: {
     primary: {
       text: "Get Your Free SEO Proposal",
@@ -213,7 +213,7 @@ export const testimonialsData = [
 export const ctaSection = {
   title: "Let's Grow Your Business Online — Starting Today.",
   subtitle:
-    "Join 50+ Indian businesses already growing with Searchmetric. Book your free SEO consultation and get a custom digital marketing plan built around your goals.",
+    "Ready to rank higher in Katihar, Purnea, Kishanganj or wherever you're based in Seemanchal? Book your free consultation and get a custom digital marketing plan built around your real goals.",
   cta: {
     text: "Get My Free Consultation",
     href: "/contact",
@@ -332,7 +332,7 @@ export const challengesSection = {
   title: "Real Problems We",
   titleHighlight: "Solve Every Day",
   description:
-    "Most Indian businesses face the same digital marketing challenges. Here's how Searchmetric turns each one into a growth opportunity.",
+    "These are the most common digital marketing problems faced by businesses in Katihar, Purnea, Kishanganj and across Seemanchal Bihar. Here's how Searchmetric turns each one into a growth opportunity.",
 };
 
 export const challengesData = [
@@ -394,17 +394,17 @@ export const challengesData = [
 
 // ============ COMPANIES SECTION ============
 export const companiesSection = {
-  badge: "Trusted Partners",
+  badge: "Our Clients",
   title: "Companies that",
   titleHighlight: "trust",
   titleEnd: "our work",
-  description: "Delivering real results for businesses across diverse industries in India.",
+  description: "Real businesses we've worked with. No fake names, no inflated numbers — just honest work.",
 };
 export const companiesData = [
   {
     id: "techminds",
     name: "TechMinds Academy",
-    tag: "Education",
+    tag: "Education & Training",
     icon: "bookOpen",
     color: "from-violet-600 to-purple-600",
   },
@@ -430,18 +430,18 @@ export const companiesData = [
     color: "from-rose-600 to-pink-600",
   },
   {
-    id: "client-5",
-    name: "Sunrise Enterprises",
-    tag: "Retail",
+    id: "asr",
+    name: "A.S.R Enterprises",
+    tag: "Mobile & Electronics",
     icon: "shoppingCart",
     color: "from-amber-600 to-orange-600",
   },
   {
-    id: "client-6",
-    name: "Metro Solutions",
-    tag: "Consulting",
-    icon: "briefcase",
-    color: "from-green-600 to-lime-600",
+    id: "spot-open",
+    name: "Your Business Here",
+    tag: "Be Our Next Client",
+    icon: "plus",
+    color: "from-slate-400 to-slate-500",
   },
 ];
 // ============ COMPARISON SECTION ============
@@ -578,70 +578,18 @@ export const platformMarketingData = [
 ];
 
 // ============ SOCIAL CLIENTS SECTION ============
+// NOTE: This section has been removed from the homepage.
+// Fake brand data (Urban Style, Desi Delights etc.) was replaced — see companiesData for real clients.
 export const socialClientsSection = {
   badge: "Client Success Stories",
   title: "Brands We",
   titleHighlight: "Manage & Grow",
-  description:
-    "These are real businesses we manage on Instagram and Facebook every day — building their audience, driving engagement, and turning followers into loyal customers.",
+  description: "",
 };
-
-export const socialClientsData = [
-  {
-    id: "urban",
-    name: "Urban Style",
-    platform: "Instagram",
-    industry: "Fashion",
-    followers: "120k",
-    engagement: "6.2%",
-    imageId: "1460925895917-afdab827c52f",
-  },
-  {
-    id: "desi",
-    name: "Desi Delights",
-    platform: "Instagram",
-    industry: "F&B",
-    followers: "45k",
-    engagement: "4.8%",
-    imageId: "1504674900247-0877df9cc836",
-  },
-  {
-    id: "tech",
-    name: "TechGadgets India",
-    platform: "Instagram",
-    industry: "Electronics",
-    followers: "80k",
-    engagement: "5.1%",
-    imageId: "1505740420928-5e560c06d30e",
-  },
-  {
-    id: "clinic",
-    name: "City Clinic",
-    platform: "Facebook",
-    industry: "Healthcare",
-    followers: "30k",
-    engagement: "3.9%",
-    imageId: "1551076805-e1869033e561",
-  },
-  {
-    id: "bright",
-    name: "Bright Tutors",
-    platform: "Facebook",
-    industry: "Education",
-    followers: "18k",
-    engagement: "4.2%",
-    imageId: "1503676260728-1c00da094a0b",
-  },
-  {
-    id: "fresh",
-    name: "FreshMart",
-    platform: "Facebook",
-    industry: "Grocery",
-    followers: "28k",
-    engagement: "3.5%",
-    imageId: "1542838132-92c53300491e",
-  },
-];
+export const socialClientsData: {
+  id: string; name: string; platform: string; industry: string;
+  followers: string; engagement: string; imageId: string;
+}[] = [];
 
 // ============ SPECIAL SERVICES SECTION ============
 export const specialServicesSection = {

@@ -15,6 +15,9 @@ const Header: FC = () => {
       { name: "Social Media Management", href: "/services/social-media-management" },
       { name: "Local SEO & Google Map Optimization", href: "/services/local-seo" },
       { name: "Lead Ads", href: "/services/lead-ads" },
+      { name: "Local SEO — Katihar", href: "/services/local-seo/katihar" },
+      { name: "Local SEO — Purnea", href: "/services/local-seo/purnea" },
+      { name: "Local SEO — Kishanganj", href: "/services/local-seo/kishanganj" },
     ],
     []
   );
@@ -23,6 +26,7 @@ const Header: FC = () => {
     () => [
       { name: "Home", href: "/" },
       { name: "Services", href: "/services", submenu: servicesSubmenu },
+      { name: "Free Audit", href: "/free-audit" },
       { name: "About", href: "/about" },
       { name: "Contact", href: "/contact" },
     ],
@@ -51,9 +55,9 @@ const Header: FC = () => {
 
           <div className="hidden md:flex items-center gap-3">
             <span className="inline-flex items-center gap-2 opacity-90">
-              <MapPin size={14} /> Delhi • Mumbai • Bangalore
+              <MapPin size={14} /> Katihar • Purnea • Seemanchal
             </span>
-            <a className="btn-secondary !py-2 !px-4" href="/contact">
+            <a className="btn-secondary !py-2 !px-4" href="/free-audit">
               Free Audit <ArrowRight size={16} />
             </a>
           </div>

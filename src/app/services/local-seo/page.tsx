@@ -35,13 +35,13 @@ const businessTypes = [
 const testimonials = [
   {
     name: "Dr. Suresh Nair",
-    business: "Dental Clinic, Mira Road",
+    business: "Coaching Institute, Katihar",
     quote: "Before Searchmetric, we were on page 3 of Google. Within 2 months we were in the top 3 on Google Maps. Patient enquiries from online went up by over 200%.",
     stars: 5,
   },
   {
     name: "Kavita S.",
-    business: "Boutique Salon, Thane",
+    business: "Retail Shop, Purnea",
     quote: "I had no idea what Google Business Profile even was. Searchmetric set everything up, optimised it, and now I get 15–20 new client calls every week just from Google.",
     stars: 5,
   },
@@ -64,7 +64,7 @@ export default function LocalSEOPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white mb-6">
               <MapPin size={16} className="text-indigo-400" />
-              <span className="text-sm font-semibold">Local SEO · Google Maps · Mira Road & Mumbai</span>
+              <span className="text-sm font-semibold">Local SEO · Google Maps · Seemanchal Bihar</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
               {localSEOService.heroTitle}
@@ -96,7 +96,7 @@ export default function LocalSEOPage() {
       {/* Business types we serve */}
       <section className="bg-white border-b border-slate-100">
         <div className="container-pad py-8">
-          <div className="text-center text-sm text-slate-400 font-medium mb-5">We help local businesses across Mumbai get found on Google:</div>
+          <div className="text-center text-sm text-slate-400 font-medium mb-5">We help local businesses across Seemanchal & Bihar get found on Google:</div>
           <div className="flex flex-wrap justify-center gap-3">
             {businessTypes.map((b, i) => (
               <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-100 text-sm font-medium text-slate-700">
@@ -118,7 +118,7 @@ export default function LocalSEOPage() {
               </h2>
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  When someone in Mira Road types &quot;dentist near me&quot; or &quot;best salon in Thane&quot; — they click on one of the top three results on Google Maps. They barely scroll past that. If you&apos;re not there, you simply don&apos;t exist for that customer.
+                  When someone in Katihar types &quot;clinic near me&quot; or &quot;best coaching institute in Purnea&quot; — they click on one of the top three results on Google Maps. They barely scroll past that. If you&apos;re not there, you simply don&apos;t exist for that customer.
                 </p>
                 <p>
                   {localSEOService.description}
@@ -144,7 +144,7 @@ export default function LocalSEOPage() {
             <div className="relative">
               <div className="aspect-video rounded-3xl overflow-hidden relative">
                 <Image src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80"
-                  alt="Google Maps search results showing local businesses in Mumbai"
+                  alt="Google Maps search results showing local businesses in Katihar Seemanchal Bihar"
                   fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/30 to-transparent" />
               </div>
@@ -193,7 +193,7 @@ export default function LocalSEOPage() {
         <div className="container-pad">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <div className="badge bg-gradient-to-r from-indigo-500 to-violet-600 text-white ring-0 mb-4">Real Results</div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Mumbai Businesses That Now Own Google Maps</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Seemanchal Businesses That Now Own Google Maps</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {testimonials.map((t, i) => (

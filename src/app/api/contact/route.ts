@@ -76,7 +76,7 @@ function buildEmailHtml(data: ContactPayload): string {
     </div>
     <div class="footer">
       This email was sent automatically from the Searchmetric website contact form.<br />
-      Searchmetric | Mira Road, Mumbai, Maharashtra — searchmetric.in
+      Searchmetric | Seemanchal Bihar — searchmetric.in
     </div>
   </div>
 </body>
@@ -132,7 +132,7 @@ function buildAutoReplyHtml(name: string): string {
       <p>📞 <a href="tel:+919876543210" style="color:#7c3aed">+91 98765 43210</a> &nbsp;|&nbsp; 💬 <a href="https://wa.me/919876543210" style="color:#7c3aed">WhatsApp Us</a></p>
       <br/>
       <p>Looking forward to speaking with you soon!</p>
-      <p>Warm regards,<br/><strong>The Searchmetric Team</strong><br/><span style="color:#94a3b8;font-size:13px">Searchmetric | Mira Road, Mumbai</span></p>
+      <p>Warm regards,<br/><strong>The Searchmetric Team</strong><br/><span style="color:#94a3b8;font-size:13px">Searchmetric | Seemanchal Bihar</span></p>
     </div>
     <div class="footer">
       You're receiving this because you submitted a form on searchmetric.in<br />

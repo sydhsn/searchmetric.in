@@ -2,7 +2,7 @@ export const leadAdsService = {
   title: "Lead Ads — Instagram, Facebook & Google",
   heroTitle: "Stop Guessing. Start Getting Real Leads Every Day.",
   description:
-    "Most businesses waste money on ads that get clicks but no customers. At Searchmetric, we build laser-targeted lead ad campaigns on Instagram, Facebook, and Google that bring in real enquiries from people who are actively looking for exactly what you offer — in Mira Road, Mumbai, and across India.",
+    "Most businesses waste money on ads that get clicks but no customers. At Searchmetric, we build laser-targeted lead ad campaigns on Instagram, Facebook, and Google that bring in real enquiries from people who are actively looking for exactly what you offer — across Katihar, Purnea, Kishanganj, and all of Seemanchal Bihar.",
   heroDescription:
     "We turn your ad budget into a predictable lead machine. No wasted spend, no confusion — just qualified prospects landing in your inbox every single day.",
   features: [
@@ -130,7 +130,7 @@ export const localSEOService = {
   title: "Local SEO & Google Maps Optimization",
   heroTitle: "Get Found by Local Customers Before Your Competitors Do.",
   description:
-    "If your business isn't showing up on Google Maps or local search results, you're losing customers every single day — to competitors who may not even be better than you. Searchmetric fixes that. We optimise your entire local online presence so the right people in Mira Road, Mumbai, and nearby areas find you first.",
+    "If your business isn't showing up on Google Maps or local search results, you're losing customers every single day — to competitors who may not even be better than you. Searchmetric fixes that. We optimise your entire local online presence so the right people in Katihar, Purnea, Kishanganj and across Seemanchal find you first.",
   heroDescription:
     "We help local Indian businesses rank higher on Google Maps, get more calls, and turn local searches into real walk-ins and enquiries — consistently.",
   features: [

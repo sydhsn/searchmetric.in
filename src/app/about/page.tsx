@@ -46,44 +46,13 @@ const values = [
   },
 ];
 
-const team = [
-  {
-    name: "Rahul Verma",
-    role: "Founder & CEO",
-    description: "Rahul started Searchmetric after seeing too many local businesses get ripped off by agencies that promised the moon and delivered a screensaver. With 12+ years in digital marketing and a Google & Meta certification on his wall, he makes sure every campaign we run is built around real outcomes.",
-    specialties: ["SEO Strategy", "Business Growth", "Paid Ads"],
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
-  },
-  {
-    name: "Priya Sharma",
-    role: "Head of Social Media",
-    description: "Priya has been doing social media before it was cool — and she still loves it. She leads our content and community team with 8+ years of experience turning scroll-stoppers into genuine brand connections for Indian businesses.",
-    specialties: ["Content Strategy", "Community Management", "Instagram Growth"],
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&q=80",
-  },
-  {
-    name: "Amit Patel",
-    role: "SEO Director",
-    description: "Amit is the reason our clients show up when people search for them. He's obsessed with local SEO and Google Business Profile optimization, and he has the results to back it up — clients ranking in the top 3 on Google Maps across Mumbai.",
-    specialties: ["Local SEO", "Technical SEO", "Google Analytics"],
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
-  },
-  {
-    name: "Neha Kapoor",
-    role: "Creative Director",
-    description: "Neha believes great design isn't just about looking pretty — it's about making people stop, pay attention, and take action. She leads our creative team and makes sure every ad, post, and landing page we build actually converts.",
-    specialties: ["Brand Design", "Ad Creatives", "Video Strategy"],
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&q=80",
-  },
-];
+// Team: Add your real team members here. Placeholder removed to stay honest.
+const team: { name: string; role: string; description: string; specialties: string[]; image: string }[] = [];
 
 const milestones = [
-  { year: "2018", title: "The Beginning", desc: "Three friends, one laptop, and a mission to do digital marketing the honest way.", clients: "5 clients" },
-  { year: "2019", title: "Finding Our Feet", desc: "Word spread fast. Local businesses in Mira Road started coming to us because we actually delivered on our promises.", clients: "50+ clients" },
-  { year: "2020", title: "Doubling Down on Local SEO", desc: "While the world went digital, we launched our local SEO specialty. Businesses needed to be found online — and we knew how to make that happen.", clients: "150+ clients" },
-  { year: "2021", title: "The Team Grows", desc: "We brought in specialists, moved into a proper office, and started building the team we always knew Searchmetric needed.", clients: "300+ clients" },
-  { year: "2022", title: "Google Partner Status", desc: "Official Google Partner certification — a recognition of the standards we hold ourselves to for every client.", clients: "450+ clients" },
-  { year: "2023", title: "500 Clients Strong", desc: "We crossed 500 active clients, and more importantly, maintained a 95% retention rate because our clients stay when they see results.", clients: "500+ clients" },
+  { year: "2024", title: "Searchmetric Founded", desc: "Started with a clear mission — bring honest, result-focused digital marketing to Seemanchal businesses who had been ignored or overcharged by bigger agencies.", clients: "Early clients" },
+  { year: "2025", title: "First Clients, Real Results", desc: "Helped TechMinds Academy, Galaxy Documents, Mobimerz, A.S.R Enterprises and others rank higher on Google and grow their online presence.", clients: "Growing" },
+  { year: "2026", title: "Expanding Across Seemanchal", desc: "Now actively serving businesses across Katihar, Purnea, Kishanganj, Barsoi, Dalkhola, and the wider Seemanchal-Bihar region.", clients: "Active & growing" },
 ];
 
 const certifications = [
@@ -111,7 +80,7 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white mb-6">
               <div className="flex gap-0.5">{[1,2,3,4,5].map(i => <Star key={i} size={14} className="fill-amber-400 text-amber-400" />)}</div>
-              <span className="text-sm font-semibold">Trusted by 500+ Indian Businesses</span>
+              <span className="text-sm font-semibold">Serving Businesses Across Seemanchal Bihar</span>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
@@ -119,15 +88,15 @@ export default function AboutPage() {
             </h1>
 
             <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Not every agency in Mira Road will tell you when something isn&apos;t working. We will. Because we&apos;d rather lose a bad-fit client than keep one who isn&apos;t growing.
+              Not every agency will tell you when something isn&apos;t working. We will. Because we&apos;d rather lose a bad-fit client than keep one who isn&apos;t growing.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
               {[
-                { value: "2018", label: "Founded" },
-                { value: "500+", label: "Clients Served" },
-                { value: "4.9★", label: "Average Rating" },
-                { value: "95%", label: "Client Retention" },
+                { value: "2024", label: "Founded" },
+                { value: "5+", label: "Clients Served" },
+                { value: "Seemanchal", label: "Primary Market" },
+                { value: "Bihar", label: "Home State" },
               ].map((stat, i) => (
                 <div key={i} className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl px-7 py-4 text-center min-w-[110px]">
                   <div className="text-2xl font-bold text-white">{stat.value}</div>
@@ -192,17 +161,17 @@ export default function AboutPage() {
               <div>
                 <div className="badge bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white ring-0 mb-5">Our Story</div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  From a Tiny Office in Mira Road to <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">500+ Happy Clients</span>
+                  A New Agency for <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">Seemanchal Businesses</span>
                 </h2>
                 <div className="space-y-5 text-slate-600 leading-relaxed">
                   <p>
                     Searchmetric was born in 2018 out of frustration. Our founder Rahul had spent years watching local businesses — restaurants, clinics, coaching institutes, salons — pour money into marketing agencies that delivered nothing more than confusing dashboards and excuses.
                   </p>
                   <p>
-                    We started with three people, a small office in Mira Road, and a simple promise: we&apos;ll only take on clients we believe we can genuinely help, and we&apos;ll talk to you in plain English — not marketing jargon. That promise is still the foundation of how we work today.
+                    We started Searchmetric with a simple observation: businesses in Katihar, Purnea, Kishanganj, and across Seemanchal Bihar are working hard every day — but almost none of them can be found on Google. Bigger agencies from Mumbai or Delhi don&apos;t care about small Bihar towns. So we decided to.
                   </p>
                   <p>
-                    Today, Searchmetric is a team of 25+ certified specialists working with businesses across Mumbai, Thane, and the rest of India. We&apos;ve grown, but we&apos;ve kept the same honest, client-first approach that got us here.
+                    We&apos;re a small, focused team — and we&apos;re honest about that. We don&apos;t have 25 people in a Mumbai high-rise. What we do have is real skill, genuine commitment, and a deep understanding of how local businesses in Bihar can win on Google. Every client we take on, we treat like our first.
                   </p>
                 </div>
 
@@ -228,12 +197,12 @@ export default function AboutPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
                   </div>
                   <div className="absolute -bottom-5 -left-5 bg-white p-5 rounded-2xl shadow-xl border border-slate-100">
-                    <div className="text-3xl font-bold text-brand-700">25+</div>
-                    <div className="text-sm text-slate-600">Expert Team Members</div>
+                    <div className="text-3xl font-bold text-brand-700">5+</div>
+                    <div className="text-sm text-slate-600">Real Clients Helped</div>
                   </div>
                   <div className="absolute -top-5 -right-5 bg-gradient-to-r from-brand-600 to-fuchsia-600 text-white p-5 rounded-2xl shadow-xl">
-                    <div className="text-3xl font-bold">6+</div>
-                    <div className="text-sm opacity-90">Years in Business</div>
+                    <div className="text-3xl font-bold">2026</div>
+                    <div className="text-sm opacity-90">Operating in Seemanchal</div>
                   </div>
                 </div>
 
@@ -352,7 +321,7 @@ export default function AboutPage() {
                 We&apos;re Different in the Ways <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-fuchsia-600">That Actually Matter</span>
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed">
-                There are hundreds of digital marketing agencies in Mumbai. Most of them will take your money and send you a report. We take your goals seriously and work backwards from real results.
+                There are many digital marketing agencies in India. Most of them will take your money and send you a report. We take your goals seriously and work backwards from real results.
               </p>
               <div className="space-y-5">
                 {[
@@ -401,7 +370,7 @@ export default function AboutPage() {
                     ))}
                   </div>
                   <div>
-                    <div className="text-sm font-semibold">25+ experts</div>
+                    <div className="text-sm font-semibold">Small & focused team</div>
                     <div className="text-xs text-slate-400">ready to work on your growth</div>
                   </div>
                 </div>
@@ -418,7 +387,7 @@ export default function AboutPage() {
             <div className="p-8 md:p-14 bg-gradient-to-r from-slate-900 to-slate-800 text-white text-center">
               <div className="max-w-3xl mx-auto">
                 <div className="badge bg-white/10 text-white ring-0 mb-6 inline-flex">
-                  <Building2 size={14} /> Mira Road · Mumbai · India
+                  <Building2 size={14} /> Katihar · Seemanchal · Bihar
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-5">
                   Ready to Work with an Agency That Actually Cares?
@@ -443,7 +412,7 @@ export default function AboutPage() {
                     <Mail size={16} /> {contactDetails.email}
                   </a>
                   <span className="flex items-center gap-2 text-slate-400">
-                    <MapPin size={16} /> Mira Road, Thane, Mumbai
+                    <MapPin size={16} /> Katihar, Seemanchal, Bihar
                   </span>
                 </div>
               </div>

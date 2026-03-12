@@ -10,7 +10,7 @@ const Footer: FC = () => {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
-    { name: "Case Studies", href: "/case-studies" },
+    { name: "Free Audit", href: "/free-audit" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
   ];
@@ -19,9 +19,15 @@ const Footer: FC = () => {
     { name: "Social Media Management", href: "/services/social-media-management" },
     { name: "Local SEO & Google Maps", href: "/services/local-seo" },
     { name: "Lead Ads (Meta & Google)", href: "/services/lead-ads" },
+    { name: "Local SEO Katihar", href: "/services/local-seo/katihar" },
+    { name: "Local SEO Purnea", href: "/services/local-seo/purnea" },
+    { name: "Local SEO Kishanganj", href: "/services/local-seo/kishanganj" },
+    { name: "Local SEO Baisi", href: "/services/local-seo/baisi" },
+    { name: "Local SEO Barsoi", href: "/services/local-seo/barsoi" },
+    { name: "Local SEO Dalkhola", href: "/services/local-seo/dalkhola" },
   ];
 
-  const indianCities = ["Delhi NCR", "Mumbai", "Bangalore", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad"];
+  const indianCities = ["Katihar", "Purnea", "Kishanganj", "Barsoi", "Salmari", "Baisi", "Dalkhola", "Siliguri", "Araria", "Forbesganj"];
 
   const socialIcons = [
     { icon: Facebook, href: "#" },
@@ -123,7 +129,7 @@ const Footer: FC = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10">
-          <div className="text-center font-semibold">Serving Across India</div>
+          <div className="text-center font-semibold">Serving Across Seemanchal & North Bihar</div>
           <div className="mt-5 flex flex-wrap justify-center gap-3">
             {indianCities.map((city) => (
               <span key={city} className="rounded-full bg-white/10 px-4 py-2 text-xs text-white/80">

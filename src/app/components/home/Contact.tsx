@@ -60,7 +60,7 @@ const Contact: FC = () => {
             <div className="mt-8 space-y-4">
               <InfoRow icon={<Phone size={18} />} title="Call Us" value="+91 98765 43210" />
               <InfoRow icon={<Mail size={18} />} title="Email Us" value="info@searchmetric.in" />
-              <InfoRow icon={<MapPin size={18} />} title="Our Offices" value="Delhi • Mumbai • Bangalore • Hyderabad" />
+              <InfoRow icon={<MapPin size={18} />} title="Our Offices" value="Katihar • Purnea • Kishanganj • Seemanchal" />
             </div>
           </div>
 

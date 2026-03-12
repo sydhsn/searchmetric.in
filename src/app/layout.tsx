@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: seo.siteName,
     locale: seo.locale,
     type: "website",
-    images: [{ url: seo.home.ogImage, width: 1200, height: 630, alt: `${seo.siteName} — SEO & Digital Marketing Agency in Mira Road, Mumbai` }],
+    images: [{ url: seo.home.ogImage, width: 1200, height: 630, alt: `${seo.siteName} — SEO & Digital Marketing Agency in Katihar, Seemanchal Bihar` }],
   },
   twitter: {
     card: "summary_large_image",

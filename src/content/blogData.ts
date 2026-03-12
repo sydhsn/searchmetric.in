@@ -10,7 +10,7 @@ export const blogPosts = [
     featured: true,
     tags: ["Google Maps", "Local SEO", "Indian Business"],
     author: {
-      name: "Rahul Verma",
+      name: "Searchmetric Team",
       role: "SEO Director",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80"
     }
@@ -26,7 +26,7 @@ export const blogPosts = [
     featured: true,
     tags: ["Instagram Ads", "Lead Generation", "Meta Ads"],
     author: {
-      name: "Priya Sharma",
+      name: "Searchmetric Team",
       role: "Social Media Head",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&q=80"
     }
@@ -42,7 +42,7 @@ export const blogPosts = [
     featured: false,
     tags: ["Content Strategy", "Startup Growth", "Trends"],
     author: {
-      name: "Neha Kapoor",
+      name: "Searchmetric Team",
       role: "Creative Director",
       image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80"
     }
@@ -58,7 +58,7 @@ export const blogPosts = [
     featured: false,
     tags: ["Facebook", "Instagram", "Platform Strategy"],
     author: {
-      name: "Amit Patel",
+      name: "Searchmetric Team",
       role: "Digital Strategist",
       image: "https://images.unsplash.com/photo-1507591064344-4c6ce005-128?w=100&q=80"
     }
@@ -74,7 +74,7 @@ export const blogPosts = [
     featured: true,
     tags: ["Google My Business", "Local Listings", "Optimization"],
     author: {
-      name: "Rahul Verma",
+      name: "Searchmetric Team",
       role: "SEO Director",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80"
     }
@@ -90,16 +90,64 @@ export const blogPosts = [
     featured: false,
     tags: ["Video Marketing", "Content Creation", "Engagement"],
     author: {
-      name: "Neha Kapoor",
-      role: "Creative Director",
-      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80"
+      name: "Searchmetric Team",
+      role: "Content Team",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=100&q=80"
+    }
+  },
+  {
+    id: 7,
+    title: "Best Digital Marketing Agency in Katihar — What to Look For",
+    excerpt: "A practical guide for Katihar business owners on choosing the right digital marketing partner — without getting overcharged or misled.",
+    date: "2026-02-10",
+    slug: "best-digital-marketing-agency-katihar",
+    category: "Local SEO",
+    readTime: "5 min read",
+    featured: true,
+    tags: ["Katihar", "Seemanchal", "Digital Marketing", "Local SEO"],
+    author: {
+      name: "Searchmetric Team",
+      role: "SEO Team",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=100&q=80"
+    }
+  },
+  {
+    id: 8,
+    title: "How Seemanchal Businesses Can Rank on Google in 2026",
+    excerpt: "A step-by-step guide for businesses in Katihar, Purnea, Kishanganj, Barsoi, and Dalkhola to appear on Google Maps and local search results.",
+    date: "2026-02-20",
+    slug: "seemanchal-businesses-rank-google-2026",
+    category: "Local SEO",
+    readTime: "6 min read",
+    featured: true,
+    tags: ["Seemanchal", "Google Maps", "Katihar", "Bihar SEO", "Local SEO"],
+    author: {
+      name: "Searchmetric Team",
+      role: "SEO Team",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=100&q=80"
+    }
+  },
+  {
+    id: 9,
+    title: "Why Your Katihar Shop Isn't Showing Up on Google Maps",
+    excerpt: "The 5 most common reasons local businesses in Katihar and Seemanchal are invisible on Google — and how to fix each one.",
+    date: "2026-03-01",
+    slug: "katihar-shop-not-showing-google-maps",
+    category: "Local SEO",
+    readTime: "4 min read",
+    featured: false,
+    tags: ["Katihar", "Google Maps", "GBP", "Seemanchal", "Local SEO Fix"],
+    author: {
+      name: "Searchmetric Team",
+      role: "SEO Team",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=100&q=80"
     }
   }
 ];
 
 export const categories = [
-  { name: "All Posts", count: 6, slug: "all" },
-  { name: "Local SEO", count: 2, slug: "local-seo" },
+  { name: "All Posts", count: 9, slug: "all" },
+  { name: "Local SEO", count: 5, slug: "local-seo" },
   { name: "Social Media", count: 2, slug: "social-media" },
   { name: "Content Marketing", count: 2, slug: "content-marketing" },
   { name: "Lead Generation", count: 3, slug: "lead-generation" },
@@ -107,6 +155,6 @@ export const categories = [
 ];
 
 export const popularTags = [
-  "Google Maps", "Instagram Ads", "Local SEO", "Facebook", 
-  "Content Strategy", "Lead Generation", "Video Marketing", "Meta Ads"
+  "Katihar", "Seemanchal", "Bihar SEO", "Google Maps", "Local SEO",
+  "Instagram Ads", "Facebook", "Lead Generation", "GBP", "Meta Ads"
 ];

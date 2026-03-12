@@ -30,7 +30,7 @@ const services = [
     gradient: "from-indigo-600 to-violet-600",
     light: "#eef2ff",
     description:
-      "If your business isn't showing up on Google Maps, you're losing customers every day. We optimise your entire local presence so nearby customers in Mira Road, Mumbai, and across India find you first — not your competitors.",
+      "If your business isn't showing up on Google Maps, you're losing customers every day. We optimise your entire local presence so nearby customers across Katihar, Purnea, Kishanganj, and Seemanchal Bihar find you first — not your competitors.",
     bullets: [
       "Google Business Profile optimisation",
       "Google Maps top 3 ranking",
@@ -85,7 +85,7 @@ export default function ServicesPage() {
         <div className="container-pad relative z-10 text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white mb-6">
             <Star size={16} />
-            <span className="text-sm font-semibold">Trusted by 500+ Businesses Across India</span>
+            <span className="text-sm font-semibold">Serving Businesses Across Seemanchal Bihar</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
             Digital Marketing Services That{" "}
@@ -94,7 +94,7 @@ export default function ServicesPage() {
             </span>
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-10">
-            We help local businesses in Mira Road, Mumbai, and across India get found online, attract more customers, and grow consistently — with simple, transparent, and results-driven digital marketing.
+            We help local businesses across Katihar, Purnea, Kishanganj, and Seemanchal Bihar get found online, attract more customers, and grow consistently — with simple, transparent, and results-driven digital marketing.
           </p>
           <Link
             href="/contact"
