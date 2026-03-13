@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { 
   Search, 
   Calendar, 
@@ -136,14 +135,8 @@ export default function BlogPage() {
                       
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="h-8 w-8 rounded-full overflow-hidden relative">
-                            <Image 
-                              src={post.author.image}
-                              alt={post.author.name}
-                              fill
-                              className="object-cover"
-                              sizes="32px"
-                            />
+                          <div className="h-8 w-8 rounded-full bg-gradient-to-br from-brand-500 to-violet-600 grid place-items-center text-white font-bold text-xs flex-shrink-0">
+                            {post.author.name.charAt(0)}
                           </div>
                           <div>
                             <div className="text-sm font-semibold">{post.author.name}</div>
@@ -310,14 +303,8 @@ export default function BlogPage() {
                       <div className="border-t border-slate-100 pt-4 mt-4">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
-                            <div className="h-8 w-8 rounded-full overflow-hidden relative">
-                              <Image 
-                                src={post.author.image}
-                                alt={post.author.name}
-                                fill
-                                className="object-cover"
-                                sizes="32px"
-                              />
+                            <div className="h-8 w-8 rounded-full bg-gradient-to-br from-brand-500 to-violet-600 grid place-items-center text-white font-bold text-xs flex-shrink-0">
+                              {post.author.name.charAt(0)}
                             </div>
                             <div>
                               <div className="text-sm font-semibold">{post.author.name}</div>

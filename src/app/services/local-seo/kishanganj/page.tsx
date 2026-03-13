@@ -1,25 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MapPin, CheckCircle, Phone, ArrowRight, MessageCircle, Star, Search, TrendingUp, Shield, Clock, Users, BarChart3 } from "lucide-react";
+import { MapPin, CheckCircle, Phone, ArrowRight, MessageCircle, Globe, Megaphone, TrendingUp, Shield, Clock, Users, BarChart3, Target } from "lucide-react";
 import { contact } from "@/content/siteCopy";
 
 export const metadata: Metadata = {
-  title: "Local SEO in Kishanganj | Google Maps Ranking & Digital Marketing — Searchmetric",
-  description: "Local SEO for Kishanganj businesses. Rank on Google Maps, attract Bihar and West Bengal customers. Tea gardens, trade, retail — we cover all sectors. Free audit.",
-  keywords: "local SEO Kishanganj, SEO agency Kishanganj, digital marketing Kishanganj, Google Maps ranking Kishanganj, Google Business Profile Kishanganj, GBP Kishanganj, SEO company Kishanganj Bihar, Instagram marketing Kishanganj, Facebook ads Kishanganj, lead generation Kishanganj, best digital marketing agency Kishanganj, Seemanchal SEO, near me SEO Kishanganj",
+  title: "Digital Marketing Agency in Kishanganj | SEO, GBP, Instagram & Facebook Ads — Searchmetric",
+  description: "Digital marketing for Kishanganj businesses — Local SEO, GBP, Instagram ads, Facebook ads, website. Cross-border Bihar–Bengal market. Free audit +91 90801 35567.",
+  keywords: "digital marketing Kishanganj, local SEO Kishanganj, Google Maps ranking Kishanganj, GBP Kishanganj, website development Kishanganj, Instagram ads Kishanganj, Facebook ads Kishanganj, performance marketing Kishanganj, lead generation Kishanganj, SEO company Kishanganj, social media marketing Kishanganj, Seemanchal digital marketing",
   alternates: { canonical: "/services/local-seo/kishanganj" },
   openGraph: {
-    title: "Local SEO in Kishanganj | Google Maps Ranking — Searchmetric",
-    description: "Rank your Kishanganj business on Google Maps. Capture cross-border customers from Bihar and Bengal.",
+    title: "Digital Marketing Agency in Kishanganj | SEO, GBP, Ads — Searchmetric",
+    description: "Digital marketing for Kishanganj businesses — Local SEO, GBP, Instagram ads, Facebook ads, website. Cross-border Bihar–Bengal market. Free audit +91 90801 35567.",
     url: "https://searchmetric.in/services/local-seo/kishanganj",
-    siteName: "Searchmetric",
-    locale: "en_IN",
-    type: "website",
+    siteName: "Searchmetric", locale: "en_IN", type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Local SEO in Kishanganj — Searchmetric",
-    description: "Rank your Kishanganj business on Google Maps. Capture cross-border customers from Bihar and Bengal.",
+    title: "Digital Marketing in Kishanganj — Searchmetric",
+    description: "Digital marketing for Kishanganj businesses — Local SEO, GBP, Instagram ads, Facebook ads, website. Cross-border Bihar–Bengal market. Free audit +91 90801 35567.",
   },
 };
 
@@ -27,19 +25,18 @@ const citySchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": "https://searchmetric.in/services/local-seo/kishanganj",
-  "name": "Searchmetric — Local SEO Agency Kishanganj",
+  "name": "Searchmetric — Digital Marketing Agency Kishanganj",
   "url": "https://searchmetric.in/services/local-seo/kishanganj",
   "telephone": "+91-90801-35567",
   "email": "info@searchmetric.in",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Hospital Road, Purab Chowk",
-    "addressLocality": "Baisi",
-    "addressRegion": "Bihar",
-    "postalCode": "854311",
-    "addressCountry": "IN",
+    "addressLocality": "Baisi", "addressRegion": "Bihar",
+    "postalCode": "854311", "addressCountry": "IN",
   },
-  "areaServed": { "@type": "City", "name": "Kishanganj" },
+  "areaServed": { "@type": "City", "name": "Kishanganj", "sameAs": "https://en.wikipedia.org/wiki/Kishanganj" },
+  "serviceType": ["Local SEO", "Google Business Profile", "Instagram Ads", "Facebook Ads", "Website Development", "Performance Marketing"],
   "priceRange": "₹₹",
 };
 
@@ -47,26 +44,11 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can local SEO attract customers from West Bengal too?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We configure your GBP service areas to cover Bihar and nearby West Bengal areas so you appear in searches from both sides of the border." }
-    },
-    {
-      "@type": "Question",
-      "name": "How fast can I rank in Kishanganj?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Very fast — Kishanganj has very low SEO competition. Many businesses can reach the top 3 within 4–6 weeks." }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you work with tea and agriculture businesses?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes — garden suppliers, agri-input shops, equipment dealers, and related services can all rank and attract B2B and B2C customers via Google." }
-    },
-    {
-      "@type": "Question",
-      "name": "What about hotels and guesthouses in Kishanganj?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Hotels here benefit enormously — travellers on the NH-27 route search for accommodation on Google Maps. We help you appear at the top of those searches." }
-    }
+    { "@type": "Question", "name": "Can digital marketing in Kishanganj attract West Bengal customers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We configure GBP service areas and ad targeting to cover both Bihar and nearby West Bengal — capturing customers from both sides." } },
+    { "@type": "Question", "name": "How fast can I rank in Kishanganj?", "acceptedAnswer": { "@type": "Answer", "text": "Very fast — competition is very low. Many businesses reach top 3 within 4–6 weeks." } },
+    { "@type": "Question", "name": "Do you run Instagram and Facebook ads in Kishanganj?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — Meta campaigns targeting Kishanganj, Thakurganj, Bahadurganj and cross-border Bengal audiences." } },
+    { "@type": "Question", "name": "Can you build a website for a Kishanganj business?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — SEO-optimised websites targeting Kishanganj, Thakurganj, and nearby West Bengal keywords." } },
+    { "@type": "Question", "name": "No lock-in contracts?", "acceptedAnswer": { "@type": "Answer", "text": "Correct — month-to-month only." } }
   ],
 };
 
@@ -76,105 +58,87 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://searchmetric.in" },
     { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://searchmetric.in/services" },
-    { "@type": "ListItem", "position": 3, "name": "Local SEO", "item": "https://searchmetric.in/services/local-seo" },
-    { "@type": "ListItem", "position": 4, "name": "Kishanganj", "item": "https://searchmetric.in/services/local-seo/kishanganj" },
+    { "@type": "ListItem", "position": 3, "name": "Kishanganj", "item": "https://searchmetric.in/services/local-seo/kishanganj" },
   ],
 };
 
-const businessTypes = [
-  { emoji: "🏥", type: "Clinics & Health" },
-  { emoji: "📚", type: "Coaching & Schools" },
-  { emoji: "🏪", type: "Shops & Retail" },
-  { emoji: "🍽️", type: "Restaurants & Dhabas" },
-  { emoji: "🏨", type: "Hotels & Lodges" },
-  { emoji: "🔧", type: "Repair & Services" },
-  { emoji: "💼", type: "Local Professionals" },
-  { emoji: "🌾", type: "Agriculture & Trade" },
+const services = [
+  { icon: "📍", title: "Local SEO & Google Maps", desc: "Rank in the top 3 on Google Maps for Kishanganj searches. GBP optimisation, citations, review generation, monthly reports.", color: "from-indigo-500 to-violet-600" },
+  { icon: "🌐", title: "Website Development & SEO", desc: "Mobile-first website optimised for Kishanganj keywords. Ranks on Google and converts visitors into customers.", color: "from-sky-500 to-cyan-600" },
+  { icon: "📸", title: "Instagram Marketing & Ads", desc: "Instagram Lead Ads and Reels content targeting Kishanganj audiences. Pre-filled forms, high conversion rates.", color: "from-pink-500 to-rose-600" },
+  { icon: "👍", title: "Facebook Marketing & Ads", desc: "Facebook Lead campaigns targeting Kishanganj 25–50 age group. Hindi+English copy, local radius targeting.", color: "from-blue-500 to-indigo-600" },
+  { icon: "🎯", title: "Performance Marketing", desc: "Google Ads + Meta Ads managed together. Every rupee tracked, every lead measured. CPL-focused campaigns.", color: "from-orange-500 to-amber-600" },
+  { icon: "📱", title: "Social Media Management", desc: "8–12 posts/month across Instagram and Facebook. Reels, Stories, captions — consistent local brand presence in Kishanganj.", color: "from-violet-500 to-purple-600" },
 ];
 
-const processSteps = [
-  { step: "01", title: "Free Audit", desc: "We audit your Google presence, check Kishanganj competitors, and identify your fastest ranking opportunities — at zero cost." },
-  { step: "02", title: "GBP Optimisation", desc: "Complete Google Business Profile setup — right categories, keyword-rich description, service areas, photos, attributes." },
-  { step: "03", title: "Citation Building", desc: "30+ directory listings with perfectly consistent Name, Address, Phone — Justdial, Sulekha, IndiaMart, Bing Places." },
-  { step: "04", title: "Reviews & Posts", desc: "Simple review collection system and regular Google Posts to keep your profile active and climbing in rank." },
-  { step: "05", title: "Monthly Reports", desc: "Clear monthly report — profile views, calls, direction requests, keyword rankings. No jargon." },
-];
-
-const includes = [
-  { icon: "📍", title: "Google Business Profile Full Setup", desc: "Complete GBP creation or deep optimisation — categories, description, photos, service areas, attributes, Q&A." },
-  { icon: "🔑", title: "Kishanganj Keyword Research", desc: "We find exactly what Kishanganj customers search for and build your SEO around those exact phrases." },
-  { icon: "📋", title: "30+ Local Directory Listings", desc: "Justdial, Sulekha, IndiaMart, Bing Places, and regional Bihar directories — consistent info builds Google trust." },
-  { icon: "⭐", title: "Review Generation System", desc: "A WhatsApp-friendly system to collect genuine Google reviews from your happy customers." },
-  { icon: "📸", title: "Photos, Posts & Q&A", desc: "Real business photos, Google Posts, Q&A management — all ranking signals Google considers for Maps." },
-  { icon: "📊", title: "Monthly Performance Report", desc: "Transparent monthly report — impressions, calls, searches, direction requests, keyword positions." },
+const faqs = [
+  { q: "Can digital marketing in Kishanganj attract West Bengal customers?", a: "Yes. We configure GBP service areas and ad targeting to cover both Bihar and nearby West Bengal — capturing customers from both sides." },
+  { q: "How fast can I rank in Kishanganj?", a: "Very fast — competition is very low. Many businesses reach top 3 within 4–6 weeks." },
+  { q: "Do you run Instagram and Facebook ads in Kishanganj?", a: "Yes — Meta campaigns targeting Kishanganj, Thakurganj, Bahadurganj and cross-border Bengal audiences." },
+  { q: "Can you build a website for a Kishanganj business?", a: "Yes — SEO-optimised websites targeting Kishanganj, Thakurganj, and nearby West Bengal keywords." },
+  { q: "No lock-in contracts?", a: "Correct — month-to-month only." },
 ];
 
 const nearbyAreas = ["Kishanganj Town", "Thakurganj", "Bahadurganj", "Dighalbank", "Kochadhaman", "Tenhatta", "Islampur"];
 
-const faqs = [
-  { q: "Can local SEO attract customers from West Bengal too?", a: "Yes. We configure your GBP service areas to cover Bihar and nearby West Bengal areas so you appear in searches from both sides of the border." },
-  { q: "How fast can I rank in Kishanganj?", a: "Very fast — Kishanganj has very low SEO competition. Many businesses can reach the top 3 within 4–6 weeks." },
-  { q: "Do you work with tea and agriculture businesses?", a: "Yes — garden suppliers, agri-input shops, equipment dealers, and related services can all rank and attract B2B and B2C customers via Google." },
-  { q: "What about hotels and guesthouses in Kishanganj?", a: "Hotels here benefit enormously — travellers on the NH-27 route search for accommodation on Google Maps. We help you appear at the top of those searches." },
-];
-
-export default function KishanganjLocalSEOPage() {
+export default function KishanganjPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(citySchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      {/* Breadcrumb */}
       <nav className="bg-slate-50 border-b border-slate-100 py-2" aria-label="Breadcrumb">
         <div className="container-pad">
           <ol className="flex flex-wrap items-center gap-1 text-xs text-slate-500">
-            {[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: "Local SEO", href: "/services/local-seo" }, { name: "Kishanganj", href: "/services/local-seo/kishanganj" }].map((crumb, i, arr) => (
+            {[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: "Kishanganj", href: "/services/local-seo/kishanganj" }].map((c, i, arr) => (
               <li key={i} className="flex items-center gap-1">
-                {i < arr.length - 1 ? (<><Link href={crumb.href} className="hover:text-brand-600 transition">{crumb.name}</Link><span className="text-slate-300">/</span></>) : (<span className="text-brand-600 font-medium">{crumb.name}</span>)}
+                {i < arr.length - 1
+                  ? <><Link href={c.href} className="hover:text-brand-600 transition">{c.name}</Link><span className="text-slate-300">/</span></>
+                  : <span className="text-brand-600 font-medium">{c.name}</span>}
               </li>
             ))}
           </ol>
         </div>
       </nav>
 
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-rose-900 to-slate-900 py-20 md:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-rose-900 to-slate-900 py-20 md:py-28">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 -left-20 w-96 h-96 bg-white/5 rounded-full filter blur-3xl" />
+          <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full filter blur-3xl" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full filter blur-3xl" />
         </div>
-        <div className="container-pad relative z-10 max-w-5xl mx-auto">
+        <div className="container-pad relative z-10 max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white mb-6">
-                <MapPin size={16} className="opacity-80" />
-                <span className="text-sm font-semibold">Local SEO · Google Maps · Kishanganj, Bihar</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white mb-6">
+                <MapPin size={14} className="opacity-80" />
+                <span className="text-sm font-semibold">Kishanganj, Bihar</span>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
-                Rank Your Kishanganj Business<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-pink-400">#1 on Google Maps</span>
+                Digital Marketing Agency<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-pink-400">in Kishanganj</span>
               </h1>
-              <p className="text-lg text-slate-300 mb-8 leading-relaxed">Kishanganj sits on the Bihar–West Bengal border. The right Google presence captures customers from both sides — and few businesses here have done it yet.</p>
+              <p className="text-slate-300 text-lg mb-4 leading-relaxed">Kishanganj sits on the Bihar–West Bengal border. The right digital presence captures customers from both states — and almost no local business has done it yet.</p>
+              <p className="text-sm mb-8" style={{color:'rgba(200,200,255,0.7)'}}>Local SEO · Google Maps · GBP · Website · Instagram Ads · Facebook Ads · Performance Marketing</p>
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
-                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-gradient-to-r from-rose-500 to-pink-600 text-white font-semibold rounded-xl shadow-xl transition-all hover:opacity-90">
+                <Link href="/free-audit" className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-gradient-to-r from-rose-500 to-pink-600 text-white font-semibold rounded-xl shadow-xl hover:opacity-90 transition-all">
                   Free Kishanganj SEO Audit <ArrowRight size={18} />
                 </Link>
                 <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl border border-white/30 text-white hover:bg-white/10 transition-all font-semibold">
                   <MessageCircle size={18} /> WhatsApp Us
                 </a>
               </div>
-              <div className="flex items-center gap-3 text-slate-300 text-sm">
-                <Phone size={16} className="opacity-70" />
+              <div className="flex items-center gap-2 text-slate-300 text-sm">
+                <Phone size={14} />
                 <a href={contact.phoneHref} className="hover:text-white transition font-semibold">{contact.phone}</a>
-                <span className="text-slate-500">·</span>
+                <span className="text-slate-500 mx-1">·</span>
                 <span className="text-slate-400">Free audit · No commitment</span>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {[{ val: "Top 3", label: "Google Maps positions we target" }, { val: "Free", label: "Audit — no cost, no commitment" }, { val: "60–90", label: "Days avg. for ranking results" }, { val: "0 ₹", label: "Setup fee for free audit" }].map((s, i) => (
+              {[{ val: "Top 3", label: "Google Maps target" }, { val: "Free", label: "Audit, no commitment" }, { val: "60–90", label: "Days to see results" }, { val: "6", label: "Digital services in one place" }].map((s, i) => (
                 <div key={i} className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-5 text-center">
-                  <div className="text-2xl font-bold text-white mb-1">{s.val}</div>
+                  <div className="text-3xl font-bold text-white mb-1">{s.val}</div>
                   <div className="text-xs text-slate-300 leading-snug">{s.label}</div>
                 </div>
               ))}
@@ -183,167 +147,76 @@ export default function KishanganjLocalSEOPage() {
         </div>
       </section>
 
-      {/* Business types */}
-      <section className="bg-white border-b border-slate-100 py-8">
-        <div className="container-pad">
-          <p className="text-center text-sm text-slate-500 font-medium mb-4">We help these Kishanganj businesses rank on Google:</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {businessTypes.map((b, i) => (
-              <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-100 text-sm font-medium text-slate-700">
-                <span>{b.emoji}</span>{b.type}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* The Opportunity */}
       <section className="section bg-gradient-to-b from-white to-slate-50">
-        <div className="container-pad max-w-5xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-semibold mb-5">
-                🎯 The Kishanganj SEO Opportunity
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-5">Why Kishanganj Is the Right Time to Get on Google</h2>
-              <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
-                <p>Kishanganj is unique — a Bihar city that draws customers from West Bengal, Sikkim, and the Northeast via NH-27. Tea gardens, agriculture, trade, and growing retail make it search-rich. Most businesses haven&apos;t even claimed their Google Business Profile, so ranking in the top 3 for most local searches is achievable within weeks.</p>
-              </div>
-              <div className="mt-6 space-y-3">
-                {["Near-zero competition for most local search terms in Kishanganj", "Growing smartphone usage — more people searching every month", "First-mover rankings in smaller markets hold for years", "Ranking here is faster and more affordable than any metro"].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <CheckCircle size={18} className="text-emerald-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-slate-700 text-sm">{item}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8">
-                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-rose-500 to-pink-600 text-white font-semibold rounded-xl hover:opacity-90 transition-all">
-                  Get Free Audit <ArrowRight size={18} />
-                </Link>
-              </div>
-            </div>
-            <div className="space-y-4">
-              {[
-                { icon: <Search size={20} />, label: "Google Search Visibility", desc: "Appear when Kishanganj locals search for your service category" },
-                { icon: <MapPin size={20} />, label: "Google Maps Top 3", desc: "The 3 businesses Google shows — you need to be there" },
-                { icon: <Star size={20} />, label: "Review Authority", desc: "Reviews build trust before customers even visit you" },
-                { icon: <BarChart3 size={20} />, label: "Real Monthly Data", desc: "Calls, views, impressions — tracked every month" },
-              ].map((item, i) => (
-                <div key={i} className="card card-pad flex items-center gap-4 group hover:border-slate-300 transition-all">
-                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-rose-500 to-pink-600 text-white grid place-items-center flex-shrink-0">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <div className="font-bold text-sm text-ink-900">{item.label}</div>
-                    <div className="text-xs text-slate-500 mt-0.5">{item.desc}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Process */}
-      <section className="section bg-white">
-        <div className="container-pad max-w-5xl mx-auto">
+        <div className="container-pad max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <div className="badge bg-gradient-to-r from-rose-500 to-pink-600 text-white ring-0 mb-4">Our Process</div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-3">How We Rank Your Kishanganj Business on Google</h2>
-            <p className="text-slate-500">Clear, transparent process — no black-box tactics, no confusion.</p>
+            <div className="badge bg-gradient-to-r from-rose-500 to-pink-600 text-white ring-0 mb-4">Our Services in Kishanganj</div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">Everything Your Kishanganj Business Needs Online</h2>
+            <p className="text-slate-500 max-w-xl mx-auto">SEO, Google Maps, website, Instagram, Facebook, performance ads — one agency, all channels, measured by real results.</p>
           </div>
-          <div className="grid md:grid-cols-5 gap-4">
-            {processSteps.map((step, i) => (
-              <div key={i} className="text-center">
-                <div className="h-14 w-14 rounded-full bg-gradient-to-br from-rose-500 to-pink-600 text-white font-bold text-lg grid place-items-center mx-auto mb-4 shadow-lg">
-                  {step.step}
-                </div>
-                <h3 className="font-bold text-sm text-ink-900 mb-2">{step.title}</h3>
-                <p className="text-xs text-slate-500 leading-relaxed">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What's Included */}
-      <section className="section bg-slate-50">
-        <div className="container-pad max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <div className="badge bg-gradient-to-r from-rose-500 to-pink-600 text-white ring-0 mb-4">Full Service</div>
-            <h2 className="text-3xl font-bold">Everything Included for Kishanganj Local SEO</h2>
-            <p className="text-slate-500 mt-3">All done for you — you run your business, we handle your Google presence.</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {includes.map((item, i) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((svc, i) => (
               <div key={i} className="card card-pad group hover:border-slate-300 transition-all">
-                <div className="text-3xl mb-3">{item.icon}</div>
-                <h3 className="font-bold text-ink-900 mb-2">{item.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+                <div className="text-3xl mb-3">{svc.icon}</div>
+                <h3 className="font-bold text-ink-900 mb-2">{svc.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{svc.desc}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link href="/free-audit" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-rose-500 to-pink-600 text-white font-semibold rounded-xl shadow-lg hover:opacity-90 transition-all">
+              Get Free Audit for Kishanganj <ArrowRight size={18} />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Ranking Factors */}
       <section className="section bg-white">
         <div className="container-pad max-w-5xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-14 items-start">
             <div>
-              <div className="badge bg-gradient-to-r from-rose-500 to-pink-600 text-white ring-0 mb-5">100% White-Hat SEO</div>
-              <h2 className="text-3xl font-bold mb-5">Why Our SEO Lasts — No Shortcuts, No Risks</h2>
-              <div className="space-y-4">
-                {[
-                  { icon: <Shield size={18} />, title: "No Fake Reviews or Spam", desc: "We never use fake reviews, keyword stuffing, or tactics that could get your Google listing suspended. Every strategy follows Google&apos;s guidelines." },
-                  { icon: <Clock size={18} />, title: "No Lock-In Contracts", desc: "Our clients stay because they see results — not because they&apos;re contractually trapped. Month-to-month, transparent pricing." },
-                  { icon: <Users size={18} />, title: "Direct Communication", desc: "You speak directly with the person working on your account. WhatsApp or call anytime — no call centres." },
-                  { icon: <TrendingUp size={18} />, title: "Based in Seemanchal Bihar", desc: "We&apos;re based in Baisi, Purnea — 5 minutes from your market. We know how people search in this region." },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-rose-500 to-pink-600 text-white grid place-items-center flex-shrink-0">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <div className="font-bold text-sm text-ink-900 mb-0.5">{item.title}</div>
-                      <div className="text-slate-500 text-sm leading-relaxed" dangerouslySetInnerHTML={{__html: item.desc}} />
-                    </div>
+              <div className="badge bg-gradient-to-r from-rose-500 to-pink-600 text-white ring-0 mb-5">🎯 The Kishanganj Opportunity</div>
+              <h2 className="text-3xl font-bold mb-5">Why Kishanganj Businesses Should Act Now</h2>
+              <p className="text-slate-600 text-sm leading-relaxed mb-5">Kishanganj is unique — a Bihar city drawing customers from West Bengal, Sikkim, and the Northeast via NH-27. Tea gardens, agriculture, growing retail, and cross-border trade make it search-rich. Most businesses haven't even claimed their GBP — ranking top 3 for most searches is achievable within weeks.</p>
+              <div className="space-y-3">
+                {["Near-zero competition for most local search terms", "Growing smartphone usage — more searches every month", "First-mover rankings hold for years in smaller markets", "Results 3–4x faster than any metro city", "Free audit reveals your exact opportunity"].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <CheckCircle size={16} className="text-emerald-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-slate-700">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div className="card card-pad">
-              <h3 className="font-bold text-lg mb-5">Google Maps Ranking Factors We Optimise</h3>
-              <div className="space-y-3">
+              <h3 className="font-bold text-lg mb-5">Why Choose Searchmetric for Kishanganj</h3>
+              <div className="space-y-4">
                 {[
-                  { factor: "GBP Completeness & Accuracy", weight: "25%", color: "bg-indigo-500" },
-                  { factor: "Review Quantity & Quality", weight: "20%", color: "bg-violet-500" },
-                  { factor: "Citation Consistency", weight: "15%", color: "bg-emerald-500" },
-                  { factor: "Distance from Searcher", weight: "15%", color: "bg-amber-500" },
-                  { factor: "Relevance to Search Term", weight: "15%", color: "bg-pink-500" },
-                  { factor: "Website & Content Signals", weight: "10%", color: "bg-blue-500" },
+                  { icon: "🛡️", title: "100% White-Hat Only", desc: "No fake reviews, no spam, no black-hat tactics. Everything follows Google guidelines — your rankings last." },
+                  { icon: "📍", title: "Based in Seemanchal Bihar", desc: "We're at Hospital Road, Purab Chowk, Baisi, Purnea. We know this region's market personally." },
+                  { icon: "🔓", title: "No Lock-In Contracts", desc: "Month-to-month. You stay because you see results, not because you're obligated to." },
+                  { icon: "💬", title: "Direct Communication", desc: "Speak directly with who's working on your account. WhatsApp or call any time." },
+                  { icon: "📊", title: "Results You Can Measure", desc: "Monthly reports in plain language — calls, leads, rankings. No jargon, no vanity metrics." },
                 ].map((item, i) => (
-                  <div key={i}>
-                    <div className="flex justify-between text-xs mb-1"><span className="font-medium text-ink-900">{item.factor}</span><span className="text-slate-500">{item.weight}</span></div>
-                    <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden"><div className={`h-full ${item.color} rounded-full`} style={{ width: item.weight }} /></div>
+                  <div key={i} className="flex items-start gap-3">
+                    <span className="text-lg flex-shrink-0">{item.icon}</span>
+                    <div>
+                      <div className="font-semibold text-sm text-ink-900 mb-0.5">{item.title}</div>
+                      <div className="text-xs text-slate-500 leading-relaxed">{item.desc}</div>
+                    </div>
                   </div>
                 ))}
               </div>
-              <p className="mt-4 text-xs text-slate-400">We optimise every one of these factors — not just one or two.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Areas covered */}
       <section className="section bg-slate-50">
         <div className="container-pad max-w-4xl mx-auto text-center">
           <h2 className="text-2xl font-bold mb-2">Areas We Cover in & Around Kishanganj</h2>
-          <p className="text-slate-500 text-sm mb-6">We target customers searching across all parts of Kishanganj and nearby areas.</p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-3 mt-5">
             {nearbyAreas.map((area) => (
-              <span key={area} className="px-4 py-2 rounded-full bg-rose-50 text-rose-700 text-sm font-medium border border-rose-200">
+              <span key={area} className="px-4 py-2 rounded-full bg-white text-slate-700 text-sm font-medium border border-slate-200">
                 📍 {area}
               </span>
             ))}
@@ -351,7 +224,6 @@ export default function KishanganjLocalSEOPage() {
         </div>
       </section>
 
-      {/* FAQs */}
       <section className="section bg-white">
         <div className="container-pad max-w-3xl mx-auto">
           <div className="text-center mb-10">
@@ -369,43 +241,37 @@ export default function KishanganjLocalSEOPage() {
         </div>
       </section>
 
-      {/* Nearby cities */}
       <section className="section bg-slate-50">
         <div className="container-pad max-w-4xl mx-auto text-center">
           <h2 className="text-2xl font-bold mb-3">We Also Serve Businesses Near Kishanganj</h2>
-          <p className="text-slate-500 text-sm mb-6">Part of our Seemanchal & North Bihar coverage area.</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {[{ name: "Katihar", href: "/services/local-seo/katihar" }, { name: "Purnea", href: "/services/local-seo/purnea" }, { name: "Kishanganj", href: "/services/local-seo/kishanganj" }, { name: "Barsoi", href: "/services/local-seo/barsoi" }, { name: "Baisi", href: "/services/local-seo/baisi" }, { name: "Dalkhola", href: "/services/local-seo/dalkhola" }, { name: "Siliguri", href: "/services/local-seo/siliguri" }].filter(c => c.name !== "Kishanganj").map((city) => (
-              <Link key={city.name} href={city.href} className="px-5 py-2 rounded-full border border-rose-200 text-rose-700 text-sm font-medium hover:bg-rose-50 transition-all">
-                Local SEO {city.name}
+          <div className="flex flex-wrap justify-center gap-3 mt-5">
+            {[{ name: "Katihar", href: "/services/local-seo/katihar" }, { name: "Purnea", href: "/services/local-seo/purnea" }, { name: "Kishanganj", href: "/services/local-seo/kishanganj" }, { name: "Barsoi", href: "/services/local-seo/barsoi" }, { name: "Baisi", href: "/services/local-seo/baisi" }, { name: "Dalkhola", href: "/services/local-seo/dalkhola" }, { name: "Siliguri", href: "/services/local-seo/siliguri" }].filter(c => c.name !== "Kishanganj").map((c) => (
+              <Link key={c.name} href={c.href} className="px-5 py-2 rounded-full border border-slate-200 text-slate-700 text-sm font-medium hover:border-brand-300 hover:text-brand-600 transition-all">
+                Digital Marketing {c.name}
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
       <section className="section bg-gradient-to-br from-slate-900 via-rose-900 to-slate-900 text-white">
         <div className="container-pad text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Rank #1 on Google Maps in Kishanganj?</h2>
-          <p className="text-slate-300 mb-3 text-lg">Free audit. No pressure. Results in 60–90 days.</p>
-          <p className="text-white font-bold text-xl mb-8">📞 {contact.phone}</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Grow Your Kishanganj Business Online?</h2>
+          <p className="text-slate-300 mb-2 text-lg">Free audit. No pressure. Results in 60–90 days.</p>
+          <p className="font-bold text-xl mb-8" style={{color:'rgba(200,220,255,0.9)'}}>📞 {contact.phone}</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
             <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl transition-all">
               <MessageCircle size={18} /> WhatsApp Free Audit
             </a>
-            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-900 font-semibold rounded-xl hover:bg-slate-100 transition-all">
-              Contact Form <ArrowRight size={18} />
+            <Link href="/free-audit" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-900 font-semibold rounded-xl hover:bg-slate-100 transition-all">
+              Get Free Audit <ArrowRight size={18} />
             </Link>
             <a href={contact.phoneHref} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/30 text-white hover:bg-white/10 transition-all font-semibold">
-              <Phone size={16} /> {contact.phone}
+              <Phone size={16} /> Call Now
             </a>
           </div>
           <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-slate-400">
-            <span>✓ 100% White-Hat SEO</span>
-            <span>✓ No lock-in contracts</span>
-            <span>✓ Free audit — no commitment</span>
-            <span>✓ Based in Bihar</span>
+            <span>✓ 100% White-Hat</span><span>✓ No lock-in</span><span>✓ Free audit</span><span>✓ SEO · GBP · Instagram · Facebook · Website</span>
           </div>
         </div>
       </section>

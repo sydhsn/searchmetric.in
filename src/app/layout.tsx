@@ -61,6 +61,10 @@ export const metadata: Metadata = {
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+    // Add your Bing verification code from https://www.bing.com/webmasters/about
+    // other: { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || "" },
+    // Add your Yandex code from https://webmaster.yandex.com
+    // yandex: process.env.NEXT_PUBLIC_YANDEX_SITE_VERIFICATION || "",
   },
 };
 
