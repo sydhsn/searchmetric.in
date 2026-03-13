@@ -116,7 +116,7 @@ export default function BaisiPage() {
                 Digital Marketing Agency<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-400">in Baisi</span>
               </h1>
-              <p className="text-slate-300 text-lg mb-4 leading-relaxed">Baisi is our home. We're based at Hospital Road, Purab Chowk, Baisi — we know this market better than any agency. Let us put your business at the top of Google.</p>
+              <p className="text-slate-300 text-lg mb-4 leading-relaxed">Baisi is our home. We&apos;re based at Hospital Road, Purab Chowk, Baisi — we know this market better than any agency. Let us put your business at the top of Google.</p>
               <p className="text-sm mb-8" style={{color:'rgba(200,200,255,0.7)'}}>Local SEO · Google Maps · GBP · Website · Instagram Ads · Facebook Ads · Performance Marketing</p>
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
                 <Link href="/free-audit" className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-gradient-to-r from-violet-500 to-purple-600 text-white font-semibold rounded-xl shadow-xl hover:opacity-90 transition-all">
@@ -175,7 +175,7 @@ export default function BaisiPage() {
             <div>
               <div className="badge bg-gradient-to-r from-violet-500 to-purple-600 text-white ring-0 mb-5">🎯 The Baisi Opportunity</div>
               <h2 className="text-3xl font-bold mb-5">Why Baisi Businesses Should Act Now</h2>
-              <p className="text-slate-600 text-sm leading-relaxed mb-5">Baisi is where Searchmetric is headquartered. We know this market personally. Almost no business in Baisi has an optimised Google presence — you can reach the top 3 on Google Maps almost immediately. We're your neighbours and we're proud to help local Baisi businesses grow.</p>
+              <p className="text-slate-600 text-sm leading-relaxed mb-5">Baisi is where Searchmetric is headquartered. We know this market personally. Almost no business in Baisi has an optimised Google presence — you can reach the top 3 on Google Maps almost immediately. We&apos;re your neighbours and we&apos;re proud to help local Baisi businesses grow.</p>
               <div className="space-y-3">
                 {["Near-zero competition for most local search terms", "Growing smartphone usage — more searches every month", "First-mover rankings hold for years in smaller markets", "Results 3–4x faster than any metro city", "Free audit reveals your exact opportunity"].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">

@@ -177,7 +177,7 @@ export default function KishanganjPage() {
             <div>
               <div className="badge bg-gradient-to-r from-rose-500 to-pink-600 text-white ring-0 mb-5">🎯 The Kishanganj Opportunity</div>
               <h2 className="text-3xl font-bold mb-5">Why Kishanganj Businesses Should Act Now</h2>
-              <p className="text-slate-600 text-sm leading-relaxed mb-5">Kishanganj is unique — a Bihar city drawing customers from West Bengal, Sikkim, and the Northeast via NH-27. Tea gardens, agriculture, growing retail, and cross-border trade make it search-rich. Most businesses haven't even claimed their GBP — ranking top 3 for most searches is achievable within weeks.</p>
+              <p className="text-slate-600 text-sm leading-relaxed mb-5">Kishanganj is unique — a Bihar city drawing customers from West Bengal, Sikkim, and the Northeast via NH-27. Tea gardens, agriculture, growing retail, and cross-border trade make it search-rich. Most businesses haven&apos;t even claimed their GBP — ranking top 3 for most searches is achievable within weeks.</p>
               <div className="space-y-3">
                 {["Near-zero competition for most local search terms", "Growing smartphone usage — more searches every month", "First-mover rankings hold for years in smaller markets", "Results 3–4x faster than any metro city", "Free audit reveals your exact opportunity"].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
