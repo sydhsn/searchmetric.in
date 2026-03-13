@@ -120,7 +120,7 @@ export default function AboutPage() {
                 </p>
                 <div className="mt-6 flex items-center gap-3">
                   <div className="h-12 w-12 rounded-full overflow-hidden relative">
-                    <Image src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&q=80" alt="Jabeen Fatima" fill className="object-cover" sizes="48px" />
+                    <Image src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Jabeen Fatima" fill className="object-cover" sizes="48px" />
                   </div>
                   <div>
                     <div className="font-bold text-ink-900">Jabeen Fatima</div>
@@ -363,7 +363,7 @@ export default function AboutPage() {
               <div className="mt-8 pt-8 border-t border-white/10">
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-2">
-                    {["photo-1494790108755-2616b612b786","photo-1494790108755-2616b612b786","photo-1472099645785-5658abf4ff4e","photo-1487412720507-e7ab37603c6f"].map((id, i) => (
+                    {["photo-1500648767791-00dcc994a43e","photo-1507003211169-0a1dd7228f2d","photo-1472099645785-5658abf4ff4e","photo-1438761681033-6461ffad8d80"].map((id, i) => (
                       <div key={i} className="h-9 w-9 rounded-full border-2 border-slate-800 overflow-hidden relative">
                         <Image src={`https://images.unsplash.com/${id}?w=100&q=80`} alt="Team member" fill className="object-cover" sizes="36px" />
                       </div>

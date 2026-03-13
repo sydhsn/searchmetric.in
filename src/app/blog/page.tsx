@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { 
   Search, 
   Calendar, 
@@ -134,16 +133,21 @@ export default function BlogPage() {
                         {post.excerpt}
                       </p>
                       
+                      {/* Author */}
+                      <div className="flex items-center gap-3 mb-6 pb-6 border-b border-slate-100">
+                        <div className="h-10 w-10 rounded-full bg-gradient-to-br from-brand-500 to-violet-600 grid place-items-center text-white font-bold text-sm">
+                          {post.author.name.charAt(0)}
+                        </div>
+                        <div>
+                          <div className="font-semibold text-sm text-ink-900">{post.author.name}</div>
+                          <div className="text-xs text-slate-400">{post.author.role} · Searchmetric</div>
+                        </div>
+                      </div>
+                      
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="h-8 w-8 rounded-full overflow-hidden relative">
-                            <Image 
-                              src={post.author.image}
-                              alt={post.author.name}
-                              fill
-                              className="object-cover"
-                              sizes="32px"
-                            />
+                          <div className="h-8 w-8 rounded-full bg-gradient-to-br from-brand-500 to-violet-600 grid place-items-center text-white font-bold text-xs flex-shrink-0">
+                            {post.author.name.charAt(0)}
                           </div>
                           <div>
                             <div className="text-sm font-semibold">{post.author.name}</div>
@@ -307,26 +311,26 @@ export default function BlogPage() {
                         </div>
                       </div>
                       
+                      {/* Author */}
+                      <div className="flex items-center gap-3 mb-4 pb-4 border-b border-slate-100">
+                        <div className="h-10 w-10 rounded-full bg-gradient-to-br from-brand-500 to-violet-600 grid place-items-center text-white font-bold text-sm flex-shrink-0">
+                          {post.author.name.charAt(0)}
+                        </div>
+                        <div>
+                          <div className="font-semibold text-sm text-ink-900">{post.author.name}</div>
+                          <div className="text-xs text-slate-400">{post.author.role} · Searchmetric</div>
+                        </div>
+                      </div>
+                      
                       <div className="border-t border-slate-100 pt-4 mt-4">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
-                            <div className="h-8 w-8 rounded-full overflow-hidden relative">
-                              <Image 
-                                src={post.author.image}
-                                alt={post.author.name}
-                                fill
-                                className="object-cover"
-                                sizes="32px"
-                              />
+                            <div className="h-8 w-8 rounded-full bg-gradient-to-br from-brand-500 to-violet-600 grid place-items-center text-white font-bold text-xs flex-shrink-0">
+                              {post.author.name.charAt(0)}
                             </div>
                             <div>
                               <div className="text-sm font-semibold">{post.author.name}</div>
-                              <div className="text-xs text-slate-500">
-                                {new Date(post.date).toLocaleDateString('en-IN', { 
-                                  month: 'short', 
-                                  day: 'numeric' 
-                                })}
-                              </div>
+                              <div className="text-xs text-slate-400">{post.author.role} · Searchmetric</div>
                             </div>
                           </div>
                           

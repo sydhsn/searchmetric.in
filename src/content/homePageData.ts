@@ -616,8 +616,8 @@ export const specialServicesData = [
     title: "Local SEO & Google Maps",
     description: "Show up near your area. Get more calls and visits.",
     icon: "mapPin",
-    gradient: "from-emerald-600 via-teal-600 to-cyan-600",
-    bgGradient: "from-emerald-50 to-teal-50",
+    gradient: "from-amber-600 via-orange-600 to-red-600",
+    bgGradient: "from-amber-50 to-orange-50",
   },
   {
     id: "lead-ads",
