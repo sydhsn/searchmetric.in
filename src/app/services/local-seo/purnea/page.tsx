@@ -118,7 +118,7 @@ export default function PurneaPage() {
                 Digital Marketing Agency<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-400">in Purnea</span>
               </h1>
-              <p className="text-slate-300 text-lg mb-4 leading-relaxed">Purnea is North Bihar's largest commercial hub. Millions of searches happen here monthly — and most businesses are still invisible on Google. Be the one that isn't.</p>
+              <p className="text-slate-300 text-lg mb-4 leading-relaxed">Purnea is North Bihar&apos;s largest commercial hub. Millions of searches happen here monthly — and most businesses are still invisible on Google. Be the one that isn&apos;t.</p>
               <p className="text-sm mb-8" style={{color:'rgba(200,200,255,0.7)'}}>Local SEO · Google Maps · GBP · Website · Instagram Ads · Facebook Ads · Performance Marketing</p>
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
                 <Link href="/free-audit" className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white font-semibold rounded-xl shadow-xl hover:opacity-90 transition-all">
@@ -177,7 +177,7 @@ export default function PurneaPage() {
             <div>
               <div className="badge bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white ring-0 mb-5">🎯 The Purnea Opportunity</div>
               <h2 className="text-3xl font-bold mb-5">Why Purnea Businesses Should Act Now</h2>
-              <p className="text-slate-600 text-sm leading-relaxed mb-5">Purnea is the administrative capital of Seemanchal with a district population over 3 million. Smartphone penetration is rising fast. 'Near me' searches grow month-on-month. Yet most local businesses remain invisible on Google Maps. Competition is low enough that ranking top 3 is achievable within 60–90 days for most categories.</p>
+              <p className="text-slate-600 text-sm leading-relaxed mb-5">Purnea is the administrative capital of Seemanchal with a district population over 3 million. Smartphone penetration is rising fast. &apos;Near me&apos; searches grow month-on-month. Yet most local businesses remain invisible on Google Maps. Competition is low enough that ranking top 3 is achievable within 60–90 days for most categories.</p>
               <div className="space-y-3">
                 {["Near-zero competition for most local search terms", "Growing smartphone usage — more searches every month", "First-mover rankings hold for years in smaller markets", "Results 3–4x faster than any metro city", "Free audit reveals your exact opportunity"].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">

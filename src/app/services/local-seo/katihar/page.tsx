@@ -269,9 +269,9 @@ export default function KatiharPage() {
               <div className="badge bg-gradient-to-r from-indigo-500 to-violet-600 text-white ring-0 mb-5">🎯 The Katihar Opportunity</div>
               <h2 className="text-3xl font-bold mb-5">Why Katihar Businesses Should Act Now</h2>
               <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
-                <p>Katihar is a major railway junction city with a growing, smartphone-native population. 'Near me' searches are increasing month-on-month — yet 90%+ of local businesses have no optimised Google presence.</p>
+                <p>Katihar is a major railway junction city with a growing, smartphone-native population. &apos;Near me&apos; searches are increasing month-on-month — yet 90%+ of local businesses have no optimised Google presence.</p>
                 <p>This is a first-mover market. Rank in the top 3 on Google Maps today and you hold that position for years. Every competitor that comes later will struggle to displace you.</p>
-                <p>Unlike Delhi or Mumbai where competition is fierce, in Katihar you're often racing 3–5 businesses most of whom have incomplete or no online presence. Ranking is faster and more affordable here than anywhere else in India right now.</p>
+                <p>Unlike Delhi or Mumbai where competition is fierce, in Katihar you&apos;re often racing 3–5 businesses most of whom have incomplete or no online presence. Ranking is faster and more affordable here than anywhere else in India right now.</p>
               </div>
               <div className="mt-6 space-y-3">
                 {[

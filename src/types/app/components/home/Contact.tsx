@@ -1,7 +1,7 @@
+import { ContactFormData } from "@/types/nav";
 import { Send, Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 import { FC, ReactNode, useState } from "react";
 import { ctaSection } from "@/content/homePageData";
-import { ContactFormData } from '@/types/nav';
 
 /* -----------------------------
    Contact
@@ -60,7 +60,7 @@ const Contact: FC = () => {
             <div className="mt-8 space-y-4">
               <InfoRow icon={<Phone size={18} />} title="Call Us" value="+91 90801 35567" />
               <InfoRow icon={<Mail size={18} />} title="Email Us" value="info@searchmetric.in" />
-              <InfoRow icon={<MapPin size={18} />} title="Our Offices" value="Hospital Road, Purab Chowk, Baisi, Purnea — 854311, Bihar" />
+              <InfoRow icon={<MapPin size={18} />} title="Our Offices" value="Delhi • Mumbai • Bangalore • Hyderabad" />
             </div>
           </div>
 
