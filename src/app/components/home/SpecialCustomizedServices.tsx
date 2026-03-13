@@ -1,4 +1,4 @@
-import { Instagram, MapPin, Target, Zap, ArrowRight } from "lucide-react";
+import { Instagram, Target, Zap,MapPin, ArrowRight } from "lucide-react";
 import { FC } from "react";
 import { specialServicesSection, specialServicesData } from "@/content/homePageData";
 
